@@ -13,9 +13,9 @@
 
 ---
 
-## 📌 Tentang Rara MD
+## 📌 Tentang Rara
 
-**Rara Multi Device** adalah bot WhatsApp berbasis Baileys (Multi-Device) yang dikembangkan oleh **Aizat**. Bot ini menggunakan sistem plugin modular dengan 794 plugin yang tersebar di 34 kategori, mendukung fitur AI, RPG, download, stalker, tools, group management, dan masih banyak lagi.
+**Rara Multi - Device** adalah bot WhatsApp berbasis Baileys (Multi-Device) yang dikembangkan oleh **Aizat**. Bot ini menggunakan sistem plugin modular dengan 794 plugin yang tersebar di 34 kategori, mendukung fitur AI, RPG, download, stalker, tools, group management, dan masih banyak lagi.
 
 ---
 
@@ -363,7 +363,7 @@ Saya adalah Aizat, pengembang bot WhatsApp ini. Jika kamu ingin mengikuti perkem
 ## 📝 Credits
 
 * **Developer:** Aizat
-* **Website:** [aizat-studio.my.id](https://aizat-studio.my.id)
+* **Website:** [aizat-studio.my.id](itsmee_aizat.oneapp.dev)
 * **Base:** Baileys (Multi-Device)
 * **Thanks to:** All contributors & API providers
 
@@ -376,6 +376,6 @@ Bot ini dibuat untuk tujuan edukasi dan hiburan. Gunakan dengan bijak dan sesuai
 ---
 
 <div align="center">
-  <b>🌟 Rara Multi Device v3.3 🌟</b>
-  <p>Developed by Aizat</p>
+  <b>Rara Multi Device v3.3</b>
+  <p>Developer by Aizat</p>
 </div>
