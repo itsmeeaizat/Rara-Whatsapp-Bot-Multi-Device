@@ -369,7 +369,7 @@ Saya adalah Aizat, pengembang bot WhatsApp ini. Jika kamu ingin mengikuti perkem
 
 ## ⚠️ Disclaimer
 
-Bot ini dibuat untuk tujuan edukasi dan hiburan. Gunakan dengan bijak dan sesuai dengan ketentuan WhatsApp. Developer tidak bertanggung jawab atas penyalahgunaan bot.
+Bot ini dibuat untuk tujuan penggunaan pribadi, jaga grup, edukasi dan hiburan. Bot ini 100℅ gratis tidak untuk diperjualbelikan, Gunakan dengan bijak dan sesuai dengan ketentuan WhatsApp. Developer tidak bertanggung jawab atas penyalahgunaan bot.
 
 ---
 
