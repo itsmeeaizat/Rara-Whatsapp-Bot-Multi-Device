@@ -1,0 +1,39 @@
+import fs from 'fs'
+import path from 'path'
+import te from '../../src/lib/rara-error.js'
+import { updateAssetUrl } from '../../src/lib/rara-uploader.js'
+const pluginConfig = {
+    name: 'ganti-rara-demote.jpg',
+    alias: ['gantirarademote', 'setrarademote'],
+    category: 'owner',
+    description: 'Ganti gambar rara-demote.jpg',
+    usage: '.ganti-rara-demote.jpg (reply/kirim gambar)',
+    example: '.ganti-rara-demote.jpg',
+    isOwner: true,
+    isPremium: false,
+    isGroup: false,
+    isPrivate: false,
+    cooldown: 5,
+    energi: 0,
+    isEnabled: true
+}
+
+async function handler(m, { sock }) {
+    const isImage = m.isImage || (m.quoted && m.quoted.type === 'imageMessage')
+    if (!isImage) return m.reply(`🖼️ *ɢᴀɴᴛɪ RARA-DEMOTE.JPG*\n\n> Kirim/reply gambar untuk mengganti\n> File: assets/images/rara-demote.jpg`)
+    try {
+        let buffer = m.quoted && m.quoted.isMedia ? await m.quoted.download() : await m.download()
+        if (!buffer) return m.reply('❌ Gagal mendownload gambar')
+        await m.reply(`⏳ Sedang mengupload gambar...`)
+        try {
+            const newUrl = await updateAssetUrl('rara-demote', buffer, 'rara-demote.jpg')
+            m.reply(`✅ *ʙᴇʀʜᴀsɪʟ*\n\n> Gambar rara-demote.jpg telah diganti ke URL baru:\n> ${newUrl}\n> Config telah diupdate secara realtime!`)
+        } catch (e) {
+            m.reply(`❌ Gagal mengupload gambar: ${e.message}`)
+        }
+    } catch (error) {
+        await m.reply(te(m.prefix, m.command, m.pushName))
+    }
+}
+
+export { pluginConfig as config, handler }

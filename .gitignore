@@ -1,0 +1,7 @@
+node_modules/
+sessions/
+tmp/
+temp/
+*.log
+*.zip
+*.tar.gz
