@@ -296,7 +296,7 @@ export default {
 
 ---
 
-## 🛠️ Deploy ke Pterodactyl Panel
+## Deploy ke Pterodactyl Panel
 
 1. Upload file bot ke server
 2. Buat server baru di Pterodactyl (Node.js egg)
@@ -317,7 +317,7 @@ Saya adalah Aizat, pengembang bot WhatsApp ini. Jika kamu ingin mengikuti perkem
 
 ---
 
-## ⚡ Powered By
+## Powered
 
 <div align="center">
   <img src="https://img.shields.io/badge/Node.js-20--22-339933?style=flat-square&logo=node.js&logoColor=white">
@@ -334,7 +334,7 @@ Saya adalah Aizat, pengembang bot WhatsApp ini. Jika kamu ingin mengikuti perkem
 
 ---
 
-## 🏆 Sponsored By
+## Sponsored
 
 <div align="center">
   <a href="https://openai.com"><img src="https://img.shields.io/badge/OpenAI-GPT--4%20%7C%20o3%20%7C%20o4-412991?style=flat-square&logo=openai&logoColor=white"></a>
@@ -359,11 +359,11 @@ Saya adalah Aizat, pengembang bot WhatsApp ini. Jika kamu ingin mengikuti perkem
 
 ---
 
-## 📝 Credits
+## Credits
 
 * **Developer:** Aizat
 * **Website:** [Aizat](itsmee_aizat.oneapp.dev)
-* **Thanks to:** All contributors & API providers
+* **Thanks to:** All contributors, AI Agent & API providers
 
 ---
 
