@@ -1,6 +1,6 @@
-import { uploadImage } from '../../src/lib/haidar-uploader.js'
-import { f } from '../../src/lib/haidar-http.js'
-import te from '../../src/lib/haidar-error.js'
+import { uploadImage } from '../../src/lib/rara-uploader.js'
+import { f } from '../../src/lib/rara-http.js'
+import te from '../../src/lib/rara-error.js'
 import { live3d } from '../../src/scraper/seaart.js'
 const pluginConfig = {
     name: 'tochibi',

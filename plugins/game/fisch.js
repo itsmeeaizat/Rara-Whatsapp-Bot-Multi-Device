@@ -1,4 +1,4 @@
-import { getDatabase } from "../../src/lib/haidar-database.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
 import {
   getOrCreateFischUser,
   getRandomFish,
@@ -11,7 +11,7 @@ import {
   JACKPOT_POOLS,
   doJackpotPull,
   applyJackpotReward,
-} from "../../src/lib/haidar-fisch.js";
+} from "../../src/lib/rara-fisch.js";
 import {
   islands,
   travelRequirements,
@@ -24,7 +24,7 @@ import {
   TOKEN_SHOP,
   GACHA_COST_COINS,
   GACHA_PITY_LIMIT,
-} from "../../src/lib/haidar-fisch-data.js";
+} from "../../src/lib/rara-fisch-data.js";
 import config from "../../config.js";
 import path from "path";
 import fs from "fs";

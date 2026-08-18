@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
-import te from '../../src/lib/haidar-error.js'
-import { updateAssetUrl } from '../../src/lib/haidar-uploader.js'
+import te from '../../src/lib/rara-error.js'
+import { updateAssetUrl } from '../../src/lib/rara-uploader.js'
 const pluginConfig = {
     name: 'ganti-rara.jpg',
     alias: ['gantirara', 'setrara'],

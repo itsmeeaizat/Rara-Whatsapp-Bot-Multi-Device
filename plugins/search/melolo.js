@@ -1,6 +1,6 @@
 import config from "../../config.js";
-import te from "../../src/lib/haidar-error.js";
-import haidarApi from "../../src/lib/haidar-apimanager.js";
+import te from "../../src/lib/rara-error.js";
+import raraApi from "../../src/lib/rara-apimanager.js";
 
 const pluginConfig = {
   name: "melolo",
@@ -48,7 +48,7 @@ function normalizeResults(data) {
 }
 
 async function fetchMelolo(category) {
-  const data = await haidarApi.covenant.meloloCategory(category, {
+  const data = await raraApi.covenant.meloloCategory(category, {
     timeout: 30000,
   });
 

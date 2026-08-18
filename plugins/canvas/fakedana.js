@@ -1,5 +1,5 @@
 import { Canvas, loadImage, FontLibrary } from 'skia-canvas'
-import te from '../../src/lib/haidar-error.js'
+import te from '../../src/lib/rara-error.js'
 FontLibrary.use('CartoonVibes', process.cwd() + '/assets/fonts/Epep.ttf')
 
 async function generate(angka) {

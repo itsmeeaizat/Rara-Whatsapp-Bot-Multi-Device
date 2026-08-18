@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import config from "../../config.js";
-import { AIRich } from "../../src/lib/haidar-builder.js";
+import { AIRich } from "../../src/lib/rara-builder.js";
 const pluginConfig = {
   name: "getplugin",
   alias: ["gp", "getcode", "plugincode", "sourcecode"],

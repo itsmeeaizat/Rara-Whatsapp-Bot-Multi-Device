@@ -1,4 +1,4 @@
-import { getAllPlugins } from '../../src/lib/haidar-plugins.js'
+import { getAllPlugins } from '../../src/lib/rara-plugins.js'
 import config from '../../config.js'
 const pluginConfig = {
     name: 'benefitpremium',

@@ -1,7 +1,7 @@
-import { enableAutoBackup, disableAutoBackup, getBackupStatus, triggerManualBackup, formatInterval } from '../../src/lib/haidar-auto-backup.js'
-import * as timeHelper from '../../src/lib/haidar-time.js'
+import { enableAutoBackup, disableAutoBackup, getBackupStatus, triggerManualBackup, formatInterval } from '../../src/lib/rara-auto-backup.js'
+import * as timeHelper from '../../src/lib/rara-time.js'
 import config from '../../config.js'
-import te from '../../src/lib/haidar-error.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
   name: "autobackup",
   alias: ["backup", "ab"],

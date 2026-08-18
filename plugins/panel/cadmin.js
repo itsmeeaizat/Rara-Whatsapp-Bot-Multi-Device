@@ -1,10 +1,10 @@
 import axios from 'axios'
 import crypto from 'crypto'
 import config from '../../config.js'
-import { isLid, lidToJid } from '../../src/lib/haidar-lid.js'
-import { hasFullAccess, getUserRole, VALID_SERVERS } from '../../src/lib/haidar-roles-cpanel.js'
-import * as timeHelper from '../../src/lib/haidar-time.js'
-import te from '../../src/lib/haidar-error.js'
+import { isLid, lidToJid } from '../../src/lib/rara-lid.js'
+import { hasFullAccess, getUserRole, VALID_SERVERS } from '../../src/lib/rara-roles-cpanel.js'
+import * as timeHelper from '../../src/lib/rara-time.js'
+import te from '../../src/lib/rara-error.js'
 const allCommands = VALID_SERVERS.map((v) => `cadmin${v}`);
 const allAliases = VALID_SERVERS.map((v) => `createadmin${v}`);
 

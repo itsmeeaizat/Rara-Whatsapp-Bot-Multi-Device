@@ -1,8 +1,8 @@
 import config from "../../config.js";
-import * as timeHelper from "../../src/lib/haidar-time.js";
+import * as timeHelper from "../../src/lib/rara-time.js";
 import { CronJob } from "cron";
-import { getDatabase } from "../../src/lib/haidar-database.js";
-import { fetchGroupsSafe } from "../../src/lib/haidar-jpm-helper.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
+import { fetchGroupsSafe } from "../../src/lib/rara-jpm-helper.js";
 
 function generateGiveawayId() {
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -363,7 +363,7 @@ function startGiveawayChecker(sock, db) {
     "* * * * *",
     async () => {
       try {
-        const { getDatabase } = await import("../../src/lib/haidar-database.js");
+        const { getDatabase } = await import("../../src/lib/rara-database.js");
         const currentDb = getDatabase();
         const { getSocket } = await import("../../src/connection.js");
         const currentSock = getSocket();

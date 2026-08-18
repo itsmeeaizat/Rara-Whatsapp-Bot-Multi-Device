@@ -1,6 +1,6 @@
 import gemini from '../../src/scraper/gemini.js';
-import { AIRich } from '../../src/lib/haidar-builder.js';
-import te from '../../src/lib/haidar-error.js';
+import { AIRich } from '../../src/lib/rara-builder.js';
+import te from '../../src/lib/rara-error.js';
 
 const pluginConfig = {
     name: 'ai',

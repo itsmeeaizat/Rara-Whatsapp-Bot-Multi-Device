@@ -1,5 +1,5 @@
-import { getDatabase } from "../../src/lib/haidar-database.js";
-import { decodeAndNormalize } from "../../src/lib/haidar-lid.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
+import { decodeAndNormalize } from "../../src/lib/rara-lid.js";
 import config from "../../config.js";
 
 const pluginConfig = {

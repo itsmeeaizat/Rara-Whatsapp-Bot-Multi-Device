@@ -1,4 +1,4 @@
-import { setNotifMakan, toggleNotif, getNotif, deleteNotif, parseJadwal } from '../../src/lib/haidar-notif-scheduler.js'
+import { setNotifMakan, toggleNotif, getNotif, deleteNotif, parseJadwal } from '../../src/lib/rara-notif-scheduler.js'
 
 const pluginConfig = {
     name: 'notifmakan',

@@ -1,6 +1,6 @@
-import { getDatabase } from '../../src/lib/haidar-database.js'
-import { hasAccessToServer, VALID_SERVERS } from '../../src/lib/haidar-roles-cpanel.js'
-import * as timeHelper from '../../src/lib/haidar-time.js'
+import { getDatabase } from '../../src/lib/rara-database.js'
+import { hasAccessToServer, VALID_SERVERS } from '../../src/lib/rara-roles-cpanel.js'
+import * as timeHelper from '../../src/lib/rara-time.js'
 const DEFAULT_JEDA = 5 * 60 * 1000;
 
 const pluginConfig = {

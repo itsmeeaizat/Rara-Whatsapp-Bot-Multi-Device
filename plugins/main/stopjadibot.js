@@ -1,4 +1,4 @@
-import { stopJadibot, isJadibotActive, getJadibotStatus } from '../../src/lib/haidar-jadibot-manager.js'
+import { stopJadibot, isJadibotActive, getJadibotStatus } from '../../src/lib/rara-jadibot-manager.js'
 
 const pluginConfig = {
     name: 'stopjadibot',

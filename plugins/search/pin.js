@@ -5,9 +5,9 @@ import {
 } from "rara";
 import axios from "axios";
 import crypto from "crypto";
-import te from "../../src/lib/haidar-error.js";
-import { f } from "../../src/lib/haidar-http.js";
-import { AIRich } from "../../src/lib/haidar-builder.js";
+import te from "../../src/lib/rara-error.js";
+import { f } from "../../src/lib/rara-http.js";
+import { AIRich } from "../../src/lib/rara-builder.js";
 
 const pluginConfig = {
   name: "pin",

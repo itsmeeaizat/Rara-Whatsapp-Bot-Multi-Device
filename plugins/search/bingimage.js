@@ -1,7 +1,7 @@
 import axios from "axios";
 import config from "../../config.js";
-import te from "../../src/lib/haidar-error.js";
-import haidarApi from "../../src/lib/haidar-apimanager.js";
+import te from "../../src/lib/rara-error.js";
+import raraApi from "../../src/lib/rara-apimanager.js";
 const pluginConfig = {
   name: "bingimage",
   alias: ["imagesearch", "carigambar", "bingimg"],
@@ -31,7 +31,7 @@ async function handler(m, { sock }) {
     await m.react("🔍");
 
     const apikey = config.APIkey?.neoxr || "Milik-Bot-RaraMD";
-    const data = await haidarApi.apiFaa.get(
+    const data = await raraApi.apiFaa.get(
       "/faa/google-image",
       {
         query,

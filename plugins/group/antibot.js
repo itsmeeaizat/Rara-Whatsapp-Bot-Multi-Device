@@ -1,8 +1,8 @@
-import { getDatabase } from "../../src/lib/haidar-database.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
 import {
   findParticipantByNumber,
   getParticipantJid,
-} from "../../src/lib/haidar-lid.js";
+} from "../../src/lib/rara-lid.js";
 import config from "../../config.js";
 const pluginConfig = {
   name: ["antibot", "botdetect"],

@@ -1,4 +1,4 @@
-import { getDatabase } from "../../src/lib/haidar-database.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
 const pluginConfig = {
   name: "meditation",
   alias: ["rest", "istirahat", "tidur", "sleep"],

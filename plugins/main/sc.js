@@ -1,4 +1,4 @@
-import { getAssetBuffer } from "../../src/lib/haidar-asset-manager.js";
+import { getAssetBuffer } from "../../src/lib/rara-asset-manager.js";
 import config from "../../config.js"
 
 const pluginConfig = {

@@ -1,6 +1,6 @@
 import { Qwen3 } from "../../src/scraper/qwen3.js";
-import { saluranCtx } from "../../src/lib/haidar-context.js";
-import te from "../../src/lib/haidar-error.js";
+import { saluranCtx } from "../../src/lib/rara-context.js";
+import te from "../../src/lib/rara-error.js";
 
 const pluginConfig = {
   name: "qwen3",

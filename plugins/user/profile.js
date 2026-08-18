@@ -1,5 +1,5 @@
 import config from "../../config.js";
-import { getDatabase } from "../../src/lib/haidar-database.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
 import { getRole } from "./level.js";
 import fs from "fs";
 import { getDevice } from "rara";

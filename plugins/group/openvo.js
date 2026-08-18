@@ -1,4 +1,4 @@
-import { downloadContentFromMessage } from 'haidar'
+import { downloadContentFromMessage } from 'rara'
 const pluginConfig = {
     name: 'rvo',
     alias: [],

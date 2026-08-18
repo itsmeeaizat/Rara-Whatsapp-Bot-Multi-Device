@@ -1,13 +1,13 @@
-import { getDatabase } from "../../src/lib/haidar-database.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
 import {
   drawBoard,
   getRandomMap,
   DICE_STICKERS,
-} from "../../src/lib/haidar-game-ulartangga.js";
+} from "../../src/lib/rara-game-ulartangga.js";
 import config from "../../config.js";
 import fs from "fs";
 import path from "path";
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 const pluginConfig = {
   name: "ulartangga",
   alias: ["ut", "snakeladder", "sl"],
@@ -41,7 +41,7 @@ try {
     process.cwd(),
     "assets",
     "image",
-    "haidar-games.jpg",
+    "rara-games.jpg",
   );
   if (fs.existsSync(thumbPath)) {
     thumbUT = fs.readFileSync(thumbPath);

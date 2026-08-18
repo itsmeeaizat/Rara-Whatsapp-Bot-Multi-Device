@@ -1,6 +1,6 @@
 import axios from "axios";
-import te from "../../src/lib/haidar-error.js";
-import { sendToolsPreview } from "../../src/lib/haidar-context.js";
+import te from "../../src/lib/rara-error.js";
+import { sendToolsPreview } from "../../src/lib/rara-context.js";
 const pluginConfig = {
   name: "pastebin",
   alias: ["paste", "pb"],

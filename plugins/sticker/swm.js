@@ -1,6 +1,6 @@
 import config from '../../config.js'
-import te from '../../src/lib/haidar-error.js'
-import { addExifToWebp, isAnimatedWebp, DEFAULT_METADATA } from '../../src/lib/haidar-exif.js'
+import te from '../../src/lib/rara-error.js'
+import { addExifToWebp, isAnimatedWebp, DEFAULT_METADATA } from '../../src/lib/rara-exif.js'
 
 const pluginConfig = {
     name: 'swm',

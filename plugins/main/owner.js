@@ -1,12 +1,12 @@
 import crypto from "crypto";
 import config, { getOwnerName } from "../../config.js";
-import { getDatabase } from "../../src/lib/haidar-database.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
 import {
   proto,
   generateWAMessageFromContent,
   prepareWAMessageMedia,
 } from "rara";
-import { AIRich } from "../../src/lib/haidar-builder.js";
+import { AIRich } from "../../src/lib/rara-builder.js";
 import axios from "axios";
 import sharp from "sharp";
 const pluginConfig = {

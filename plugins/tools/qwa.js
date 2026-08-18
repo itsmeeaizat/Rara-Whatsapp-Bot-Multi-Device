@@ -1,7 +1,7 @@
 import axios from 'axios'
-import { uploadImage } from '../../src/lib/haidar-uploader.js'
-import te from '../../src/lib/haidar-error.js'
-import { serialize } from '../../src/lib/haidar-serialize.js'
+import { uploadImage } from '../../src/lib/rara-uploader.js'
+import te from '../../src/lib/rara-error.js'
+import { serialize } from '../../src/lib/rara-serialize.js'
 import { parsePhoneNumber } from 'awesome-phonenumber'
 
 const pluginConfig = {

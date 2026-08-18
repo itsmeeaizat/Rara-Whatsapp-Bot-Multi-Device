@@ -3,9 +3,9 @@ import path from 'path'
 import crypto from 'crypto'
 import { exec } from 'child_process'
 import { promisify } from 'util'
-import { downloadMediaMessage } from 'haidar'
+import { downloadMediaMessage } from 'rara'
 import config from '../../config.js'
-import te from '../../src/lib/haidar-error.js'
+import te from '../../src/lib/rara-error.js'
 
 const run = promisify(exec)
 

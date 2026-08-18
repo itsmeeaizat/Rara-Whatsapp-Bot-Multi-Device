@@ -1,7 +1,7 @@
 import axios from "axios";
 import config from "../../config.js";
-import { f } from "../../src/lib/haidar-http.js";
-import { saluranCtx } from "../../src/lib/haidar-context.js";
+import { f } from "../../src/lib/rara-http.js";
+import { saluranCtx } from "../../src/lib/rara-context.js";
 const pluginConfig = {
   name: "asupantiktok",
   alias: ["tiktokasupan", "ttasupan"],

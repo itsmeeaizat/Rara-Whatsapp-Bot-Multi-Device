@@ -1,5 +1,5 @@
-import te from "../../src/lib/haidar-error.js";
-import haidarApi from "../../src/lib/haidar-apimanager.js";
+import te from "../../src/lib/rara-error.js";
+import raraApi from "../../src/lib/rara-apimanager.js";
 import config from "../../config.js";
 const pluginConfig = {
   name: "gpt4o",

@@ -1,4 +1,4 @@
-import { getDatabase } from "../../src/lib/haidar-database.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
 import config from "../../config.js";
 import path from "path";
 import fs from "fs";
@@ -24,7 +24,7 @@ try {
     process.cwd(),
     "assets",
     "images",
-    "haidar-games.jpg",
+    "rara-games.jpg",
   );
   if (fs.existsSync(thumbPath)) thumbFun = fs.readFileSync(thumbPath);
 } catch (e) {}

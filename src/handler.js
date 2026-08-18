@@ -1,27 +1,27 @@
 import config from "../config.js";
 import { isSelf } from "../config.js";
 import { generateWAMessageFromContent, prepareWAMessageMedia } from "rara";
-import { serialize, getCachedThumb } from "./lib/haidar-serialize.js";
-import { saluranCtx } from "./lib/haidar-context.js";
+import { serialize, getCachedThumb } from "./lib/rara-serialize.js";
+import { saluranCtx } from "./lib/rara-context.js";
 import {
   getPlugin,
   getPluginCount,
   getAllPlugins,
   pluginStore,
   getAllCommandNames,
-} from "./lib/haidar-plugins.js";
+} from "./lib/rara-plugins.js";
 import {
   findSimilarCommands,
   formatSuggestionMessage,
-} from "./lib/haidar-similarity.js";
-import { getDatabase } from "./lib/haidar-database.js";
+} from "./lib/rara-similarity.js";
+import { getDatabase } from "./lib/rara-database.js";
 import {
   formatUptime,
   createWaitMessage,
   createErrorMessage,
-} from "./lib/haidar-formatter.js";
+} from "./lib/rara-formatter.js";
 import { getUptime } from "./connection.js";
-import { logger, logMessage, c } from "./lib/haidar-logger.js";
+import { logger, logMessage, c } from "./lib/rara-logger.js";
 import {
   isLid,
   isLidConverted,
@@ -31,14 +31,14 @@ import {
   cacheParticipantLids,
   savePersistentCache,
   getLidCacheSize,
-} from "./lib/haidar-lid.js";
-import { hasActiveSession, getSession } from "./lib/haidar-game-data.js";
+} from "./lib/rara-lid.js";
+import { hasActiveSession, getSession } from "./lib/rara-game-data.js";
 import {
   levenshtein,
   formatAfkDuration,
   checkPermission,
   checkMode,
-} from "./lib/haidar-middleware.js";
+} from "./lib/rara-middleware.js";
 import {
   handleAntilink,
   handleAntiJudol,
@@ -51,27 +51,27 @@ import {
   handleAntilinkAll,
   handleAntiHidetag,
   handleAntiSwGc,
-} from "./lib/haidar-group-protection.js";
+} from "./lib/rara-group-protection.js";
 import {
   debounceMessage,
   getCachedUser,
   getCachedGroup,
   getCachedSetting,
-} from "./lib/haidar-performance.js";
+} from "./lib/rara-performance.js";
 import {
   isJadibotOwner,
   isJadibotPremium,
   loadJadibotDb,
-} from "./lib/haidar-jadibot-database.js";
-import { getActiveJadibots } from "./lib/haidar-jadibot-manager.js";
-import { handleCommand as handleCaseCommand } from "../case/haidar.js";
+} from "./lib/rara-jadibot-database.js";
+import { getActiveJadibots } from "./lib/rara-jadibot-manager.js";
+import { handleCommand as handleCaseCommand } from "../case/rara.js";
 import { RateLimiterMemory } from "rate-limiter-flexible";
-import { games as haidarGames } from "./lib/haidar-games.js";
+import { games as raraGames } from "./lib/rara-games.js";
 import fs from "fs";
 import path from "path";
 import { exec } from "child_process";
 import axios from "axios";
-import * as timeHelper from "./lib/haidar-time.js";
+import * as timeHelper from "./lib/rara-time.js";
 const safe = (fn) => {
   try {
     return fn();
@@ -117,7 +117,7 @@ try {
   FormData = (await import("form-data")).default || (await import("form-data"));
 } catch { }
 try {
-  levelHelper = await import("./lib/haidar-level.js");
+  levelHelper = await import("./lib/rara-level.js");
 } catch { }
 try {
   handleBuyerDone = (await import("../plugins/store/done.js")).handleBuyerDone;
@@ -203,18 +203,18 @@ try {
   sulapPlugin = await import("../plugins/fun/sulap.js");
 } catch { }
 try {
-  handleAutoAI = (await import("./lib/haidar-auto-ai.js")).handleAutoAI;
+  handleAutoAI = (await import("./lib/rara-auto-ai.js")).handleAutoAI;
 } catch { }
 try {
-  handleAutoDownload = (await import("./lib/haidar-auto-download.js"))
+  handleAutoDownload = (await import("./lib/rara-auto-download.js"))
     .handleAutoDownload;
 } catch { }
 try {
-  checkStickerCommand = (await import("./lib/haidar-sticker-command.js"))
+  checkStickerCommand = (await import("./lib/rara-sticker-command.js"))
     .checkStickerCommand;
 } catch { }
 try {
-  handleStickerReply = (await import("./lib/haidar-sticker-reply.js"))
+  handleStickerReply = (await import("./lib/rara-sticker-reply.js"))
     .handleStickerReply;
 } catch { }
 try {
@@ -983,7 +983,7 @@ async function messageHandler(msg, sock, options = {}) {
                 const commandArgs = words.slice(1).join(" ");
                 m.body = `${prefix}${bestMatch}${commandArgs ? " " + commandArgs : ""}`;
                 const { parseCommand } =
-                  await import("./lib/haidar-serialize.js");
+                  await import("./lib/rara-serialize.js");
                 const parsed = parseCommand(m.body, prefix);
                 m.isCommand = parsed.isCommand;
                 m.command = parsed.command;
@@ -1054,9 +1054,9 @@ async function messageHandler(msg, sock, options = {}) {
           const { default: path } = await import('path')
           const { default: os } = await import('os')
           const { promisify } = await import('util')
-          const { generateWAMessage, getBuffer, generateWAMessageFromContent, proto, generateMessageID } = await import('haidar')
+          const { generateWAMessage, getBuffer, generateWAMessageFromContent, proto, generateMessageID } = await import('rara')
           const { exec: childExec } = await import('child_process')
-          const { VERSION, Button, ButtonV2, Carousel, AIRich, } = await import('./lib/haidar-builder.js')
+          const { VERSION, Button, ButtonV2, Carousel, AIRich, } = await import('./lib/rara-builder.js')
           const exec = promisify(childExec)
           
           ${code}
@@ -1114,7 +1114,7 @@ async function messageHandler(msg, sock, options = {}) {
           const { default: fs } = await import('fs')
           const { default: path } = await import('path')
           const { default: os } = await import('os')
-          const { generateWAMessage, getBuffer, generateWAMessageFromContent, proto, generateMessageID } = await import('haidar')
+          const { generateWAMessage, getBuffer, generateWAMessageFromContent, proto, generateMessageID } = await import('rara')
 
           const result = await ${expr}
           if (result === undefined) return 'undefined'
@@ -1315,7 +1315,7 @@ async function messageHandler(msg, sock, options = {}) {
           if (stickerCmd) {
             const prefix = m.prefix || config.command?.prefix || ".";
             m.body = `${prefix}${stickerCmd}`;
-            const { parseCommand } = await import("./lib/haidar-serialize.js");
+            const { parseCommand } = await import("./lib/rara-serialize.js");
             const parsed = parseCommand(m.body, prefix);
             m.isCommand = parsed.isCommand;
             m.command = parsed.command;

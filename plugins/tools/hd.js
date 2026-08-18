@@ -9,7 +9,7 @@ function getSharp() {
 import FormData from "form-data";
 import path from "path";
 import fs from "fs";
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 const pluginConfig = {
   name: "hd",
   alias: ["enhance2", "upscale2", "aienhancer"],

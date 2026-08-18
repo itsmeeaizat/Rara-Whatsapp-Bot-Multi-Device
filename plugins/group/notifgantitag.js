@@ -4,9 +4,9 @@ import {
   DEFAULT_TOXIC_WORDS,
 } from "./antitoxic.js";
 import config from "../../config.js";
-import { getDatabase } from "../../src/lib/haidar-database.js";
-import te from "../../src/lib/haidar-error.js";
-import { saluranCtx } from "../../src/lib/haidar-context.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
+import te from "../../src/lib/rara-error.js";
+import { saluranCtx } from "../../src/lib/rara-context.js";
 const pluginConfig = {
   name: "notifgantitag",
   alias: ["notiflabel", "notiftag", "labeltag"],

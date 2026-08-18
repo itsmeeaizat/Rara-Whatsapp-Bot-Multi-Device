@@ -1,5 +1,5 @@
-import { getDatabase } from '../../src/lib/haidar-database.js'
-import * as timeHelper from '../../src/lib/haidar-time.js'
+import { getDatabase } from '../../src/lib/rara-database.js'
+import * as timeHelper from '../../src/lib/rara-time.js'
 const pluginConfig = {
   name: "listwarn",
   alias: ["warnings", "cekwarn", "warnlist"],

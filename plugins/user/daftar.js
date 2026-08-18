@@ -1,13 +1,13 @@
 import fs from "fs";
 import path from "path";
-import { getDatabase } from "../../src/lib/haidar-database.js";
-import { getAssetBuffer } from "../../src/lib/haidar-asset-manager.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
+import { getAssetBuffer } from "../../src/lib/rara-asset-manager.js";
 import {
   getCachedJid,
   isLid,
   isLidConverted,
   lidToJid,
-} from "../../src/lib/haidar-lid.js";
+} from "../../src/lib/rara-lid.js";
 import config from "../../config.js";
 
 const pluginConfig = {
@@ -62,7 +62,7 @@ function getRegistrationRewards() {
 }
 
 async function getRegistrationImage() {
-  const { getCachedThumb } = await import("../../src/lib/haidar-serialize.js");
+  const { getCachedThumb } = await import("../../src/lib/rara-serialize.js");
   for (const key of REGISTRATION_IMAGE_CANDIDATES) {
     const buf = getAssetBuffer(key);
     if (buf) return buf;

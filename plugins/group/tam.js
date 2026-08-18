@@ -1,7 +1,7 @@
-import { getDatabase } from "../../src/lib/haidar-database.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
 import { generateWAMessageFromContent } from "rara";
 import config from "../../config.js";
-import { saluranCtx } from "../../src/lib/haidar-context.js";
+import { saluranCtx } from "../../src/lib/rara-context.js";
 
 const pluginConfig = {
   name: "tam",

@@ -1,8 +1,8 @@
 import axios from 'axios'
 import crypto from 'crypto'
-import { generateWAMessage, generateWAMessageFromContent, jidNormalizedUser } from 'haidar'
+import { generateWAMessage, generateWAMessageFromContent, jidNormalizedUser } from 'rara'
 import config from '../../config.js'
-import te from '../../src/lib/haidar-error.js'
+import te from '../../src/lib/rara-error.js'
 
 const pluginConfig = {
     name: 'tiktokfoto',

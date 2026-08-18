@@ -1,5 +1,5 @@
-import te from "../../src/lib/haidar-error.js";
-import haidarApi from "../../src/lib/haidar-apimanager.js";
+import te from "../../src/lib/rara-error.js";
+import raraApi from "../../src/lib/rara-apimanager.js";
 const pluginConfig = {
   name: "sendngl",
   alias: [],
@@ -30,7 +30,7 @@ async function handler(m, { sock }) {
   m.react("🎴");
 
   try {
-    await haidarApi.cuki.sendNgl(
+    await raraApi.cuki.sendNgl(
       {
         link,
         text: kata,

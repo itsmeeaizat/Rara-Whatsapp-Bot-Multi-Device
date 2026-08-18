@@ -1,10 +1,10 @@
 import config from "../../config.js";
-import { getDatabase } from "../../src/lib/haidar-database.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
 import {
   addJadibotPremium,
   removeJadibotPremium,
   getJadibotPremiums,
-} from "../../src/lib/haidar-jadibot-database.js";
+} from "../../src/lib/rara-jadibot-database.js";
 const pluginConfig = {
   name: "addprem",
   alias: [

@@ -1,6 +1,6 @@
-import { getDatabase } from "../../src/lib/haidar-database.js";
-import { addExpWithLevelCheck } from "../../src/lib/haidar-level.js";
-import te from "../../src/lib/haidar-error.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
+import { addExpWithLevelCheck } from "../../src/lib/rara-level.js";
+import te from "../../src/lib/rara-error.js";
 
 const pluginConfig = {
     name: "dungeon",

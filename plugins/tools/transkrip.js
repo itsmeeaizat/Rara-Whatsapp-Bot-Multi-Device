@@ -4,7 +4,7 @@ import fs from 'fs'
 import path from 'path'
 import { exec } from 'child_process'
 import config from '../../config.js'
-import te from '../../src/lib/haidar-error.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'transkrip',
     alias: ['stt', 'speechtotext', 'transcribe'],

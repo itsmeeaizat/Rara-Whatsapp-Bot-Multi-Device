@@ -12,8 +12,8 @@ import path from "path";
 import readline from "readline";
 import NodeCache from "node-cache";
 import config, { isOwner as isOwners, setBotNumber } from "../config.js";
-import * as colors from "./lib/haidar-logger.js";
-import { extendSocket } from "./lib/haidar-socket.js";
+import * as colors from "./lib/rara-logger.js";
+import { extendSocket } from "./lib/rara-socket.js";
 import {
   isLid,
   lidToJid,
@@ -22,8 +22,8 @@ import {
   resolveAnyLidToJid,
   resolveFromSock,
   isLidConverted,
-} from "./lib/haidar-lid.js";
-import { initAutoBackup } from "./lib/haidar-auto-backup.js";
+} from "./lib/rara-lid.js";
+import { initAutoBackup } from "./lib/rara-auto-backup.js";
 import { prepareScraper } from "./scraper/tiktoktok.js"; 
 const groupCache = new NodeCache({ stdTTL: 5 * 60, useClones: false });
 const processedMessages = new NodeCache({ stdTTL: 30, useClones: false });
@@ -419,7 +419,7 @@ async function startConnection(options = {}) {
       setTimeout(async () => {
         try {
           const { reloadAllPlugins: R, getPluginCount: G } =
-            await import("./lib/haidar-plugins.js");
+            await import("./lib/rara-plugins.js");
           !G() && (await R());
         } catch { }
       }, 100);
@@ -440,13 +440,13 @@ async function startConnection(options = {}) {
       try {
         const { startGiveawayChecker } =
           await import("../plugins/group/giveaway.js");
-        const db = (await import("./lib/haidar-database.js")).getDatabase();
+        const db = (await import("./lib/rara-database.js")).getDatabase();
         startGiveawayChecker(sock, db);
       } catch (e) {
         colors.logger.debug("giveaway", "skipped: " + e.message);
       }
       try {
-        const { startAutoBioChecker } = await import("./lib/haidar-scheduler.js");
+        const { startAutoBioChecker } = await import("./lib/rara-scheduler.js");
         startAutoBioChecker(sock);
       } catch (e) {
         colors.logger.debug("autobio", "skipped: " + e.message);
@@ -533,7 +533,7 @@ async function startConnection(options = {}) {
       });
       if (isBotAdded) {
         try {
-          const { getDatabase } = await import("./lib/haidar-database.js");
+          const { getDatabase } = await import("./lib/rara-database.js");
           const db = getDatabase();
 
           try {
@@ -809,9 +809,9 @@ async function startConnection(options = {}) {
         const groupJid = msg.key.remoteJid;
 
         try {
-          const { getDatabase } = await import("./lib/haidar-database.js");
+          const { getDatabase } = await import("./lib/rara-database.js");
           const { handleAntiTagSW, handleAntiSwGc } =
-            await import("./lib/haidar-group-protection.js");
+            await import("./lib/rara-group-protection.js");
           const db = getDatabase();
           if (groupJid?.endsWith("@g.us")) {
             const antiTagHandled = await handleAntiTagSW(msg, currentSock, db);
@@ -860,7 +860,7 @@ async function startConnection(options = {}) {
             msg.key.participant = participant;
           }
 
-          const { getDatabase } = await import("./lib/haidar-database.js");
+          const { getDatabase } = await import("./lib/rara-database.js");
           const db = getDatabase();
           const autoReadSW = db.setting("autoReadSW") || {};
           const autoReactSW = db.setting("autoReactSW") || {};
@@ -948,10 +948,10 @@ async function startConnection(options = {}) {
         const code = messageBody.slice(2).trim();
         if (code) {
           try {
-            const { serialize } = await import("./lib/haidar-serialize.js");
+            const { serialize } = await import("./lib/rara-serialize.js");
             const m = await serialize(currentSock, msg, {});
             const { getDatabase: _getDb } =
-              await import("./lib/haidar-database.js");
+              await import("./lib/rara-database.js");
             const db = _getDb();
             const sock = currentSock;
             const { default: sharp } = await import("sharp");
@@ -1058,7 +1058,7 @@ async function startConnection(options = {}) {
   });
 
   {
-    const { getDatabase: _getDb } = await import("./lib/haidar-database.js");
+    const { getDatabase: _getDb } = await import("./lib/rara-database.js");
     const _db = _getDb();
     if (_db.setting("antiCall") ?? config.features?.antiCall) {
       sock.ev.on("call", async (calls) => {

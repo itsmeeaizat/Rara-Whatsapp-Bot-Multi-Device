@@ -4,17 +4,17 @@ import {
   isLid,
   isLidConverted,
   lidToJid,
-} from "../../src/lib/haidar-lid.js";
+} from "../../src/lib/rara-lid.js";
 import moment from "moment-timezone";
 import config from "../../config.js";
-import { getDatabase } from "../../src/lib/haidar-database.js";
-import { saluranCtx } from "../../src/lib/haidar-context.js";
-import { createGoodbyeCard } from "../../src/lib/haidar-welcome-card.js";
-import { resolveAnyLidToJid } from "../../src/lib/haidar-lid.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
+import { saluranCtx } from "../../src/lib/rara-context.js";
+import { createGoodbyeCard } from "../../src/lib/rara-welcome-card.js";
+import { resolveAnyLidToJid } from "../../src/lib/rara-lid.js";
 import path from "path";
 import fs from "fs";
-import te from "../../src/lib/haidar-error.js";
-import { getAssetBuffer } from "../../src/lib/haidar-asset-manager.js";
+import te from "../../src/lib/rara-error.js";
+import { getAssetBuffer } from "../../src/lib/rara-asset-manager.js";
 import { prepareWAMessageMedia, generateWAMessageFromContent } from "rara";
 function resolvePlaceholders(
   template,

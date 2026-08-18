@@ -1,7 +1,7 @@
-import { getAssetBuffer } from "../../src/lib/haidar-asset-manager.js";
+import { getAssetBuffer } from "../../src/lib/rara-asset-manager.js";
 import fs from "fs";
 import config from "../../config.js";
-import { getDatabase } from "../../src/lib/haidar-database.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
 const pluginConfig = {
   name: "setmenu",
   alias: ["menuvariant", "menustyle"],

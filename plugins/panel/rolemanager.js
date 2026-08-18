@@ -1,5 +1,5 @@
-import { isLid, lidToJid } from '../../src/lib/haidar-lid.js'
-import { addRole, removeRole, listByRole, canManageRole, getUserRole, VALID_SERVERS } from '../../src/lib/haidar-roles-cpanel.js'
+import { isLid, lidToJid } from '../../src/lib/rara-lid.js'
+import { addRole, removeRole, listByRole, canManageRole, getUserRole, VALID_SERVERS } from '../../src/lib/rara-roles-cpanel.js'
 const ROLES = ['owner', 'ceo', 'reseller']
 const allCommands = []
 

@@ -1,7 +1,7 @@
-import { startSchedulerByName, getFullSchedulerStatus } from '../../src/lib/haidar-scheduler.js'
-import { initSholatScheduler } from '../../src/lib/haidar-sholat-scheduler.js'
-import { getDatabase } from '../../src/lib/haidar-database.js'
-import te from '../../src/lib/haidar-error.js'
+import { startSchedulerByName, getFullSchedulerStatus } from '../../src/lib/rara-scheduler.js'
+import { initSholatScheduler } from '../../src/lib/rara-sholat-scheduler.js'
+import { getDatabase } from '../../src/lib/rara-database.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'startschedule',
     alias: ['startscheduler', 'schedstart', 'resumeschedule'],

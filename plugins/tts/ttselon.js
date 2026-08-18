@@ -2,8 +2,8 @@ import axios from "axios";
 import { spawn } from "child_process";
 import fs from "fs";
 import path from "path";
-import te from "../../src/lib/haidar-error.js";
-import { saluranCtx } from "../../src/lib/haidar-context.js";
+import te from "../../src/lib/rara-error.js";
+import { saluranCtx } from "../../src/lib/rara-context.js";
 const pluginConfig = {
   name: "ttselon",
   alias: ["elontts", "ttselonmusk"],

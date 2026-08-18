@@ -1,10 +1,10 @@
 import config, { getOwnerName } from "../../config.js";
-import { getDatabase } from "../../src/lib/haidar-database.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
 import {
   addJadibotOwner,
   removeJadibotOwner,
   getJadibotOwners,
-} from "../../src/lib/haidar-jadibot-database.js";
+} from "../../src/lib/rara-jadibot-database.js";
 import fs from "fs";
 import path from "path";
 import {
@@ -12,7 +12,7 @@ import {
   lidToJid,
   resolveAnyLidToJid,
   isLidConverted,
-} from "../../src/lib/haidar-lid.js";
+} from "../../src/lib/rara-lid.js";
 import { getGroupMode } from "../group/botmode.js";
 const pluginConfig = {
   name: "addowner",

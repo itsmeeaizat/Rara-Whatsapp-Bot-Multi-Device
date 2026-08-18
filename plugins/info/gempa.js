@@ -1,5 +1,5 @@
 import axios from "axios";
-import { saluranCtx } from "../../src/lib/haidar-context.js";
+import { saluranCtx } from "../../src/lib/rara-context.js";
 
 const pluginConfig = {
   name: "gempa",

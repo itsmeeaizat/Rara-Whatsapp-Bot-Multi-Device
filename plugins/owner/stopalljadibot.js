@@ -1,5 +1,5 @@
-import { stopAllJadibots, getActiveJadibots } from '../../src/lib/haidar-jadibot-manager.js'
-import te from '../../src/lib/haidar-error.js'
+import { stopAllJadibots, getActiveJadibots } from '../../src/lib/rara-jadibot-manager.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'stopalljadibot',
     alias: ['stopsemuajadibot', 'killalljadibots'],

@@ -1,8 +1,8 @@
-import { getAssetBuffer } from "../../src/lib/haidar-asset-manager.js";
+import { getAssetBuffer } from "../../src/lib/rara-asset-manager.js";
 import axios from "axios";
 import config from "../../config.js";
 import fs from "fs";
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 const pluginConfig = {
   name: "apkmod",
   alias: ["modapk2", "apkpremium"],

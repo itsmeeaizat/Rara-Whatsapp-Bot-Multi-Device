@@ -1,6 +1,6 @@
 import axios from "axios";
-import te from "../../src/lib/haidar-error.js";
-import { saluranCtx } from "../../src/lib/haidar-context.js";
+import te from "../../src/lib/rara-error.js";
+import { saluranCtx } from "../../src/lib/rara-context.js";
 import { prepareWAMessageMedia, generateWAMessageFromContent } from "rara";
 
 const nexrayTypes = [

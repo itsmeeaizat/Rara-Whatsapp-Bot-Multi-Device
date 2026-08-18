@@ -5,7 +5,7 @@ import * as cheerio from "cheerio";
 function getSharp() {
   return _sharp;
 }
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 async function nerdfonts() {
   try {
     const { data } = await axios.get(

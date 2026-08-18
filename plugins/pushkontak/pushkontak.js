@@ -1,14 +1,14 @@
 import fs from "fs";
 import path from "path";
-import { getDatabase } from "../../src/lib/haidar-database.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
 import { getGroupMode } from "../group/botmode.js";
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 import config from "../../config.js";
 import {
   resolveAnyLidToJid,
   isLidConverted,
   getCachedJid,
-} from "../../src/lib/haidar-lid.js";
+} from "../../src/lib/rara-lid.js";
 
 const pluginConfig = {
   name: "pushkontak",
@@ -47,7 +47,7 @@ const SESSION_TIMEOUT = 300000;
 const SERIAL_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
 import axios from "axios";
-import { getAssetBuffer } from "../../src/lib/haidar-asset-manager.js";
+import { getAssetBuffer } from "../../src/lib/rara-asset-manager.js";
 
 let cachedThumb = null;
 let cachedDoc = null;

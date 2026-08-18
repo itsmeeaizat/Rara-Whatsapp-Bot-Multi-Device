@@ -1,4 +1,4 @@
-import { sendStoreBackup, SCHEMA_VERSION } from '../../src/lib/haidar-store-backup.js'
+import { sendStoreBackup, SCHEMA_VERSION } from '../../src/lib/rara-store-backup.js'
 const pluginConfig = {
     name: 'backupdb',
     alias: ['dbbackup', 'backupstore', 'storebackup'],

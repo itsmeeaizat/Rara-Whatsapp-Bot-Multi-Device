@@ -1,5 +1,5 @@
 import axios from 'axios'
-import te from '../../src/lib/haidar-error.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'txt2qr',
     alias: ['texttoqr', 'qrcode', 'qrcreate'],

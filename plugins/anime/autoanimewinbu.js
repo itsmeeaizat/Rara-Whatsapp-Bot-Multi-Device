@@ -1,6 +1,6 @@
-import { loadSent, saveSent, loadState, saveState, getOngoingAnimeList, startAutoCheck, stopAutoCheck, runCheck, isRunning } from '../../src/lib/haidar-auto-anime.js'
+import { loadSent, saveSent, loadState, saveState, getOngoingAnimeList, startAutoCheck, stopAutoCheck, runCheck, isRunning } from '../../src/lib/rara-auto-anime.js'
 import config from '../../config.js'
-import te from '../../src/lib/haidar-error.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'autoanimewinbu',
     alias: ['aaw', 'autoanime'],

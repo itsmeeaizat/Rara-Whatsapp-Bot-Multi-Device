@@ -1,4 +1,4 @@
-import { getRandomItem, getItemByIndex, searchItem, getAllData } from '../../src/lib/haidar-game-data.js'
+import { getRandomItem, getItemByIndex, searchItem, getAllData } from '../../src/lib/rara-game-data.js'
 const pluginConfig = {
     name: 'asmaulhusna',
     alias: ['asmaul', 'husna', '99names'],

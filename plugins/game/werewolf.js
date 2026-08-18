@@ -1,4 +1,4 @@
-import { getDatabase } from "../../src/lib/haidar-database.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
 /**
  * 🐺 WEREWOLF GAME
  * Social deduction game for WhatsApp
@@ -9,7 +9,7 @@ import { getDatabase } from "../../src/lib/haidar-database.js";
 import config from "../../config.js";
 import fs from "fs";
 import path from "path";
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 const pluginConfig = {
   name: "werewolf",
   alias: ["ww", "wwgc"],
@@ -35,8 +35,8 @@ let thumbWin = null;
 
 try {
   const assetsPath = path.join(process.cwd(), "assets", "images");
-  if (fs.existsSync(path.join(assetsPath, "haidar-games.jpg"))) {
-    thumbWW = fs.readFileSync(path.join(assetsPath, "haidar-games.jpg"));
+  if (fs.existsSync(path.join(assetsPath, "rara-games.jpg"))) {
+    thumbWW = fs.readFileSync(path.join(assetsPath, "rara-games.jpg"));
   }
   if (fs.existsSync(path.join(assetsPath, "rara.jpg"))) {
     thumbNight = fs.readFileSync(path.join(assetsPath, "rara.jpg"));

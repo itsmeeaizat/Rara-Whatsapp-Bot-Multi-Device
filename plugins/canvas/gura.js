@@ -2,7 +2,7 @@ import FormData from "form-data";
 import fetch from "node-fetch";
 import mime from "mime-types";
 import { downloadMediaMessage, getContentType } from "rara";
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 
 const pluginConfig = {
   name: "gura",

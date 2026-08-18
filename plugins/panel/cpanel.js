@@ -1,5 +1,5 @@
 import config from '../../config.js'
-import { getRoles, getUserRole, getAccessibleServers, VALID_SERVERS } from '../../src/lib/haidar-roles-cpanel.js'
+import { getRoles, getUserRole, getAccessibleServers, VALID_SERVERS } from '../../src/lib/rara-roles-cpanel.js'
 const pluginConfig = {
     name: 'cpanel',
     alias: ['panelmenu', 'menupanel'],

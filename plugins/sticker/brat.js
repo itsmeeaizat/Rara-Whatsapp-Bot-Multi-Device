@@ -1,8 +1,8 @@
-import { getAssetBuffer } from "../../src/lib/haidar-asset-manager.js";
+import { getAssetBuffer } from "../../src/lib/rara-asset-manager.js";
 import fs from "fs";
 import config from "../../config.js";
-import te from "../../src/lib/haidar-error.js";
-import haidarApi from "../../src/lib/haidar-apimanager.js";
+import te from "../../src/lib/rara-error.js";
+import raraApi from "../../src/lib/rara-apimanager.js";
 const pluginConfig = {
   name: "brat",
   alias: ["bratmenu", "bratimg", "brattext"],
@@ -149,7 +149,7 @@ async function handler(m, { sock }) {
   m.react("🕕");
 
   try {
-    const url = haidarApi.yupra.url("/api/image/brat", { text });
+    const url = raraApi.yupra.url("/api/image/brat", { text });
     await sock.sendImageAsSticker(m.chat, url, m, {
       packname: config.sticker.packname,
       author: config.sticker.author,

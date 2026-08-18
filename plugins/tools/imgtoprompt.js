@@ -6,7 +6,7 @@
 import imgtoprompt from '../../src/scraper/img2prompt.js'
 import fs from 'fs'
 import path from 'path'
-import te from '../../src/lib/haidar-error.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'imgtoprompt',
     alias: ['img2prompt', 'imagetoprompt', 'i2p'],

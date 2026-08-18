@@ -1,5 +1,5 @@
 import { Client } from 'ssh2'
-import te from '../../src/lib/haidar-error.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'installtemastellar',
     alias: ['installthemastellar', 'temastellar'],

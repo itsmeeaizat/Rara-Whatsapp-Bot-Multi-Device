@@ -1,9 +1,9 @@
-import { getAssetBuffer } from "../../src/lib/haidar-asset-manager.js";
-import { getCaseCommands } from "../../case/haidar.js";
+import { getAssetBuffer } from "../../src/lib/rara-asset-manager.js";
+import { getCaseCommands } from "../../case/rara.js";
 import fs from "fs";
 import path from "path";
 import config from "../../config.js";
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

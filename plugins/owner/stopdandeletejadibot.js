@@ -1,5 +1,5 @@
-import { stopJadibot, getAllJadibotSessions } from '../../src/lib/haidar-jadibot-manager.js'
-import te from '../../src/lib/haidar-error.js'
+import { stopJadibot, getAllJadibotSessions } from '../../src/lib/rara-jadibot-manager.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'stopdandeletejadibot',
     alias: ['deletejadibot', 'removejadibot', 'hapusjadibot'],

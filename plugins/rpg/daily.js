@@ -1,5 +1,5 @@
-import { getDatabase } from "../../src/lib/haidar-database.js";
-import { addExpWithLevelCheck } from "../../src/lib/haidar-level.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
+import { addExpWithLevelCheck } from "../../src/lib/rara-level.js";
 import config from "../../config.js";
 
 const pluginConfig = {

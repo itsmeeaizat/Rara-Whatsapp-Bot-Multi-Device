@@ -1,6 +1,6 @@
 import config from '../../config.js';
-import { updateAssetUrl } from '../../src/lib/haidar-uploader.js';
-import te from '../../src/lib/haidar-error.js';
+import { updateAssetUrl } from '../../src/lib/rara-uploader.js';
+import te from '../../src/lib/rara-error.js';
 
 const pluginConfig = {
     name: 'ganti-asset',

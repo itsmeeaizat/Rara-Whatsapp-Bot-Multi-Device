@@ -1,13 +1,13 @@
-import { getAssetBuffer } from "../../src/lib/haidar-asset-manager.js";
+import { getAssetBuffer } from "../../src/lib/rara-asset-manager.js";
 import { prepareWAMessageMedia, generateWAMessageFromContent, proto } from "rara";
 import axios from 'axios'
 import crypto from 'crypto'
 import config from '../../config.js'
-import { isLid, lidToJid } from '../../src/lib/haidar-lid.js'
-import { checkPanelJeda, setPanelLastUsed } from '../../src/lib/haidar-panel-jeda.js'
-import { hasAccessToServer, getUserRole, VALID_SERVERS } from '../../src/lib/haidar-roles-cpanel.js'
+import { isLid, lidToJid } from '../../src/lib/rara-lid.js'
+import { checkPanelJeda, setPanelLastUsed } from '../../src/lib/rara-panel-jeda.js'
+import { hasAccessToServer, getUserRole, VALID_SERVERS } from '../../src/lib/rara-roles-cpanel.js'
 import { isGcSeller } from './gcseller.js'
-import * as timeHelper from '../../src/lib/haidar-time.js'
+import * as timeHelper from '../../src/lib/rara-time.js'
 import fs from 'fs'
 const RAM_OPTIONS = [
   "1gb",

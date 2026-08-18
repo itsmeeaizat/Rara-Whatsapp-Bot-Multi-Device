@@ -1,7 +1,7 @@
 import axios from 'axios'
 import config from '../../config.js'
-import * as timeHelper from '../../src/lib/haidar-time.js'
-import te from '../../src/lib/haidar-error.js'
+import * as timeHelper from '../../src/lib/rara-time.js'
+import te from '../../src/lib/rara-error.js'
 const NEOXR_APIKEY = config.APIkey?.neoxr || "Milik-Bot-OurinMD";
 
 const pluginConfig = {

@@ -1,5 +1,5 @@
-import { getDatabase } from '../../src/lib/haidar-database.js'
-import * as levelHelper from '../../src/lib/haidar-level.js'
+import { getDatabase } from '../../src/lib/rara-database.js'
+import * as levelHelper from '../../src/lib/rara-level.js'
 const pluginConfig = {
     name: 'addexp',
     alias: ['tambahexp', 'giveexp', 'addxp'],

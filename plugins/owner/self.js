@@ -3,8 +3,8 @@ import config from '../../config.js'
  * @file plugins/owner/self.js
  * @description Plugin untuk mengaktifkan mode self (hanya owner & bot)
  */
-import { getDatabase } from '../../src/lib/haidar-database.js'
-import te from '../../src/lib/haidar-error.js'
+import { getDatabase } from '../../src/lib/rara-database.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'self',
     alias: ['selfmode', 'private-mode'],

@@ -1,6 +1,6 @@
-import { getDatabase } from "../../src/lib/haidar-database.js";
-import * as timeHelper from "../../src/lib/haidar-time.js";
-import { saluranCtx } from "../../src/lib/haidar-context.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
+import * as timeHelper from "../../src/lib/rara-time.js";
+import { saluranCtx } from "../../src/lib/rara-context.js";
 const pluginConfig = {
   name: "terima",
   alias: ["accept", "yes"],

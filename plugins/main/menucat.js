@@ -1,5 +1,5 @@
 import * as botmodePlugin from "../group/botmode.js";
-import { getCasesByCategory } from "../../case/haidar.js";
+import { getCasesByCategory } from "../../case/rara.js";
 import { prepareWAMessageMedia, generateWAMessageFromContent } from "rara";
 import config from "../../config.js";
 import axios from "axios";
@@ -8,9 +8,9 @@ import {
   getCommandsByCategory,
   getCategories,
   getPlugin,
-} from "../../src/lib/haidar-plugins.js";
-import { getDatabase } from "../../src/lib/haidar-database.js";
-import { getTimeGreeting } from "../../src/lib/haidar-formatter.js";
+} from "../../src/lib/rara-plugins.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
+import { getTimeGreeting } from "../../src/lib/rara-formatter.js";
 import fs from "fs"
 
 const pluginConfig = {

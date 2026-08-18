@@ -1,5 +1,5 @@
-import { getDatabase } from "../../src/lib/haidar-database.js";
-import { getTimeGreeting } from "../../src/lib/haidar-formatter.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
+import { getTimeGreeting } from "../../src/lib/rara-formatter.js";
 const pluginConfig = {
   name: "daily",
   alias: ["claim", "harian", "bonus"],

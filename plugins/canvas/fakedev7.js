@@ -1,9 +1,9 @@
-import { getAssetBuffer } from "../../src/lib/haidar-asset-manager.js";
+import { getAssetBuffer } from "../../src/lib/rara-asset-manager.js";
 import * as _canvas from '@napi-rs/canvas';
 import axios from "axios";
 import path from "path";
 
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 
 const pluginConfig = {
   name: "fakedev7",

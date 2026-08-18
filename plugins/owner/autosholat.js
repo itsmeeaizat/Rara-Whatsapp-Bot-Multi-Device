@@ -1,12 +1,12 @@
-import * as timeHelper from "../../src/lib/haidar-time.js";
-import { getDatabase } from "../../src/lib/haidar-database.js";
+import * as timeHelper from "../../src/lib/rara-time.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
 import config from "../../config.js";
 import {
   getTodaySchedule,
   extractPrayerTimes,
   searchKota,
-} from "../../src/lib/haidar-sholat-api.js";
-import te from "../../src/lib/haidar-error.js";
+} from "../../src/lib/rara-sholat-api.js";
+import te from "../../src/lib/rara-error.js";
 
 const pluginConfig = {
   name: "autosholat",

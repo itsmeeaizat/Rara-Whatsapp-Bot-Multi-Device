@@ -3,8 +3,8 @@ import {
   generateWAMessageFromContent,
   prepareWAMessageMedia,
 } from "rara";
-import te from "../../src/lib/haidar-error.js";
-import { f } from "../../src/lib/haidar-http.js";
+import te from "../../src/lib/rara-error.js";
+import { f } from "../../src/lib/rara-http.js";
 
 const pluginConfig = {
   name: "pap",

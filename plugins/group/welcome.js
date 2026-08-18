@@ -1,14 +1,14 @@
 import moment from "moment-timezone";
 import config from "../../config.js";
-import { getDatabase } from "../../src/lib/haidar-database.js";
-import { createWideDiscordCard } from "../../src/lib/haidar-welcome-card.js";
-import { resolveAnyLidToJid } from "../../src/lib/haidar-lid.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
+import { createWideDiscordCard } from "../../src/lib/rara-welcome-card.js";
+import { resolveAnyLidToJid } from "../../src/lib/rara-lid.js";
 import path from "path";
 import fs from "fs";
 import axios from "axios";
-import te from "../../src/lib/haidar-error.js";
-import { saluranCtx } from "../../src/lib/haidar-context.js";
-import { getAssetBuffer } from "../../src/lib/haidar-asset-manager.js";
+import te from "../../src/lib/rara-error.js";
+import { saluranCtx } from "../../src/lib/rara-context.js";
+import { getAssetBuffer } from "../../src/lib/rara-asset-manager.js";
 import { prepareWAMessageMedia, generateWAMessageFromContent } from "rara";
 function resolvePlaceholders(
   template,

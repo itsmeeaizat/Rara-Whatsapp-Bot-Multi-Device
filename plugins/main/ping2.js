@@ -2,8 +2,8 @@ import os from 'os'
 import { performance } from 'perf_hooks'
 import { execSync } from 'child_process'
 import config from '../../config.js'
-import { getDatabase } from '../../src/lib/haidar-database.js'
-import te from '../../src/lib/haidar-error.js'
+import { getDatabase } from '../../src/lib/rara-database.js'
+import te from '../../src/lib/rara-error.js'
 
 const pluginConfig = {
     name: 'ping2',

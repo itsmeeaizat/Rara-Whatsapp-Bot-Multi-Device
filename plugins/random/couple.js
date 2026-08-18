@@ -1,8 +1,8 @@
 import config from '../../config.js'
-import { downloadMediaMessage } from 'haidar'
+import { downloadMediaMessage } from 'rara'
 import fs from 'fs'
 import { default as axios } from 'axios'
-import te from '../../src/lib/haidar-error.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'ppcouple',
     alias: ['cp', 'ppcp'],

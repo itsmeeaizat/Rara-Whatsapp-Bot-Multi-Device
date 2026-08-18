@@ -1,8 +1,8 @@
 import {
   getParticipantJid,
   getParticipantJids,
-} from "../../src/lib/haidar-lid.js";
-import te from "../../src/lib/haidar-error.js";
+} from "../../src/lib/rara-lid.js";
+import te from "../../src/lib/rara-error.js";
 const pluginConfig = {
   name: "tagall",
   alias: ["all", "everyone"],

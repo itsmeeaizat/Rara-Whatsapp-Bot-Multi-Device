@@ -1,4 +1,4 @@
-import { getCaseCount, getCasesByCategory } from "../../case/haidar.js";
+import { getCaseCount, getCasesByCategory } from "../../case/rara.js";
 import {
   prepareWAMessageMedia,
   generateWAMessageFromContent,
@@ -10,12 +10,12 @@ import config from "../../config.js";
 import {
   formatUptime,
   getTimeGreeting,
-} from "../../src/lib/haidar-formatter.js";
+} from "../../src/lib/rara-formatter.js";
 import {
   getCommandsByCategory,
   getCategories,
-} from "../../src/lib/haidar-plugins.js";
-import { getDatabase } from "../../src/lib/haidar-database.js";
+} from "../../src/lib/rara-plugins.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
 import fs from "fs";
 import path from "path";
 
@@ -213,11 +213,11 @@ function getSortedCategories(m, botMode) {
   return { sorted: result, totalCmds, commandsByCategory };
 }
 async function formatTime(date) {
-  const timeHelper = await import("../../src/lib/haidar-time.js");
+  const timeHelper = await import("../../src/lib/rara-time.js");
   return timeHelper.formatTime("HH:mm");
 }
 async function formatDateShort(date) {
-  const timeHelper = await import("../../src/lib/haidar-time.js");
+  const timeHelper = await import("../../src/lib/rara-time.js");
   return timeHelper.formatFull("dddd, DD MMMM YYYY");
 }
 async function buildMenuText(
@@ -230,7 +230,7 @@ async function buildMenuText(
 ) {
   const prefix = botConfig.command?.prefix || ".";
   const user = db.getUser(m.sender);
-  const timeHelper = await import("../../src/lib/haidar-time.js");
+  const timeHelper = await import("../../src/lib/rara-time.js");
   const timeStr = timeHelper.formatTime("HH:mm");
   const dateStr = timeHelper.formatFull("dddd, DD MMMM YYYY");
   const categories = getCategories();

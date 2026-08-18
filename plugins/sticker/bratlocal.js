@@ -6,7 +6,7 @@ import os from "os";
 import { execFile } from "child_process";
 import { promisify } from "util";
 import fetch from "node-fetch";
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 import config from "../../config.js";
 
 const execFileAsync = promisify(execFile);

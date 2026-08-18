@@ -1,7 +1,7 @@
-import { stopSchedulerByName, getFullSchedulerStatus } from '../../src/lib/haidar-scheduler.js'
-import { stopSholatScheduler } from '../../src/lib/haidar-sholat-scheduler.js'
-import { getDatabase } from '../../src/lib/haidar-database.js'
-import te from '../../src/lib/haidar-error.js'
+import { stopSchedulerByName, getFullSchedulerStatus } from '../../src/lib/rara-scheduler.js'
+import { stopSholatScheduler } from '../../src/lib/rara-sholat-scheduler.js'
+import { getDatabase } from '../../src/lib/rara-database.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'stopschedule',
     alias: ['stopscheduler', 'schedstop', 'pauseschedule'],

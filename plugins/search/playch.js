@@ -7,8 +7,8 @@ import { exec } from "child_process";
 import { promisify } from "util";
 import yts from "yt-search";
 import config from "../../config.js";
-import te from "../../src/lib/haidar-error.js";
-import { saluranCtx } from "../../src/lib/haidar-context.js";
+import te from "../../src/lib/rara-error.js";
+import { saluranCtx } from "../../src/lib/rara-context.js";
 import ytdl, { fallbackToMp3Buffer } from "../../src/scraper/ytdl.js";
 const run = promisify(exec);
 const pluginConfig = {

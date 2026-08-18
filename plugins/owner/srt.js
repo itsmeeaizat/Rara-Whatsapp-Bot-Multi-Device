@@ -2,9 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 import config from '../../config.js';
-import { getDatabase } from '../../src/lib/haidar-database.js';
-import te from '../../src/lib/haidar-error.js';
-import { prepareWAMessageMedia, generateWAMessageFromContent, generateWAMessage, jidNormalizedUser } from 'haidar';
+import { getDatabase } from '../../src/lib/rara-database.js';
+import te from '../../src/lib/rara-error.js';
+import { prepareWAMessageMedia, generateWAMessageFromContent, generateWAMessage, jidNormalizedUser } from 'rara';
 
 const pluginConfig = {
     name: 'srt',

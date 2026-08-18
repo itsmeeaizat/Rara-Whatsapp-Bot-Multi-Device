@@ -1,5 +1,5 @@
-import { getDatabase } from '../../src/lib/haidar-database.js'
-import { isLid, lidToJid, resolveAnyLidToJid } from '../../src/lib/haidar-lid.js'
+import { getDatabase } from '../../src/lib/rara-database.js'
+import { isLid, lidToJid, resolveAnyLidToJid } from '../../src/lib/rara-lid.js'
 
 const pluginConfig = {
     name: 'mutemember',

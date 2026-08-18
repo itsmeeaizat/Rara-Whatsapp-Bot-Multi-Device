@@ -1,4 +1,4 @@
-import { games } from '../../src/lib/haidar-games.js'
+import { games } from '../../src/lib/rara-games.js'
 
 games.register('tebaktebakan', {
     alias: ['tbt', 'tebak2an', 'receh'],

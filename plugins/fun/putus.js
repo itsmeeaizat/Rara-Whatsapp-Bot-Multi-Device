@@ -2,7 +2,7 @@
  * Putus - End relationship
  */
 
-import { getDatabase } from '../../src/lib/haidar-database.js'
+import { getDatabase } from '../../src/lib/rara-database.js'
 const pluginConfig = {
     name: 'putus',
     alias: ['breakup', 'cerai'],

@@ -1,4 +1,4 @@
-import { getDatabase } from "../../src/lib/haidar-database.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
 import config from "../../config.js";
 
 const pluginConfig = {
@@ -48,7 +48,7 @@ async function handler(m, { sock, db }) {
     db.setting("autobio_status", true);
     await m.react("✅");
     try {
-      const { startAutoBioChecker } = await import("../../src/lib/haidar-scheduler.js");
+      const { startAutoBioChecker } = await import("../../src/lib/rara-scheduler.js");
       startAutoBioChecker(sock);
     } catch (e) {}
     return m.reply(`✅ *AUTO BIO DIAKTIFKAN*\n\nBio WhatsApp bot sekarang akan diperbarui secara otomatis setiap menit.`);
@@ -86,7 +86,7 @@ async function handler(m, { sock, db }) {
     
     // Restart scheduler
     try {
-      const { startAutoBioChecker } = await import("../../src/lib/haidar-scheduler.js");
+      const { startAutoBioChecker } = await import("../../src/lib/rara-scheduler.js");
       startAutoBioChecker(sock);
     } catch (e) {}
 
@@ -98,7 +98,7 @@ async function handler(m, { sock, db }) {
   
   // Restart scheduler to apply new text immediately
   try {
-    const { startAutoBioChecker } = await import("../../src/lib/haidar-scheduler.js");
+    const { startAutoBioChecker } = await import("../../src/lib/rara-scheduler.js");
     startAutoBioChecker(sock);
   } catch (e) {}
   

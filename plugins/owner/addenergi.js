@@ -1,5 +1,5 @@
 import config from '../../config.js'
-import { getDatabase } from '../../src/lib/haidar-database.js'
+import { getDatabase } from '../../src/lib/rara-database.js'
 const pluginConfig = {
     name: 'addenergi',
     alias: ['tambahenergi', 'giveenergi', 'addenergy'],

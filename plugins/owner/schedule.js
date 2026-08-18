@@ -1,4 +1,4 @@
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 /**
  * @file plugins/owner/schedule.js
  * @description Command untuk mengelola scheduled messages
@@ -13,7 +13,7 @@ import {
   getSchedulerStatus,
   formatTimeRemaining,
   getMsUntilTime,
-} from "../../src/lib/haidar-scheduler.js";
+} from "../../src/lib/rara-scheduler.js";
 /**
  * Konfigurasi plugin
  */

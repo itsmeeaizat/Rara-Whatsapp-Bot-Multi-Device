@@ -1,5 +1,5 @@
-import { getPlugin } from "../../src/lib/haidar-plugins.js";
-import { getDatabase } from "../../src/lib/haidar-database.js";
+import { getPlugin } from "../../src/lib/rara-plugins.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
 
 const config = {
   name: "capprem",

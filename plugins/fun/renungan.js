@@ -1,5 +1,5 @@
-import { getRandomItem } from '../../src/lib/haidar-game-data.js'
-import { fetchBuffer } from '../../src/lib/haidar-utils.js'
+import { getRandomItem } from '../../src/lib/rara-game-data.js'
+import { fetchBuffer } from '../../src/lib/rara-utils.js'
 const pluginConfig = {
     name: 'renungan',
     alias: ['motivasi', 'mutiara'],

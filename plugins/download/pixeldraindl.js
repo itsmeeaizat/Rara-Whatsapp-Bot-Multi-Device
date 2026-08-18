@@ -1,10 +1,10 @@
 import axios from 'axios'
 import config from '../../config.js'
-import * as timeHelper from '../../src/lib/haidar-time.js'
+import * as timeHelper from '../../src/lib/rara-time.js'
 import path from 'path'
 import fs from 'fs'
-import { f } from '../../src/lib/haidar-http.js'
-import te from '../../src/lib/haidar-error.js'
+import { f } from '../../src/lib/rara-http.js'
+import te from '../../src/lib/rara-error.js'
 const NEOXR_APIKEY = config.APIkey?.neoxr || "Milik-Bot-RaraMD";
 
 const pluginConfig = {

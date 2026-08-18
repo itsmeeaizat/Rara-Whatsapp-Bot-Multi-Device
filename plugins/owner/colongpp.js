@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 import config from "../../config.js";
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 const pluginConfig = {
   name: "colongpp",
   alias: ["stealpp", "malingpp", "ambilpp"],

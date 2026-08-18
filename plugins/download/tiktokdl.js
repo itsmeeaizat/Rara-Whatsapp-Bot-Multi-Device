@@ -1,5 +1,5 @@
 import axios from "axios";
-import { AIRich } from "../../src/lib/haidar-builder.js";
+import { AIRich } from "../../src/lib/rara-builder.js";
 
 async function tiktokDl(url) {
   function formatNumber(integer) {

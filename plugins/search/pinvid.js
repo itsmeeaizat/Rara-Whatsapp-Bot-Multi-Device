@@ -10,7 +10,7 @@ import {
   jidNormalizedUser,
 } from "rara";
 import config from "../../config.js";
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 const execAsync = promisify(exec);
 const NEOXR_APIKEY = config.APIkey?.neoxr || "Milik-Bot-RaraMD";
 

@@ -5,9 +5,9 @@ import {
   searchKota,
   getTodaySchedule,
   extractPrayerTimes,
-} from "../../src/lib/haidar-sholat-api.js";
-import te from "../../src/lib/haidar-error.js";
-import { saluranCtx } from "../../src/lib/haidar-context.js";
+} from "../../src/lib/rara-sholat-api.js";
+import te from "../../src/lib/rara-error.js";
+import { saluranCtx } from "../../src/lib/rara-context.js";
 const pluginConfig = {
   name: "jadwalsholat",
   alias: ["sholat", "prayertime", "jadwalsolat", "waktusolat", "waktusholat"],

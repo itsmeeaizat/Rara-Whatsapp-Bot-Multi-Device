@@ -1,5 +1,5 @@
-import { getDatabase } from "../../src/lib/haidar-database.js";
-import { sendRpgPreview } from "../../src/lib/haidar-context.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
+import { sendRpgPreview } from "../../src/lib/rara-context.js";
 const pluginConfig = {
   name: "stamina",
   alias: ["energy", "cekstamina"],

@@ -9,22 +9,22 @@ import {
   groupSettingsHandler,
   handleAntiRemoveFromUpsert,
 } from "./src/handler.js";
-import { loadPlugins, pluginStore } from "./src/lib/haidar-plugins.js";
-import { initDatabase, getDatabase } from "./src/lib/haidar-database.js";
+import { loadPlugins, pluginStore } from "./src/lib/rara-plugins.js";
+import { initDatabase, getDatabase } from "./src/lib/rara-database.js";
 import {
   initScheduler,
   loadScheduledMessages,
   startGroupScheduleChecker,
   startSewaChecker,
-} from "./src/lib/haidar-scheduler.js";
-import { handleAntiTagSW } from "./src/lib/haidar-group-protection.js";
-import { initSholatScheduler } from "./src/lib/haidar-sholat-scheduler.js";
-import { initNotifScheduler } from "./src/lib/haidar-notif-scheduler.js";
-import { initAutoJpmScheduler } from "./src/lib/haidar-auto-jpm.js";
-import { startMemoryMonitor } from "./src/lib/haidar-memory-monitor.js";
-import { startTempCleaner } from "./src/lib/haidar-temp-cleaner.js";
-import { startDailyPruner } from "./src/lib/haidar-data-pruner.js";
-import { preloadAssets } from "./src/lib/haidar-asset-manager.js";
+} from "./src/lib/rara-scheduler.js";
+import { handleAntiTagSW } from "./src/lib/rara-group-protection.js";
+import { initSholatScheduler } from "./src/lib/rara-sholat-scheduler.js";
+import { initNotifScheduler } from "./src/lib/rara-notif-scheduler.js";
+import { initAutoJpmScheduler } from "./src/lib/rara-auto-jpm.js";
+import { startMemoryMonitor } from "./src/lib/rara-memory-monitor.js";
+import { startTempCleaner } from "./src/lib/rara-temp-cleaner.js";
+import { startDailyPruner } from "./src/lib/rara-data-pruner.js";
+import { preloadAssets } from "./src/lib/rara-asset-manager.js";
 import {
   logger,
   c,
@@ -33,9 +33,9 @@ import {
   logConnection,
   logErrorBox,
   divider,
-} from "./src/lib/haidar-logger.js";
+} from "./src/lib/rara-logger.js";
 
-await import("./src/lib/haidar-agent.js")
+await import("./src/lib/rara-agent.js")
   .then((m) => m.initializeAgent())
   .catch(() => { });
 
@@ -111,7 +111,7 @@ function startDevWatcher(pluginsPath) {
         if (!fs.existsSync(fullPath)) {
           fileStatCache.delete(fullPath);
           const pluginName = path.basename(filename, ".js");
-          const { unloadPlugin } = await import("./src/lib/haidar-plugins.js");
+          const { unloadPlugin } = await import("./src/lib/rara-plugins.js");
           const result = unloadPlugin(pluginName);
           if (result.success) logger.warn("plugin", `removed ${filename}`);
           return;
@@ -132,7 +132,7 @@ function startDevWatcher(pluginsPath) {
           });
 
           const { hotReloadPlugin } =
-            await import("./src/lib/haidar-plugins.js");
+            await import("./src/lib/rara-plugins.js");
           const result = await hotReloadPlugin(fullPath);
           if (!result.success) {
             logger.error(
@@ -372,13 +372,13 @@ async function main() {
         } catch { }
         try {
           const { startOtpPoller: _startOtp } =
-            await import("./src/lib/haidar-otp-poller.js");
+            await import("./src/lib/rara-otp-poller.js");
           _startOtp(sock);
         } catch { }
 
         try {
           const { getAllJadibotSessions, restartJadibotSession } =
-            await import("./src/lib/haidar-jadibot-manager.js");
+            await import("./src/lib/rara-jadibot-manager.js");
           const sessions = getAllJadibotSessions();
           if (sessions.length > 0) {
             logger.info("JADIBOT", `Restoring ${sessions.length} session(s)`);

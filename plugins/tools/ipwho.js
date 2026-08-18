@@ -1,6 +1,6 @@
 import config from "../../config.js";
-import te from "../../src/lib/haidar-error.js";
-import { sendToolsPreview, saluranCtx } from "../../src/lib/haidar-context.js";
+import te from "../../src/lib/rara-error.js";
+import { sendToolsPreview, saluranCtx } from "../../src/lib/rara-context.js";
 const pluginConfig = {
   name: "ipwho",
   alias: ["ip", "iplookup", "ipinfo"],

@@ -1,6 +1,6 @@
-import { getDatabase } from "../../src/lib/haidar-database.js";
-import { addExpWithLevelCheck } from "../../src/lib/haidar-level.js";
-import { sendRpgPreview } from "../../src/lib/haidar-context.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
+import { addExpWithLevelCheck } from "../../src/lib/rara-level.js";
+import { sendRpgPreview } from "../../src/lib/rara-context.js";
 
 const pluginConfig = {
   name: "maling",

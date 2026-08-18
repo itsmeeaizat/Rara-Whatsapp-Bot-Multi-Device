@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
-import { getDatabase } from "../../src/lib/haidar-database.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
 import { getOwnerName } from "../../config.js";
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 const pluginConfig = {
   name: "ganti-namaowner",
   alias: ["setnamaowner", "setnameowner", "setownername"],

@@ -3,7 +3,7 @@ import path from "path";
 import crypto from "crypto";
 import axios from "axios";
 import FormData from "form-data";
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 
 const config = {
   name: "hd2",

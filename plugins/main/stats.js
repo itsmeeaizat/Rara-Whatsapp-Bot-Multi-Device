@@ -1,5 +1,5 @@
 import os from "os";
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 
 const pluginConfig = {
   name: "stats",

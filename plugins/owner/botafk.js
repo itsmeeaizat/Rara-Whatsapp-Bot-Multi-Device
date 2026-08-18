@@ -1,5 +1,5 @@
 import moment from 'moment-timezone'
-import { getDatabase } from '../../src/lib/haidar-database.js'
+import { getDatabase } from '../../src/lib/rara-database.js'
 const pluginConfig = {
     name: 'botafk',
     alias: ['afkbot', 'afkmode'],

@@ -2,9 +2,9 @@ import axios from "axios";
 import FormData from "form-data";
 import config from "../../config.js";
 import { downloadMediaMessage } from "rara";
-import te from "../../src/lib/haidar-error.js";
-import haidarApi from "../../src/lib/haidar-apimanager.js";
-import { saluranCtx } from "../../src/lib/haidar-context.js";
+import te from "../../src/lib/rara-error.js";
+import raraApi from "../../src/lib/rara-apimanager.js";
+import { saluranCtx } from "../../src/lib/rara-context.js";
 
 const pluginConfig = {
   name: "musikapaini",
@@ -87,7 +87,7 @@ async function handler(m, { sock }) {
 
     await m.reply("🔍 *ᴍᴇɴɢɪᴅᴇɴᴛɪꜰɪᴋᴀsɪ...*\n\n> Mencari info lagu...");
 
-    const data = await haidarApi.neoxr.whatMusic(
+    const data = await raraApi.neoxr.whatMusic(
       {
         url: audioUrl,
         apikey: config.APIkey?.neoxr || "Milik-Bot-OurinMD",

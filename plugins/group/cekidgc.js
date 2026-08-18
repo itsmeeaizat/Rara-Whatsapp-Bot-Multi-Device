@@ -2,7 +2,7 @@ import sharp from "sharp";
 import config from "../../config.js";
 import axios from "axios";
 import { generateWAMessageFromContent, proto } from "rara";
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 
 const pluginConfig = {
   name: "cekidgc",

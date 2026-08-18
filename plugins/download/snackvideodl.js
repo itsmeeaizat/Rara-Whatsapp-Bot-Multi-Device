@@ -1,5 +1,5 @@
 import { snackvideo } from 'btch-downloader'
-import te from '../../src/lib/haidar-error.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'snackvideodl',
     alias: ['svdl', 'snackvideo', 'sv'],

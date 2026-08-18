@@ -1,9 +1,9 @@
 import config from "../../config.js";
-import { getDatabase } from "../../src/lib/haidar-database.js";
-import * as timeHelper from "../../src/lib/haidar-time.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
+import * as timeHelper from "../../src/lib/rara-time.js";
 import fs from "fs";
-import te from "../../src/lib/haidar-error.js";
-import { saluranCtx } from "../../src/lib/haidar-context.js";
+import te from "../../src/lib/rara-error.js";
+import { saluranCtx } from "../../src/lib/rara-context.js";
 const pluginConfig = {
   name: "addsewa",
   alias: ["sewaadd", "tambahsewa"],

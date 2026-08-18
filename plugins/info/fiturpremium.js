@@ -1,5 +1,5 @@
-import { getAllPlugins } from "../../src/lib/haidar-plugins.js";
-import { getDatabase } from "../../src/lib/haidar-database.js";
+import { getAllPlugins } from "../../src/lib/rara-plugins.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
 
 const config = {
   name: "fiturpremium",

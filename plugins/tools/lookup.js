@@ -1,6 +1,6 @@
 import config from "../../config.js";
-import te from "../../src/lib/haidar-error.js";
-import { sendToolsPreview } from "../../src/lib/haidar-context.js";
+import te from "../../src/lib/rara-error.js";
+import { sendToolsPreview } from "../../src/lib/rara-context.js";
 const pluginConfig = {
   name: "lookup",
   alias: ["dnslookup", "dns", "whois"],

@@ -1,6 +1,6 @@
 import axios from "axios";
 import config from "../../config.js";
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 const pluginConfig = {
   name: "bratbahlil",
   alias: [],
@@ -28,7 +28,7 @@ async function handler(m, { sock }) {
   m.react("🕕");
 
   try {
-    const url = `https://api.haidar.my.id/api/bratbahlil?text=${encodeURIComponent(text)}`;
+    const url = `https://api.rara.my.id/api/bratbahlil?text=${encodeURIComponent(text)}`;
     await sock.sendImageAsSticker(m.chat, url, m, {
       packname: config.sticker.packname,
       author: config.sticker.author,

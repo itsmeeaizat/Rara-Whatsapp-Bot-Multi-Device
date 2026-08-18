@@ -1,6 +1,6 @@
-import { f } from '../../src/lib/haidar-http.js'
+import { f } from '../../src/lib/rara-http.js'
 import config from '../../config.js'
-import te from '../../src/lib/haidar-error.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'anime-gen',
     alias: ['animegen', 'aianimegen', 'genai-anime'],

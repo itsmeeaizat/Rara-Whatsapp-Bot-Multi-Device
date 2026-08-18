@@ -1,12 +1,12 @@
-import { getAssetBuffer } from "../../src/lib/haidar-asset-manager.js";
+import { getAssetBuffer } from "../../src/lib/rara-asset-manager.js";
 import * as _canvas from '@napi-rs/canvas'
 import axios from "axios";
 import path from "path";
 import fs from "fs";
 
 
-import { uploadTo0x0 } from "../../src/lib/haidar-tmpfiles.js";
-import te from "../../src/lib/haidar-error.js";
+import { uploadTo0x0 } from "../../src/lib/rara-tmpfiles.js";
+import te from "../../src/lib/rara-error.js";
 const pluginConfig = {
   name: "fakeml",
   alias: ["mlbbfake", "mlcard", "mlfake"],

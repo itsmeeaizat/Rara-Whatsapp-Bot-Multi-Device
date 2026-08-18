@@ -1,4 +1,4 @@
-import { setNotifTidur, toggleNotif, getNotif, deleteNotif, parseJadwal } from '../../src/lib/haidar-notif-scheduler.js'
+import { setNotifTidur, toggleNotif, getNotif, deleteNotif, parseJadwal } from '../../src/lib/rara-notif-scheduler.js'
 
 const pluginConfig = {
     name: 'notiftidur',

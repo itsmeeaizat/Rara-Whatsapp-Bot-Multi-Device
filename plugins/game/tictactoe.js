@@ -1,5 +1,5 @@
-import { getDatabase } from '../../src/lib/haidar-database.js'
-import { parseMention, delay } from '../../src/lib/haidar-utils.js'
+import { getDatabase } from '../../src/lib/rara-database.js'
+import { parseMention, delay } from '../../src/lib/rara-utils.js'
 const pluginConfig = {
   name: "tictactoe",
   alias: ["ttt", "xo"],

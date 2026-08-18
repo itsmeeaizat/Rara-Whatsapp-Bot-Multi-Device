@@ -1,4 +1,4 @@
-import { getDatabase } from '../../src/lib/haidar-database.js'
+import { getDatabase } from '../../src/lib/rara-database.js'
 import { DEFAULT_TOXIC_WORDS } from './antitoxic.js'
 const pluginConfig = {
     name: 'listtoxic',

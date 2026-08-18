@@ -1,5 +1,5 @@
-import { getDatabase } from "../../src/lib/haidar-database.js";
-import te from "../../src/lib/haidar-error.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
+import te from "../../src/lib/rara-error.js";
 import config from "../../config.js";
 
 const pluginConfig = {

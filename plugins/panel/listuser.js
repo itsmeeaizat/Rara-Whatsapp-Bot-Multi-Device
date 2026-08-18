@@ -1,7 +1,7 @@
 import axios from 'axios'
 import config from '../../config.js'
-import { hasFullAccess, getUserRole, VALID_SERVERS } from '../../src/lib/haidar-roles-cpanel.js'
-import te from '../../src/lib/haidar-error.js'
+import { hasFullAccess, getUserRole, VALID_SERVERS } from '../../src/lib/rara-roles-cpanel.js'
+import te from '../../src/lib/rara-error.js'
 const allCommands = VALID_SERVERS.map(v => `listuser${v}`)
 const allAliases = [
     ...VALID_SERVERS.map(v => `users${v}`),

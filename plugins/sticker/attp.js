@@ -1,8 +1,8 @@
-import { addExifToWebp } from '../../src/lib/haidar-exif.js'
+import { addExifToWebp } from '../../src/lib/rara-exif.js'
 import axios from 'axios'
 import config from '../../config.js'
-import { f } from '../../src/lib/haidar-http.js'
-import te from '../../src/lib/haidar-error.js'
+import { f } from '../../src/lib/rara-http.js'
+import te from '../../src/lib/rara-error.js'
 const NEOXR_APIKEY = config.APIkey?.neoxr || 'Milik-Bot-RaraMD'
 const pluginConfig = {
     name: 'attp',

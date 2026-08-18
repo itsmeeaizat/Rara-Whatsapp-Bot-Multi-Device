@@ -1,7 +1,7 @@
 import axios from 'axios'
 import config from '../../config.js'
-import { f } from '../../src/lib/haidar-http.js'
-import te from '../../src/lib/haidar-error.js'
+import { f } from '../../src/lib/rara-http.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'bratanime',
     alias: ['animebrat'],

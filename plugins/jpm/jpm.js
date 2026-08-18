@@ -1,14 +1,14 @@
-import { getDatabase } from "../../src/lib/haidar-database.js";
-import { fetchGroupsSafe } from "../../src/lib/haidar-jpm-helper.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
+import { fetchGroupsSafe } from "../../src/lib/rara-jpm-helper.js";
 import {
   getAutoJpmConfig,
   setAutoJpmConfig,
   startAutoJpmScheduler,
   stopAutoJpmScheduler,
   getAutoJpmStorageDir,
-} from "../../src/lib/haidar-auto-jpm.js";
-import { getMimeType, getExtension } from "../../src/lib/haidar-utils.js";
-import * as timeHelper from "../../src/lib/haidar-time.js";
+} from "../../src/lib/rara-auto-jpm.js";
+import { getMimeType, getExtension } from "../../src/lib/rara-utils.js";
+import * as timeHelper from "../../src/lib/rara-time.js";
 import {
   getBinaryNodeChild,
   prepareWAMessageMedia,
@@ -16,13 +16,13 @@ import {
   proto,
 } from "rara";
 import config from "../../config.js";
-import te from "../../src/lib/haidar-error.js";
-import { saluranCtx } from "../../src/lib/haidar-context.js";
+import te from "../../src/lib/rara-error.js";
+import { saluranCtx } from "../../src/lib/rara-context.js";
 import util from "util";
 import axios from "axios";
 import path from "path";
 import fs from "fs";
-import { getAssetBuffer } from "../../src/lib/haidar-asset-manager.js";
+import { getAssetBuffer } from "../../src/lib/rara-asset-manager.js";
 
 const pluginConfig = {
   name: "jpm",

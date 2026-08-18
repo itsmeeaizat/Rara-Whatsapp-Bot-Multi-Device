@@ -1,5 +1,5 @@
-import te from "../../src/lib/haidar-error.js";
-import haidarApi from "../../src/lib/haidar-apimanager.js";
+import te from "../../src/lib/rara-error.js";
+import raraApi from "../../src/lib/rara-apimanager.js";
 const pluginConfig = {
   name: "tts",
   alias: ["say"],
@@ -23,7 +23,7 @@ async function handler(m, { sock }) {
 
   async function textToSpeech2(text) {
     try {
-      const response = await haidarApi.nexray.geminiTts(text);
+      const response = await raraApi.nexray.geminiTts(text);
       return response;
     } catch (error) {
       return error;

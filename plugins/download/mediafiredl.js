@@ -1,4 +1,4 @@
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 import mediafire from "../../src/scraper/mediafire.js";
 
 const pluginConfig = {

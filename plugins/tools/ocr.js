@@ -1,6 +1,6 @@
 import * as _tesseract from "tesseract.js";
-import te from "../../src/lib/haidar-error.js";
-import { sendToolsPreview } from "../../src/lib/haidar-context.js";
+import te from "../../src/lib/rara-error.js";
+import { sendToolsPreview } from "../../src/lib/rara-context.js";
 
 function getTesseract() {
   return _tesseract;

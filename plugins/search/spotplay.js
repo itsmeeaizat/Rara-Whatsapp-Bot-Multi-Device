@@ -1,5 +1,5 @@
-import te from "../../src/lib/haidar-error.js";
-import haidarApi from "../../src/lib/haidar-apimanager.js";
+import te from "../../src/lib/rara-error.js";
+import raraApi from "../../src/lib/rara-apimanager.js";
 
 const pluginConfig = {
   name: "spotplay",
@@ -21,7 +21,7 @@ async function handler(m, { sock }) {
   m.react("🕕");
 
   try {
-    const data = await haidarApi.azbry.spotplay(query, {
+    const data = await raraApi.azbry.spotplay(query, {
       timeout: 30000,
       headers: {
         "user-agent": "Mozilla/5.0",

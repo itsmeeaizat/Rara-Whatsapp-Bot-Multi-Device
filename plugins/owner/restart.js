@@ -1,6 +1,6 @@
 import { spawn } from 'child_process'
 import path from 'path'
-import te from '../../src/lib/haidar-error.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'restart',
     alias: ['reset', 'reboot', 'restartbot'],

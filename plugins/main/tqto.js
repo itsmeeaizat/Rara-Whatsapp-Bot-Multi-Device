@@ -1,7 +1,7 @@
 import config from '../../config.js'
 import path from 'path'
 import fs from 'fs'
-import { AIRich } from '../../src/lib/haidar-builder.js'
+import { AIRich } from '../../src/lib/rara-builder.js'
 const pluginConfig = {
     name: 'tqto',
     alias: ['thanksto', 'credits', 'kredit'],

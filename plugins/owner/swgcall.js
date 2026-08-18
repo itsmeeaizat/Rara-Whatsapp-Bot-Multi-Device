@@ -1,10 +1,10 @@
-import { getAssetBuffer } from "../../src/lib/haidar-asset-manager.js";
+import { getAssetBuffer } from "../../src/lib/rara-asset-manager.js";
 import { fileTypeFromBuffer } from "file-type";
 import fs from "fs";
 import path from "path";
 import { config } from "../../config.js";
-import te from "../../src/lib/haidar-error.js";
-import { saluranCtx } from "../../src/lib/haidar-context.js";
+import te from "../../src/lib/rara-error.js";
+import { saluranCtx } from "../../src/lib/rara-context.js";
 
 const botConfig = config;
 

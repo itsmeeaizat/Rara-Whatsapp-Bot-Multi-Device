@@ -1,6 +1,6 @@
 import config from '../../config.js'
-import { getParticipantJids } from '../../src/lib/haidar-lid.js'
-import te from '../../src/lib/haidar-error.js'
+import { getParticipantJids } from '../../src/lib/rara-lid.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'hidetag2',
     alias: ['h2', 'ht2'],

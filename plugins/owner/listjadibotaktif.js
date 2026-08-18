@@ -1,4 +1,4 @@
-import { getActiveJadibots } from '../../src/lib/haidar-jadibot-manager.js'
+import { getActiveJadibots } from '../../src/lib/rara-jadibot-manager.js'
 const pluginConfig = {
     name: 'listjadibotaktif',
     alias: ['jadibotaktif', 'activejadibots'],

@@ -1,9 +1,9 @@
 import fs from "fs";
 import path from "path";
 import cekfemboy from "../../src/scraper/lufemboy.js";
-import { queueFFmpeg } from "../../src/lib/haidar-ffmpeg.js";
-import { fetchBuffer } from "../../src/lib/haidar-utils.js";
-import te from "../../src/lib/haidar-error.js";
+import { queueFFmpeg } from "../../src/lib/rara-ffmpeg.js";
+import { fetchBuffer } from "../../src/lib/rara-utils.js";
+import te from "../../src/lib/rara-error.js";
 const pluginConfig = {
   name: "cekfemboy",
   alias: ["femboy"],

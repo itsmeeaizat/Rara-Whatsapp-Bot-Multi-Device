@@ -1,7 +1,7 @@
 import axios from 'axios'
-import { getParticipantJid, resolveAnyLidToJid } from '../../src/lib/haidar-lid.js'
-import * as timeHelper from '../../src/lib/haidar-time.js'
-import te from '../../src/lib/haidar-error.js'
+import { getParticipantJid, resolveAnyLidToJid } from '../../src/lib/rara-lid.js'
+import * as timeHelper from '../../src/lib/rara-time.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'groupinfo',
     alias: ['infogroup', 'gcinfo', 'infogc', 'gc'],

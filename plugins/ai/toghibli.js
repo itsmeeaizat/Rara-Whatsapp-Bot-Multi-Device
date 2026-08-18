@@ -1,7 +1,7 @@
 import axios from 'axios'
-import { uploadImage } from '../../src/lib/haidar-uploader.js'
-import { f } from '../../src/lib/haidar-http.js'
-import te from '../../src/lib/haidar-error.js'
+import { uploadImage } from '../../src/lib/rara-uploader.js'
+import { f } from '../../src/lib/rara-http.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'toghibli',
     alias: ['ghibli', 'ghiblistyle'],

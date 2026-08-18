@@ -1,8 +1,8 @@
-import { getDatabase } from "../../src/lib/haidar-database.js";
-import { fetchGroupsSafe } from "../../src/lib/haidar-jpm-helper.js";
-import { saluranCtx } from "../../src/lib/haidar-context.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
+import { fetchGroupsSafe } from "../../src/lib/rara-jpm-helper.js";
+import { saluranCtx } from "../../src/lib/rara-context.js";
 import config from "../../config.js";
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 
 const pluginConfig = {
   name: "bcgc",

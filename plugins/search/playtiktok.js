@@ -1,4 +1,4 @@
-import te from "../../src/lib/haidar-error.js";
+import te from "../../src/lib/rara-error.js";
 import { tiktokSearchVideo } from "../../src/scraper/tiktoksearch.js";
 
 const pluginConfig = {

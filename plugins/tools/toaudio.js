@@ -1,4 +1,4 @@
-import { queueFFmpeg } from '../../src/lib/haidar-ffmpeg.js'
+import { queueFFmpeg } from '../../src/lib/rara-ffmpeg.js'
 import fs from 'fs'
 import path from 'path'
 const pluginConfig = {

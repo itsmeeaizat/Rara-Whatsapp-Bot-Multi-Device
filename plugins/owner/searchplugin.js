@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
-import { getAllPlugins } from "../../src/lib/haidar-plugins.js";
-import te from "../../src/lib/haidar-error.js";
+import { getAllPlugins } from "../../src/lib/rara-plugins.js";
+import te from "../../src/lib/rara-error.js";
 const pluginConfig = {
   name: "searchplugin",
   alias: ["splugin", "findplugin", "infoplugin"],

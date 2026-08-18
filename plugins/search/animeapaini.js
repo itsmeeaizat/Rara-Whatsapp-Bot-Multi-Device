@@ -1,8 +1,8 @@
 import axios from 'axios'
 import config from '../../config.js'
-import { downloadContentFromMessage } from 'haidar'
+import { downloadContentFromMessage } from 'rara'
 import FormData from 'form-data'
-import te from '../../src/lib/haidar-error.js'
+import te from '../../src/lib/rara-error.js'
 const NEOXR_APIKEY = config.APIkey?.neoxr || 'Milik-Bot-RaraMD'
 
 const pluginConfig = {

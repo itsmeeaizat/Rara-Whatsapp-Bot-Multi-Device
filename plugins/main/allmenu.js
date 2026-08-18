@@ -5,7 +5,7 @@ import config from "../../config.js";
 import axios from "axios";
 import {
   getTimeGreeting,
-} from "../../src/lib/haidar-formatter.js";
+} from "../../src/lib/rara-formatter.js";
 import fs from "fs"
 import {
   getCommandsByCategory,
@@ -13,8 +13,8 @@ import {
   getPluginCount,
   getPlugin,
   getPluginsByCategory,
-} from "../../src/lib/haidar-plugins.js";
-import { getCasesByCategory, getCaseCount } from "../../case/haidar.js";
+} from "../../src/lib/rara-plugins.js";
+import { getCasesByCategory, getCaseCount } from "../../case/rara.js";
 const pluginConfig = {
   name: "allmenu",
   alias: ["fullmenu", "am", "allcommand", "semua"],

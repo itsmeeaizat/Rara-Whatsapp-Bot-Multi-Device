@@ -1,8 +1,8 @@
-import { getFullSchedulerStatus, formatTimeRemaining, getMsUntilTime } from '../../src/lib/haidar-scheduler.js'
-import { initSholatScheduler, stopSholatScheduler } from '../../src/lib/haidar-sholat-scheduler.js'
-import { getDatabase } from '../../src/lib/haidar-database.js'
-import { getTodaySchedule, extractPrayerTimes } from '../../src/lib/haidar-sholat-api.js'
-import te from '../../src/lib/haidar-error.js'
+import { getFullSchedulerStatus, formatTimeRemaining, getMsUntilTime } from '../../src/lib/rara-scheduler.js'
+import { initSholatScheduler, stopSholatScheduler } from '../../src/lib/rara-sholat-scheduler.js'
+import { getDatabase } from '../../src/lib/rara-database.js'
+import { getTodaySchedule, extractPrayerTimes } from '../../src/lib/rara-sholat-api.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'cekschedule',
     alias: ['cekscheduler', 'schedulerstatus', 'schedstatus'],

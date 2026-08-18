@@ -1,5 +1,5 @@
-import { getQuotedStickerHash, addStickerCommand, listStickerCommands } from '../../src/lib/haidar-sticker-command.js'
-import { getPlugin } from '../../src/lib/haidar-plugins.js'
+import { getQuotedStickerHash, addStickerCommand, listStickerCommands } from '../../src/lib/rara-sticker-command.js'
+import { getPlugin } from '../../src/lib/rara-plugins.js'
 const pluginConfig = {
     name: 'addcmdsticker',
     alias: ['addstickercmd', 'setsticker', 'stickeradd'],

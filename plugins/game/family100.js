@@ -10,9 +10,9 @@ import {
   isSurrender,
   isReplyToGame,
   getRandomReward,
-} from "../../src/lib/haidar-game-data.js";
-import { getDatabase } from "../../src/lib/haidar-database.js";
-import { addExpWithLevelCheck } from "../../src/lib/haidar-level.js";
+} from "../../src/lib/rara-game-data.js";
+import { getDatabase } from "../../src/lib/rara-database.js";
+import { addExpWithLevelCheck } from "../../src/lib/rara-level.js";
 
 const pluginConfig = {
   name: "family100",

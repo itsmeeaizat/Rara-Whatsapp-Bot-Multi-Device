@@ -1,8 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 import config from '../../config.js'
-import { getDatabase } from '../../src/lib/haidar-database.js'
-import te from '../../src/lib/haidar-error.js'
+import { getDatabase } from '../../src/lib/rara-database.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'resetdb',
     alias: ['cleardb', 'wipedb'],

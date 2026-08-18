@@ -1,12 +1,12 @@
 import * as _canvas from "@napi-rs/canvas";
 import path from "path";
 import fs from "fs";
-import * as timeHelper from "../../src/lib/haidar-time.js";
-import te from "../../src/lib/haidar-error.js";
-import { saluranCtx } from "../../src/lib/haidar-context.js";
+import * as timeHelper from "../../src/lib/rara-time.js";
+import te from "../../src/lib/rara-error.js";
+import { saluranCtx } from "../../src/lib/rara-context.js";
 import axios from "axios";
 import config from "../../config.js";
-import { getAssetBuffer } from "../../src/lib/haidar-asset-manager.js";
+import { getAssetBuffer } from "../../src/lib/rara-asset-manager.js";
 const pluginConfig = {
   name: "nulis",
   alias: ["tulis", "write"],

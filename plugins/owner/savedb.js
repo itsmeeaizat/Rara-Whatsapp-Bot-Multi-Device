@@ -2,7 +2,7 @@ import moment from 'moment-timezone'
 import fs from 'fs'
 import path from 'path'
 import config from '../../config.js'
-import te from '../../src/lib/haidar-error.js'
+import te from '../../src/lib/rara-error.js'
 const pluginConfig = {
     name: 'savedb',
     alias: ['backupdb', 'downloaddb', 'getdb'],

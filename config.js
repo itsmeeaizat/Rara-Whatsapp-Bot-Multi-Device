@@ -1,5 +1,5 @@
-import { getDatabase } from "./src/lib/haidar-database.js";
-import * as ownerPremiumDb from "./src/lib/haidar-premium-db.js";
+import { getDatabase } from "./src/lib/rara-database.js";
+import * as ownerPremiumDb from "./src/lib/rara-premium-db.js";
 
 //  utamakan baca object config sampai bawah
 const config = {
