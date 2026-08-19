@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { Canvas, loadImage, FontLibrary } from 'skia-canvas'
 import te from '../../src/lib/rara-error.js'
 FontLibrary.use('CartoonVibes', process.cwd() + '/assets/fonts/Epep.ttf')

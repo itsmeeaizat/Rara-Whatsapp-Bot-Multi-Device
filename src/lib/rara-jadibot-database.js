@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import fs from 'fs'
 import path from 'path'
 const JADIBOT_AUTH_FOLDER = path.join(process.cwd(), 'session', 'jadibot')

@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { nightActionHandler } from './werewolf.js'
 const pluginConfig = {
     name: 'wwsorcerer',

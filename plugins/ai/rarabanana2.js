@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { fluxImage } from "../../src/scraper/seaart.js";
 
 const pluginConfig = {

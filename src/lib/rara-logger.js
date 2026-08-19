@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import chalk from "chalk";
 import * as timeHelper from "./rara-time.js";
 import { getCachedJid, isLidConverted } from "./rara-lid.js";

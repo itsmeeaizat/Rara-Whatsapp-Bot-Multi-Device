@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import config from '../../config.js'
 import { getRoles, getUserRole, getAccessibleServers, VALID_SERVERS } from '../../src/lib/rara-roles-cpanel.js'
 const pluginConfig = {

@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { downloadMediaMessage } from "rara";
 import { isLid, lidToJid, lidToJidSafe } from "./rara-lid.js";
 import config from "../../config.js";

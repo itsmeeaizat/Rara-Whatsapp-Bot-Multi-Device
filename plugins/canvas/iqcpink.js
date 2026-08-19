@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { createCanvas, loadImage, GlobalFonts } from '@napi-rs/canvas';
 import { writeFile, readFile, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';

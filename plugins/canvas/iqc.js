@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import axios from 'axios'
 import { createCanvas, loadImage, GlobalFonts } from '@napi-rs/canvas'
 import { writeFile, mkdir, readFile } from 'node:fs/promises'

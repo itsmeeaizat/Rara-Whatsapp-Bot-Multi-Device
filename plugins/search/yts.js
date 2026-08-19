@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import yts from "yt-search";
 import { generateWAMessageFromContent, proto } from "rara";
 import axios from "axios";

@@ -1,9 +1,4 @@
-/**
- * Nama Plugin: Play
- * Pembuat Code: Aizat
- * Saluran: https://whatsapp.com/channel/example
- */
-
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import axios from "axios";
 
 const pluginConfig = {

@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import fs from 'fs'
 import path from 'path'
 import te from '../../src/lib/rara-error.js'
@@ -7,7 +8,7 @@ const pluginConfig = {
     category: 'owner',
     description: 'Ganti nama developer di config.js',
     usage: '.ganti-namadev <nama baru>',
-    example: '.ganti-namadev Lucky Archz',
+    example: '.ganti-namadev Aizat',
     isOwner: true,
     isPremium: false,
     isGroup: false,

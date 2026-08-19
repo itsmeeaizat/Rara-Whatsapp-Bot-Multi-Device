@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { startJadibot, isJadibotActive } from '../../src/lib/rara-jadibot-manager.js'
 
 const pluginConfig = {

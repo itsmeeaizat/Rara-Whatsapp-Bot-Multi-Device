@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { Canvas, loadImage, FontLibrary } from 'skia-canvas'
 import fs from 'fs'
 import path from 'path'

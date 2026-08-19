@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import ttdown from "../../src/scraper/tiktok.js";
 import axios from "axios";
 import ffmpeg from "fluent-ffmpeg";

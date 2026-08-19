@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { fbdown } from '../../src/scraper/fbdown.js'
 import te from '../../src/lib/rara-error.js'
 

@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import os from 'os'
 import { performance } from 'perf_hooks'
 import { execSync } from 'child_process'

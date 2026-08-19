@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { sendStoreBackup, SCHEMA_VERSION } from '../../src/lib/rara-store-backup.js'
 const pluginConfig = {
     name: 'backupdb',

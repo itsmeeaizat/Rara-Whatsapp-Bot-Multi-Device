@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import sharp from 'sharp'
 import fs from 'fs'
 import path from 'path'

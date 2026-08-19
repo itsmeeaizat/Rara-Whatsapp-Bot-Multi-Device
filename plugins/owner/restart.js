@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { spawn } from 'child_process'
 import path from 'path'
 import te from '../../src/lib/rara-error.js'

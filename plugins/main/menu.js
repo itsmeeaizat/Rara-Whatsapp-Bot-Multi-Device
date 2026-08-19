@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { getCaseCount, getCasesByCategory } from "../../case/rara.js";
 import {
   prepareWAMessageMedia,

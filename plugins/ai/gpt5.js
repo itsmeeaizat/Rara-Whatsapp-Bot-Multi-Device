@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { GPT5 } from "../../src/scraper/gpt5.js";
 import { saluranCtx } from "../../src/lib/rara-context.js";
 import te from "../../src/lib/rara-error.js";

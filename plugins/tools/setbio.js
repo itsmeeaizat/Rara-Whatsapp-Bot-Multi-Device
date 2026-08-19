@@ -1,10 +1,11 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 const pluginConfig = {
     name: 'setbio',
     alias: ['setbiobot', 'setstatus', 'setabout'],
     category: 'tools',
     description: 'Mengubah bio/status bot',
     usage: '.setbio <bio baru>',
-    example: '.setbio Bot WhatsApp by Lucky Archz',
+    example: '.setbio Bot WhatsApp by Aizat',
     isOwner: true,
     isPremium: false,
     isGroup: false,

@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import config from "../../config.js";
 import * as timeHelper from "../../src/lib/rara-time.js";
 import { CronJob } from "cron";

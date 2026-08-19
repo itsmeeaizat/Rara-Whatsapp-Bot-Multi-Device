@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { DaFont } from "../../src/scraper/dafont.js";
 
 if (!global.dafontSessions) global.dafontSessions = {};

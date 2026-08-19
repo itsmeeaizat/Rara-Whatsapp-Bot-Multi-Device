@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import moment from 'moment-timezone'
 const TIMEZONE = 'Asia/Jakarta'
 

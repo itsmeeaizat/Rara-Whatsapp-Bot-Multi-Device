@@ -1,20 +1,4 @@
-/**
- * Credits & Thanks to
- * Developer = Aizat
- * Lead owner = HyuuSATAN
- * Owner = Keisya
- * Designer = Danzzz
- * Wileys = Penyedia baileys
- * Penyedia API
- * Penyedia Scraper
- * 
- * JANGAN HAPUS/GANTI CREDITS & THANKS TO
- * JANGAN DIJUAL YA MEK
- * 
- * Saluran Resmi Aizat:
- * https://whatsapp.com/channel/example 
- */
-
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import fs from 'fs'
 import path from 'path'
 import { logger } from './rara-logger.js'

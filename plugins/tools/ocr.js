@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import * as _tesseract from "tesseract.js";
 import te from "../../src/lib/rara-error.js";
 import { sendToolsPreview } from "../../src/lib/rara-context.js";

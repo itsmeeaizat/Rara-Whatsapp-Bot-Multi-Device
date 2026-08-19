@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { createCanvas, GlobalFonts } from "@napi-rs/canvas";
 import fs from "fs";
 import path from "path";

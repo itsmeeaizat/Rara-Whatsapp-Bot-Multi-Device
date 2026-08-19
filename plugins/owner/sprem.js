@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { generateWAMessageFromContent, proto } from "rara";
 
 const pluginConfig = {

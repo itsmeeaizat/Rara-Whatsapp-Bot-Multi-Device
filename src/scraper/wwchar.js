@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import * as cheerio from 'cheerio'
 async function scrapeWutheringWavesCharacter(name) {
     if (!name) throw new Error("Nama karakter kosong");

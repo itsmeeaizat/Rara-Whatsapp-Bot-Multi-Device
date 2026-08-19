@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { Txt2Img2 } from "../../src/scraper/txt2img2.js";
 
 const pluginConfig = {

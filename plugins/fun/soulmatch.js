@@ -1,8 +1,4 @@
-/**
- * Soul Match / Belahan Jiwa - Fun compatibility checker
- * Ported from RTXZY-MD-pro
- */
-
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 const pluginConfig = {
     name: 'soulmatch',
     alias: [],

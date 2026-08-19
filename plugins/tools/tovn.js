@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { queueFFmpeg } from '../../src/lib/rara-ffmpeg.js'
 import fs from 'fs'
 import path from 'path'

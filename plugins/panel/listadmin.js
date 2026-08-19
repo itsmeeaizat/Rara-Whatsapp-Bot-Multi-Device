@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import axios from 'axios'
 import config from '../../config.js'
 import { hasFullAccess, getUserRole, VALID_SERVERS } from '../../src/lib/rara-roles-cpanel.js'

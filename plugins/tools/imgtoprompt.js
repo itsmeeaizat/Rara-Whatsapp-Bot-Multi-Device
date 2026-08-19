@@ -1,8 +1,4 @@
-/**
- * @file plugins/tools/imgtoprompt.js
- * @description Plugin untuk mengubah gambar menjadi prompt AI
- */
-
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import imgtoprompt from '../../src/scraper/img2prompt.js'
 import fs from 'fs'
 import path from 'path'

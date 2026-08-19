@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import fs from "fs";
 import { pinterestdl } from "../../src/lib/rara-pinterest.js";
 import path from "path";

@@ -1,5 +1,4 @@
-// Izin yak bang hehe :b
-
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 export const NL = [
   "example",
   "example1",

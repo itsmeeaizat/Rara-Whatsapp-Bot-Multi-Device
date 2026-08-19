@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import axios from "axios";
 import { spawn } from "child_process";
 import fs from "fs";

@@ -1,32 +1,4 @@
-/**
- * Do not remove this watermark.
- *
- * NIXCODE - Advanced WhatsApp Interactive Message Builder
- * Built for creating buttons, carousels, native flows,
- * and AI rich response payloads using Baileys with
- * fluent chaining, flexible payload customization,
- * and scalable architecture for modern bot development.
- *
- * Runtime:
- * - Baileys: @whiskeysockets/baileys (latest)
- *
- * Created by Nixel
- * Contributors: ~ Ahmad tumbuh kembang
- *
- * WhatsApp: wa.me/62851883493.3
- * Channel: https://whatsapp.com/channel/example
- *
- * Copyright (c) 2026 Nixel
- *
- * Permission is granted to use and modify this library
- * for personal or commercial projects.
- *
- * Reuploading, reselling, relicensing, or redistributing
- * this library as a standalone product is prohibited.
- *
- * Do not claim this project as your own original work.
- */
-
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 'use strict';
 
 const VERSION = '4.6';

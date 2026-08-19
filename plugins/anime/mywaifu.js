@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import fetch from "node-fetch";
 import crypto from "crypto";
 import { generateWAMessageFromContent, generateWAMessage, jidNormalizedUser } from "rara";

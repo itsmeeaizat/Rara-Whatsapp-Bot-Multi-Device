@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import instagramDownloader from "../../src/scraper/ig.js";
 const pluginConfig = {
   name: "instagramdl",

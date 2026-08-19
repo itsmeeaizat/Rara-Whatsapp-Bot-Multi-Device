@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import fs from "fs";
 import path from "path";
 import { unloadPlugin } from "../../src/lib/rara-plugins.js";

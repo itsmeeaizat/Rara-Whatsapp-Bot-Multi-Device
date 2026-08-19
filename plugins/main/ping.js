@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { AIRich } from "../../src/lib/rara-builder.js"
 import { performance } from "perf_hooks"
 import os from "os"

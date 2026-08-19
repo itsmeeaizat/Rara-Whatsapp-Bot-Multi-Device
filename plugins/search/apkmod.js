@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { getAssetBuffer } from "../../src/lib/rara-asset-manager.js";
 import axios from "axios";
 import config from "../../config.js";

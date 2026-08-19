@@ -1,15 +1,11 @@
-/**
- * Mimpi / Dream World - Fun dream interpretation generator
- * Ported from RTXZY-MD-pro
- */
-
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 const pluginConfig = {
     name: 'mimpi',
     alias: ['dream', 'dreamworld'],
     category: 'fun',
     description: 'Jelajahi dunia mimpimu berdasarkan nama',
     usage: '.mimpi <nama>',
-    example: '.mimpi Keisya',
+    example: '.mimpi Aizat',
     isOwner: false,
     isPremium: false,
     isGroup: false,

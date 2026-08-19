@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 const pluginConfig = {
   name: ["buatsaluran", "createsaluran", "createnewsletter"],
   alias: [],

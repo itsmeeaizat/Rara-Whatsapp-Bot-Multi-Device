@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 const afkStorage = global.afkStorage || (global.afkStorage = new Map())
 
 const pluginConfig = {

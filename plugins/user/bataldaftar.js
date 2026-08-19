@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { clearRegistrationSession } from "./daftar.js";
 
 const pluginConfig = {

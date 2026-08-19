@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 const pluginConfig = {
     name: 'hapusabsen',
     alias: ['deleteabsen', 'tutupabsen', 'closeabsen', 'resetabsen'],

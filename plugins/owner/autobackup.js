@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { enableAutoBackup, disableAutoBackup, getBackupStatus, triggerManualBackup, formatInterval } from '../../src/lib/rara-auto-backup.js'
 import * as timeHelper from '../../src/lib/rara-time.js'
 import config from '../../config.js'

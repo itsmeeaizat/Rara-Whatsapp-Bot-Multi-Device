@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import fs from "fs";
 import path from "path";
 import archiver from "archiver";
@@ -38,7 +39,7 @@ const EXCLUDE_DIRS = new Set([
   "rara",
   "ALYA V8",
   "DHX-pro",
-  "RTXZY-MD-pro",
+  "Rara-MD",
   "BETABOTZ-MD2-pro",
   "KazzTzyCanvs",
   "starseed-main",

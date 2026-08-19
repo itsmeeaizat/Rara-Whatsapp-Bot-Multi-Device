@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import likee from '../../src/scraper/likee.js'
 import te from '../../src/lib/rara-error.js'
 const pluginConfig = {

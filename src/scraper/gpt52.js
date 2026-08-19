@@ -1,9 +1,4 @@
-/***
-  @ Base: https://chatgpt.com/
-  @ Author: Shannz
-  @ Note: Access chatgpt without login, support continuing chat, streaming, web search, and uploading images.
-***/
-
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import crypto from "crypto";
 import fs from "fs";
 import path from "path";

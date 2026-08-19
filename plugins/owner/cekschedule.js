@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { getFullSchedulerStatus, formatTimeRemaining, getMsUntilTime } from '../../src/lib/rara-scheduler.js'
 import { initSholatScheduler, stopSholatScheduler } from '../../src/lib/rara-sholat-scheduler.js'
 import { getDatabase } from '../../src/lib/rara-database.js'

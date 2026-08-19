@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import {
   makeWASocket,
   DisconnectReason,
@@ -594,7 +595,7 @@ async function startConnection(options = {}) {
             `Terima kasih sudah mengundang aku ke *${groupName}*!\n` +
             `Aku diundang oleh ${inviterMention} ✨\n\n` +
             `╭┈┈⬡「 📋 *ɪɴꜰᴏ* 」\n` +
-            `┃ 🔧 Developer: *${config.bot?.developer || "Lucky Archz"}*\n` +
+            `┃ 🔧 Developer: *${config.bot?.developer || "Aizat"}*\n` +
             `┃ 📢 Prefix: \`${prefix}\`\n` +
             `┃ 📩 Support: ${config.bot?.support || "-"}\n` +
             `╰┈┈⬡\n\n` +

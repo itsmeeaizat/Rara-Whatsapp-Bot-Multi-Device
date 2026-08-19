@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { getDatabase } from '../../src/lib/rara-database.js'
 import { DEFAULT_TOXIC_WORDS } from './antitoxic.js'
 const pluginConfig = {

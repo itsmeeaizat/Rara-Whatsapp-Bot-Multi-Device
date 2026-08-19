@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import moment from "moment-timezone";
 import fs from "fs";
 import path from "path";

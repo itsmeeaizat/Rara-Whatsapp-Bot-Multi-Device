@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import config from '../../config.js'
 import os from 'os'
 import { exec } from 'child_process'

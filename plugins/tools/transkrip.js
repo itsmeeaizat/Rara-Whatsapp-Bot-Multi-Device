@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import FormData from 'form-data'
 import axios from 'axios'
 import fs from 'fs'

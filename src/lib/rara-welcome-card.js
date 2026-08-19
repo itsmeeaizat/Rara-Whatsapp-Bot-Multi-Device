@@ -1,27 +1,17 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 let _canvas = null;
 async function _getCanvas() {
   if (!_canvas) _canvas = await import("@napi-rs/canvas");
   return _canvas;
 }
+
 import fs from "fs";
 import path from "path";
 import axios from "axios";
+
 const DEFAULT_AVATAR = "https://i.imgur.com/TuItj4L.png";
 
-function drawRoundedRect(ctx, x, y, width, height, radius) {
-  ctx.beginPath();
-  ctx.moveTo(x + radius, y);
-  ctx.lineTo(x + width - radius, y);
-  ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
-  ctx.lineTo(x + width, y + height - radius);
-  ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
-  ctx.lineTo(x + radius, y + height);
-  ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
-  ctx.lineTo(x, y + radius);
-  ctx.quadraticCurveTo(x, y, x + radius, y);
-  ctx.closePath();
-}
-
+/* ── Helper: load avatar with fallback ─────────────────────── */
 async function loadAvatarSafe(avatarUrl) {
   const { loadImage } = await _getCanvas();
   const localFallback = path.join(
@@ -34,8 +24,7 @@ async function loadAvatarSafe(avatarUrl) {
   try {
     if (!avatarUrl) {
       if (fs.existsSync(localFallback)) {
-        const buffer = fs.readFileSync(localFallback);
-        return await loadImage(buffer);
+        return await loadImage(fs.readFileSync(localFallback));
       }
       return await loadImage(DEFAULT_AVATAR);
     }
@@ -45,8 +34,7 @@ async function loadAvatarSafe(avatarUrl) {
       (typeof avatarUrl === "string" && avatarUrl.includes("pp-kosong"))
     ) {
       if (fs.existsSync(localFallback)) {
-        const buffer = fs.readFileSync(localFallback);
-        return await loadImage(buffer);
+        return await loadImage(fs.readFileSync(localFallback));
       }
     }
 
@@ -60,21 +48,18 @@ async function loadAvatarSafe(avatarUrl) {
     }
 
     if (fs.existsSync(avatarUrl)) {
-      const buffer = fs.readFileSync(avatarUrl);
-      return await loadImage(buffer);
+      return await loadImage(fs.readFileSync(avatarUrl));
     }
 
     if (fs.existsSync(localFallback)) {
-      const buffer = fs.readFileSync(localFallback);
-      return await loadImage(buffer);
+      return await loadImage(fs.readFileSync(localFallback));
     }
 
     return await loadImage(DEFAULT_AVATAR);
-  } catch (err) {
+  } catch {
     try {
       if (fs.existsSync(localFallback)) {
-        const buffer = fs.readFileSync(localFallback);
-        return await loadImage(buffer);
+        return await loadImage(fs.readFileSync(localFallback));
       }
       return await loadImage(DEFAULT_AVATAR);
     } catch {
@@ -83,513 +68,425 @@ async function loadAvatarSafe(avatarUrl) {
   }
 }
 
-function drawHexagonPath(ctx, x, y, r) {
+/* ── Helper: rounded rect ──────────────────────────────────── */
+function drawRoundedRect(ctx, x, y, w, h, r) {
   ctx.beginPath();
-  for (let i = 0; i < 6; i++) {
-    const angle = (Math.PI / 3) * i;
-    const xPos = x + r * Math.cos(angle);
-    const yPos = y + r * Math.sin(angle);
-    if (i === 0) ctx.moveTo(xPos, yPos);
-    else ctx.lineTo(xPos, yPos);
-  }
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r);
+  ctx.quadraticCurveTo(x, y, x + r, y);
   ctx.closePath();
 }
 
-async function createWideDiscordCard(
-  username,
-  avatarUrl,
-  groupName,
-  memberCount,
-) {
+/* ── Helper: draw floral / decorative petals ───────────────── */
+function drawPetal(ctx, cx, cy, size, rotation, color, alpha) {
+  ctx.save();
+  ctx.translate(cx, cy);
+  ctx.rotate(rotation);
+  ctx.globalAlpha = alpha || 0.08;
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  ctx.ellipse(0, -size * 0.6, size * 0.35, size * 0.6, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+}
+
+function drawFlower(ctx, cx, cy, size, color, alpha) {
+  var a = alpha || 0.06;
+  for (var i = 0; i < 8; i++) {
+    var angle = (Math.PI / 4) * i;
+    drawPetal(ctx, cx, cy, size, angle, color, a);
+  }
+}
+
+/* ── Helper: draw sparkle dots ─────────────────────────────── */
+function drawSparkles(ctx, width, height, count, color) {
+  ctx.fillStyle = color || "rgba(255, 182, 217, 0.3)";
+  var seed = 12345;
+  for (var i = 0; i < (count || 25); i++) {
+    seed = (seed * 9301 + 49297) % 233280;
+    var x = (seed / 233280) * width;
+    seed = (seed * 9301 + 49297) % 233280;
+    var y = (seed / 233280) * height;
+    seed = (seed * 9301 + 49297) % 233280;
+    var r = ((seed / 233280) * 2.5) + 0.5;
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+
+/* ── Helper: circular avatar clip ──────────────────────────── */
+function clipCircle(ctx, cx, cy, radius) {
+  ctx.beginPath();
+  ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+  ctx.clip();
+}
+
+/* ── Helper: truncate text ────────────────────────────────── */
+function truncate(text, maxLen) {
+  var ml = maxLen || 18;
+  if (!text) return "Unknown";
+  return text.length > ml ? text.substring(0, ml) + "\u2026" : text;
+}
+
+/* ════════════════════════════════════════════════════════════
+ *  WELCOME CARD — Pink/Purple Floral Theme (Rara Multi Device)
+ * ════════════════════════════════════════════════════════════ */
+async function createWelcomeCardV4(username, avatarUrl, groupName, memberCount) {
   const { createCanvas } = await _getCanvas();
   const width = 1024;
-  const height = 450;
+  const height = 500;
   const canvas = createCanvas(width, height);
   const ctx = canvas.getContext("2d");
-  ctx.fillStyle = "#0f0c29";
+
+  // ── Background: dark purple to magenta gradient ────────────
+  var bg = ctx.createLinearGradient(0, 0, width, height);
+  bg.addColorStop(0, "#1a0a2e");
+  bg.addColorStop(0.4, "#2d1b4e");
+  bg.addColorStop(0.7, "#4a1942");
+  bg.addColorStop(1, "#1a0a2e");
+  ctx.fillStyle = bg;
   ctx.fillRect(0, 0, width, height);
-  const bgGlow = ctx.createRadialGradient(width, height, 0, width, height, 600);
-  bgGlow.addColorStop(0, "rgba(48, 43, 99, 0.6)");
-  bgGlow.addColorStop(1, "rgba(0,0,0,0)");
-  ctx.fillStyle = bgGlow;
+
+  // ── Radial glow (pink, top-right) ──────────────────────────
+  var glow1 = ctx.createRadialGradient(width * 0.8, height * 0.2, 0, width * 0.8, height * 0.2, 400);
+  glow1.addColorStop(0, "rgba(236, 72, 153, 0.25)");
+  glow1.addColorStop(1, "rgba(236, 72, 153, 0)");
+  ctx.fillStyle = glow1;
   ctx.fillRect(0, 0, width, height);
-  ctx.strokeStyle = "rgba(255, 255, 255, 0.05)";
-  ctx.lineWidth = 1;
-  const gridSize = 40;
-  for (let x = 0; x <= width; x += gridSize) {
-    ctx.beginPath();
-    ctx.moveTo(x, 0);
-    ctx.lineTo(x, height);
-    ctx.stroke();
-  }
-  for (let y = 0; y <= height; y += gridSize) {
-    ctx.beginPath();
-    ctx.moveTo(0, y);
-    ctx.lineTo(width, y);
-    ctx.stroke();
-  }
-  const cardX = 50;
-  const cardY = 50;
-  const cardW = width - 100;
-  const cardH = height - 100;
-  ctx.fillStyle = "rgba(255, 255, 255, 0.03)";
-  ctx.strokeStyle = "rgba(255, 255, 255, 0.1)";
+
+  // ── Radial glow (purple, bottom-left) ──────────────────────
+  var glow2 = ctx.createRadialGradient(width * 0.2, height * 0.8, 0, width * 0.2, height * 0.8, 350);
+  glow2.addColorStop(0, "rgba(168, 85, 247, 0.2)");
+  glow2.addColorStop(1, "rgba(168, 85, 247, 0)");
+  ctx.fillStyle = glow2;
+  ctx.fillRect(0, 0, width, height);
+
+  // ── Decorative flowers ────────────────────────────────────
+  drawFlower(ctx, 80, 80, 60, "#ec4899", 0.05);
+  drawFlower(ctx, width - 100, 100, 70, "#a855f7", 0.05);
+  drawFlower(ctx, 60, height - 60, 50, "#f472b6", 0.04);
+  drawFlower(ctx, width - 80, height - 80, 65, "#c026d3", 0.04);
+  drawFlower(ctx, width / 2, 40, 45, "#e879f9", 0.03);
+
+  // ── Sparkles ───────────────────────────────────────────────
+  drawSparkles(ctx, width, height, 30, "rgba(255, 182, 217, 0.35)");
+
+  // ── Glass card ─────────────────────────────────────────────
+  var cardX = 40;
+  var cardY = 40;
+  var cardW = width - 80;
+  var cardH = height - 80;
+  ctx.fillStyle = "rgba(255, 255, 255, 0.04)";
+  ctx.strokeStyle = "rgba(236, 72, 153, 0.25)";
   ctx.lineWidth = 2;
-  ctx.beginPath();
-  ctx.roundRect(cardX, cardY, cardW, cardH, 30);
+  drawRoundedRect(ctx, cardX, cardY, cardW, cardH, 30);
   ctx.fill();
   ctx.stroke();
-  const avatarSize = 180;
-  const centerX = 200;
-  const centerY = height / 2;
+
+  // ── Top accent bar (pink gradient) ─────────────────────────
+  var accentGrad = ctx.createLinearGradient(cardX, 0, cardX + cardW, 0);
+  accentGrad.addColorStop(0, "#ec4899");
+  accentGrad.addColorStop(0.5, "#a855f7");
+  accentGrad.addColorStop(1, "#ec4899");
+  ctx.fillStyle = accentGrad;
+  drawRoundedRect(ctx, cardX + 20, cardY + 15, cardW - 40, 4, 2);
+  ctx.fill();
+
+  // ── Avatar: circular with pink glow ring ───────────────────
+  var avatarSize = 200;
+  var avatarX = 220;
+  var avatarY = height / 2;
+
+  // Glow
   ctx.save();
-  ctx.shadowColor = "#00d2ff";
-  ctx.shadowBlur = 40;
+  ctx.shadowColor = "#ec4899";
+  ctx.shadowBlur = 50;
   ctx.beginPath();
-  ctx.arc(centerX, centerY, avatarSize / 2 - 10, 0, Math.PI * 2);
+  ctx.arc(avatarX, avatarY, avatarSize / 2, 0, Math.PI * 2);
   ctx.fillStyle = "#000";
   ctx.fill();
   ctx.restore();
-  ctx.save();
-  drawHexagonPath(ctx, centerX, centerY, avatarSize / 2);
-  ctx.clip();
 
+  // Clip & draw avatar
+  ctx.save();
+  clipCircle(ctx, avatarX, avatarY, avatarSize / 2 - 8);
   try {
-    const avatar = await loadAvatarSafe(avatarUrl);
-    if (avatar)
-      ctx.drawImage(
-        avatar,
-        centerX - avatarSize / 2,
-        centerY - avatarSize / 2,
-        avatarSize,
-        avatarSize,
-      );
+    var avatar = await loadAvatarSafe(avatarUrl);
+    if (avatar) {
+      ctx.drawImage(avatar, avatarX - avatarSize / 2 + 8, avatarY - avatarSize / 2 + 8, avatarSize - 16, avatarSize - 16);
+    }
   } catch (e) {
-    ctx.fillStyle = "#333";
-    ctx.fillRect(
-      centerX - avatarSize / 2,
-      centerY - avatarSize / 2,
-      avatarSize,
-      avatarSize,
-    );
+    ctx.fillStyle = "#4a1942";
+    ctx.fillRect(avatarX - avatarSize / 2 + 8, avatarY - avatarSize / 2 + 8, avatarSize - 16, avatarSize - 16);
   }
   ctx.restore();
-  ctx.strokeStyle = "#00d2ff";
-  ctx.lineWidth = 5;
-  drawHexagonPath(ctx, centerX, centerY, avatarSize / 2 + 5);
-  ctx.stroke();
-  const textX = 350;
-  ctx.fillStyle = "rgba(0, 210, 255, 0.15)";
+
+  // Pink ring border
+  ctx.strokeStyle = "#ec4899";
+  ctx.lineWidth = 4;
   ctx.beginPath();
-  ctx.roundRect(textX, 120, 140, 36, 18);
+  ctx.arc(avatarX, avatarY, avatarSize / 2, 0, Math.PI * 2);
+  ctx.stroke();
+
+  // Inner thin ring
+  ctx.strokeStyle = "rgba(255, 182, 217, 0.5)";
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.arc(avatarX, avatarY, avatarSize / 2 - 6, 0, Math.PI * 2);
+  ctx.stroke();
+
+  // ── Text area ──────────────────────────────────────────────
+  var textX = 380;
+  var cleanName = truncate(username, 16);
+
+  // WELCOME badge
+  ctx.fillStyle = "rgba(236, 72, 153, 0.15)";
+  drawRoundedRect(ctx, textX, 100, 180, 38, 19);
   ctx.fill();
-
-  ctx.fillStyle = "#00d2ff";
-  ctx.font = "bold 18px Courier New";
-  ctx.fillText("● NEW USER", textX + 15, 144);
-  ctx.font = "900 60px Arial";
-  const nameMetric = ctx.measureText(username);
-
-  // Bikin gradient khusus untuk teks
-  const gradient = ctx.createLinearGradient(
-    textX,
-    0,
-    textX + nameMetric.width,
-    0,
-  );
-  gradient.addColorStop(0, "#ffffff");
-  gradient.addColorStop(1, "#92effd");
-
-  ctx.fillStyle = gradient;
-  ctx.fillText(username, textX, 220);
-  ctx.fillStyle = "#a0a0a0";
-  ctx.font = "24px Arial";
-  ctx.fillText(`Bergabung ke: ${groupName}`, textX, 260);
-
-  ctx.fillStyle = "#ffffff";
-  ctx.font = "bold 20px Arial";
-  ctx.fillText(`MEMBERS: #${memberCount}`, textX, 320);
-  ctx.beginPath();
-  ctx.moveTo(width - 250, 350);
-  ctx.lineTo(width - 50, 350);
-  ctx.lineTo(width - 50, 340);
-  ctx.strokeStyle = "rgba(255,255,255,0.3)";
-  ctx.lineWidth = 2;
+  ctx.strokeStyle = "rgba(236, 72, 153, 0.4)";
+  ctx.lineWidth = 1;
   ctx.stroke();
+
+  ctx.fillStyle = "#f9a8d4";
+  ctx.font = "bold 16px Courier New";
+  ctx.fillText("\u2661 WELCOME", textX + 18, 124);
+
+  // Username with gradient
+  ctx.font = "900 52px Arial";
+  var nameMetric = ctx.measureText(cleanName);
+  var nameGrad = ctx.createLinearGradient(textX, 0, textX + nameMetric.width, 0);
+  nameGrad.addColorStop(0, "#ffffff");
+  nameGrad.addColorStop(0.5, "#f9a8d4");
+  nameGrad.addColorStop(1, "#ec4899");
+  ctx.fillStyle = nameGrad;
+  ctx.fillText(cleanName, textX, 185);
+
+  // Group name
+  ctx.font = "22px Arial";
+  ctx.fillStyle = "#c4b5fd";
+  ctx.fillText("Bergabung ke: " + truncate(groupName, 25), textX, 225);
+
+  // Divider line
+  ctx.strokeStyle = "rgba(236, 72, 153, 0.2)";
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(textX, 255);
+  ctx.lineTo(textX + 300, 255);
+  ctx.stroke();
+
+  // Member count badge
+  var memberText = "Member ke-" + memberCount;
+  ctx.font = "bold 22px Arial";
+  var badgeWidth = ctx.measureText(memberText).width + 50;
+  ctx.fillStyle = "rgba(168, 85, 247, 0.15)";
+  drawRoundedRect(ctx, textX, 285, badgeWidth, 42, 21);
+  ctx.fill();
+  ctx.strokeStyle = "rgba(168, 85, 247, 0.4)";
+  ctx.lineWidth = 1;
+  ctx.stroke();
+
+  ctx.fillStyle = "#e9d5ff";
+  ctx.fillText(memberText, textX + 25, 312);
+
+  // ── Bottom branding: Rara Multi Device ─────────────────────
+  ctx.font = "italic 16px Arial";
+  ctx.fillStyle = "rgba(249, 168, 212, 0.6)";
+  ctx.fillText("\u273f Rara Multi Device \u273f", textX, 365);
+
+  // ── Decorative corner accents ──────────────────────────────
+  drawFlower(ctx, width - 70, 70, 40, "#ec4899", 0.08);
+  drawFlower(ctx, 70, height - 70, 35, "#a855f7", 0.08);
 
   return canvas.toBuffer("image/png");
+}
+
+/* ════════════════════════════════════════════════════════════
+ *  GOODBYE CARD — Dark Pink/Rose Theme (Rara Multi Device)
+ * ════════════════════════════════════════════════════════════ */
+async function createGoodbyeCardV4(username, avatarUrl, groupName, memberCount) {
+  const { createCanvas } = await _getCanvas();
+  const width = 1024;
+  const height = 500;
+  const canvas = createCanvas(width, height);
+  const ctx = canvas.getContext("2d");
+
+  // ── Background: dark burgundy to deep mauve ────────────────
+  var bg = ctx.createLinearGradient(0, 0, width, height);
+  bg.addColorStop(0, "#1a0510");
+  bg.addColorStop(0.4, "#2d0a1f");
+  bg.addColorStop(0.7, "#3d1025");
+  bg.addColorStop(1, "#1a0510");
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, width, height);
+
+  // ── Radial glow (rose, top-right) ──────────────────────────
+  var glow1 = ctx.createRadialGradient(width * 0.8, height * 0.2, 0, width * 0.8, height * 0.2, 400);
+  glow1.addColorStop(0, "rgba(244, 63, 94, 0.2)");
+  glow1.addColorStop(1, "rgba(244, 63, 94, 0)");
+  ctx.fillStyle = glow1;
+  ctx.fillRect(0, 0, width, height);
+
+  // ── Radial glow (purple, bottom-left) ──────────────────────
+  var glow2 = ctx.createRadialGradient(width * 0.2, height * 0.8, 0, width * 0.2, height * 0.8, 350);
+  glow2.addColorStop(0, "rgba(168, 85, 247, 0.12)");
+  glow2.addColorStop(1, "rgba(168, 85, 247, 0)");
+  ctx.fillStyle = glow2;
+  ctx.fillRect(0, 0, width, height);
+
+  // ── Decorative flowers (faded) ─────────────────────────────
+  drawFlower(ctx, 80, 80, 55, "#f43f5e", 0.04);
+  drawFlower(ctx, width - 100, 100, 65, "#a855f7", 0.03);
+  drawFlower(ctx, 60, height - 60, 45, "#e11d48", 0.03);
+  drawFlower(ctx, width - 80, height - 80, 60, "#c026d3", 0.03);
+
+  // ── Sparkles (dimmer) ──────────────────────────────────────
+  drawSparkles(ctx, width, height, 20, "rgba(251, 113, 133, 0.2)");
+
+  // ── Glass card ─────────────────────────────────────────────
+  var cardX = 40;
+  var cardY = 40;
+  var cardW = width - 80;
+  var cardH = height - 80;
+  ctx.fillStyle = "rgba(255, 255, 255, 0.03)";
+  ctx.strokeStyle = "rgba(244, 63, 94, 0.2)";
+  ctx.lineWidth = 2;
+  drawRoundedRect(ctx, cardX, cardY, cardW, cardH, 30);
+  ctx.fill();
+  ctx.stroke();
+
+  // ── Top accent bar (rose gradient) ─────────────────────────
+  var accentGrad = ctx.createLinearGradient(cardX, 0, cardX + cardW, 0);
+  accentGrad.addColorStop(0, "#f43f5e");
+  accentGrad.addColorStop(0.5, "#a855f7");
+  accentGrad.addColorStop(1, "#f43f5e");
+  ctx.fillStyle = accentGrad;
+  drawRoundedRect(ctx, cardX + 20, cardY + 15, cardW - 40, 4, 2);
+  ctx.fill();
+
+  // ── Avatar: circular with rose glow ring ───────────────────
+  var avatarSize = 200;
+  var avatarX = 220;
+  var avatarY = height / 2;
+
+  // Glow
+  ctx.save();
+  ctx.shadowColor = "#f43f5e";
+  ctx.shadowBlur = 45;
+  ctx.beginPath();
+  ctx.arc(avatarX, avatarY, avatarSize / 2, 0, Math.PI * 2);
+  ctx.fillStyle = "#000";
+  ctx.fill();
+  ctx.restore();
+
+  // Clip & draw avatar
+  ctx.save();
+  clipCircle(ctx, avatarX, avatarY, avatarSize / 2 - 8);
+  try {
+    var avatar = await loadAvatarSafe(avatarUrl);
+    if (avatar) {
+      ctx.drawImage(avatar, avatarX - avatarSize / 2 + 8, avatarY - avatarSize / 2 + 8, avatarSize - 16, avatarSize - 16);
+    }
+  } catch (e) {
+    ctx.fillStyle = "#2d0a1f";
+    ctx.fillRect(avatarX - avatarSize / 2 + 8, avatarY - avatarSize / 2 + 8, avatarSize - 16, avatarSize - 16);
+  }
+  ctx.restore();
+
+  // Rose ring border
+  ctx.strokeStyle = "#f43f5e";
+  ctx.lineWidth = 4;
+  ctx.beginPath();
+  ctx.arc(avatarX, avatarY, avatarSize / 2, 0, Math.PI * 2);
+  ctx.stroke();
+
+  // Inner thin ring
+  ctx.strokeStyle = "rgba(251, 113, 133, 0.4)";
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.arc(avatarX, avatarY, avatarSize / 2 - 6, 0, Math.PI * 2);
+  ctx.stroke();
+
+  // ── Text area ──────────────────────────────────────────────
+  var textX = 380;
+  var cleanName = truncate(username, 16);
+
+  // GOODBYE badge
+  ctx.fillStyle = "rgba(244, 63, 94, 0.12)";
+  drawRoundedRect(ctx, textX, 100, 170, 38, 19);
+  ctx.fill();
+  ctx.strokeStyle = "rgba(244, 63, 94, 0.35)";
+  ctx.lineWidth = 1;
+  ctx.stroke();
+
+  ctx.fillStyle = "#fda4af";
+  ctx.font = "bold 16px Courier New";
+  ctx.fillText("\u2661 GOODBYE", textX + 18, 124);
+
+  // Username with gradient
+  ctx.font = "900 52px Arial";
+  var nameMetric = ctx.measureText(cleanName);
+  var nameGrad = ctx.createLinearGradient(textX, 0, textX + nameMetric.width, 0);
+  nameGrad.addColorStop(0, "#ffffff");
+  nameGrad.addColorStop(0.5, "#fda4af");
+  nameGrad.addColorStop(1, "#f43f5e");
+  ctx.fillStyle = nameGrad;
+  ctx.fillText(cleanName, textX, 185);
+
+  // Group name
+  ctx.font = "22px Arial";
+  ctx.fillStyle = "#c4b5fd";
+  ctx.fillText("Meninggalkan: " + truncate(groupName, 25), textX, 225);
+
+  // Divider line
+  ctx.strokeStyle = "rgba(244, 63, 94, 0.15)";
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(textX, 255);
+  ctx.lineTo(textX + 300, 255);
+  ctx.stroke();
+
+  // Member count badge
+  var memberText = "Sisa " + memberCount + " member";
+  ctx.font = "bold 22px Arial";
+  var badgeWidth = ctx.measureText(memberText).width + 50;
+  ctx.fillStyle = "rgba(168, 85, 247, 0.12)";
+  drawRoundedRect(ctx, textX, 285, badgeWidth, 42, 21);
+  ctx.fill();
+  ctx.strokeStyle = "rgba(168, 85, 247, 0.3)";
+  ctx.lineWidth = 1;
+  ctx.stroke();
+
+  ctx.fillStyle = "#e9d5ff";
+  ctx.fillText(memberText, textX + 25, 312);
+
+  // ── Bottom branding ────────────────────────────────────────
+  ctx.font = "italic 16px Arial";
+  ctx.fillStyle = "rgba(253, 164, 175, 0.5)";
+  ctx.fillText("\u273f Rara Multi Device \u273f", textX, 365);
+
+  // ── Decorative corner accents ──────────────────────────────
+  drawFlower(ctx, width - 70, 70, 35, "#f43f5e", 0.06);
+  drawFlower(ctx, 70, height - 70, 30, "#a855f7", 0.05);
+
+  return canvas.toBuffer("image/png");
+}
+
+/* ════════════════════════════════════════════════════════════
+ *  LEGACY ALIASES (backward compatibility)
+ * ════════════════════════════════════════════════════════════ */
+async function createWideDiscordCard(username, avatarUrl, groupName, memberCount) {
+  return createWelcomeCardV4(username, avatarUrl, groupName, memberCount);
 }
 
 async function createGoodbyeCard(username, avatarUrl, groupName, memberCount) {
-  const { createCanvas } = await _getCanvas();
-  const width = 1024;
-  const height = 450;
-  const canvas = createCanvas(width, height);
-  const ctx = canvas.getContext("2d");
-
-  ctx.fillStyle = "#0f0505";
-  ctx.fillRect(0, 0, width, height);
-
-  const bgGlow = ctx.createRadialGradient(width, 0, 0, width, 0, 600);
-  bgGlow.addColorStop(0, "rgba(180, 0, 0, 0.4)");
-  bgGlow.addColorStop(1, "rgba(0,0,0,0)");
-  ctx.fillStyle = bgGlow;
-  ctx.fillRect(0, 0, width, height);
-
-  ctx.strokeStyle = "rgba(255, 50, 50, 0.08)";
-  ctx.lineWidth = 1;
-  const gridSize = 40;
-
-  for (let x = 0; x <= width; x += gridSize) {
-    ctx.beginPath();
-    ctx.moveTo(x, 0);
-    ctx.lineTo(x, height);
-    ctx.stroke();
-  }
-  for (let y = 0; y <= height; y += gridSize) {
-    ctx.beginPath();
-    ctx.moveTo(0, y);
-    ctx.lineTo(width, y);
-    ctx.stroke();
-  }
-
-  const cardX = 50;
-  const cardY = 50;
-  const cardW = width - 100;
-  const cardH = height - 100;
-
-  ctx.fillStyle = "rgba(50, 0, 0, 0.3)";
-  ctx.strokeStyle = "rgba(255, 0, 0, 0.3)";
-  ctx.lineWidth = 2;
-
-  ctx.beginPath();
-  ctx.roundRect(cardX, cardY, cardW, cardH, 30);
-  ctx.fill();
-  ctx.stroke();
-
-  const avatarSize = 180;
-  const centerX = 200;
-  const centerY = height / 2;
-
-  ctx.save();
-  ctx.shadowColor = "#ff0033";
-  ctx.shadowBlur = 50;
-  drawHexagonPath(ctx, centerX, centerY, avatarSize / 2 - 5);
-  ctx.fillStyle = "#000";
-  ctx.fill();
-  ctx.restore();
-
-  ctx.save();
-  drawHexagonPath(ctx, centerX, centerY, avatarSize / 2);
-  ctx.clip();
-
-  try {
-    const avatar = await loadAvatarSafe(avatarUrl);
-    if (avatar)
-      ctx.drawImage(
-        avatar,
-        centerX - avatarSize / 2,
-        centerY - avatarSize / 2,
-        avatarSize,
-        avatarSize,
-      );
-  } catch (e) {
-    ctx.fillStyle = "#300";
-    ctx.fillRect(
-      centerX - avatarSize / 2,
-      centerY - avatarSize / 2,
-      avatarSize,
-      avatarSize,
-    );
-  }
-  ctx.restore();
-
-  ctx.strokeStyle = "#ff0033";
-  ctx.lineWidth = 5;
-  drawHexagonPath(ctx, centerX, centerY, avatarSize / 2 + 5);
-  ctx.stroke();
-
-  const textX = 350;
-
-  ctx.fillStyle = "rgba(255, 0, 50, 0.15)";
-  ctx.beginPath();
-  ctx.roundRect(textX, 120, 160, 36, 18);
-  ctx.fill();
-
-  ctx.fillStyle = "#ff0033";
-  ctx.font = "bold 18px Courier New";
-  ctx.fillText("● DISCONNECTED", textX + 15, 144);
-
-  ctx.font = "900 60px Arial";
-  const nameMetric = ctx.measureText(username);
-
-  const gradient = ctx.createLinearGradient(
-    textX,
-    0,
-    textX + nameMetric.width,
-    0,
-  );
-  gradient.addColorStop(0, "#ffffff");
-  gradient.addColorStop(1, "#ff4d4d");
-
-  ctx.fillStyle = gradient;
-  ctx.fillText(username, textX, 220);
-
-  ctx.fillStyle = "#c0a0a0";
-  ctx.font = "24px Arial";
-  ctx.fillText(`Meninggalkan: ${groupName}`, textX, 260);
-
-  ctx.fillStyle = "#ffcccc";
-  ctx.font = "bold 20px Arial";
-  ctx.fillText(`REMAINING: #${memberCount}`, textX, 320);
-
-  ctx.beginPath();
-  ctx.moveTo(width - 250, 350);
-  ctx.lineTo(width - 50, 350);
-  ctx.lineTo(width - 50, 340);
-  ctx.strokeStyle = "rgba(255, 0, 0, 0.5)";
-  ctx.lineWidth = 2;
-  ctx.stroke();
-
-  return canvas.toBuffer("image/png");
-}
-
-async function createWelcomeCardV4(
-  username,
-  avatarUrl,
-  groupName,
-  memberCount,
-) {
-  const { createCanvas } = await _getCanvas();
-  const width = 1024;
-  const height = 450;
-  const canvas = createCanvas(width, height);
-  const ctx = canvas.getContext("2d");
-
-  // Background - Modern Dark Blue/Purple gradient
-  const bgGradient = ctx.createLinearGradient(0, 0, width, height);
-  bgGradient.addColorStop(0, "#0f0c29");
-  bgGradient.addColorStop(0.5, "#302b63");
-  bgGradient.addColorStop(1, "#24243e");
-  ctx.fillStyle = bgGradient;
-  ctx.fillRect(0, 0, width, height);
-
-  // Decorative circles
-  ctx.fillStyle = "rgba(255, 255, 255, 0.03)";
-  ctx.beginPath();
-  ctx.arc(width, 0, 300, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.beginPath();
-  ctx.arc(0, height, 200, 0, Math.PI * 2);
-  ctx.fill();
-
-  // Glassmorphism Card
-  ctx.save();
-  const cardX = 50,
-    cardY = 50,
-    cardW = width - 100,
-    cardH = height - 100;
-  drawRoundedRect(ctx, cardX, cardY, cardW, cardH, 30);
-  ctx.fillStyle = "rgba(255, 255, 255, 0.05)";
-  ctx.fill();
-  ctx.strokeStyle = "rgba(255, 255, 255, 0.1)";
-  ctx.lineWidth = 2;
-  ctx.stroke();
-  ctx.restore();
-
-  // Avatar
-  const avatarSize = 180;
-  const avatarX = 150;
-  const avatarY = height / 2;
-
-  ctx.save();
-  ctx.beginPath();
-  ctx.arc(avatarX, avatarY, avatarSize / 2, 0, Math.PI * 2);
-  ctx.closePath();
-  ctx.clip();
-
-  try {
-    const avatar = await loadAvatarSafe(avatarUrl);
-    if (avatar)
-      ctx.drawImage(
-        avatar,
-        avatarX - avatarSize / 2,
-        avatarY - avatarSize / 2,
-        avatarSize,
-        avatarSize,
-      );
-  } catch {
-    ctx.fillStyle = "#ccc";
-    ctx.fillRect(
-      avatarX - avatarSize / 2,
-      avatarY - avatarSize / 2,
-      avatarSize,
-      avatarSize,
-    );
-  }
-  ctx.restore();
-
-  // Avatar Border
-  ctx.beginPath();
-  ctx.arc(avatarX, avatarY, avatarSize / 2, 0, Math.PI * 2);
-  ctx.strokeStyle = "#00d2ff";
-  ctx.lineWidth = 5;
-  ctx.stroke();
-
-  // Text Info
-  const textStart = 300;
-
-  // Welcome Label
-  ctx.font = "bold 30px Arial";
-  ctx.fillStyle = "#00d2ff";
-  ctx.fillText("WELCOME", textStart, 160);
-
-  // Username
-  ctx.font = "bold 60px Arial";
-  ctx.fillStyle = "#ffffff";
-  const cleanUsername =
-    username.length > 15 ? username.substring(0, 15) + "..." : username;
-  ctx.fillText(cleanUsername, textStart, 230);
-
-  // Group Name
-  ctx.font = "30px Arial";
-  ctx.fillStyle = "#a0a0a0";
-  ctx.fillText("to " + groupName, textStart, 280);
-
-  // Member Count Tag
-  const tagY = 320;
-  const tagText = `Member #${memberCount}`;
-  ctx.font = "bold 24px Arial";
-  const tagWidth = ctx.measureText(tagText).width + 40;
-
-  drawRoundedRect(ctx, textStart, tagY, tagWidth, 40, 20);
-  ctx.fillStyle = "rgba(0, 210, 255, 0.15)";
-  ctx.fill();
-  ctx.strokeStyle = "#00d2ff";
-  ctx.lineWidth = 1;
-  ctx.stroke();
-
-  ctx.fillStyle = "#00d2ff";
-  ctx.fillText(tagText, textStart + 20, tagY + 28);
-
-  return canvas.toBuffer("image/png");
-}
-
-async function createGoodbyeCardV4(
-  username,
-  avatarUrl,
-  groupName,
-  memberCount,
-) {
-  const { createCanvas } = await _getCanvas();
-  const width = 1024;
-  const height = 450;
-  const canvas = createCanvas(width, height);
-  const ctx = canvas.getContext("2d");
-
-  // Background - Dark Red/Black gradient
-  const bgGradient = ctx.createLinearGradient(0, 0, width, height);
-  bgGradient.addColorStop(0, "#1a0b0b");
-  bgGradient.addColorStop(0.5, "#4a0e0e");
-  bgGradient.addColorStop(1, "#240b0b");
-  ctx.fillStyle = bgGradient;
-  ctx.fillRect(0, 0, width, height);
-
-  // Decorative circles
-  ctx.fillStyle = "rgba(255, 255, 255, 0.03)";
-  ctx.beginPath();
-  ctx.arc(width, 0, 300, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.beginPath();
-  ctx.arc(0, height, 200, 0, Math.PI * 2);
-  ctx.fill();
-
-  // Glassmorphism Card
-  ctx.save();
-  const cardX = 50,
-    cardY = 50,
-    cardW = width - 100,
-    cardH = height - 100;
-  drawRoundedRect(ctx, cardX, cardY, cardW, cardH, 30);
-  ctx.fillStyle = "rgba(255, 255, 255, 0.05)";
-  ctx.fill();
-  ctx.strokeStyle = "rgba(255, 50, 50, 0.1)";
-  ctx.lineWidth = 2;
-  ctx.stroke();
-  ctx.restore();
-
-  // Avatar
-  const avatarSize = 180;
-  const avatarX = 150;
-  const avatarY = height / 2;
-
-  ctx.save();
-  ctx.beginPath();
-  ctx.arc(avatarX, avatarY, avatarSize / 2, 0, Math.PI * 2);
-  ctx.closePath();
-  ctx.clip();
-
-  try {
-    const avatar = await loadAvatarSafe(avatarUrl);
-    if (avatar)
-      ctx.drawImage(
-        avatar,
-        avatarX - avatarSize / 2,
-        avatarY - avatarSize / 2,
-        avatarSize,
-        avatarSize,
-      );
-  } catch {
-    ctx.fillStyle = "#ccc";
-    ctx.fillRect(
-      avatarX - avatarSize / 2,
-      avatarY - avatarSize / 2,
-      avatarSize,
-      avatarSize,
-    );
-  }
-  ctx.restore();
-
-  // Avatar Border
-  ctx.beginPath();
-  ctx.arc(avatarX, avatarY, avatarSize / 2, 0, Math.PI * 2);
-  ctx.strokeStyle = "#ff3333";
-  ctx.lineWidth = 5;
-  ctx.stroke();
-
-  // Text Info
-  const textStart = 300;
-
-  // Goodbye Label
-  ctx.font = "bold 30px Arial";
-  ctx.fillStyle = "#ff3333";
-  ctx.fillText("GOODBYE", textStart, 160);
-
-  // Username
-  ctx.font = "bold 60px Arial";
-  ctx.fillStyle = "#ffffff";
-  const cleanUsername =
-    username.length > 15 ? username.substring(0, 15) + "..." : username;
-  ctx.fillText(cleanUsername, textStart, 230);
-  ctx.font = "30px Arial";
-  ctx.fillStyle = "#a0a0a0";
-  ctx.fillText("from " + groupName, textStart, 280);
-  const tagY = 320;
-  const tagText = `Remaining #${memberCount}`;
-  ctx.font = "bold 24px Arial";
-  const tagWidth = ctx.measureText(tagText).width + 40;
-
-  drawRoundedRect(ctx, textStart, tagY, tagWidth, 40, 20);
-  ctx.fillStyle = "rgba(255, 50, 50, 0.15)";
-  ctx.fill();
-  ctx.strokeStyle = "#ff3333";
-  ctx.lineWidth = 1;
-  ctx.stroke();
-
-  ctx.fillStyle = "#ff3333";
-  ctx.fillText(tagText, textStart + 20, tagY + 28);
-
-  return canvas.toBuffer("image/png");
+  return createGoodbyeCardV4(username, avatarUrl, groupName, memberCount);
 }
 
 export {

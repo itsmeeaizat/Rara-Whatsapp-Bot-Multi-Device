@@ -1,7 +1,4 @@
-/**
- * Putus - End relationship
- */
-
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { getDatabase } from '../../src/lib/rara-database.js'
 const pluginConfig = {
     name: 'putus',

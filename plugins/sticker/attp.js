@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { addExifToWebp } from '../../src/lib/rara-exif.js'
 import axios from 'axios'
 import config from '../../config.js'

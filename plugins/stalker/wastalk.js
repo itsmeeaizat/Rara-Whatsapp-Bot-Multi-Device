@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import moment from 'moment-timezone'
 import PhoneNum from 'awesome-phonenumber'
 import config from '../../config.js'

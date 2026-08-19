@@ -1,9 +1,10 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { getDatabase } from "../../src/lib/rara-database.js";
 /**
  * 🐺 WEREWOLF GAME
  * Social deduction game for WhatsApp
  *
- * Based on reference: RTXZY-MD-pro/lib/werewolf.js
+ 
  * Enhanced for RaraAI
  */
 import config from "../../config.js";

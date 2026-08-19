@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { RedNoteDL } from "../../src/scraper/rednote.js";
 
 const pluginConfig = {

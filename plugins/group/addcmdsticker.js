@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { getQuotedStickerHash, addStickerCommand, listStickerCommands } from '../../src/lib/rara-sticker-command.js'
 import { getPlugin } from '../../src/lib/rara-plugins.js'
 const pluginConfig = {

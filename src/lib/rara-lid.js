@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { jidDecode } from "rara";
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join } from "path";

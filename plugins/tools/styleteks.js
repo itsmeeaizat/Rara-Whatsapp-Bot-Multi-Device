@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 const pluginConfig = {
     name: 'styleteks',
     alias: ['fancytext', 'font', 'gaya', 'tulisan', 'fontstyle'],

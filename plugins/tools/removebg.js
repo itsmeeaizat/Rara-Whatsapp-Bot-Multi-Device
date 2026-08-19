@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { pixa } from '../../src/scraper/removebackground.js'
 import fs from 'fs'
 import path from 'path'

@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import axios from 'axios'
 import { getParticipantJid, resolveAnyLidToJid } from '../../src/lib/rara-lid.js'
 import * as timeHelper from '../../src/lib/rara-time.js'

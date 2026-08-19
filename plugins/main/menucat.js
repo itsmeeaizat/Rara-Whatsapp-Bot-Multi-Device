@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import * as botmodePlugin from "../group/botmode.js";
 import { getCasesByCategory } from "../../case/rara.js";
 import { prepareWAMessageMedia, generateWAMessageFromContent } from "rara";

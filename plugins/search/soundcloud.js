@@ -1,3 +1,4 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import { load } from "cheerio";
 import fetch from "node-fetch";
 

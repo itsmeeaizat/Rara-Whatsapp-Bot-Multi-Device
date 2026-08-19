@@ -1,8 +1,8 @@
+// RARA WHATSAPP MULTIDEVICE, AIZAT, MADE IN INDONESIA
 import te from "../../src/lib/rara-error.js";
 /**
  * @file plugins/owner/schedule.js
  * @description Command untuk mengelola scheduled messages
- * @author Lucky Archz, Keisya, hyuuSATAN
  * @version 1.1.0
  */
 
