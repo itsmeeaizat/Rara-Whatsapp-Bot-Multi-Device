@@ -61,25 +61,25 @@ function handler(m, { sock }) {
   }
 
   let text = `⏱️ *sᴛᴀᴛᴜs ᴊᴇᴅᴀ ᴘᴀɴᴇʟ*\n\n`;
-  text += ` 📊 *sᴛᴀᴛᴜs* \n`;
-  text += ` ${status}\n`;
-  text += ` ${statusDesc}\n`;
-  text += `\n\n`;
+  text += `╭┈┈⬡「 📊 *sᴛᴀᴛᴜs* 」\n`;
+  text += `┃ ${status}\n`;
+  text += `┃ ${statusDesc}\n`;
+  text += `╰┈┈⬡\n\n`;
 
-  text += ` ⚙️ *ᴋᴏɴꜰɪɢ* \n`;
-  text += ` ◦ Jeda: *${jedaMs === 0 ? "OFF" : formatTime(jedaMs)}*\n`;
-  text += ` ◦ Default: *5 menit*\n`;
+  text += `╭┈┈⬡「 ⚙️ *ᴋᴏɴꜰɪɢ* 」\n`;
+  text += `┃ ◦ Jeda: *${jedaMs === 0 ? "OFF" : formatTime(jedaMs)}*\n`;
+  text += `┃ ◦ Default: *5 menit*\n`;
 
   if (lastUsed > 0) {
     const lastUsedTime = timeHelper.fromTimestamp(lastUsed, "HH:mm:ss");
-    text += ` ◦ Last create: *${lastUsedTime}*\n`;
+    text += `┃ ◦ Last create: *${lastUsedTime}*\n`;
   }
 
   if (remaining > 0) {
-    text += ` ◦ Sisa: *${formatTime(remaining)}*\n`;
+    text += `┃ ◦ Sisa: *${formatTime(remaining)}*\n`;
   }
 
-  text += `\n\n`;
+  text += `╰┈┈⬡\n\n`;
 
   if (m.isOwner) {
     text += `> _Owner: gunakan \`${m.prefix}jedacreate\` untuk setting_`;

@@ -74,11 +74,11 @@ async function handler(m, { sock }) {
     await m.react("✅");
     return m.reply(
       `✅ *PLUGIN DIHAPUS*\n\n` +
-        `*DETAIL* \n` +
-        `File: \`${found.file}\`\n` +
-        `Folder: \`${found.folder}\`\n` +
-        `Unload: ${unloadResult.success ? "✅ Sukses" : "⚠️ Pending"}\n` +
-        `\n\n` +
+        `╭─〔 *DETAIL* 〕───⬣\n` +
+        `│ File: \`${found.file}\`\n` +
+        `│ Folder: \`${found.folder}\`\n` +
+        `│ Unload: ${unloadResult.success ? "✅ Sukses" : "⚠️ Pending"}\n` +
+        `╰───────⬣\n\n` +
         `Plugin sudah dihapus dan tidak aktif!`,
     );
   } catch (error) {

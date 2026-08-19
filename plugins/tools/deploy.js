@@ -130,14 +130,17 @@ Contoh:
         m.react('✅')
 
         await m.reply(
-`*DEPLOY SUCCESS*
-🌐 Nama     : ${name}
-☁️ Platform : Vercel
-📄 Type     : Static HTML
-⚙️ Status   : Building
-🔗 URL
-https://${domain}
-`
+`╭──「 *DEPLOY SUCCESS* 」
+│
+│ 🌐 Nama     : ${name}
+│ ☁️ Platform : Vercel
+│ 📄 Type     : Static HTML
+│ ⚙️ Status   : Building
+│
+│ 🔗 URL
+│ https://${domain}
+│
+╰────────────────`
         )
 
     } catch (error) {
@@ -149,9 +152,11 @@ https://${domain}
             error.message
 
         m.reply(
-`*DEPLOY FAILED*
-❌ ${err}
-`
+`╭──「 *DEPLOY FAILED* 」
+│
+│ ❌ ${err}
+│
+╰────────────────`
         )
     }
 }

@@ -63,12 +63,12 @@ async function handler(m, { sock }) {
         
         await m.reply(
             `🗑️ *ᴅᴇʟ ᴘʀᴇᴍɪᴜᴍ ᴀʟʟ*\n\n` +
-            ` 📋 *ʜᴀsɪʟ* \n` +
-            ` 👥 ᴛᴏᴛᴀʟ ᴍᴇᴍʙᴇʀ: \`${participants.length}\`\n` +
-            ` ✅ ᴅɪʜᴀᴘᴜs: \`${removedCount}\`\n` +
-            ` ⏭️ ʙᴜᴋᴀɴ ᴘʀᴇᴍɪᴜᴍ: \`${notPremCount}\`\n` +
-            ` 💎 sɪsᴀ ᴘʀᴇᴍɪᴜᴍ: \`${db.data.premium.length}\`\n` +
-            `\n\n` +
+            `╭┈┈⬡「 📋 *ʜᴀsɪʟ* 」\n` +
+            `┃ 👥 ᴛᴏᴛᴀʟ ᴍᴇᴍʙᴇʀ: \`${participants.length}\`\n` +
+            `┃ ✅ ᴅɪʜᴀᴘᴜs: \`${removedCount}\`\n` +
+            `┃ ⏭️ ʙᴜᴋᴀɴ ᴘʀᴇᴍɪᴜᴍ: \`${notPremCount}\`\n` +
+            `┃ 💎 sɪsᴀ ᴘʀᴇᴍɪᴜᴍ: \`${db.data.premium.length}\`\n` +
+            `╰┈┈⬡\n\n` +
             `> Grup: ${groupMeta.subject}`
         )
         

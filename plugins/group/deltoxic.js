@@ -45,10 +45,10 @@ async function handler(m, { sock }) {
     
     await m.reply(
         `✅ *ᴋᴀᴛᴀ ᴛᴏxɪᴄ ᴅɪʜᴀᴘᴜs*\n\n` +
-        ` 📋 *ᴅᴇᴛᴀɪʟ* \n` +
-        ` 📝 ᴋᴀᴛᴀ: \`${word}\`\n` +
-        ` 📊 sɪsᴀ: \`${toxicWords.length}\` kata\n` +
-        ``
+        `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
+        `┃ 📝 ᴋᴀᴛᴀ: \`${word}\`\n` +
+        `┃ 📊 sɪsᴀ: \`${toxicWords.length}\` kata\n` +
+        `╰┈┈⬡`
     )
 }
 

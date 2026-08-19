@@ -69,16 +69,16 @@ function handler(m, { sock }) {
         let modeList = ''
         for (const [key, val] of Object.entries(MODES)) {
             const isCurrent = key === currentMode ? ' ⬅️' : ''
-            modeList += `\`${m.prefix}botmode ${key}\`${isCurrent}\n`
-            modeList += `└ ${val.desc}\n`
+            modeList += `┃ \`${m.prefix}botmode ${key}\`${isCurrent}\n`
+            modeList += `┃ └ ${val.desc}\n`
         }
 
         return m.reply(
             `🔧 *ʙᴏᴛ ᴍᴏᴅᴇ*\n\n` +
             `> Mode saat ini: *${currentMode.toUpperCase()}* (${MODES[currentMode]?.name || 'Unknown'})\n` +
-            `\n📋 *ᴘɪʟɪʜᴀɴ* \n` +
+            `\n╭─「 📋 *ᴘɪʟɪʜᴀɴ* 」\n` +
             `${modeList}` +
-            `\n\n` +
+            `╰───────────────\n\n` +
             `*ꜰʟᴀɢ sᴛᴏʀᴇ:*\n` +
             `> \`${m.prefix}botmode store\` - Manual order\n\n` +
             `> _Pengaturan per-grup_`
@@ -88,6 +88,8 @@ function handler(m, { sock }) {
     if (!Object.keys(MODES).includes(mode)) {
         return m.reply(`❌ Mode tidak valid. Pilihan: \`${Object.keys(MODES).join(', ')}\``)
     }
+
+
 
     const newGroupData = {
         ...groupData,

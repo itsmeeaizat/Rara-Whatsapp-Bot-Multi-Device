@@ -103,14 +103,14 @@ function handler(m) {
         m.react('✅')
 
         let txt = `✅ *ɢᴄ sᴇʟʟᴇʀ ${serverLabel} ᴅɪᴛᴀᴍʙᴀʜᴋᴀɴ*\n\n`
-        txt += ` 📋 *ᴅᴇᴛᴀɪʟ* \n`
-        txt += ` 🖥️ sᴇʀᴠᴇʀ: \`${serverLabel}\`\n`
-        txt += ` 👥 ɢʀᴜᴘ: \`${m.groupName || m.chat}\`\n`
-        txt += ` 🔓 ᴀᴋsᴇs: \`1gb${version}\` - \`10gb${version}\`, \`unli${version}\`\n`
+        txt += `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n`
+        txt += `┃ 🖥️ sᴇʀᴠᴇʀ: \`${serverLabel}\`\n`
+        txt += `┃ 👥 ɢʀᴜᴘ: \`${m.groupName || m.chat}\`\n`
+        txt += `┃ 🔓 ᴀᴋsᴇs: \`1gb${version}\` - \`10gb${version}\`, \`unli${version}\`\n`
         if (current) {
-            txt += ` ⚠️ ᴘʀᴇᴠ: \`${current}\` (diganti)\n`
+            txt += `┃ ⚠️ ᴘʀᴇᴠ: \`${current}\` (diganti)\n`
         }
-        txt += `\n\n`
+        txt += `╰┈┈⬡\n\n`
         txt += `> Semua member grup ini sekarang bisa create server ${serverLabel}.`
         return m.reply(txt)
     }

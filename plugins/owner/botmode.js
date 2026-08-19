@@ -40,24 +40,24 @@ async function handler(m, { sock }) {
     const groupMode = groupData.botMode || null
     
     if (!mode) {
-        let txt = ` 🤖 *ʙᴏᴛ ᴍᴏᴅᴇ* \n`
-        txt += ` ㊗ ɢʟᴏʙᴀʟ: *${globalMode.toUpperCase()}*\n`
+        let txt = `╭┈┈⬡「 🤖 *ʙᴏᴛ ᴍᴏᴅᴇ* 」\n`
+        txt += `┃ ㊗ ɢʟᴏʙᴀʟ: *${globalMode.toUpperCase()}*\n`
         
         if (m.isGroup) {
-            txt += ` ㊗ ɢʀᴜᴘ: *${(groupMode || 'INHERIT').toUpperCase()}*\n`
+            txt += `┃ ㊗ ɢʀᴜᴘ: *${(groupMode || 'INHERIT').toUpperCase()}*\n`
         }
-        txt += `\n\n`
+        txt += `╰┈┈⬡\n\n`
         
-        txt += ` 📋 *ᴀᴠᴀɪʟᴀʙʟᴇ ᴍᴏᴅᴇs* \n`
+        txt += `╭┈┈⬡「 📋 *ᴀᴠᴀɪʟᴀʙʟᴇ ᴍᴏᴅᴇs* 」\n`
         
         const currentMode = m.isGroup ? (groupMode || globalMode) : globalMode
         
         for (const [key, desc] of Object.entries(MODE_DESCRIPTIONS)) {
             const isActive = key === currentMode ? ' ✅' : ''
-            txt += ` ㊗ *${key.toUpperCase()}*${isActive}\n`
-            txt += `   ${desc}\n`
+            txt += `┃ ㊗ *${key.toUpperCase()}*${isActive}\n`
+            txt += `┃   ${desc}\n`
         }
-        txt += `\n\n`
+        txt += `╰┈┈⬡\n\n`
         
         txt += `*ꜰʟᴀɢ sᴛᴏʀᴇ:*\n`
         txt += `> \`${m.prefix}botmode store\` - Manual order\n`

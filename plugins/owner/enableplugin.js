@@ -86,12 +86,12 @@ async function handler(m, { sock }) {
 
     await m.reply(
       `✅ *ᴘʟᴜɢɪɴ ᴇɴᴀʙʟᴇᴅ*\n\n` +
-        ` 📋 *ᴅᴇᴛᴀɪʟ* \n` +
-        ` 📦 Plugin: *${plugin.config.name}*\n` +
-        ` 📁 Category: *${category}*\n` +
-        ` 📄 File: *${file}*\n` +
-        ` 🟢 Status: *Enabled*\n` +
-        `\n\n` +
+        `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
+        `┃ 📦 Plugin: *${plugin.config.name}*\n` +
+        `┃ 📁 Category: *${category}*\n` +
+        `┃ 📄 File: *${file}*\n` +
+        `┃ 🟢 Status: *Enabled*\n` +
+        `╰┈┈⬡\n\n` +
         `> Restart bot atau gunakan hot reload untuk apply.`,
     );
   } catch (error) {

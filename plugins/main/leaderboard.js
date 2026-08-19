@@ -149,7 +149,7 @@ async function handler(m, { sock }) {
     
     let text = `🏆 *${title}* 🏆\n\n`
     text += `Peringkat para penguasa tertinggi saat ini!\n\n`
-    text += ` ${emoji} *RANKING* \n`
+    text += `╭┈┈⬡「 ${emoji} *RANKING* 」\n`
     
     const mentions = []
     
@@ -158,14 +158,14 @@ async function handler(m, { sock }) {
         const pct = totalField > 0 ? ((u[field] / totalField) * 100).toFixed(1) : 0
         const isMe = u.jid === senderJid ? " *(You)*" : ""
         
-        text += ` ${medal} @${u.jid.split('@')[0]}${isMe}\n`
-        text += `    └ ${formatValue(u)} (${pct}%)\n`
+        text += `┃ ${medal} @${u.jid.split('@')[0]}${isMe}\n`
+        text += `┃    └ ${formatValue(u)} (${pct}%)\n`
         
-        if (i < top10.length - 1) text += `\n`
+        if (i < top10.length - 1) text += `┃\n`
         mentions.push(u.jid.includes('@') ? u.jid : u.jid + "@s.whatsapp.net")
     })
     
-    text += `\n\n`
+    text += `╰┈┈┈┈┈┈┈┈⬡\n\n`
     
     const myRankIndex = users.findIndex(u => u.jid === senderJid)
     if (myRankIndex !== -1) {

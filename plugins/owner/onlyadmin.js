@@ -31,11 +31,11 @@ async function handler(m) {
         await m.react('✅')
         return m.reply(
             '✅ *ᴏɴʟʏᴀᴅᴍɪɴ ᴀᴋᴛɪꜰ*\n\n' +
-            ' 🔒 *ᴀᴋsᴇs* \n' +
-            ' ✅ Admin grup\n' +
-            ' ✅ Owner bot\n' +
-            ' ❌ Member biasa\n' +
-            '\n\n' +
+            '╭┈┈⬡「 🔒 *ᴀᴋsᴇs* 」\n' +
+            '┃ ✅ Admin grup\n' +
+            '┃ ✅ Owner bot\n' +
+            '┃ ❌ Member biasa\n' +
+            '╰┈┈⬡\n\n' +
             '> Gunakan `.onlyadmin off` untuk menonaktifkan'
         )
     }
@@ -52,12 +52,12 @@ async function handler(m) {
         await m.react('✅')
         return m.reply(
             '✅ *ᴏɴʟʏᴀᴅᴍɪɴ ᴀᴋᴛɪꜰ*\n\n' +
-            ' 🔒 *ᴀᴋsᴇs* \n' +
-            ' ✅ Admin grup\n' +
-            ' ✅ Owner bot\n' +
-            ' ✅ Private chat (semua)\n' +
-            ' ❌ Member biasa di grup\n' +
-            '\n\n' +
+            '╭┈┈⬡「 🔒 *ᴀᴋsᴇs* 」\n' +
+            '┃ ✅ Admin grup\n' +
+            '┃ ✅ Owner bot\n' +
+            '┃ ✅ Private chat (semua)\n' +
+            '┃ ❌ Member biasa di grup\n' +
+            '╰┈┈⬡\n\n' +
             '> Gunakan `.onlyadmin off` untuk menonaktifkan'
         )
     }
@@ -81,12 +81,12 @@ async function handler(m) {
         await m.react('✅')
         return m.reply(
             '✅ *ᴏɴʟʏᴀᴅᴍɪɴ ᴀᴋᴛɪꜰ*\n\n' +
-            ' 🔒 *ᴀᴋsᴇs* \n' +
-            ' ✅ Admin grup\n' +
-            ' ✅ Owner bot\n' +
-            ' ✅ Private chat (semua)\n' +
-            ' ❌ Member biasa di grup\n' +
-            ''
+            '╭┈┈⬡「 🔒 *ᴀᴋsᴇs* 」\n' +
+            '┃ ✅ Admin grup\n' +
+            '┃ ✅ Owner bot\n' +
+            '┃ ✅ Private chat (semua)\n' +
+            '┃ ❌ Member biasa di grup\n' +
+            '╰┈┈⬡'
         )
     }
 

@@ -70,7 +70,7 @@ function handler(m) {
 
     if (!text) {
         return m.reply(
-            ` 🌌 *ɪɴsᴛᴀʟʟ ᴛᴇᴍᴀ ɴᴇʙᴜʟᴀ* \n ㊗ ᴜsᴀɢᴇ: \`${m.prefix}installtemanebula <ip>|<password>\`\n\n\n> \`Contoh: ${m.prefix}installtemanebula 192.168.1.1|secretpass\``
+            `╭┈┈⬡「 🌌 *ɪɴsᴛᴀʟʟ ᴛᴇᴍᴀ ɴᴇʙᴜʟᴀ* 」\n┃ ㊗ ᴜsᴀɢᴇ: \`${m.prefix}installtemanebula <ip>|<password>\`\n╰┈┈⬡\n\n> \`Contoh: ${m.prefix}installtemanebula 192.168.1.1|secretpass\``
         )
     }
 
@@ -107,7 +107,7 @@ function handler(m) {
 
             m.react('✅')
             await m.reply(
-                ` ✅ *ᴛᴇᴍᴀ ɴᴇʙᴜʟᴀ* \n ㊗ sᴛᴀᴛᴜs: *Terinstall*\n ㊗ ɪᴘ: ${ipvps}\n\n\n> _Tema Nebula berhasil diinstall!_`
+                `╭┈┈⬡「 ✅ *ᴛᴇᴍᴀ ɴᴇʙᴜʟᴀ* 」\n┃ ㊗ sᴛᴀᴛᴜs: *Terinstall*\n┃ ㊗ ɪᴘ: ${ipvps}\n╰┈┈⬡\n\n> _Tema Nebula berhasil diinstall!_`
             )
         } catch (err) {
             console.error('[Nebula Install Error]', err)

@@ -127,17 +127,17 @@ async function handler(m, { sock }) {
         m.chat,
         `🐍🎲 *ULAR TANGGA*\n\n` +
         `Room berhasil dibuat!\n\n` +
-        ` 📋 *INFO ROOM* \n` +
-        ` 👑 Host: @${m.sender.split("@")[0]}\n` +
-        ` 👥 Players: 1/4\n` +
-        ` 🗺️ Map: ${mapConfig.name}\n` +
-        `\n\n` +
-        ` 🎮 *COMMANDS* \n` +
-        ` ➕ \`${prefix}ut join\` - Gabung\n` +
-        ` ▶️ \`${prefix}ut start\` - Mulai\n` +
-        ` ℹ️ \`${prefix}ut info\` - Info room\n` +
-        ` 🚪 \`${prefix}ut exit\` - Keluar\n` +
-        ``,
+        `╭┈┈⬡「 📋 *INFO ROOM* 」\n` +
+        `┃ 👑 Host: @${m.sender.split("@")[0]}\n` +
+        `┃ 👥 Players: 1/4\n` +
+        `┃ 🗺️ Map: ${mapConfig.name}\n` +
+        `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+        `╭┈┈⬡「 🎮 *COMMANDS* 」\n` +
+        `┃ ➕ \`${prefix}ut join\` - Gabung\n` +
+        `┃ ▶️ \`${prefix}ut start\` - Mulai\n` +
+        `┃ ℹ️ \`${prefix}ut info\` - Info room\n` +
+        `┃ 🚪 \`${prefix}ut exit\` - Keluar\n` +
+        `╰┈┈┈┈┈┈┈┈⬡`,
         "🎲 ROOM CREATED",
         "Ayo bergabung!",
         [m.sender],
@@ -181,12 +181,12 @@ async function handler(m, { sock }) {
         m.chat,
         `✅ *PLAYER BERGABUNG*\n\n` +
         `@${m.sender.split("@")[0]} masuk!\n\n` +
-        ` 👥 *PLAYERS* \n` +
+        `╭┈┈⬡「 👥 *PLAYERS* 」\n` +
         `${playerList
           .split("\n")
-          .map((l) => ` ${l}`)
+          .map((l) => `┃ ${l}`)
           .join("\n")}\n` +
-        `\n\n` +
+        `╰┈┈┈┈┈┈┈┈⬡\n\n` +
         `> Total: ${players.length}/4\n` +
         `> ${players.length >= 2 ? `✅ Bisa mulai! \`${prefix}ut start\`` : "🕕 Butuh 1 player lagi"}`,
         "👥 PLAYER JOINED",
@@ -245,12 +245,12 @@ async function handler(m, { sock }) {
             image: boardImage,
             caption:
               `🐍🎲 *PERMAINAN DIMULAI!*\n\n` +
-              ` 👥 *PLAYERS* \n` +
+              `╭┈┈⬡「 👥 *PLAYERS* 」\n` +
               `${playerList
                 .split("\n")
-                .map((l) => ` ${l}`)
+                .map((l) => `┃ ${l}`)
                 .join("\n")}\n` +
-              `\n\n` +
+              `╰┈┈┈┈┈┈┈┈⬡\n\n` +
               `> 🎯 Giliran: @${players[0].split("@")[0]}\n` +
               `> Ketik *kocok* untuk lempar dadu!`,
             contextInfo: utCtx(players),
@@ -262,12 +262,12 @@ async function handler(m, { sock }) {
           sock,
           m.chat,
           `🐍🎲 *PERMAINAN DIMULAI!*\n\n` +
-          ` 👥 *PLAYERS* \n` +
+          `╭┈┈⬡「 👥 *PLAYERS* 」\n` +
           `${playerList
             .split("\n")
-            .map((l) => ` ${l}`)
+            .map((l) => `┃ ${l}`)
             .join("\n")}\n` +
-          `\n\n` +
+          `╰┈┈┈┈┈┈┈┈⬡\n\n` +
           `> 🎯 Giliran: @${players[0].split("@")[0]}\n` +
           `> Ketik *kocok* untuk lempar dadu!`,
           "🎮 GAME STARTED",
@@ -301,18 +301,18 @@ async function handler(m, { sock }) {
         {
           text:
             `🐍🎲 *INFO ROOM*\n\n` +
-            ` 📋 *ROOM* \n` +
-            ` 👑 Host: @${ut[m.chat].host.split("@")[0]}\n` +
-            ` 📍 Status: ${ut[m.chat].status}\n` +
-            ` 🗺️ Map: ${ut[m.chat].mapName}\n` +
-            ` 👥 Players: ${players.length}/4\n` +
-            `\n\n` +
-            ` 👥 *PLAYERS* \n` +
+            `╭┈┈⬡「 📋 *ROOM* 」\n` +
+            `┃ 👑 Host: @${ut[m.chat].host.split("@")[0]}\n` +
+            `┃ 📍 Status: ${ut[m.chat].status}\n` +
+            `┃ 🗺️ Map: ${ut[m.chat].mapName}\n` +
+            `┃ 👥 Players: ${players.length}/4\n` +
+            `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+            `╭┈┈⬡「 👥 *PLAYERS* 」\n` +
             `${playerList
               .split("\n")
-              .map((l) => ` ${l}`)
+              .map((l) => `┃ ${l}`)
               .join("\n")}\n` +
-            `` +
+            `╰┈┈┈┈┈┈┈┈⬡` +
             (currentTurn
               ? `\n\n> 🎯 Giliran: @${currentTurn.split("@")[0]}`
               : ""),
@@ -399,19 +399,19 @@ async function handler(m, { sock }) {
       `🐍🎲 *ULAR TANGGA*\n\n` +
       `Permainan klasik yang penuh petualangan!\n` +
       `Naiki tangga, hindari ular, sampai ke 100!\n\n` +
-      ` 🎮 *COMMANDS* \n` +
-      ` 🎲 \`${prefix}ut create\` - Buat room\n` +
-      ` ➕ \`${prefix}ut join\` - Gabung room\n` +
-      ` ▶️ \`${prefix}ut start\` - Mulai game\n` +
-      ` ℹ️ \`${prefix}ut info\` - Info room\n` +
-      ` 🚪 \`${prefix}ut exit\` - Keluar\n` +
-      ` 🗑️ \`${prefix}ut delete\` - Hapus room\n` +
-      `\n\n` +
-      ` 🏆 *HADIAH* \n` +
-      ` 💰 +${WIN_REWARD.koin.toLocaleString()} Koin\n` +
-      ` ⭐ +${WIN_REWARD.exp.toLocaleString()} EXP\n` +
-      ` ⚡ +${WIN_REWARD.energi} Energi\n` +
-      `\n\n` +
+      `╭┈┈⬡「 🎮 *COMMANDS* 」\n` +
+      `┃ 🎲 \`${prefix}ut create\` - Buat room\n` +
+      `┃ ➕ \`${prefix}ut join\` - Gabung room\n` +
+      `┃ ▶️ \`${prefix}ut start\` - Mulai game\n` +
+      `┃ ℹ️ \`${prefix}ut info\` - Info room\n` +
+      `┃ 🚪 \`${prefix}ut exit\` - Keluar\n` +
+      `┃ 🗑️ \`${prefix}ut delete\` - Hapus room\n` +
+      `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+      `╭┈┈⬡「 🏆 *HADIAH* 」\n` +
+      `┃ 💰 +${WIN_REWARD.koin.toLocaleString()} Koin\n` +
+      `┃ ⭐ +${WIN_REWARD.exp.toLocaleString()} EXP\n` +
+      `┃ ⚡ +${WIN_REWARD.energi} Energi\n` +
+      `╰┈┈┈┈┈┈┈┈⬡\n\n` +
       `> Min 2 player, Max 4 player`,
       "🐍🎲 ULAR TANGGA",
       "Ayo main!",
@@ -537,11 +537,11 @@ async function answerHandler(m, sock) {
         caption:
           `🎉 *PEMENANG!*\n\n` +
           `${color} @${m.sender.split("@")[0]} sampai ke 100!\n\n` +
-          ` 🎁 *HADIAH* \n` +
-          ` 💰 +${WIN_REWARD.koin.toLocaleString()} Koin\n` +
-          ` ⭐ +${WIN_REWARD.exp.toLocaleString()} EXP\n` +
-          ` ⚡ +${WIN_REWARD.energi} Energi\n` +
-          `\n\n` +
+          `╭┈┈⬡「 🎁 *HADIAH* 」\n` +
+          `┃ 💰 +${WIN_REWARD.koin.toLocaleString()} Koin\n` +
+          `┃ ⭐ +${WIN_REWARD.exp.toLocaleString()} EXP\n` +
+          `┃ ⚡ +${WIN_REWARD.energi} Energi\n` +
+          `╰┈┈┈┈┈┈┈┈⬡\n\n` +
           `> GG WP! Main lagi? \`.ut create\``,
         contextInfo: utCtx([m.sender]),
       });
@@ -551,11 +551,11 @@ async function answerHandler(m, sock) {
         m.chat,
         `🎉 *PEMENANG!*\n\n` +
         `${color} @${m.sender.split("@")[0]} sampai ke 100!\n\n` +
-        ` 🎁 *HADIAH* \n` +
-        ` 💰 +${WIN_REWARD.koin.toLocaleString()} Koin\n` +
-        ` ⭐ +${WIN_REWARD.exp.toLocaleString()} EXP\n` +
-        ` ⚡ +${WIN_REWARD.energi} Energi\n` +
-        ``,
+        `╭┈┈⬡「 🎁 *HADIAH* 」\n` +
+        `┃ 💰 +${WIN_REWARD.koin.toLocaleString()} Koin\n` +
+        `┃ ⭐ +${WIN_REWARD.exp.toLocaleString()} EXP\n` +
+        `┃ ⚡ +${WIN_REWARD.energi} Energi\n` +
+        `╰┈┈┈┈┈┈┈┈⬡`,
         "🏆 WINNER!",
         `${name} menang!`,
         [m.sender],

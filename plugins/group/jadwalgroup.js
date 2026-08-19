@@ -55,7 +55,7 @@ async function handler(m, { sock, db }) {
         
         let scheduleInfo = `⏰ *ᴊᴀᴅᴡᴀʟ ɢʀᴜᴘ*
 
- 📋 *sᴛᴀᴛᴜs* 
+「 📋 *sᴛᴀᴛᴜs* 」
 🔓 ᴏᴘᴇɴ: *${openTime || 'Tidak aktif'}*
 🔒 ᴄʟᴏsᴇ: *${closeTime || 'Tidak aktif'}*
 
@@ -151,10 +151,11 @@ async function handler(m, { sock, db }) {
     
     const successMsg = `✅ *ᴊᴀᴅᴡᴀʟ ᴅɪsɪᴍᴘᴀɴ*
 
- ⏰ *sᴇᴛᴛɪɴɢ* 
- ㊗ ${emoji} ᴀᴋsɪ: *${actionText}*
- ㊗ ⏱️ ᴡᴀᴋᴛᴜ: *${formattedTime} WIB*
- ㊗ 📡 sᴛᴀᴛᴜs: *🟢 Aktif*
+╭┈┈⬡「 ⏰ *sᴇᴛᴛɪɴɢ* 」
+┃ ㊗ ${emoji} ᴀᴋsɪ: *${actionText}*
+┃ ㊗ ⏱️ ᴡᴀᴋᴛᴜ: *${formattedTime} WIB*
+┃ ㊗ 📡 sᴛᴀᴛᴜs: *🟢 Aktif*
+╰┈┈⬡
 
 > _Grup akan otomatis ${action === 'open' ? 'dibuka' : 'ditutup'}_
 > _setiap hari pada jam *${formattedTime}* WIB._`;

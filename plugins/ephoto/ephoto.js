@@ -120,7 +120,7 @@ async function handler(m, { sock }) {
         return m.reply(
             `🎨 *ᴇᴘʜᴏᴛᴏ ᴇꜰꜰᴇᴄᴛs*\n\n` +
             `> Buat efek text keren!\n\n` +
-            ` 📋 *ᴅᴀꜰᴛᴀʀ ᴇꜰᴇᴋ* \n${effectList}\n\n\n` +
+            `╭┈┈⬡「 📋 *ᴅᴀꜰᴛᴀʀ ᴇꜰᴇᴋ* 」\n${effectList}\n╰┈┈┈┈┈┈┈┈⬡\n\n` +
             `> *Contoh:* ${m.prefix}glitchtext Rara-AI`
         )
     }

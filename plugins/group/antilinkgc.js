@@ -19,6 +19,8 @@ const pluginConfig = {
     isBotAdmin: true
 }
 
+
+
 function handler(m, { sock }) {
     const db = getDatabase()
     const option = m.text?.toLowerCase()?.trim()
@@ -30,10 +32,10 @@ function handler(m, { sock }) {
         
         return m.reply(
             `🔗 *ᴀɴᴛɪʟɪɴᴋ ᴡᴀ*\n\n` +
-            ` 📋 *sᴛᴀᴛᴜs* \n` +
-            ` ◦ Status: *${status.toUpperCase()}*\n` +
-            ` ◦ Mode: *${mode.toUpperCase()}*\n` +
-            `\n\n` +
+            `╭┈┈⬡「 📋 *sᴛᴀᴛᴜs* 」\n` +
+            `┃ ◦ Status: *${status.toUpperCase()}*\n` +
+            `┃ ◦ Mode: *${mode.toUpperCase()}*\n` +
+            `╰┈┈⬡\n\n` +
             `*ᴅᴇᴛᴇᴋsɪ:*\n` +
             `> • chat.whatsapp.com (grup)\n` +
             `> • wa.me (kontak)\n` +

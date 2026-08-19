@@ -115,12 +115,12 @@ function handler(m, { sock }) {
         m.react('✅')
         return m.reply(
             `✅ *${roleLabel.toUpperCase()} ᴅɪᴛᴀᴍʙᴀʜᴋᴀɴ*\n\n` +
-            ` 📋 *ᴅᴇᴛᴀɪʟ* \n` +
-            ` 📱 ɴᴏᴍᴏʀ: \`${targetUser}\`\n` +
-            ` 🏷️ ʀᴏʟᴇ: \`${roleLabel}\`\n` +
-            ` 🖥️ sᴇʀᴠᴇʀ: \`${serverLabel}\`\n` +
-            ` 📊 ᴛᴏᴛᴀʟ: \`${listByRole(server, role).length}\` ${role}\n` +
-            ``
+            `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
+            `┃ 📱 ɴᴏᴍᴏʀ: \`${targetUser}\`\n` +
+            `┃ 🏷️ ʀᴏʟᴇ: \`${roleLabel}\`\n` +
+            `┃ 🖥️ sᴇʀᴠᴇʀ: \`${serverLabel}\`\n` +
+            `┃ 📊 ᴛᴏᴛᴀʟ: \`${listByRole(server, role).length}\` ${role}\n` +
+            `╰┈┈⬡`
         )
     }
     

@@ -38,7 +38,7 @@ function handler(m) {
 
     if (!text) {
         return m.reply(
-            ` 🎨 *ɪɴsᴛᴀʟʟ ᴛᴇᴍᴀ sᴛᴇʟʟᴀʀ* \n ㊗ ᴜsᴀɢᴇ: \`${m.prefix}installtemastellar <ip>|<password>\`\n\n\n> \`Contoh: ${m.prefix}installtemastellar 192.168.1.1|secretpass\``
+            `╭┈┈⬡「 🎨 *ɪɴsᴛᴀʟʟ ᴛᴇᴍᴀ sᴛᴇʟʟᴀʀ* 」\n┃ ㊗ ᴜsᴀɢᴇ: \`${m.prefix}installtemastellar <ip>|<password>\`\n╰┈┈⬡\n\n> \`Contoh: ${m.prefix}installtemastellar 192.168.1.1|secretpass\``
         )
     }
 
@@ -75,7 +75,7 @@ function handler(m) {
 
             m.react('✅')
             await m.reply(
-                ` ✅ *ᴛᴇᴍᴀ sᴛᴇʟʟᴀʀ* \n ㊗ sᴛᴀᴛᴜs: *Terinstall*\n ㊗ ɪᴘ: ${ipvps}\n\n\n> _Tema Stellar + dependencies berhasil diinstall!_`
+                `╭┈┈⬡「 ✅ *ᴛᴇᴍᴀ sᴛᴇʟʟᴀʀ* 」\n┃ ㊗ sᴛᴀᴛᴜs: *Terinstall*\n┃ ㊗ ɪᴘ: ${ipvps}\n╰┈┈⬡\n\n> _Tema Stellar + dependencies berhasil diinstall!_`
             )
         } catch (err) {
             m.react('☢')

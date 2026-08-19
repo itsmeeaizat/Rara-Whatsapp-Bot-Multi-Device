@@ -61,11 +61,11 @@ async function handler(m, { sock }) {
     else if (user.isPremium) userStatus = 'Premium'
     if (!energiEnabled) userStatus += ' (Energi OFF)'
     
-    let text = `* ⚡ ENERGI INFO *\n\n`
+    let text = `*〔 ⚡ ENERGI INFO 〕*\n\n`
 
-text += `* 👤 User * ${targetName}\n`
-text += `* ⚡ Energi * ${energiDisplay}\n`
-text += `* 💎 Status * ${userStatus}\n\n`
+text += `*〔 👤 User 〕* ${targetName}\n`
+text += `*〔 ⚡ Energi 〕* ${energiDisplay}\n`
+text += `*〔 💎 Status 〕* ${userStatus}\n\n`
     
     if (!energiEnabled) {
         text += `🔌 Sistem energi dinonaktifkan — semua command gratis`

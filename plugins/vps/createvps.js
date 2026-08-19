@@ -127,19 +127,19 @@ ssh_pwauth: True`,
         const ip = ipv4?.ip_address || 'Tidak tersedia'
         
         const detailTxt = `✅ *ᴠᴘs ʙᴇʀʜᴀsɪʟ ᴅɪʙᴜᴀᴛ*\n\n` +
-            `📋 *ᴅᴇᴛᴀɪʟ ᴠᴘs* \n` +
-            `🆔 \`ɪᴅ\`: *${dropletId}*\n` +
-            `🏷️ \`ʜᴏsᴛɴᴀᴍᴇ\`: *${hostname}*\n` +
-            `🌐 \`ɪᴘ\`: *${ip}*\n` +
-            `👤 \`ᴜsᴇʀ\`: *root*\n` +
-            `🔐 \`ᴘᴀss\`: *${password}*\n` +
-            `\n\n` +
-            `🧠 *sᴘᴇᴄ* \n` +
-            `💾 \`ʀᴀᴍ\`: *${spec.ram}*\n` +
-            `⚡ \`ᴄᴘᴜ\`: *${spec.cpu}*\n` +
-            `🌍 \`ʀᴇɢɪᴏɴ\`: *${region}*\n` +
-            `💿 \`ᴏs\`: *Ubuntu 22.04*\n` +
-            `\n\n` +
+            `╭─「 📋 *ᴅᴇᴛᴀɪʟ ᴠᴘs* 」\n` +
+            `┃ 🆔 \`ɪᴅ\`: *${dropletId}*\n` +
+            `┃ 🏷️ \`ʜᴏsᴛɴᴀᴍᴇ\`: *${hostname}*\n` +
+            `┃ 🌐 \`ɪᴘ\`: *${ip}*\n` +
+            `┃ 👤 \`ᴜsᴇʀ\`: *root*\n` +
+            `┃ 🔐 \`ᴘᴀss\`: *${password}*\n` +
+            `╰───────────────\n\n` +
+            `╭─「 🧠 *sᴘᴇᴄ* 」\n` +
+            `┃ 💾 \`ʀᴀᴍ\`: *${spec.ram}*\n` +
+            `┃ ⚡ \`ᴄᴘᴜ\`: *${spec.cpu}*\n` +
+            `┃ 🌍 \`ʀᴇɢɪᴏɴ\`: *${region}*\n` +
+            `┃ 💿 \`ᴏs\`: *Ubuntu 22.04*\n` +
+            `╰───────────────\n\n` +
             `> ⚠️ Simpan data ini baik-baik!`
         
         await sock.sendMessage(m.sender, { text: detailTxt })

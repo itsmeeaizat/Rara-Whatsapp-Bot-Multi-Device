@@ -63,22 +63,22 @@ async function handler(m, { sock }) {
         const mentions = onlineMembers
         
         let text = `📊 *ᴄᴇᴋ ᴏɴʟɪɴᴇ*\n\n`
-        text += ` 📋 *ɪɴꜰᴏ ɢʀᴜᴘ* \n`
-        text += ` 👥 ɴᴀᴍᴀ: *${groupMetadata.subject}*\n`
-        text += ` 👤 ᴛᴏᴛᴀʟ: \`${participants.length}\` member\n`
-        text += ` 🟢 ᴏɴʟɪɴᴇ: \`${onlineMembers.length}\` member\n`
-        text += `\n\n`
+        text += `╭┈┈⬡「 📋 *ɪɴꜰᴏ ɢʀᴜᴘ* 」\n`
+        text += `┃ 👥 ɴᴀᴍᴀ: *${groupMetadata.subject}*\n`
+        text += `┃ 👤 ᴛᴏᴛᴀʟ: \`${participants.length}\` member\n`
+        text += `┃ 🟢 ᴏɴʟɪɴᴇ: \`${onlineMembers.length}\` member\n`
+        text += `╰┈┈⬡\n\n`
         
         if (onlineMembers.length === 0) {
             text += `> _Tidak ada member yang terdeteksi online_\n`
             text += `> _Pastikan member telah membuka WA_`
         } else {
-            text += ` 🟢 *ᴍᴇᴍʙᴇʀ ᴏɴʟɪɴᴇ* \n`
+            text += `╭┈┈⬡「 🟢 *ᴍᴇᴍʙᴇʀ ᴏɴʟɪɴᴇ* 」\n`
             
             let count = 0
             for (const jid of onlineMembers) {
                 if (count >= 50) {
-                    text += ` ... dan ${onlineMembers.length - 50} member lainnya\n`
+                    text += `┃ ... dan ${onlineMembers.length - 50} member lainnya\n`
                     break
                 }
                 const number = jid.split('@')[0]
@@ -90,11 +90,11 @@ async function handler(m, { sock }) {
                 if (presences[jid] === 'composing') statusIcon = '⌨️'
                 if (presences[jid] === 'recording') statusIcon = '🎤'
                 
-                text += ` ${statusIcon} @${number}${adminBadge}\n`
+                text += `┃ ${statusIcon} @${number}${adminBadge}\n`
                 count++
             }
             
-            text += `\n\n`
+            text += `╰┈┈⬡\n\n`
             text += `> 🟢 Online | ⌨️ Mengetik | 🎤 Rekam Audio`
         }
         

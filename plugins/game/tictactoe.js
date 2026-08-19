@@ -350,13 +350,13 @@ async function answerHandler(m, sock) {
 // ==================== Helper ====================
 function renderBoard(arr) {
   const cells = arr.map((cell) => boardSymbols[String(cell)] || cell);
-  return `┌┬┬┐
- ${cells[0]}  ${cells[1]}  ${cells[2]} 
-├┼┼┤
- ${cells[3]}  ${cells[4]}  ${cells[5]} 
-├┼┼┤
- ${cells[6]}  ${cells[7]}  ${cells[8]} 
-└┴┴┘`;
+  return `┌───┬───┬───┐
+│ ${cells[0]} │ ${cells[1]} │ ${cells[2]} │
+├───┼───┼───┤
+│ ${cells[3]} │ ${cells[4]} │ ${cells[5]} │
+├───┼───┼───┤
+│ ${cells[6]} │ ${cells[7]} │ ${cells[8]} │
+└───┴───┴───┘`;
 }
 
 export { pluginConfig as config, handler, answerHandler }
