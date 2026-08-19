@@ -20,12 +20,29 @@ const pluginConfig = {
 }
 
 async function handler(m, { sock }) {
+    const botName = config.bot?.name || "Rara-AI"
+
+    const caption =
+        `╭─〔 🌾 *sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ* 〕\n` +
+        `┃\n` +
+        `┃ ➤ Halo kak *${m.pushName}* 👋\n` +
+        `┃\n` +
+        `┃ _Untuk asli dari bot ini, kamu_\n` +
+        `┃ _bisa dapatkan melalui link di bawah,_\n` +
+        `┃ _cari kata kunci *Rara Multi Device*_\n` +
+        `┃\n` +
+        `┃ 🏷 *Bot:* ${botName}\n` +
+        `┃ 👨‍💻 *Dev:* Aizat\n` +
+        `┃ 🇮🇩 *Made in Indonesia*\n` +
+        `┃\n` +
+        `┃ _💬 Link akan mengarahkan ke channel_\n` +
+        `┃ _Youtube kami_\n` +
+        `╰────────────────⬣`
+
     return await sock.sendMessage(m.chat, {
         image: getAssetBuffer("rara"),
-        caption: `🌾 Halo kak *${m.pushName}*
-        
-Untuk asli dari bot ini, kamu bisa dapatkan melalui link, nanti kamu tinggal cari kata kunci *Rara Multi Device*`,
-        footer: "💬 Link ini nanti akan mengarahkan kamu ke channel Youtube kami",
+        caption: caption,
+        footer: "Rara Multi Device",
         interactiveButtons: [
             {
                 name: "cta_url",

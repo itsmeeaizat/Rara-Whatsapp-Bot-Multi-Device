@@ -37,7 +37,7 @@ async function getDiskUsage() {
                     const free = parseInt(parts[1]);
                     const size = parseInt(parts[2]);
                     const used = size - free;
-                    return `💿 *Drive ${caption}*\nTotal: ${formatSize(size)}\nUsed: ${formatSize(used)}\nFree: ${formatSize(free)}\n`;
+                    return `┃ ➤ *Drive ${caption}*\n┃   Total: ${formatSize(size)}\n┃   Used: ${formatSize(used)}\n┃   Free: ${formatSize(free)}`;
                 }
                 return null;
             }).filter(Boolean).join('\n');
@@ -45,10 +45,10 @@ async function getDiskUsage() {
             const { stdout } = await execAsync('df -h /');
             const lines = stdout.trim().split('\n');
             const parts = lines[1].replace(/\s+/g, ' ').split(' ');
-            return `💿 *Disk Usage*\nTotal: ${parts[1]}\nUsed: ${parts[2]}\nFree: ${parts[3]}\nUse%: ${parts[4]}`;
+            return `┃ ➤ *Disk Usage*\n┃   Total: ${parts[1]}\n┃   Used: ${parts[2]}\n┃   Free: ${parts[3]}\n┃   Use%: ${parts[4]}`;
         }
     } catch (e) {
-        return '❌ Gagal mengambil info disk';
+        return '┃ ❌ Gagal mengambil info disk';
     }
 }
 
@@ -61,13 +61,15 @@ async function handler(m, { sock }) {
                 const totalMem = os.totalmem();
                 const freeMem = os.freemem();
                 const usedMem = totalMem - freeMem;
-                
-                const text = `💻 *RAM USAGE*\n\n` +
-                             `Total: ${formatSize(totalMem)}\n` +
-                             `Used: ${formatSize(usedMem)}\n` +
-                             `Free: ${formatSize(freeMem)}\n` +
-                             `Platform: ${os.platform()} (${os.arch()})`;
-                m.reply(text);
+                const pct = ((usedMem / totalMem) * 100).toFixed(1);
+
+                let txt = `╭─〔 💻 *ʀᴀᴍ ᴜsᴀɢᴇ* 〕\n`
+                txt += `┃ ➤ *Total:* ${formatSize(totalMem)}\n`
+                txt += `┃ ➤ *Dipakai:* ${formatSize(usedMem)} (${pct}%)\n`
+                txt += `┃ ➤ *Bebas:* ${formatSize(freeMem)}\n`
+                txt += `┃ ➤ *Platform:* ${os.platform()} (${os.arch()})\n`
+                txt += `╰────────────────⬣`
+                m.reply(txt);
             }
             break;
 
@@ -76,24 +78,28 @@ async function handler(m, { sock }) {
                 const model = cpus[0].model;
                 const speed = cpus[0].speed;
                 const cores = cpus.length;
-                
-                const text = `🖥️ *CPU INFO*\n\n` +
-                             `Model: ${model}\n` +
-                             `Speed: ${speed} MHz\n` +
-                             `Cores: ${cores} Core(s)\n` +
-                             `Uptime: ${formatSize(os.uptime())} (Wrong format, raw seconds)`; 
                 const uptime = os.uptime();
                 const hours = Math.floor(uptime / 3600);
                 const minutes = Math.floor((uptime % 3600) / 60);
                 const seconds = Math.floor(uptime % 60);
                 const uptimeStr = `${hours}h ${minutes}m ${seconds}s`;
-                m.reply(`🖥️ *CPU INFO*\n\nModel: ${model}\nSpeed: ${speed} MHz\nCores: ${cores}\nServer Uptime: ${uptimeStr}`);
+
+                let txt = `╭─〔 🖥️ *ᴄᴘᴜ ɪɴꜰᴏ* 〕\n`
+                txt += `┃ ➤ *Model:* ${model.trim()}\n`
+                txt += `┃ ➤ *Speed:* ${speed} MHz\n`
+                txt += `┃ ➤ *Cores:* ${cores} Core(s)\n`
+                txt += `┃ ➤ *Server Uptime:* ${uptimeStr}\n`
+                txt += `╰────────────────⬣`
+                m.reply(txt);
             }
             break;
 
             case 'disk': {
                 const diskInfo = await getDiskUsage();
-                m.reply(diskInfo);
+                let txt = `╭─〔 💿 *ᴅɪsᴋ ᴜsᴀɢᴇ* 〕\n`
+                txt += diskInfo + '\n'
+                txt += `╰────────────────⬣`
+                m.reply(txt);
             }
             break;
 
@@ -106,7 +112,13 @@ async function handler(m, { sock }) {
                 else if (latency < 500) speed = '⚡ Good';
                 else if (latency < 1000) speed = '🐢 Oke';
                 else speed = '🐌 Slow';
-                m.reply(`📶 *Pong!*\nLatency: ${latency}ms\nResponse: ${speed}`);
+
+                let txt = `╭─〔 📶 *ʟᴀᴛᴇɴᴄʏ* 〕\n`
+                txt += `┃ ➤ *Pong!* 🏓\n`
+                txt += `┃ ➤ *Latency:* ${latency}ms\n`
+                txt += `┃ ➤ *Response:* ${speed}\n`
+                txt += `╰────────────────⬣`
+                m.reply(txt);
             }
             break;
         }

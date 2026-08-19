@@ -32,13 +32,11 @@ function formatUptime(ms) {
   const hours = Math.floor((seconds % 86400) / 3600);
   const minutes = Math.floor((seconds % 3600) / 60);
   const secs = seconds % 60;
-
   const parts = [];
   if (days > 0) parts.push(`${days}d`);
   if (hours > 0) parts.push(`${hours}h`);
   if (minutes > 0) parts.push(`${minutes}m`);
   if (secs > 0 || parts.length === 0) parts.push(`${secs}s`);
-
   return parts.join(" ");
 }
 
@@ -55,41 +53,31 @@ async function handler(m, { sock, db, uptime, config: botConfig }) {
     const totalUsers = Object.keys(users).length;
     const totalGroups = Object.keys(groups).length;
     const premiumUsers = Object.values(users).filter((u) => u.premium).length;
+    const botName = botConfig?.bot?.name || "Rara-AI";
+    const version = botConfig?.bot?.version || "1.0.0";
 
-    const statsObj = {
-      bot: botConfig?.bot?.name || "Rara-AI",
-      version: `v${botConfig?.bot?.version || "1.0.0"}`,
-      uptime: formatUptime(uptime),
-      database: {
-        users: totalUsers,
-        premium: premiumUsers,
-        groups: totalGroups,
-      },
-      system: {
-        platform: `${os.platform()} ${os.arch()}`,
-        node: process.version,
-        cpuLoad: `${cpuUsage}%`,
-        ram: `${formatBytes(usedMem)} / ${formatBytes(totalMem)}`,
-        heap: `${formatBytes(memUsed.heapUsed)} / ${formatBytes(memUsed.heapTotal)}`,
-      },
-      updated: new Date().toLocaleTimeString("id-ID", {
-        timeZone: "Asia/Jakarta",
-      }),
-    };
+    let txt = `╭─〔 📊 *ʙᴏᴛ sᴛᴀᴛɪsᴛɪᴄs* 〕\n`
+    txt += `┃\n`
+    txt += `┃ 🤖 *Bot:* ${botName}\n`
+    txt += `┃ 🔑 *Versi:* v${version}\n`
+    txt += `┃ ⏱️ *Uptime:* ${formatUptime(uptime)}\n`
+    txt += `┃\n`
+    txt += `┃ 👥 *ᴜsᴇʀs*\n`
+    txt += `┃ ➤ Total: ${totalUsers}\n`
+    txt += `┃ ➤ Premium: ${premiumUsers}\n`
+    txt += `┃ ➤ Groups: ${totalGroups}\n`
+    txt += `┃\n`
+    txt += `┃ 🖥️ *sʏsᴛᴇᴍ*\n`
+    txt += `┃ ➤ Platform: ${os.platform()} ${os.arch()}\n`
+    txt += `┃ ➤ Node: ${process.version}\n`
+    txt += `┃ ➤ CPU Load: ${cpuUsage}%\n`
+    txt += `┃ ➤ RAM: ${formatBytes(usedMem)} / ${formatBytes(totalMem)}\n`
+    txt += `┃ ➤ Heap: ${formatBytes(memUsed.heapUsed)} / ${formatBytes(memUsed.heapTotal)}\n`
+    txt += `┃\n`
+    txt += `┃ _Updated: ${new Date().toLocaleTimeString("id-ID", { timeZone: "Asia/Jakarta" })}_\n`
+    txt += `╰────────────────⬣`
 
-    const table = [
-      "📊 Bot Statistics",
-      "Key | Value",
-      `Bot | ${statsObj.bot};;Version | ${statsObj.version};;Uptime | ${statsObj.uptime}`,
-      `Users | ${statsObj.database.users};;Premium | ${statsObj.database.premium};;Groups | ${statsObj.database.groups}`,
-      `Platform | ${statsObj.system.platform};;Node | ${statsObj.system.node};;CPU Load | ${statsObj.system.cpuLoad}`,
-      `RAM | ${statsObj.system.ram};;Heap | ${statsObj.system.heap};;Updated | ${statsObj.updated}`,
-    ];
-
-    await sock.sendTableV2(m.chat, table, m, {
-      title: "📊 Berikut ini adalah statistik dari bot kami",
-      footer: botConfig?.bot?.name,
-    });
+    await m.reply(txt);
   } catch (error) {
     m.reply(te(m.prefix, m.command, m.pushName));
   }
