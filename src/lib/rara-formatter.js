@@ -40,60 +40,56 @@ import * as timeHelper from './rara-time.js'
  */
 
 /**
- * Karakter untuk styling menu
+ * Karakter untuk styling menu Rara
  * @constant
  */
 const CHARS = {
   cornerTopLeft: "╭",
-  cornerTopRight: "╮",
   cornerBottomLeft: "╰",
-  cornerBottomRight: "╯",
-  horizontal: "─",
-  vertical: "│",
-  arrow: "➣",
+  dotted: "┈",
+  vertical: "┃",
   bullet: "◦",
-  star: "✦",
-  diamond: "◇",
+  floral: "❀",
   dot: "•",
-  check: "",
+  check: "✓",
   cross: "✗",
   line: "━",
 };
 
 /**
- * Emoji untuk berbagai kebutuhan
+ * Label pengganti emoji native (Rara aesthetic — no native emojis)
  * @constant
  */
 const EMOJIS = {
-  dashboard: "📊",
-  info: "ℹ️",
-  user: "👤",
-  bot: "🤖",
-  owner: "👑",
-  premium: "💎",
-  free: "🆓",
-  public: "🌐",
-  self: "🔒",
-  commands: "🖥️",
-  utilities: "🔧",
-  fun: "🎮",
-  group: "👥",
-  time: "⏰",
-  uptime: "⏱️",
-  version: "📌",
-  speed: "⚡",
-  limit: "📊",
-  status: "📋",
-  mode: "🔄",
-  name: "📝",
-  number: "📱",
-  developer: "👨‍💻",
-  total: "📈",
-  tip: "💡",
-  warning: "⚠️",
-  success: "✅",
-  error: "❌",
-  loading: "🕕",
+  dashboard: "",
+  info: "",
+  user: "",
+  bot: "",
+  owner: "",
+  premium: "",
+  free: "",
+  public: "",
+  self: "",
+  commands: "",
+  utilities: "",
+  fun: "",
+  group: "",
+  time: "",
+  uptime: "",
+  version: "",
+  speed: "",
+  limit: "",
+  status: "",
+  mode: "",
+  name: "",
+  number: "",
+  developer: "",
+  total: "",
+  tip: "",
+  warning: "",
+  success: "",
+  error: "",
+  loading: "",
 };
 
 /**
@@ -170,46 +166,44 @@ function formatFileSize(bytes) {
 }
 
 /**
- * Buat garis horizontal
+ * Buat garis dotted (┈)
  * @param {number} length - Panjang garis
- * @param {string} [char='─'] - Karakter untuk garis
+ * @param {string} [char] - Karakter untuk garis
  * @returns {string} String garis
  */
-function createLine(length = 20, char = CHARS.horizontal) {
+function createLine(length = 20, char = CHARS.dotted) {
   return char.repeat(length);
 }
 
 /**
- * Buat header box
+ * Buat header Rara bracket box
  * @param {string} title - Judul header
- * @param {number} [width=20] - Lebar box
+ * @param {number} [width=20] - Lebar box (unused, kept for compatibility)
  * @returns {string} Header string
  * @example
  * createHeader('DASHBOARD');
- * // "╭─「 DASHBOARD 」─────╮"
+ * // "╭┈❀ *DASHBOARD*"
  */
 function createHeader(title, width = 20) {
-  const titlePart = `${CHARS.horizontal}「 ${title} 」`;
-  const remainingWidth = Math.max(0, width - titlePart.length - 2);
-  return `${CHARS.cornerTopLeft}${titlePart}${createLine(remainingWidth)}${CHARS.cornerTopRight}`;
+  return `${CHARS.cornerTopLeft}${CHARS.dotted}${CHARS.floral} *${title}*`;
 }
 
 /**
- * Buat footer box
- * @param {number} [width=20] - Lebar box
+ * Buat footer Rara bracket box
+ * @param {number} [width=20] - Lebar box (unused, kept for compatibility)
  * @returns {string} Footer string
  * @example
- * createFooter(); // "╰────────────────────╯"
+ * createFooter(); // "╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀"
  */
 function createFooter(width = 20) {
-  return `${CHARS.cornerBottomLeft}${createLine(width)}${CHARS.cornerBottomRight}`;
+  return `${CHARS.cornerBottomLeft}${createLine(20)}${CHARS.floral}`;
 }
 
 /**
- * Buat baris body dengan bullet
+ * Buat baris body dengan bullet Rara
  * @param {string} text - Text untuk baris
- * @param {string} [prefix='│'] - Prefix baris
- * @param {string} [bullet='◦'] - Karakter bullet
+ * @param {string} [prefix] - Prefix baris
+ * @param {string} [bullet] - Karakter bullet
  * @returns {string} Formatted body line
  */
 function createBodyLine(text, prefix = CHARS.vertical, bullet = CHARS.bullet) {
@@ -217,19 +211,19 @@ function createBodyLine(text, prefix = CHARS.vertical, bullet = CHARS.bullet) {
 }
 
 /**
- * Buat baris dengan arrow
+ * Buat baris dengan label: value
  * @param {string} label - Label
  * @param {string} value - Nilai
- * @returns {string} Formatted line dengan arrow
+ * @returns {string} Formatted line
  * @example
- * createArrowLine('Nama', 'Rara-AI'); // "│ ➣ Nama: Rara-AI"
+ * createArrowLine('Nama', 'Rara-AI'); // "┃ ◦ Nama: Rara-AI"
  */
 function createArrowLine(label, value) {
-  return `${CHARS.vertical} ${CHARS.arrow} ${label}: ${value}`;
+  return `${CHARS.vertical} ${CHARS.bullet} ${label}: ${value}`;
 }
 
 /**
- * Buat dashboard info
+ * Buat dashboard info (Rara bracket box)
  * @param {DashboardData} data - Data untuk dashboard
  * @returns {string} Formatted dashboard string
  */
@@ -243,7 +237,7 @@ function createDashboard(data) {
   } = data;
 
   const lines = [
-    `${CHARS.cornerTopLeft}${CHARS.horizontal}「 ${EMOJIS.dashboard} DASHBOARD 」${CHARS.horizontal}`,
+    `${CHARS.cornerTopLeft}${CHARS.dotted}${CHARS.floral} *DASHBOARD*`,
     `${CHARS.vertical}`,
     createArrowLine("Nama", userName),
     createArrowLine("Status User", userStatus),
@@ -251,14 +245,14 @@ function createDashboard(data) {
     createArrowLine("Pengguna", totalUsers.toString()),
     createArrowLine("Limit", userLimit.toString()),
     `${CHARS.vertical}`,
-    `${CHARS.cornerBottomLeft}${createLine(24)}`,
+    `${CHARS.cornerBottomLeft}${createLine(20)}${CHARS.floral}`,
   ];
 
   return lines.join("\n");
 }
 
 /**
- * Buat info bot
+ * Buat info bot (Rara bracket box)
  * @param {BotInfoData} data - Data info bot
  * @returns {string} Formatted bot info string
  */
@@ -274,23 +268,24 @@ function createBotInfo(data) {
   } = data;
 
   const lines = [
-    `${CHARS.horizontal} *Informasi Bot* ${CHARS.horizontal}`,
-    ``,
-    `${CHARS.dot} Nama-Bot : ${botName} 🌿`,
-    `${CHARS.dot} Developer : ${developer}`,
-    `${CHARS.dot} Mode : ${mode.charAt(0).toUpperCase() + mode.slice(1)}`,
-    `${CHARS.dot} Version : ${version}`,
-    `${CHARS.dot} Uptime : ${uptime}`,
-    `${CHARS.dot} Total-Fitur : ${totalFeatures}`,
-    `${CHARS.dot} Platform : ${platform}`,
-    ``,
+    `${CHARS.cornerTopLeft}${CHARS.dotted}${CHARS.floral} *BOT INFO*`,
+    `${CHARS.vertical}`,
+    createArrowLine("Nama-Bot", botName),
+    createArrowLine("Developer", developer),
+    createArrowLine("Mode", mode.charAt(0).toUpperCase() + mode.slice(1)),
+    createArrowLine("Version", version),
+    createArrowLine("Uptime", uptime),
+    createArrowLine("Total-Fitur", totalFeatures.toString()),
+    createArrowLine("Platform", platform),
+    `${CHARS.vertical}`,
+    `${CHARS.cornerBottomLeft}${createLine(20)}${CHARS.floral}`,
   ];
 
   return lines.join("\n");
 }
 
 /**
- * Buat user profile
+ * Buat user profile (Rara bracket box)
  * @param {UserProfileData} data - Data user profile
  * @returns {string} Formatted user profile string
  */
@@ -303,31 +298,27 @@ function createUserProfile(data) {
     registeredAt = "",
   } = data;
 
-  const statusEmoji =
-    status === "Owner"
-      ? EMOJIS.owner
-      : status === "Premium"
-        ? EMOJIS.premium
-        : EMOJIS.free;
-
   const lines = [
-    `【 USER PROFILE 】`,
-    `${EMOJIS.name} Nama   : ${name}`,
-    `${EMOJIS.number} Nomor  : ${formatNumber(number)}`,
-    `${statusEmoji} Status : ${status}`,
-    `${EMOJIS.limit} Limit  : ${limit}`,
-    ``,
+    `${CHARS.cornerTopLeft}${CHARS.dotted}${CHARS.floral} *USER PROFILE*`,
+    `${CHARS.vertical}`,
+    createArrowLine("Nama", name),
+    createArrowLine("Nomor", formatNumber(number)),
+    createArrowLine("Status", status),
+    createArrowLine("Limit", limit.toString()),
   ];
 
   if (registeredAt) {
-    lines.splice(5, 0, `${EMOJIS.time} Daftar : ${registeredAt}`);
+    lines.splice(5, 0, createArrowLine("Daftar", registeredAt));
   }
+
+  lines.push(`${CHARS.vertical}`);
+  lines.push(`${CHARS.cornerBottomLeft}${createLine(20)}${CHARS.floral}`);
 
   return lines.join("\n");
 }
 
 /**
- * Buat status bot
+ * Buat status bot (Rara bracket box)
  * @param {Object} data - Data status bot
  * @returns {string} Formatted bot status string
  */
@@ -342,21 +333,23 @@ function createBotStatus(data) {
   } = data;
 
   const lines = [
-    `【 BOT STATUS 】`,
-    `${EMOJIS.bot} Bot      : ${botName}`,
-    `${EMOJIS.uptime} Uptime   : ${uptime}`,
-    `${EMOJIS.mode} Mode     : ${mode}`,
-    `${EMOJIS.commands} Commands : ${totalCommands} fitur`,
-    `${EMOJIS.user} Pengguna : ${totalUsers} users`,
-    `${EMOJIS.speed} Speed    : ${speed}`,
-    ``,
+    `${CHARS.cornerTopLeft}${CHARS.dotted}${CHARS.floral} *BOT STATUS*`,
+    `${CHARS.vertical}`,
+    createArrowLine("Bot", botName),
+    createArrowLine("Uptime", uptime),
+    createArrowLine("Mode", mode),
+    createArrowLine("Commands", `${totalCommands} fitur`),
+    createArrowLine("Pengguna", `${totalUsers} users`),
+    createArrowLine("Speed", speed),
+    `${CHARS.vertical}`,
+    `${CHARS.cornerBottomLeft}${createLine(20)}${CHARS.floral}`,
   ];
 
   return lines.join("\n");
 }
 
 /**
- * Buat kategori menu
+ * Buat kategori menu (Rara bracket box)
  * @param {MenuCategory} category - Data kategori
  * @param {string} prefix - Prefix command
  * @returns {string} Formatted category menu
@@ -368,17 +361,23 @@ function createCategoryMenu(category, prefix = config.command?.prefix || ".") {
     return "";
   }
 
-  const header = `${emoji} *${name}*`;
-  const commandList = commands
-    .map((cmd) => `${CHARS.vertical} ${prefix}${cmd}`)
-    .join("\n");
-  const footer = `${CHARS.cornerBottomLeft}${createLine(15)}`;
+  const lines = [
+    `${CHARS.cornerTopLeft}${CHARS.dotted}${CHARS.floral} *${name.toUpperCase()}*`,
+    `${CHARS.vertical}`,
+  ];
 
-  return `${header}\n${commandList}\n${footer}`;
+  for (const cmd of commands) {
+    lines.push(`${CHARS.vertical} ${CHARS.bullet} ${prefix}${cmd}`);
+  }
+
+  lines.push(`${CHARS.vertical}`);
+  lines.push(`${CHARS.cornerBottomLeft}${createLine(20)}${CHARS.floral}`);
+
+  return lines.join("\n");
 }
 
 /**
- * Buat kategori menu dengan sub-description
+ * Buat kategori menu dengan sub-description (Rara bracket box)
  * @param {Object} data - Data kategori menu
  * @returns {string} Formatted category section
  */
@@ -386,17 +385,19 @@ function createCategorySection(data) {
   const { emoji, title, command, description, prefix = "." } = data;
 
   const lines = [
-    `${emoji} *${title}*`,
-    `  Ketik: ${prefix}${command}`,
-    `  ${CHARS.vertical} ( ${description} )`,
-    ``,
+    `${CHARS.cornerTopLeft}${CHARS.dotted}${CHARS.floral} *${title.toUpperCase()}*`,
+    `${CHARS.vertical}`,
+    `${CHARS.vertical} ${CHARS.bullet} Ketik: ${prefix}${command}`,
+    `${CHARS.vertical} ${CHARS.bullet} ${description || ""}`,
+    `${CHARS.vertical}`,
+    `${CHARS.cornerBottomLeft}${createLine(20)}${CHARS.floral}`,
   ];
 
   return lines.join("\n");
 }
 
 /**
- * Buat main menu lengkap
+ * Buat main menu lengkap (Rara aesthetic)
  * @param {Object} data - Data untuk main menu
  * @returns {string} Formatted main menu string
  */
@@ -432,7 +433,7 @@ function createMainMenu(data) {
     );
   }
 
-  parts.push(`${EMOJIS.tip} *Tips:* Jika kamu tidak tahu cara menggunakan Bot`);
+  parts.push(`*Tips:* Jika kamu tidak tahu cara menggunakan Bot`);
   parts.push(`Kamu bisa tanya ke owner`);
   parts.push(`${CHARS.vertical} Mode: ${data.mode || "Public"}`);
 
@@ -440,26 +441,24 @@ function createMainMenu(data) {
 }
 
 /**
- * Buat command list untuk kategori tertentu
+ * Buat command list untuk kategori tertentu (Rara bracket box)
  * @param {string} categoryName - Nama kategori
  * @param {string[]} commands - Array command
  * @param {string} prefix - Prefix command
  * @returns {string} Formatted command list
  */
 function createCommandList(categoryName, commands, prefix = ".") {
-  const emoji = config.categoryEmojis?.[categoryName.toLowerCase()] || "📋";
-
   const lines = [
-    `${CHARS.cornerTopLeft}${CHARS.horizontal}❏ ${emoji} *${categoryName.toUpperCase()}*`,
-    "",
+    `${CHARS.cornerTopLeft}${CHARS.dotted}${CHARS.floral} *${categoryName.toUpperCase()}*`,
+    `${CHARS.vertical}`,
   ];
 
   for (const cmd of commands) {
-    lines.push(`${CHARS.vertical} ${prefix}${cmd}`);
+    lines.push(`${CHARS.vertical} ${CHARS.bullet} ${prefix}${cmd}`);
   }
 
-  lines.push("");
-  lines.push(`${CHARS.cornerBottomLeft}${createLine(20)}`);
+  lines.push(`${CHARS.vertical}`);
+  lines.push(`${CHARS.cornerBottomLeft}${createLine(20)}${CHARS.floral}`);
 
   return lines.join("\n");
 }
@@ -470,7 +469,7 @@ function createCommandList(categoryName, commands, prefix = ".") {
  * @returns {string} Formatted wait message
  */
 function createWaitMessage(message = "Tunggu sebentar...") {
-  return `${EMOJIS.loading} *${message}*`;
+  return `*${message}*`;
 }
 
 /**
@@ -479,7 +478,7 @@ function createWaitMessage(message = "Tunggu sebentar...") {
  * @returns {string} Formatted success message
  */
 function createSuccessMessage(message = "Berhasil!") {
-  return `${EMOJIS.success} *${message}*`;
+  return `*${message}*`;
 }
 
 /**
@@ -488,7 +487,7 @@ function createSuccessMessage(message = "Berhasil!") {
  * @returns {string} Formatted error message
  */
 function createErrorMessage(message = "Terjadi kesalahan!") {
-  return `${EMOJIS.error} *${message}*`;
+  return `*${message}*`;
 }
 
 /**
@@ -497,11 +496,11 @@ function createErrorMessage(message = "Terjadi kesalahan!") {
  * @returns {string} Formatted warning message
  */
 function createWarningMessage(message) {
-  return `${EMOJIS.warning} *${message}*`;
+  return `*${message}*`;
 }
 
 /**
- * Mendapatkan greeting berdasarkan waktu
+ * Mendapatkan greeting berdasarkan waktu (no native emojis)
  * @returns {string} Greeting message
  * @example
  * getTimeGreeting(); // "Selamat Pagi" (jika pagi hari)
@@ -509,10 +508,10 @@ function createWarningMessage(message) {
 function getTimeGreeting() {
   const hour = timeHelper.getHour();
 
-  if (hour >= 4 && hour < 10) return "Selamat Pagi 🌅";
-  if (hour >= 10 && hour < 15) return "Selamat Siang ☀️";
-  if (hour >= 15 && hour < 18) return "Selamat Sore 🌇";
-  return "Selamat Malam 🌙";
+  if (hour >= 4 && hour < 10) return "Selamat Pagi";
+  if (hour >= 10 && hour < 15) return "Selamat Siang";
+  if (hour >= 15 && hour < 18) return "Selamat Sore";
+  return "Selamat Malam";
 }
 
 /**
