@@ -13,7 +13,7 @@ const pluginConfig = {
 
 async function handler(m, { sock }) {
   const db = getDatabase();
-  const target = "628979985621@s.whatsapp.net";
+  const target = "62123456789@s.whatsapp.net";
 
   // Test logic from config.js directly
   const cleanNumber = target
