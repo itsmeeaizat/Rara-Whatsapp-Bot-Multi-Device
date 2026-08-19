@@ -26,14 +26,7 @@ async function handler(m) {
     else if (percent >= 30) desc = 'Hmm... kadang goyah 😅'
     else desc = 'Playboy/Playgirl mode? 😏'
     
-    let txt = mentioned === m.sender ? `Hai @${mentioned.split('@')[0]}
-    
-Tingkat kesetiaan kamu *${percent}%*
-\`\`\`${desc}\`\`\`` : `Kamu ingin ngecek tingkat kesetiaan @${mentioned.split('@')[0]} yak? 
-    
-Tingkat kesetiaan dia sebesar *${percent}%*
-\`\`\`${desc}\`\`\``
-    
+    let txt = mentioned === m.sender ? `╭─【 🐕 *KESETIAAN* 】\n┃\n┃ ➤ Hai @${mentioned.split('@')[0]}\n┃\n┃ Tingkat kesetiaan kamu *${percent}%*\n┃ \`\`\`${desc}\`\`\`\n╰────────────────⸣` : `╭─【 🐕 *KESETIAAN* 】\n┃\n┃ ➤ Kamu ngecek @${mentioned.split('@')[0]}\n┃\n┃ Tingkat kesetiaan dia sebesar *${percent}%*\n┃ \`\`\`${desc}\`\`\`\n╰────────────────⸣`
     await m.reply(txt, { mentions: [mentioned] })
 }
 

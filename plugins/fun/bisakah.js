@@ -47,8 +47,7 @@ async function handler(m) {
     
     const answer = answers[Math.floor(Math.random() * answers.length)];
     
-    await m.reply(`${m.body.slice(1)}?
-*${answer}*`);
+    await m.reply(`╭─【 💪 *BISAKAH* 】\n┃\n┃ ➤ ${m.body.slice(1)}?\n┃\n┃ *${answer}*\n╰────────────────⸣`);
 }
 
 export { pluginConfig as config, handler }
