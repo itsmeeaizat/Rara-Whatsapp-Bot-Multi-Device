@@ -38,72 +38,72 @@ async function handler(m, { sock }) {
     txt += `> V1: ${serverStatuses.v1} | V2: ${serverStatuses.v2} | V3: ${serverStatuses.v3} | V4: ${serverStatuses.v4} | V5: ${serverStatuses.v5}\n`
     txt += `> Role kamu: *${m.isOwner ? 'Bot Owner' : userRoleList}*\n\n`
     
-    txt += `╭─「 📦 *ᴄʀᴇᴀᴛᴇ sᴇʀᴠᴇʀ* 」\n`
+    txt += `╭┈❀ *ᴄʀᴇᴀᴛᴇ sᴇʀᴠᴇʀ*\n`
     for (const ver of VALID_SERVERS) {
-        txt += `┃ \`${prefix}1gb${ver}\` - \`${prefix}10gb${ver}\` | \`${prefix}unli${ver}\`\n`
+        txt += `┃ ◦ \`${prefix}1gb${ver}\` - \`${prefix}10gb${ver}\` | \`${prefix}unli${ver}\`\n`
     }
-    txt += `╰───────────────\n\n`
+    txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n`
     
-    txt += `╭─「 👑 *ᴏᴡɴᴇʀ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ* 」\n`
+    txt += `╭┈❀ *ᴏᴡɴᴇʀ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ*\n`
     for (const ver of VALID_SERVERS) {
-        txt += `┃ \`${prefix}addowner${ver}\` | \`${prefix}delowner${ver}\` | \`${prefix}listowner${ver}\`\n`
+        txt += `┃ ◦ \`${prefix}addowner${ver}\` | \`${prefix}delowner${ver}\` | \`${prefix}listowner${ver}\`\n`
     }
-    txt += `╰───────────────\n\n`
+    txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n`
     
-    txt += `╭─「 🎯 *ᴄᴇᴏ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ* 」\n`
+    txt += `╭┈❀ *ᴄᴇᴏ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ*\n`
     for (const ver of VALID_SERVERS) {
-        txt += `┃ \`${prefix}addceo${ver}\` | \`${prefix}delceo${ver}\` | \`${prefix}listceo${ver}\`\n`
+        txt += `┃ ◦ \`${prefix}addceo${ver}\` | \`${prefix}delceo${ver}\` | \`${prefix}listceo${ver}\`\n`
     }
-    txt += `╰───────────────\n\n`
+    txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n`
     
-    txt += `╭─「 👥 *ʀᴇsᴇʟʟᴇʀ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ* 」\n`
+    txt += `╭┈❀ *ʀᴇsᴇʟʟᴇʀ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ*\n`
     for (const ver of VALID_SERVERS) {
-        txt += `┃ \`${prefix}addreseller${ver}\` | \`${prefix}delreseller${ver}\` | \`${prefix}listreseller${ver}\`\n`
+        txt += `┃ ◦ \`${prefix}addreseller${ver}\` | \`${prefix}delreseller${ver}\` | \`${prefix}listreseller${ver}\`\n`
     }
-    txt += `╰───────────────\n\n`
+    txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n`
     
-    txt += `╭─「 🔐 *ᴀᴅᴍɪɴ ᴘᴀɴᴇʟ* 」\n`
+    txt += `╭┈❀ *ᴀᴅᴍɪɴ ᴘᴀɴᴇʟ*\n`
     for (const ver of VALID_SERVERS) {
-        txt += `┃ \`${prefix}cadmin${ver}\` | \`${prefix}deladmin${ver}\` | \`${prefix}listadmin${ver}\`\n`
+        txt += `┃ ◦ \`${prefix}cadmin${ver}\` | \`${prefix}deladmin${ver}\` | \`${prefix}listadmin${ver}\`\n`
     }
-    txt += `╰───────────────\n\n`
+    txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n`
     
-    txt += `╭─「 🖥️ *sᴇʀᴠᴇʀ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ* 」\n`
+    txt += `╭┈❀ 🖥️ *sᴇʀᴠᴇʀ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ*\n`
     for (const ver of VALID_SERVERS) {
-        txt += `┃ \`${prefix}listserver${ver}\` | \`${prefix}delserver${ver}\` | \`${prefix}serverinfo${ver}\`\n`
+        txt += `┃ ◦ \`${prefix}listserver${ver}\` | \`${prefix}delserver${ver}\` | \`${prefix}serverinfo${ver}\`\n`
     }
-    txt += `╰───────────────\n\n`
+    txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n`
     
-    txt += `╭─「 👤 *ᴜsᴇʀ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ* 」\n`
+    txt += `╭┈❀ *ᴜsᴇʀ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ*\n`
     for (const ver of VALID_SERVERS) {
-        txt += `┃ \`${prefix}listuser${ver}\`\n`
+        txt += `┃ ◦ \`${prefix}listuser${ver}\`\n`
     }
-    txt += `╰───────────────\n\n`
+    txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n`
     
-    txt += `╭─「 🏪 *ɢᴄ sᴇʟʟᴇʀ ᴘᴀɴᴇʟ* 」\n`
+    txt += `╭┈❀ *ɢᴄ sᴇʟʟᴇʀ ᴘᴀɴᴇʟ*\n`
     for (const ver of VALID_SERVERS) {
-        txt += `┃ \`${prefix}addgcseller${ver}\` | \`${prefix}resetgcseller${ver}\`\n`
+        txt += `┃ ◦ \`${prefix}addgcseller${ver}\` | \`${prefix}resetgcseller${ver}\`\n`
     }
-    txt += `╰───────────────\n\n`
+    txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n`
     
     const doConfig = config.digitalocean || {}
     const doHasToken = doConfig.token ? '✅' : '❌'
     
-    txt += `╭─「 🌊 *ᴅɪɢɪᴛᴀʟᴏᴄᴇᴀɴ ᴠᴘs* 」\n`
-    txt += `┃ Status: ${doHasToken} Token\n`
+    txt += `╭┈❀ *ᴅɪɢɪᴛᴀʟᴏᴄᴇᴀɴ ᴠᴘs*\n`
+    txt += `┃ ◦ Status: ${doHasToken} Token\n`
     txt += `┃\n`
-    txt += `┃ 📦 *ᴄʀᴇᴀᴛᴇ ᴠᴘs:*\n`
-    txt += `┃ \`${prefix}vps1g1c\` - 1GB/1CPU\n`
-    txt += `┃ \`${prefix}vps2g1c\` - 2GB/1CPU\n`
-    txt += `┃ \`${prefix}vps4g2c\` - 4GB/2CPU\n`
-    txt += `┃ \`${prefix}vps8g4c\` - 8GB/4CPU\n`
+    txt += `┃ ◦ *ᴄʀᴇᴀᴛᴇ ᴠᴘs:*\n`
+    txt += `┃ ◦ \`${prefix}vps1g1c\` - 1GB/1CPU\n`
+    txt += `┃ ◦ \`${prefix}vps2g1c\` - 2GB/1CPU\n`
+    txt += `┃ ◦ \`${prefix}vps4g2c\` - 4GB/2CPU\n`
+    txt += `┃ ◦ \`${prefix}vps8g4c\` - 8GB/4CPU\n`
     txt += `┃\n`
-    txt += `┃ 🔧 *ᴍᴀɴᴀɢᴇ:*\n`
-    txt += `┃ \`${prefix}listvps\` | \`${prefix}cekvps\` | \`${prefix}delvps\` | \`${prefix}sisavps\`\n`
+    txt += `┃ ◦ *ᴍᴀɴᴀɢᴇ:*\n`
+    txt += `┃ ◦ \`${prefix}listvps\` | \`${prefix}cekvps\` | \`${prefix}delvps\` | \`${prefix}sisavps\`\n`
     txt += `┃\n`
-    txt += `┃ ⚡ *ᴋᴏɴᴛʀᴏʟ:*\n`
-    txt += `┃ \`${prefix}turnon\` | \`${prefix}turnoff\` | \`${prefix}restartvps\`\n`
-    txt += `╰───────────────\n\n`
+    txt += `┃ ◦ *ᴋᴏɴᴛʀᴏʟ:*\n`
+    txt += `┃ ◦ \`${prefix}turnon\` | \`${prefix}turnoff\` | \`${prefix}restartvps\`\n`
+    txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n`
     
     txt += `> _Powered by ${config.info?.website || 'RaraAI'}_`
     

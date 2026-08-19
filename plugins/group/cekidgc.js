@@ -124,19 +124,19 @@ async function handler(m, { sock }) {
 
     const infoText =
       `── .✦ 𝗚𝗥𝗢𝗨𝗣 𝗜𝗡𝗙𝗢 ✦. ── 𝜗ৎ\n\n` +
-      `╭─〔 ${groupName} 〕───⬣\n` +
-      `│  ✦ ɴᴀᴍᴀ        : *${groupName}*\n` +
-      `│  ✦ ɪᴅ             : \`${groupJid}\`\n` +
-      `│  ✦ ᴍᴇᴍʙᴇʀ     : *${memberCount}*\n` +
-      `│  ✦ ᴀᴅᴍɪɴ        : *${adminCount}*\n` +
-      `│  ✦ ᴏᴡɴᴇʀ       : @${groupOwner.replace(/@.+/g, "")}\n` +
-      `│  ✦ ᴅɪʙᴜᴀᴛ       : *${createdAt}*\n` +
-      `│  ✦ ᴋᴏᴍᴜɴɪᴛᴀs : *${isCommunity}*\n` +
-      `│  ✦ ᴇᴅɪᴛ ɪɴꜰᴏ   : *${isRestrict}*\n` +
-      `│  ✦ ᴀɴɴᴏᴜɴᴄᴇ : *${isAnnounce}*\n` +
-      `│  ✦ ᴊᴏɪɴ ᴍᴏᴅᴇ  : *${joinMode}*\n` +
-      `│  ✦ ᴅᴇsᴋʀɪᴘsɪ  : ${descPreview}\n` +
-      `╰──────────────⬣\n\n` +
+      `╭┈❀ ${groupName}\n` +
+      `┃ ◦ ɴᴀᴍᴀ        : *${groupName}*\n` +
+      `┃ ◦ ɪᴅ             : \`${groupJid}\`\n` +
+      `┃ ◦ ᴍᴇᴍʙᴇʀ     : *${memberCount}*\n` +
+      `┃ ◦ ᴀᴅᴍɪɴ        : *${adminCount}*\n` +
+      `┃ ◦ ᴏᴡɴᴇʀ       : @${groupOwner.replace(/@.+/g, "")}\n` +
+      `┃ ◦ ᴅɪʙᴜᴀᴛ       : *${createdAt}*\n` +
+      `┃ ◦ ᴋᴏᴍᴜɴɪᴛᴀs : *${isCommunity}*\n` +
+      `┃ ◦ ᴇᴅɪᴛ ɪɴꜰᴏ   : *${isRestrict}*\n` +
+      `┃ ◦ ᴀɴɴᴏᴜɴᴄᴇ : *${isAnnounce}*\n` +
+      `┃ ◦ ᴊᴏɪɴ ᴍᴏᴅᴇ  : *${joinMode}*\n` +
+      `┃ ◦ ᴅᴇsᴋʀɪᴘsɪ  : ${descPreview}\n` +
+      `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
       `.☘︎ ݁˖ © ${config.bot?.name || "Rara-AI"}`;
 
     const buttons = [

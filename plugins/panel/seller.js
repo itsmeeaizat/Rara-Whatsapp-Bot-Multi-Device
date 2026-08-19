@@ -138,12 +138,12 @@ function handler(m, { sock }) {
             m.react('✅')
             return m.reply(
                 `✅ *sᴇʟʟᴇʀ ᴅɪᴛᴀᴍʙᴀʜᴋᴀɴ*\n\n` +
-                `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
-                `┃ 📱 ɴᴏᴍᴏʀ: \`${targetUser}\`\n` +
-                `┃ 🏷️ sᴛᴀᴛᴜs: \`Seller/Reseller\`\n` +
-                `┃ 🔓 ᴀᴋsᴇs: \`Create Server (1gb-10gb v1-v3)\`\n` +
-                `┃ 📊 ᴛᴏᴛᴀʟ: \`${pteroConfig.sellers.length}\` seller\n` +
-                `╰┈┈⬡${roleChanged}`
+                `╭┈❀ *ᴅᴇᴛᴀɪʟ*\n` +
+                `┃ ◦ ɴᴏᴍᴏʀ: \`${targetUser}\`\n` +
+                `┃ ◦ sᴛᴀᴛᴜs: \`Seller/Reseller\`\n` +
+                `┃ ◦ ᴀᴋsᴇs: \`Create Server (1gb-10gb v1-v3)\`\n` +
+                `┃ ◦ ᴛᴏᴛᴀʟ: \`${pteroConfig.sellers.length}\` seller\n` +
+                `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n${roleChanged}`
             )
         } else {
             pteroConfig.sellers = pteroConfig.sellers.filter(s => s !== targetUser)

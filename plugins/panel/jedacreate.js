@@ -55,10 +55,10 @@ function handler(m, { sock }) {
         const currentJeda = db.setting('panelCreateJeda') ?? DEFAULT_JEDA
         return m.reply(
             `⏱️ *ᴊᴇᴅᴀ ᴘᴀɴᴇʟ ᴄʀᴇᴀᴛᴇ*\n\n` +
-            `╭┈┈⬡「 📋 *ɪɴꜰᴏ* 」\n` +
+            `╭┈❀ *ɪɴꜰᴏ*\n` +
             `┃ ◦ Jeda saat ini: *${formatTime(currentJeda)}*\n` +
             `┃ ◦ Default: *5 menit*\n` +
-            `╰┈┈⬡\n\n` +
+            `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
             `> Gunakan: \`${m.prefix}jedacreate <waktu>\`\n` +
             `> Contoh: \`${m.prefix}jedacreate 5m\` (5 menit)\n` +
             `> Untuk nonaktifkan: \`${m.prefix}jedacreate 0\`\n\n` +
@@ -89,9 +89,9 @@ function handler(m, { sock }) {
     
     return m.reply(
         `✅ *ᴊᴇᴅᴀ ᴅɪsᴇᴛ*\n\n` +
-        `╭┈┈⬡「 ⏱️ *ᴋᴏɴꜰɪɢ* 」\n` +
+        `╭┈❀ ⏱️ *ᴋᴏɴꜰɪɢ*\n` +
         `┃ ◦ Jeda: *${formatTime(jedaMs)}*\n` +
-        `╰┈┈⬡\n\n` +
+        `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
         `> Setelah panel dibuat, SEMUA user harus menunggu ${formatTime(jedaMs)} sebelum bisa create lagi.`
     )
 }

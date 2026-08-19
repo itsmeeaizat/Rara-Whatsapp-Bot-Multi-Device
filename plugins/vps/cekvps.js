@@ -62,20 +62,20 @@ async function handler(m, { sock }) {
       droplet.status === "active" ? "🟢 Active" : "🔴 " + droplet.status;
 
     let txt = `📋 *ᴅᴇᴛᴀɪʟ ᴠᴘs*\n\n`;
-    txt += `╭─「 🖥️ *ɪɴꜰᴏ* 」\n`;
-    txt += `┃ 🆔 \`ɪᴅ\`: *${droplet.id}*\n`;
-    txt += `┃ 🏷️ \`ɴᴀᴍᴇ\`: *${droplet.name}*\n`;
-    txt += `┃ 📊 \`sᴛᴀᴛᴜs\`: *${status}*\n`;
-    txt += `┃ 🌐 \`ɪᴘᴠ4\`: *${ip}*\n`;
-    txt += `┃ 🌍 \`ɪᴘᴠ6\`: *${ipv6}*\n`;
-    txt += `╰───────────────\n\n`;
-    txt += `╭─「 🧠 *sᴘᴇᴄ* 」\n`;
-    txt += `┃ 💾 \`ʀᴀᴍ\`: *${droplet.memory} MB*\n`;
-    txt += `┃ ⚡ \`ᴄᴘᴜ\`: *${droplet.vcpus} vCPU*\n`;
-    txt += `┃ 💿 \`ᴅɪsᴋ\`: *${droplet.disk} GB*\n`;
-    txt += `┃ 🌏 \`ʀᴇɢɪᴏɴ\`: *${droplet.region?.name || droplet.region?.slug}*\n`;
-    txt += `┃ 💻 \`ᴏs\`: *${droplet.image?.distribution} ${droplet.image?.name}*\n`;
-    txt += `╰───────────────\n\n`;
+    txt += `╭┈❀ 🖥️ *ɪɴꜰᴏ*\n`;
+    txt += `┃ ◦ \`ɪᴅ\`: *${droplet.id}*\n`;
+    txt += `┃ ◦ \`ɴᴀᴍᴇ\`: *${droplet.name}*\n`;
+    txt += `┃ ◦ \`sᴛᴀᴛᴜs\`: *${status}*\n`;
+    txt += `┃ ◦ \`ɪᴘᴠ4\`: *${ip}*\n`;
+    txt += `┃ ◦ \`ɪᴘᴠ6\`: *${ipv6}*\n`;
+    txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n`;
+    txt += `╭┈❀ *sᴘᴇᴄ*\n`;
+    txt += `┃ ◦ \`ʀᴀᴍ\`: *${droplet.memory} MB*\n`;
+    txt += `┃ ◦ \`ᴄᴘᴜ\`: *${droplet.vcpus} vCPU*\n`;
+    txt += `┃ ◦ \`ᴅɪsᴋ\`: *${droplet.disk} GB*\n`;
+    txt += `┃ ◦ \`ʀᴇɢɪᴏɴ\`: *${droplet.region?.name || droplet.region?.slug}*\n`;
+    txt += `┃ ◦ \`ᴏs\`: *${droplet.image?.distribution} ${droplet.image?.name}*\n`;
+    txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n`;
     txt += `> 📅 Created: ${timeHelper.fromTimestamp(droplet.created_at, "DD MMMM YYYY HH:mm:ss")}`;
 
     await m.reply(txt);

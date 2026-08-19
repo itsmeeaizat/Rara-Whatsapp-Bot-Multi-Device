@@ -85,11 +85,11 @@ async function handler(m, { sock }) {
     m.react('🔇')
     await m.reply(
         `🔇 *MEMBER DIMUTE*\n\n` +
-        `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
-        `┃ 👤 ᴍᴇᴍʙᴇʀ: @${targetNumber}\n` +
-        `┃ 🔇 sᴛᴀᴛᴜs: \`Muted\`\n` +
-        `┃ 📊 ᴛᴏᴛᴀʟ ᴍᴜᴛᴇ: \`${mutedMembers.length}\` ᴍᴇᴍʙᴇʀ\n` +
-        `╰┈┈⬡\n\n` +
+        `╭┈❀ *ᴅᴇᴛᴀɪʟ*\n` +
+        `┃ ◦ ᴍᴇᴍʙᴇʀ: @${targetNumber}\n` +
+        `┃ ◦ sᴛᴀᴛᴜs: \`Muted\`\n` +
+        `┃ ◦ ᴛᴏᴛᴀʟ ᴍᴜᴛᴇ: \`${mutedMembers.length}\` ᴍᴇᴍʙᴇʀ\n` +
+        `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
         `> Semua pesan dari member ini akan dihapus otomatis\n` +
         `> Gunakan \`${m.prefix}unmutemember\` untuk unmute`,
         { mentions: [targetJid] }

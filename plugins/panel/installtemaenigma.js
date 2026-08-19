@@ -66,7 +66,7 @@ function handler(m) {
 
     if (!text) {
         return m.reply(
-            `╭┈┈⬡「 🎨 *ɪɴsᴛᴀʟʟ ᴛᴇᴍᴀ ᴇɴɪɢᴍᴀ* 」\n┃ ㊗ ᴜsᴀɢᴇ: \`${m.prefix}installtemaenigma <ip>|<password>|<link_wa>|<link_group>|<link_channel>\`\n╰┈┈⬡\n\n> Contoh:\n> \`${m.prefix}installtemaenigma 192.168.1.1|pass|https://wa.me/628xxx|https://t.me/group|https://t.me/channel\``
+            `╭┈❀ *ɪɴsᴛᴀʟʟ ᴛᴇᴍᴀ ᴇɴɪɢᴍᴀ*\n┃ ◦ ㊗ ᴜsᴀɢᴇ: \`${m.prefix}installtemaenigma <ip>|<password>|<link_wa>|<link_group>|<link_channel>\`\n╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n> Contoh:\n> \`${m.prefix}installtemaenigma 192.168.1.1|pass|https://wa.me/628xxx|https://t.me/group|https://t.me/channel\``
         )
     }
 
@@ -113,7 +113,7 @@ function handler(m) {
 
             m.react('✅')
             await m.reply(
-                `╭┈┈⬡「 ✅ *ᴛᴇᴍᴀ ᴇɴɪɢᴍᴀ* 」\n┃ ㊗ sᴛᴀᴛᴜs: *Terinstall*\n┃ ㊗ ɪᴘ: ${ipvps}\n╰┈┈⬡\n\n> _Tema Enigma + dependencies berhasil diinstall!_`
+                `╭┈❀ *ᴛᴇᴍᴀ ᴇɴɪɢᴍᴀ*\n┃ ◦ ㊗ sᴛᴀᴛᴜs: *Terinstall*\n┃ ◦ ㊗ ɪᴘ: ${ipvps}\n╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n> _Tema Enigma + dependencies berhasil diinstall!_`
             )
         } catch (err) {
             m.react('☢')

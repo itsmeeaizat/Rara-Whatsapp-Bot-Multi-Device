@@ -106,9 +106,9 @@ async function handler(m, { sock }) {
     return m.reply(
       `📦 *ɢᴇᴛ ᴘʟᴜɢɪɴ*\n\n` +
       `> Dapatkan source code plugin\n\n` +
-      `╭┈┈⬡「 📋 *ғᴏʀᴍᴀᴛ* 」\n` +
-      `┃ .getplugin <nama>\n` +
-      `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+      `╭┈❀ *ғᴏʀᴍᴀᴛ*\n` +
+      `┃ ◦ .getplugin <nama>\n` +
+      `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
       `*Contoh:*\n` +
       `> .getplugin menu\n` +
       `> .getplugin sticker\n` +

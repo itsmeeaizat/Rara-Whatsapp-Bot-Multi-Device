@@ -23,12 +23,9 @@ async function handler(m, { sock }) {
 
   if (!query) {
     return m.reply(
-      `╭┈┈⬡「 🎵 *ᴛɪᴋᴛᴏᴋ sᴇᴀʀᴄʜ* 」
-┃
-┃ ㊗ ᴜsᴀɢᴇ: \`${m.prefix}ptvsearch <query>\`
-┃
-╰┈┈⬡
-
+      `╭┈❀ *ᴛɪᴋᴛᴏᴋ sᴇᴀʀᴄʜ*
+┃ ◦ ┃ ◦ ㊗ ᴜsᴀɢᴇ: \`${m.prefix}ptvsearch <query>\`
+┃ ◦ ╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n
 > \`Contoh: ${m.prefix}ptvsearch anime\``,
     );
   }

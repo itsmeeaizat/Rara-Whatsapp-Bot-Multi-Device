@@ -66,7 +66,7 @@ function handler(m) {
 
     if (!text) {
         return m.reply(
-            `╭┈┈⬡「 🎨 *ɪɴsᴛᴀʟʟ ᴛᴇᴍᴀ ʙɪʟʟɪɴɢ* 」\n┃ ㊗ ᴜsᴀɢᴇ: \`${m.prefix}installtemabilling <ip>|<password>\`\n╰┈┈⬡\n\n> \`Contoh: ${m.prefix}installtemabilling 192.168.1.1|secretpass\``
+            `╭┈❀ *ɪɴsᴛᴀʟʟ ᴛᴇᴍᴀ ʙɪʟʟɪɴɢ*\n┃ ◦ ㊗ ᴜsᴀɢᴇ: \`${m.prefix}installtemabilling <ip>|<password>\`\n╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n> \`Contoh: ${m.prefix}installtemabilling 192.168.1.1|secretpass\``
         )
     }
 
@@ -107,7 +107,7 @@ function handler(m) {
 
             m.react('✅')
             await m.reply(
-                `╭┈┈⬡「 ✅ *ᴛᴇᴍᴀ ʙɪʟʟɪɴɢ* 」\n┃ ㊗ sᴛᴀᴛᴜs: *Terinstall*\n┃ ㊗ ɪᴘ: ${ipvps}\n╰┈┈⬡\n\n> _Tema Billing + dependencies berhasil diinstall!_`
+                `╭┈❀ *ᴛᴇᴍᴀ ʙɪʟʟɪɴɢ*\n┃ ◦ ㊗ sᴛᴀᴛᴜs: *Terinstall*\n┃ ◦ ㊗ ɪᴘ: ${ipvps}\n╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n> _Tema Billing + dependencies berhasil diinstall!_`
             )
         } catch (err) {
             m.react('☢')

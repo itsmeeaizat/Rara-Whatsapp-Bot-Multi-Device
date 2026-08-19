@@ -190,29 +190,29 @@ function buildConfirmationRewardBlock(user) {
   const rewards = getRegistrationRewards();
 
   if (user?.hasClaimedRegisterReward) {
-    return `╭┈┈⬡「 🎁 *ʙᴏɴᴜs* 」\n┃ Bonus daftar pertama sudah pernah diambil\n┃ Daftar ulang tidak mendapat reward lagi\n╰┈┈┈┈┈┈┈┈⬡`;
+    return `╭┈❀ *ʙᴏɴᴜs*\n┃ ◦ Bonus daftar pertama sudah pernah diambil\n┃ ◦ Daftar ulang tidak mendapat reward lagi\n╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n`;
   }
 
-  return `╭┈┈⬡「 🎁 *ʀᴇᴡᴀʀᴅs* 」\n┃ 💰 +${rewards.koin.toLocaleString("id-ID")} Koin\n┃ ⚡ +${rewards.energi} Energi\n┃ ⭐ +${rewards.exp.toLocaleString("id-ID")} EXP\n╰┈┈┈┈┈┈┈┈⬡`;
+  return `╭┈❀ *ʀᴇᴡᴀʀᴅs*\n┃ ◦ +${rewards.koin.toLocaleString("id-ID")} Koin\n┃ ◦ +${rewards.energi} Energi\n┃ ◦ +${rewards.exp.toLocaleString("id-ID")} EXP\n╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n`;
 }
 
 function buildSuccessRewardBlock(alreadyClaimedReward) {
   const rewards = getRegistrationRewards();
 
   if (alreadyClaimedReward) {
-    return `╭┈┈⬡「 🎁 *ʙᴏɴᴜs* 」\n┃ Bonus daftar sudah pernah diklaim\n┃ Tidak ada reward tambahan kali ini\n╰┈┈┈┈┈┈┈┈⬡`;
+    return `╭┈❀ *ʙᴏɴᴜs*\n┃ ◦ Bonus daftar sudah pernah diklaim\n┃ ◦ Tidak ada reward tambahan kali ini\n╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n`;
   }
 
-  return `╭┈┈⬡「 🎁 *ʀᴇᴡᴀʀᴅs* 」\n┃ 💰 +${rewards.koin.toLocaleString("id-ID")} Koin\n┃ ⚡ +${rewards.energi} Energi\n┃ ⭐ +${rewards.exp.toLocaleString("id-ID")} EXP\n╰┈┈┈┈┈┈┈┈⬡`;
+  return `╭┈❀ *ʀᴇᴡᴀʀᴅs*\n┃ ◦ +${rewards.koin.toLocaleString("id-ID")} Koin\n┃ ◦ +${rewards.energi} Energi\n┃ ◦ +${rewards.exp.toLocaleString("id-ID")} EXP\n╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n`;
 }
 
 function buildUserDataBlock(name, age, gender) {
   return (
-    `╭┈┈⬡「 📋 *ᴅᴀᴛᴀ* 」\n` +
-    `┃ 📛 Nama: *${name || "-"}*\n` +
-    `┃ 🎂 Umur: *${age ? `${age} tahun` : "-"}*\n` +
-    `┃ 👤 Gender: *${gender || "-"}*\n` +
-    `╰┈┈┈┈┈┈┈┈⬡`
+    `╭┈❀ *ᴅᴀᴛᴀ*\n` +
+    `┃ ◦ Nama: *${name || "-"}*\n` +
+    `┃ ◦ Umur: *${age ? `${age} tahun` : "-"}*\n` +
+    `┃ ◦ Gender: *${gender || "-"}*\n` +
+    `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n`
   );
 }
 
@@ -355,8 +355,8 @@ async function registrationAnswerHandler(m, sock) {
       m,
       `� *ᴘᴇʀᴛᴀɴʏᴀᴀɴ 3/4*\n\n` +
       `> Kamu cowo atau cewe?\n\n` +
-      `┃ � *Cowo* / *Cowok* / *Laki-laki* / *L*\n` +
-      `┃ � *Cewe* / *Cewek* / *Perempuan* / *P*\n\n` +
+      `┃ ◦ � *Cowo* / *Cowok* / *Laki-laki* / *L*\n` +
+      `┃ ◦ � *Cewe* / *Cewek* / *Perempuan* / *P*\n\n` +
       `📩 Reply pesan ini dengan jawabanmu`,
     );
 
@@ -520,8 +520,8 @@ async function registrationAnswerHandler(m, sock) {
         m,
         `👤 *ʀᴇᴠɪsɪ ɢᴇɴᴅᴇʀ*\n\n` +
         `> Pilih gender yang benar ya.\n\n` +
-        `┃ � *Cowo* / *Cowok* / *Laki-laki* / *L*\n` +
-        `┃ 👧 *Cewe* / *Cewek* / *Perempuan* / *P*\n\n` +
+        `┃ ◦ � *Cowo* / *Cowok* / *Laki-laki* / *L*\n` +
+        `┃ ◦ *Cewe* / *Cewek* / *Perempuan* / *P*\n\n` +
         `📩 Reply pesan ini dengan jawabanmu`,
       );
 

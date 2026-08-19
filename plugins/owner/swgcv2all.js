@@ -81,10 +81,11 @@ async function handler(m, { sock }) {
     return m.reply(
       `👋 *sᴡɢᴄᴠ2 ᴀʟʟ ɢʟᴏʙᴀʟ*\n\n` +
       `> Kirim pesan *Status Grup V2* ke SEMUA grup sekaligus.\n\n` +
-      `╭┈┈⬡「 📋 *ᴄᴀʀᴀ ᴘᴀᴋᴀɪ* 」\n` +
-      `┃ ${m.prefix}swgcv2all Halo semua!\n` +
-      `┃ atau reply gambar/video dengan caption ${m.prefix}swgcv2all\n` +
-      `╰┈┈┈┈┈┈┈┈⬡`
+      `╭┈❀ *ᴄᴀʀᴀ ᴘᴀᴋᴀɪ*\n` +
+      `┃ ◦ ${m.prefix}swgcv2all Halo semua!\n` +
+      `┃ ◦ atau reply gambar/video dengan caption ${m.prefix}swgcv2all\n` +
+      `╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀
+`
     );
   }
 
@@ -172,11 +173,11 @@ async function handler(m, { sock }) {
     await m.react("✅");
     await m.reply(
       `✅ *sᴡɢᴄᴠ2 ᴀʟʟ sᴇʟᴇsᴀɪ*\n\n` +
-      `╭┈┈⬡「 📊 *ʀᴇsᴜʟᴛ* 」\n` +
-      `┃ 🌐 Total Grup: *${groupIds.length}*\n` +
-      `┃ ✅ Sukses: *${successCount}*\n` +
-      `┃ ❌ Gagal: *${failCount}*\n` +
-      `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+      `╭┈❀ *ʀᴇsᴜʟᴛ*\n` +
+      `┃ ◦ Total Grup: *${groupIds.length}*\n` +
+      `┃ ◦ Sukses: *${successCount}*\n` +
+      `┃ ◦ Gagal: *${failCount}*\n` +
+      `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
       `> Broadcast Status Grup V2 (Ring Pink) berhasil dikirim ke semua grup!`
     );
 

@@ -54,11 +54,11 @@ async function handler(m, { sock }) {
 
   let txt = `🎉 *ᴅᴀɪʟʏ ᴄʟᴀɪᴍ sᴜᴋsᴇs*\n`;
   txt += `> ${greeting}, @${m.sender.split("@")[0]}\n\n`;
-  txt += `╭┈┈⬡「 🎁 *ʀᴇᴡᴀʀᴅs* 」\n`;
-  txt += `┃ 🚄 Exp: *+${expReward}*\n`;
-  txt += `┃ 💰 Koin: *+${moneyReward.toLocaleString("id-ID")}*\n`;
-  txt += `┃ 🥤 Potion: *+${potionReward}*\n`;
-  txt += `╰┈┈┈┈┈┈┈┈⬡\n\n`;
+  txt += `╭┈❀ *ʀᴇᴡᴀʀᴅs*\n`;
+  txt += `┃ ◦ Exp: *+${expReward}*\n`;
+  txt += `┃ ◦ Koin: *+${moneyReward.toLocaleString("id-ID")}*\n`;
+  txt += `┃ ◦ Potion: *+${potionReward}*\n`;
+  txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n`;
   txt += `> Jangan lupa claim lagi besok!`;
 
   await m.reply(txt, { mentions: [m.sender] });

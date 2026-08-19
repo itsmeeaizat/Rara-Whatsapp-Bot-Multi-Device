@@ -44,21 +44,19 @@ async function handler(m, { sock }) {
     const saluranName = config.saluran?.name || config.bot?.name || "Rara-AI";
 
     const caption = `🕌 *ᴊᴀᴅᴡᴀʟ sʜᴏʟᴀᴛ*
-╭┈┈⬡「 📍 *${lokasi}* 」
-┃ 📅 ${today}
-┃ 🗺️ ${daerah}
-╰┈┈⬡
-╭┈┈⬡「 ⏰ *ᴡᴀᴋᴛᴜ sʜᴏʟᴀᴛ* 」
-┃ 🌙 ɪᴍsᴀᴋ: \`${times.imsak}\`
-┃ 🌅 sᴜʙᴜʜ: \`${times.subuh}\`
-┃ ☀️ ᴛᴇʀʙɪᴛ: \`${times.terbit}\`
-┃ 🌤️ ᴅʜᴜʜᴀ: \`${times.dhuha}\`
-┃ 🌞 ᴅᴢᴜʜᴜʀ: \`${times.dzuhur}\`
-┃ 🌇 ᴀsʜᴀʀ: \`${times.ashar}\`
-┃ 🌆 ᴍᴀɢʜʀɪʙ: \`${times.maghrib}\`
-┃ 🌃 ɪsʏᴀ: \`${times.isya}\`
-╰┈┈⬡
-> _Sumber: myquran.com | Jangan lupa sholat ya! 🤲_`;
+╭┈❀ *${lokasi}*
+┃ ◦ ${today}
+┃ ◦ ${daerah}
+╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n╭┈❀ ⏰ *ᴡᴀᴋᴛᴜ sʜᴏʟᴀᴛ*
+┃ ◦ ɪᴍsᴀᴋ: \`${times.imsak}\`
+┃ ◦ sᴜʙᴜʜ: \`${times.subuh}\`
+┃ ◦ ᴛᴇʀʙɪᴛ: \`${times.terbit}\`
+┃ ◦ ᴅʜᴜʜᴀ: \`${times.dhuha}\`
+┃ ◦ ᴅᴢᴜʜᴜʀ: \`${times.dzuhur}\`
+┃ ◦ ᴀsʜᴀʀ: \`${times.ashar}\`
+┃ ◦ ᴍᴀɢʜʀɪʙ: \`${times.maghrib}\`
+┃ ◦ ɪsʏᴀ: \`${times.isya}\`
+╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n> _Sumber: myquran.com | Jangan lupa sholat ya! 🤲_`;
     const adzanUrl = "https://files.catbox.moe/z2bj5s.mp3";
     let adzanBuffer;
     try {

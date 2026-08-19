@@ -75,7 +75,7 @@ async function handleSession(m, sock) {
     session.step = "q2";
 
     await m.reply(
-      `✅ Detail tersimpan!\n┃ 🎁 ${title}\n┃ ⏱️ ${formatDuration(duration)}\n┃ 👥 ${winners} pemenang\n\n_Mengambil daftar grup..._`,
+      `✅ Detail tersimpan!\n┃ ◦ ${title}\n┃ ◦ ${formatDuration(duration)}\n┃ ◦ ${winners} pemenang\n\n_Mengambil daftar grup..._`,
     );
 
     try {
@@ -203,14 +203,14 @@ async function createGiveaway(session, sock, m) {
 
   const giveawayText =
     "🎉 *G I V E A W A Y*\n\n" +
-    `╭┈┈⬡「 📋 *ɪɴꜰᴏ* 」\n` +
-    `┃ 🎁 ᴛɪᴛʟᴇ: *${giveaway.title}*\n` +
-    `┃ 🏆 ʜᴀᴅɪᴀʜ: *${giveaway.prizeName}*\n` +
-    `┃ 👥 ᴘᴇᴍᴇɴᴀɴɢ: ${giveaway.winners}\n` +
-    `┃ ⏰ ʙᴇʀᴀᴋʜɪʀ: ${endTimeFormatted}\n` +
-    `┃ ⏱️ ᴅᴜʀᴀsɪ: ${remaining}\n` +
-    `┃ 🆔 ɪᴅ: \`${giveawayId}\`\n` +
-    `╰┈┈⬡\n\n` +
+    `╭┈❀ *ɪɴꜰᴏ*\n` +
+    `┃ ◦ ᴛɪᴛʟᴇ: *${giveaway.title}*\n` +
+    `┃ ◦ ʜᴀᴅɪᴀʜ: *${giveaway.prizeName}*\n` +
+    `┃ ◦ ᴘᴇᴍᴇɴᴀɴɢ: ${giveaway.winners}\n` +
+    `┃ ◦ ʙᴇʀᴀᴋʜɪʀ: ${endTimeFormatted}\n` +
+    `┃ ◦ ᴅᴜʀᴀsɪ: ${remaining}\n` +
+    `┃ ◦ ɪᴅ: \`${giveawayId}\`\n` +
+    `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
     `> Klik tombol *Join* untuk ikut giveaway!`;
 
   const joinButton = [
@@ -270,10 +270,11 @@ async function endGiveaway(giveawayId, sock, db) {
       text:
         `😔 *GIVEAWAY BERAKHIR*\n\n` +
         `Giveaway *${giveaway.title}* berakhir tanpa peserta.\n\n` +
-        `╭┈┈⬡「 📋 *ɪɴꜰᴏ* 」\n` +
-        `┃ 🆔 ɪᴅ: \`${giveawayId}\`\n` +
-        `┃ 👥 ᴘᴇsᴇʀᴛᴀ: 0\n` +
-        `╰┈┈⬡`,
+        `╭┈❀ *ɪɴꜰᴏ*\n` +
+        `┃ ◦ ɪᴅ: \`${giveawayId}\`\n` +
+        `┃ ◦ ᴘᴇsᴇʀᴛᴀ: 0\n` +
+        `╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀
+`,
       contextInfo: getCtx(),
     });
     return;
@@ -306,15 +307,15 @@ async function endGiveaway(giveawayId, sock, db) {
     {
       text:
         `🎊 *GIVEAWAY BERAKHIR!*\n\n` +
-        `╭┈┈⬡「 🏆 *ᴘᴇᴍᴇɴᴀɴɢ* 」\n` +
+        `╭┈❀ *ᴘᴇᴍᴇɴᴀɴɢ*\n` +
         `${winnerText}\n` +
-        `╰┈┈⬡\n\n` +
-        `╭┈┈⬡「 📋 *ɪɴꜰᴏ* 」\n` +
-        `┃ 🎁 ᴛɪᴛʟᴇ: *${giveaway.title}*\n` +
-        `┃ 🏆 ʜᴀᴅɪᴀʜ: *${giveaway.prizeName}*\n` +
-        `┃ 🆔 ɪᴅ: \`${giveawayId}\`\n` +
-        `┃ 👥 ᴘᴇsᴇʀᴛᴀ: ${giveaway.participants.length}\n` +
-        `╰┈┈⬡\n\n` +
+        `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
+        `╭┈❀ *ɪɴꜰᴏ*\n` +
+        `┃ ◦ ᴛɪᴛʟᴇ: *${giveaway.title}*\n` +
+        `┃ ◦ ʜᴀᴅɪᴀʜ: *${giveaway.prizeName}*\n` +
+        `┃ ◦ ɪᴅ: \`${giveawayId}\`\n` +
+        `┃ ◦ ᴘᴇsᴇʀᴛᴀ: ${giveaway.participants.length}\n` +
+        `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
         `> Hadiah dikirim ke private chat pemenang!`,
       contextInfo: { ...getCtx(), mentionedJid: giveaway.winnerList },
     },
@@ -342,14 +343,14 @@ async function endGiveaway(giveawayId, sock, db) {
           text:
             `🎉 *sᴇʟᴀᴍᴀᴛ!*\n\n` +
             `> Kamu memenangkan giveaway!\n\n` +
-            `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
-            `┃ 🎁 ᴛɪᴛʟᴇ: \`${giveaway.title}\`\n` +
-            `┃ 🏆 ʜᴀᴅɪᴀʜ: *${giveaway.prizeName}*\n` +
-            `┃ 🆔 ɪᴅ: \`${giveawayId}\`\n` +
-            `╰┈┈⬡\n\n` +
-            `╭┈┈⬡「 🎁 *ᴅᴇᴛᴀɪʟ ʜᴀᴅɪᴀʜ* 」\n` +
+            `╭┈❀ *ᴅᴇᴛᴀɪʟ*\n` +
+            `┃ ◦ ᴛɪᴛʟᴇ: \`${giveaway.title}\`\n` +
+            `┃ ◦ ʜᴀᴅɪᴀʜ: *${giveaway.prizeName}*\n` +
+            `┃ ◦ ɪᴅ: \`${giveawayId}\`\n` +
+            `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
+            `╭┈❀ *ᴅᴇᴛᴀɪʟ ʜᴀᴅɪᴀʜ*\n` +
             `${giveaway.prizeDetails || "Hubungi admin untuk detail"}\n` +
-            `╰┈┈⬡\n\n` +
+            `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
             `> _Ini informasi resmi dari bot._`,
           contextInfo: ctx,
         },
@@ -486,14 +487,14 @@ async function handler(m, { sock }) {
       text += "🟢 *Aktif:*\n";
       for (const g of active) {
         const endFmt = timeHelper.fromTimestamp(g.endTime, "DD/MM/YYYY HH:mm");
-        text += `┃ 🆔 \`${g.giveawayId}\` — ${g.title} (${g.participants.length} peserta, berakhir ${endFmt})\n`;
+        text += `┃ ◦ \`${g.giveawayId}\` — ${g.title} (${g.participants.length} peserta, berakhir ${endFmt})\n`;
       }
       text += "\n";
     }
     if (ended.length > 0) {
       text += "🔴 *Berakhir:*\n";
       for (const g of ended.slice(-5)) {
-        text += `┃ 🆔 \`${g.giveawayId}\` — ${g.title} (${g.winnerList?.length || 0} pemenang)\n`;
+        text += `┃ ◦ \`${g.giveawayId}\` — ${g.title} (${g.winnerList?.length || 0} pemenang)\n`;
       }
     }
 
@@ -542,14 +543,15 @@ async function handler(m, { sock }) {
     await sock.sendMessage(giveaway.chatId, {
       text:
         `🔄 *GIVEAWAY REROLL!*\n\n` +
-        `╭┈┈⬡「 🏆 *ᴘᴇᴍᴇɴᴀɴɢ ʙᴀʀᴜ* 」\n` +
+        `╭┈❀ *ᴘᴇᴍᴇɴᴀɴɢ ʙᴀʀᴜ*\n` +
         `${winnerText}\n` +
-        `╰┈┈⬡\n\n` +
-        `╭┈┈⬡「 📋 *ɪɴꜰᴏ* 」\n` +
-        `┃ 🎁 ᴛɪᴛʟᴇ: *${giveaway.title}*\n` +
-        `┃ 🏆 ʜᴀᴅɪᴀʜ: *${giveaway.prizeName}*\n` +
-        `┃ 🆔 ɪᴅ: \`${giveawayId}\`\n` +
-        `╰┈┈⬡`,
+        `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
+        `╭┈❀ *ɪɴꜰᴏ*\n` +
+        `┃ ◦ ᴛɪᴛʟᴇ: *${giveaway.title}*\n` +
+        `┃ ◦ ʜᴀᴅɪᴀʜ: *${giveaway.prizeName}*\n` +
+        `┃ ◦ ɪᴅ: \`${giveawayId}\`\n` +
+        `╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀
+`,
       contextInfo: { ...getCtx(), mentionedJid: giveaway.winnerList },
     });
 
@@ -561,14 +563,14 @@ async function handler(m, { sock }) {
           text:
             `🎉 *sᴇʟᴀᴍᴀᴛ!*\n\n` +
             `> Kamu memenangkan giveaway (reroll)!\n\n` +
-            `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
-            `┃ 🎁 ᴛɪᴛʟᴇ: \`${giveaway.title}\`\n` +
-            `┃ 🏆 ʜᴀᴅɪᴀʜ: *${giveaway.prizeName}*\n` +
-            `┃ 🆔 ɪᴅ: \`${giveawayId}\`\n` +
-            `╰┈┈⬡\n\n` +
-            `╭┈┈⬡「 🎁 *ᴅᴇᴛᴀɪʟ ʜᴀᴅɪᴀʜ* 」\n` +
+            `╭┈❀ *ᴅᴇᴛᴀɪʟ*\n` +
+            `┃ ◦ ᴛɪᴛʟᴇ: \`${giveaway.title}\`\n` +
+            `┃ ◦ ʜᴀᴅɪᴀʜ: *${giveaway.prizeName}*\n` +
+            `┃ ◦ ɪᴅ: \`${giveawayId}\`\n` +
+            `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
+            `╭┈❀ *ᴅᴇᴛᴀɪʟ ʜᴀᴅɪᴀʜ*\n` +
             `${giveaway.prizeDetails || "Hubungi admin untuk detail"}\n` +
-            `╰┈┈⬡\n\n` +
+            `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
             `> _Ini informasi resmi dari bot._`,
           contextInfo: ctx,
         });
@@ -580,10 +582,10 @@ async function handler(m, { sock }) {
   if (cmd === "giveaway") {
     await m.reply(
       "🎁 *GIVEAWAY MENU*\n\n" +
-        `┃ ${prefix}giveawaycreate — Buat giveaway\n` +
-        `┃ ${prefix}giveawaylist — Lihat daftar\n` +
-        `┃ ${prefix}giveawaydelete — Hapus giveaway\n` +
-        `┃ ${prefix}giveawayreroll — Reroll pemenang\n\n` +
+        `┃ ◦ ${prefix}giveawaycreate — Buat giveaway\n` +
+        `┃ ◦ ${prefix}giveawaylist — Lihat daftar\n` +
+        `┃ ◦ ${prefix}giveawaydelete — Hapus giveaway\n` +
+        `┃ ◦ ${prefix}giveawayreroll — Reroll pemenang\n\n` +
         `> Alias: ga, gacreate, galist, gadelete, gareroll`,
     );
     return;

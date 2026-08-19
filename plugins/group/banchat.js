@@ -40,11 +40,11 @@ async function handler(m, { sock }) {
             
             return sock.sendMessage(m.chat, {
                 text: `✅ *ɢʀᴜᴘ ᴅɪ-ᴜɴʙᴀɴ*\n\n` +
-                    `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
-                    `┃ 📛 ɢʀᴜᴘ: *${groupName}*\n` +
-                    `┃ 📊 sᴛᴀᴛᴜs: *✅ AKTIF*\n` +
-                    `┃ 👤 ᴜɴʙᴀɴ ᴏʟᴇʜ: @${m.sender.split('@')[0]}\n` +
-                    `╰┈┈⬡\n\n` +
+                    `╭┈❀ *ᴅᴇᴛᴀɪʟ*\n` +
+                    `┃ ◦ ɢʀᴜᴘ: *${groupName}*\n` +
+                    `┃ ◦ sᴛᴀᴛᴜs: *✅ AKTIF*\n` +
+                    `┃ ◦ ᴜɴʙᴀɴ ᴏʟᴇʜ: @${m.sender.split('@')[0]}\n` +
+                    `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
                     `> Semua member sekarang bisa menggunakan bot kembali.`,
                 mentions: [m.sender]
             }, { quoted: m })
@@ -61,11 +61,11 @@ async function handler(m, { sock }) {
         db.setGroup(m.chat, { ...groupData, isBanned: true })
         
         await m.reply(`🚫 *ɢʀᴜᴘ ᴅɪʙᴀɴ*\n\n` +
-                `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
-                `┃ 📛 ɢʀᴜᴘ: *${groupName}*\n` +
-                `┃ 📊 sᴛᴀᴛᴜs: *🔴 BANNED*\n` +
-                `┃ 👤 ʙᴀɴ ᴏʟᴇʜ: @${m.sender.split('@')[0]}\n` +
-                `╰┈┈⬡\n\n` +
+                `╭┈❀ *ᴅᴇᴛᴀɪʟ*\n` +
+                `┃ ◦ ɢʀᴜᴘ: *${groupName}*\n` +
+                `┃ ◦ sᴛᴀᴛᴜs: *🔴 BANNED*\n` +
+                `┃ ◦ ʙᴀɴ ᴏʟᴇʜ: @${m.sender.split('@')[0]}\n` +
+                `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
                 `> Member biasa tidak bisa menggunakan bot di grup ini.\n` +
                 `> Hanya owner yang bisa menggunakan bot.`, {  mentions: [m.sender] })
         

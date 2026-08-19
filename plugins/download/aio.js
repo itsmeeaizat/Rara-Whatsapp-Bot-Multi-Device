@@ -27,16 +27,16 @@ async function handler(m, { sock }) {
     return m.reply(
       `📥 *ᴀʟʟ ɪɴ ᴏɴᴇ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ*\n\n` +
         `> Download dari berbagai platform!\n\n` +
-        `╭┈┈⬡「 🌐 *ᴘʟᴀᴛꜰᴏʀᴍ* 」\n` +
-        `┃ • Instagram\n` +
-        `┃ • TikTok\n` +
-        `┃ • Facebook\n` +
-        `┃ • Twitter/X\n` +
-        `┃ • YouTube\n` +
-        `┃ • Pinterest\n` +
-        `┃ • CapCut\n` +
-        `┃ • Threads / Reddit\n` +
-        `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+        `╭┈❀ *ᴘʟᴀᴛꜰᴏʀᴍ*\n` +
+        `┃ ◦ • Instagram\n` +
+        `┃ ◦ • TikTok\n` +
+        `┃ ◦ • Facebook\n` +
+        `┃ ◦ • Twitter/X\n` +
+        `┃ ◦ • YouTube\n` +
+        `┃ ◦ • Pinterest\n` +
+        `┃ ◦ • CapCut\n` +
+        `┃ ◦ • Threads / Reddit\n` +
+        `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
         `> *Contoh:* ${m.prefix}aio https://instagram.com/p/xxx`,
     );
   }

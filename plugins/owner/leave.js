@@ -64,10 +64,10 @@ async function handler(m, { sock }) {
   } else {
     return m.reply(
       `🚪 *ʟᴇᴀᴠᴇ ɢʀᴜᴘ*\n\n` +
-        `╭┈┈⬡「 📋 *ᴄᴀʀᴀ ᴘᴀᴋᴀɪ* 」\n` +
+        `╭┈❀ *ᴄᴀʀᴀ ᴘᴀᴋᴀɪ*\n` +
         `┃ ◦ Di grup: \`.leave\`\n` +
         `┃ ◦ Via link: \`.leave <link>\`\n` +
-        `╰┈┈⬡\n\n` +
+        `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
         `\`Contoh: ${m.prefix}leave https://chat.whatsapp.com/xxx\``,
     );
   }

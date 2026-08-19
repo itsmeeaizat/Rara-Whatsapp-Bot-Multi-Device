@@ -97,11 +97,13 @@ function toSmallCaps(text) {
     .join("");
 }
 function createBracketBox(emoji, title, lines = []) {
-  let text = `╭─〔 ${emoji} \`${title}\`\n`;
+  let text = "\u256d\u2508\u2740 *" + toSmallCaps(title) + "*\n";
+  text += "\u2503\n";
   for (const line of lines) {
-    text += `┃ *${toSmallCaps(line)}*\n`;
+    text += "\u2503 \u25e6 " + toSmallCaps(line) + "\n";
   }
-  text += `╰─⬣\n\n`;
+  text += "\u2503\n";
+  text += "\u2570\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2740\n\n";
   return text;
 }
 function getCommandSymbols(cmdName) {

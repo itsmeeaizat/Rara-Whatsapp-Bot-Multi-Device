@@ -195,12 +195,12 @@ async function handler(m, { sock }) {
         mimetype: "application/zip",
         caption:
           `✅ *ʙᴀᴄᴋᴜᴘ sᴇʟᴇsᴀɪ*\n\n` +
-          `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
-          `┃ 📝 ɴᴀᴍᴀ: \`${zipFileName}\`\n` +
-          `┃ 📊 sɪᴢᴇ: \`${fileSizeMB} MB\`\n` +
-          `┃ 📁 ꜰɪʟᴇ: \`${fileCount}\`\n` +
-          `┃ 📅 ᴛᴀɴɢɢᴀʟ: \`${moment().tz("Asia/Jakarta").format("DD/MM/YYYY")}\`\n` +
-          `╰┈┈⬡`,
+          `╭┈❀ *ᴅᴇᴛᴀɪʟ*\n` +
+          `┃ ◦ ɴᴀᴍᴀ: \`${zipFileName}\`\n` +
+          `┃ ◦ sɪᴢᴇ: \`${fileSizeMB} MB\`\n` +
+          `┃ ◦ ꜰɪʟᴇ: \`${fileCount}\`\n` +
+          `┃ ◦ ᴛᴀɴɢɢᴀʟ: \`${moment().tz("Asia/Jakarta").format("DD/MM/YYYY")}\`\n` +
+          `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n`,
         contextInfo: {
           forwardingScore: 9999,
           isForwarded: true,

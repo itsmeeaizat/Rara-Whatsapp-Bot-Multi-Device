@@ -42,10 +42,10 @@ async function handler(m, { sock }) {
   if (!targetJid || levels <= 0) {
     return m.reply(
       `📊 *ᴅᴇʟ ʟᴇᴠᴇʟ*\n\n` +
-        `╭┈┈⬡「 📋 *ᴜsᴀɢᴇ* 」\n` +
-        `┃ > \`.dellevel <jumlah>\` - ke diri sendiri\n` +
-        `┃ > \`.dellevel <jumlah> @user\` - ke orang lain\n` +
-        `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+        `╭┈❀ *ᴜsᴀɢᴇ*\n` +
+        `┃ ◦ > \`.dellevel <jumlah>\` - ke diri sendiri\n` +
+        `┃ ◦ > \`.dellevel <jumlah> @user\` - ke orang lain\n` +
+        `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
         `> Contoh: \`${m.prefix}dellevel 5\``,
     );
   }
@@ -62,13 +62,14 @@ async function handler(m, { sock }) {
 
   await m.reply(
     `✅ *ʟᴇᴠᴇʟ ᴅɪᴋᴜʀᴀɴɢɪ*\n\n` +
-      `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
-      `┃ 👤 User: @${targetJid.split("@")[0]}\n` +
-      `┃ ➖ Kurang: *-${levels} Level*\n` +
-      `┃ 🚄 Exp Removed: *-${expToRemove.toLocaleString("id-ID")}*\n` +
-      `┃ 📊 Level: *${oldLevel} → ${newLevel}*\n` +
-      `┃ ${getRole(newLevel)}\n` +
-      `╰┈┈┈┈┈┈┈┈⬡`,
+      `╭┈❀ *ᴅᴇᴛᴀɪʟ*\n` +
+      `┃ ◦ User: @${targetJid.split("@")[0]}\n` +
+      `┃ ◦ Kurang: *-${levels} Level*\n` +
+      `┃ ◦ Exp Removed: *-${expToRemove.toLocaleString("id-ID")}*\n` +
+      `┃ ◦ Level: *${oldLevel} → ${newLevel}*\n` +
+      `┃ ◦ ${getRole(newLevel)}\n` +
+      `╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀
+`,
     { mentions: [targetJid] },
   );
 }

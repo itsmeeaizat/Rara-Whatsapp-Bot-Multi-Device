@@ -28,19 +28,19 @@ async function handler(m, { sock }) {
     let text = `📋 *ᴅᴀꜰᴛᴀʀ ᴋᴀᴛᴀ ᴛᴏxɪᴄ*\n\n`
     
     if (customWords.length > 0) {
-        text += `╭┈┈⬡「 ✏️ *ᴄᴜsᴛᴏᴍ* (${customWords.length}) 」\n`
+        text += `╭┈❀ ✏️ *ᴄᴜsᴛᴏᴍ* (${customWords.length})\n`
         for (let i = 0; i < customWords.length; i++) {
-            text += `┃ ${i + 1}. ${customWords[i]}\n`
+            text += `┃ ◦ ${i + 1}. ${customWords[i]}\n`
         }
-        text += `╰┈┈┈┈┈┈┈┈⬡\n\n`
+        text += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n`
     }
     
-    text += `╭┈┈⬡「 📦 *ᴅᴇꜰᴀᴜʟᴛ* (${defaultWords.length}) 」\n`
+    text += `╭┈❀ *ᴅᴇꜰᴀᴜʟᴛ* (${defaultWords.length})\n`
     
     for (let i = 0; i < defaultWords.length; i++) {
-        text += `┃ ${i + 1}. ${defaultWords[i]}\n`
+        text += `┃ ◦ ${i + 1}. ${defaultWords[i]}\n`
     }
-    text += `╰┈┈┈┈┈┈┈┈⬡\n\n`
+    text += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n`
     
     text += `Total: *${customWords.length + defaultWords.length}* kata\n`
     text += `\`.addtoxic <kata>\` untuk tambah\n`

@@ -69,11 +69,11 @@ async function handler(m, { sock }) {
     
     await m.reply(
         `✅ *ᴇɴᴇʀɢɪ ᴅɪᴋᴜʀᴀɴɢɪ*\n\n` +
-        `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
-        `┃ 👤 ᴜsᴇʀ: @${targetJid.split('@')[0]}\n` +
-        `┃ ➖ ᴋᴜʀᴀɴɢ: *-${formatNumber(amount)}*\n` +
-        `┃ ⚡ sɪsᴀ: *${formatNumber(newEnergi)}*\n` +
-        `╰┈┈⬡`,
+        `╭┈❀ *ᴅᴇᴛᴀɪʟ*\n` +
+        `┃ ◦ ᴜsᴇʀ: @${targetJid.split('@')[0]}\n` +
+        `┃ ◦ ᴋᴜʀᴀɴɢ: *-${formatNumber(amount)}*\n` +
+        `┃ ◦ sɪsᴀ: *${formatNumber(newEnergi)}*\n` +
+        `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n`,
         { mentions: [targetJid] }
     )
 }

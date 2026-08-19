@@ -33,9 +33,9 @@ async function handler(m) {
             text += `> Birthday kamu: *${currentBday}*\n\n`
         }
         
-        text += `╭┈┈⬡「 📋 *ғᴏʀᴍᴀᴛ* 」\n`
-        text += `┃ ${m.prefix}setbirthday DD-MM\n`
-        text += `╰┈┈┈┈┈┈┈┈⬡\n\n`
+        text += `╭┈❀ *ғᴏʀᴍᴀᴛ*\n`
+        text += `┃ ◦ ${m.prefix}setbirthday DD-MM\n`
+        text += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n`
         text += `*Contoh:*\n`
         text += `> ${m.prefix}setbirthday 25-12\n`
         text += `> ${m.prefix}setbirthday 01-01`
@@ -74,10 +74,10 @@ async function handler(m) {
     
     await m.reply(
         `✅ *ʙɪʀᴛʜᴅᴀʏ ᴅɪsɪᴍᴘᴀɴ!*\n\n` +
-        `╭┈┈⬡「 🎂 *ᴅᴇᴛᴀɪʟ* 」\n` +
-        `┃ 📅 Tanggal: *${day} ${months[month - 1]}*\n` +
-        `┃ 👤 User: @${cleanJid}\n` +
-        `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+        `╭┈❀ *ᴅᴇᴛᴀɪʟ*\n` +
+        `┃ ◦ Tanggal: *${day} ${months[month - 1]}*\n` +
+        `┃ ◦ User: @${cleanJid}\n` +
+        `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
         `> Bot akan mengucapkan selamat\n` +
         `> ulang tahun di hari spesialmu! 🎉`,
         { mentions: [userJid] }

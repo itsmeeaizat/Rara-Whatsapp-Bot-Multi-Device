@@ -32,10 +32,10 @@ function handler(m, { sock }) {
         
         return m.reply(
             `🔗 *ᴀɴᴛɪʟɪɴᴋ ᴡᴀ*\n\n` +
-            `╭┈┈⬡「 📋 *sᴛᴀᴛᴜs* 」\n` +
+            `╭┈❀ *sᴛᴀᴛᴜs*\n` +
             `┃ ◦ Status: *${status.toUpperCase()}*\n` +
             `┃ ◦ Mode: *${mode.toUpperCase()}*\n` +
-            `╰┈┈⬡\n\n` +
+            `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
             `*ᴅᴇᴛᴇᴋsɪ:*\n` +
             `> • chat.whatsapp.com (grup)\n` +
             `> • wa.me (kontak)\n` +

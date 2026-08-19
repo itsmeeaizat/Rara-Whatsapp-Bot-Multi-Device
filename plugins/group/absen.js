@@ -35,16 +35,16 @@ async function handler(m, { sock }) {
     const now = moment().tz('Asia/Jakarta')
     const dateStr = now.format('D MMMM YYYY')
     const list = absen.peserta
-        .map((jid, i) => `┃ ${i + 1}. @${jid.split('@')[0]}`)
+        .map((jid, i) => `┃ ◦ ${i + 1}. @${jid.split('@')[0]}`)
         .join('\n')
     await m.reply(`✅ *MANTAP, @${m.sender.split('@')[0]} HADIRR*\n` +
             `TUJUAN ABSEN: ${absen.keterangan}\n` +
-            `╭┈┈⬡「 📋 INFO LAIN 」\n` +
-            `┃ 📅 ${dateStr}\n` +
-            `┃ 👥 Total: ${absen.peserta.length}\n` +
-            `├┈┈⬡「 📝 *ᴅᴀғᴛᴀʀ ʜᴀᴅɪʀ* 」\n` +
+            `╭┈❀ INFO LAIN\n` +
+            `┃ ◦ ${dateStr}\n` +
+            `┃ ◦ Total: ${absen.peserta.length}\n` +
+            `├┈┈ 📝 *ᴅᴀғᴛᴀʀ ʜᴀᴅɪʀ*\n` +
             `${list}\n` +
-            `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+            `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
             `> _Ketik *${m.prefix}absen* untuk hadir_\n` +
             `> _Ketik *${m.prefix}cekabsen* untuk melihat daftar_`,
             { mentions: absen.peserta })

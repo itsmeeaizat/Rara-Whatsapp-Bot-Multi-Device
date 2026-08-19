@@ -45,7 +45,7 @@ async function handler(m, { sock }) {
 
   await m.reply(
     `📋 *ABSEN UDAH JALAN NIHH*\n\n` +
-      `「 📋 *ɪɴғᴏ* 」\n` +
+      ` 📋 *ɪɴғᴏ*\n` +
       `📝 ${keterangan}\n` +
       `👑 Dibuat oleh: @${m.sender.split("@")[0]}\n` +
       `👥 Peserta: 0\n\n` +

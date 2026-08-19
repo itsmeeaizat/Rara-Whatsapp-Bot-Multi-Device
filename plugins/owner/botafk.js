@@ -30,10 +30,10 @@ async function handler(m, { sock }) {
         
         return m.reply(
             `✅ *ʙᴏᴛ ᴋᴇᴍʙᴀʟɪ ᴏɴʟɪɴᴇ*\n\n` +
-            `╭┈┈⬡「 📊 *sᴛᴀᴛɪsᴛɪᴋ ᴀꜰᴋ* 」\n` +
-            `┃ ⏱️ ᴅᴜʀᴀsɪ: \`${duration}\`\n` +
-            `┃ 📝 ᴀʟᴀsᴀɴ: \`${currentAfk.reason || '-'}\`\n` +
-            `╰┈┈⬡\n\n` +
+            `╭┈❀ *sᴛᴀᴛɪsᴛɪᴋ ᴀꜰᴋ*\n` +
+            `┃ ◦ ᴅᴜʀᴀsɪ: \`${duration}\`\n` +
+            `┃ ◦ ᴀʟᴀsᴀɴ: \`${currentAfk.reason || '-'}\`\n` +
+            `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
             `> Bot siap menerima command!`
         )
     } else {
@@ -48,15 +48,15 @@ async function handler(m, { sock }) {
         await m.react('💤')
         return m.reply(
             `💤 *ʙᴏᴛ ᴀꜰᴋ ᴀᴋᴛɪꜰ*\n\n` +
-            `╭┈┈⬡「 📋 *ɪɴꜰᴏ* 」\n` +
-            `┃ 📝 ᴀʟᴀsᴀɴ: \`${reason}\`\n` +
-            `┃ ⏰ sᴇᴊᴀᴋ: \`${moment().tz('Asia/Jakarta').format('HH:mm:ss')}\`\n` +
-            `╰┈┈⬡\n\n` +
-            `╭┈┈⬡「 🔒 *ᴀᴋsᴇs* 」\n` +
-            `┃ ✅ Owner bot\n` +
-            `┃ ✅ Bot sendiri (fromMe)\n` +
-            `┃ ❌ Semua user lain\n` +
-            `╰┈┈⬡\n\n` +
+            `╭┈❀ *ɪɴꜰᴏ*\n` +
+            `┃ ◦ ᴀʟᴀsᴀɴ: \`${reason}\`\n` +
+            `┃ ◦ sᴇᴊᴀᴋ: \`${moment().tz('Asia/Jakarta').format('HH:mm:ss')}\`\n` +
+            `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
+            `╭┈❀ *ᴀᴋsᴇs*\n` +
+            `┃ ◦ Owner bot\n` +
+            `┃ ◦ Bot sendiri (fromMe)\n` +
+            `┃ ◦ Semua user lain\n` +
+            `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
             `> User lain akan dapat pesan AFK\n` +
             `> Ketik \`${m.prefix}botafk\` untuk kembali online`
         )

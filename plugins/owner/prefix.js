@@ -198,17 +198,17 @@ function handler(m, { sock }) {
             const configPref = config.command?.prefix || '.'
             
             let text = `📋 *ʟɪsᴛ ᴘʀᴇғɪx*\n\n`
-            text += `╭┈┈⬡「 ⚙️ *ᴄᴏɴғɪɢ* 」\n`
-            text += `┃ Default: \`${configPref}\`\n`
-            text += `┃ Noprefix: ${data.noprefix ? '✅ Aktif' : '❌ Nonaktif'}\n`
-            text += `╰┈┈┈┈┈┈┈┈⬡\n\n`
+            text += `╭┈❀ ⚙️ *ᴄᴏɴғɪɢ*\n`
+            text += `┃ ◦ Default: \`${configPref}\`\n`
+            text += `┃ ◦ Noprefix: ${data.noprefix ? '✅ Aktif' : '❌ Nonaktif'}\n`
+            text += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n`
             
             if (data.prefixes.length > 0) {
-                text += `╭┈┈⬡「 📁 *ᴅᴀᴛᴀʙᴀsᴇ* 」\n`
+                text += `╭┈❀ *ᴅᴀᴛᴀʙᴀsᴇ*\n`
                 data.prefixes.forEach((p, i) => {
-                    text += `┃ ${i + 1}. \`${p}\`\n`
+                    text += `┃ ◦ ${i + 1}. \`${p}\`\n`
                 })
-                text += `╰┈┈┈┈┈┈┈┈⬡\n\n`
+                text += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n`
             }
             
             text += `*Total prefix aktif:* ${all.length}`

@@ -48,10 +48,10 @@ function handler(m, { sock }) {
     return m.reply(
         `🔔 *ʟᴇᴠᴇʟ ᴜᴘ ɴᴏᴛɪꜰ*\n\n` +
         `> Status saat ini: *${status}*\n\n` +
-        `╭┈┈⬡「 📋 *ᴜsᴀɢᴇ* 」\n` +
-        `┃ > \`.levelup on\` - Aktifkan\n` +
-        `┃ > \`.levelup off\` - Nonaktifkan\n` +
-        `╰┈┈┈┈┈┈┈┈⬡`
+        `╭┈❀ *ᴜsᴀɢᴇ*\n` +
+        `┃ ◦ > \`.levelup on\` - Aktifkan\n` +
+        `┃ ◦ > \`.levelup off\` - Nonaktifkan\n` +
+        `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n`
     )
 }
 

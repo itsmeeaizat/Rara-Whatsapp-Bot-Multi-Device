@@ -71,11 +71,11 @@ async function handler(m, { sock }) {
 
     await m.reply(
         `✅ *ᴜsᴇʀ ᴅɪᴜɴʙᴀɴ*\n\n` +
-        `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
-        `┃ 📱 ɴᴏᴍᴏʀ: \`${targetNumber}\`\n` +
-        `┃ ✅ sᴛᴀᴛᴜs: \`Unbanned\`\n` +
-        `┃ 📊 ᴛᴏᴛᴀʟ: \`${bannedList.length}\` ᴜsᴇʀ\n` +
-        `╰┈┈⬡`
+        `╭┈❀ *ᴅᴇᴛᴀɪʟ*\n` +
+        `┃ ◦ ɴᴏᴍᴏʀ: \`${targetNumber}\`\n` +
+        `┃ ◦ sᴛᴀᴛᴜs: \`Unbanned\`\n` +
+        `┃ ◦ ᴛᴏᴛᴀʟ: \`${bannedList.length}\` ᴜsᴇʀ\n` +
+        `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n`
     )
 }
 

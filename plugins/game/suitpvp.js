@@ -94,10 +94,10 @@ async function handler(m, { sock }) {
     
     await m.react('✊')
     await m.reply(`Kamu menantang @${target.split('@')[0]} untuk adu suit\n\n` +
-            `╭┈┈⬡「 💬 *ʀᴇsᴘᴏɴ* 」\n` +
-            `┃ ✅ Ketik *terima* / *gas* / *ok*\n` +
-            `┃ ❌ Ketik *tolak* / *gabisa*\n` +
-            `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+            `╭┈❀ *ʀᴇsᴘᴏɴ*\n` +
+            `┃ ◦ Ketik *terima* / *gas* / *ok*\n` +
+            `┃ ◦ Ketik *tolak* / *gabisa*\n` +
+            `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n` +
             `Waktu: 90 detik`, {  mentions: [target]})
 }
 
@@ -139,9 +139,9 @@ async function answerHandler(m, sock) {
             
             const pmMessage = `✊✌️✋ *sᴜɪᴛ - ᴘɪʟɪʜ ᴊᴀᴡᴀʙᴀɴ*\n\n` +
                 `Ketik salah satu:\n\n` +
-                `┃ ✊ *batu*\n` +
-                `┃ ✌️ *gunting*\n` +
-                `┃ ✋ *kertas*\n\n` +
+                `┃ ◦ *batu*\n` +
+                `┃ ◦ *gunting*\n` +
+                `┃ ◦ *kertas*\n\n` +
                 `*TIP: Reply pesan ini dengan pilihanmu!*\n` +
                 `Contoh: *batu*`
             

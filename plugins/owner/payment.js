@@ -37,8 +37,8 @@ function buildPaymentText(paymentCfg, customText, botName, ownerName) {
     text += `📱 *E-Wallet:*\n`
     for (const m of methods) {
       text += `├─ • *${m.name}*\n`
-      text += `│  \`${m.number}\`\n`
-      if (m.holder) text += `│  a/n: ${m.holder}\n`
+      text += `┃ ◦  \`${m.number}\`\n`
+      if (m.holder) text += `┃ ◦  a/n: ${m.holder}\n`
     }
     text += `\n`
   }
@@ -47,8 +47,8 @@ function buildPaymentText(paymentCfg, customText, botName, ownerName) {
     text += `🏦 *Bank Transfer:*\n`
     for (const b of banks) {
       text += `├─ • *${b.name}*\n`
-      text += `│  \`${b.number}\`\n`
-      if (b.holder) text += `│  a/n: ${b.holder}\n`
+      text += `┃ ◦  \`${b.number}\`\n`
+      if (b.holder) text += `┃ ◦  a/n: ${b.holder}\n`
     }
     text += `\n`
   }

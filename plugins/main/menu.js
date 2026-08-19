@@ -300,32 +300,32 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
     txt += createBracketBox("BOT INFO", botInfoLines);
     txt += createBracketBox("USER INFO", userInfoLines);
   } else {
-    txt += `\n\n╭─〔 🤖 *ʙᴏᴛ ɪɴꜰᴏ* 〕\n`;
-    txt += `*│* 🖐 ɴᴀᴍᴀ     : *${botConfig.bot?.name || "Rara-AI"}*\n`;
-    txt += `*│* 🔑 ᴠᴇʀsɪ    : *v${botConfig.bot?.version || "1.2.0"}*\n`;
-    txt += `*│* ⚙️ ᴍᴏᴅᴇ     : *${(botConfig.mode || "public").toUpperCase()}*\n`;
-    txt += `*│* 🧶 ᴘʀᴇꜰɪx    : *[ ${prefix} ]*\n`;
-    txt += `*│* ⏱ ᴜᴘᴛɪᴍᴇ   : *${uptimeFormatted}*\n`;
-    txt += `*│* 👥 ᴛᴏᴛᴀʟ    : *${totalUsers} Users*\n`;
-    txt += `*│* 🏷 ɢʀᴏᴜᴘ     : *${botMode.toUpperCase()}*\n`;
-    txt += `*│* 👑 ᴏᴡɴᴇʀ    : *${botConfig.owner?.name || "Rara-AI"}*\n`;
-    txt += `╰────────────────⬣\n\n`;
-    txt += `╭─〔 👤 *ᴜsᴇʀ ɪɴꜰᴏ* 〕\n`;
-    txt += `*│* 🙋 ɴᴀᴍᴀ     : *${m.pushName}*\n`;
-    txt += `*│* 🎭 ʀᴏʟᴇ     : *${roleEmoji} ${userRole}*\n`;
-    txt += `*│* 🎟 ᴇɴᴇʀɢɪ   : *${m.isOwner || m.isPremium ? "∞ Unlimited" : (user?.energi ?? 25)}*\n`;
-    txt += `*│* ⚡ ʟᴇᴠᴇʟ    : *${Math.floor((user?.exp || 0) / 20000) + 1}*\n`;
-    txt += `*│* ✨ ᴇxᴘ       : *${(user?.exp ?? 0).toLocaleString()}*\n`;
-    txt += `*│* 💰 ᴋᴏɪɴ      : *${(user?.koin ?? 0).toLocaleString()}*\n`;
+    txt += `\n\n╭┈❀ *ʙᴏᴛ ɪɴꜰᴏ*\n`;
+    txt += `┃ ◦ ɴᴀᴍᴀ     : *${botConfig.bot?.name || "Rara-AI"}*\n`;
+    txt += `┃ ◦ ᴠᴇʀsɪ    : *v${botConfig.bot?.version || "1.2.0"}*\n`;
+    txt += `┃ ◦ ᴍᴏᴅᴇ     : *${(botConfig.mode || "public").toUpperCase()}*\n`;
+    txt += `┃ ◦ ᴘʀᴇꜰɪx    : *[ ${prefix} ]*\n`;
+    txt += `┃ ◦ ᴜᴘᴛɪᴍᴇ   : *${uptimeFormatted}*\n`;
+    txt += `┃ ◦ ᴛᴏᴛᴀʟ    : *${totalUsers} Users*\n`;
+    txt += `┃ ◦ ɢʀᴏᴜᴘ     : *${botMode.toUpperCase()}*\n`;
+    txt += `┃ ◦ ᴏᴡɴᴇʀ    : *${botConfig.owner?.name || "Rara-AI"}*\n`;
+    txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n`;
+    txt += `╭┈❀ *ᴜsᴇʀ ɪɴꜰᴏ*\n`;
+    txt += `┃ ◦ ɴᴀᴍᴀ     : *${m.pushName}*\n`;
+    txt += `┃ ◦ ʀᴏʟᴇ     : *${roleEmoji} ${userRole}*\n`;
+    txt += `┃ ◦ ᴇɴᴇʀɢɪ   : *${m.isOwner || m.isPremium ? "∞ Unlimited" : (user?.energi ?? 25)}*\n`;
+    txt += `┃ ◦ ʟᴇᴠᴇʟ    : *${Math.floor((user?.exp || 0) / 20000) + 1}*\n`;
+    txt += `┃ ◦ ᴇxᴘ       : *${(user?.exp ?? 0).toLocaleString()}*\n`;
+    txt += `┃ ◦ ᴋᴏɪɴ      : *${(user?.koin ?? 0).toLocaleString()}*\n`;
     if (rpg.health !== undefined) {
-      txt += `*│* ❤️ ʜᴘ        : *${rpg.health}/${rpg.maxHealth || rpg.health}*\n`;
-      txt += `*│* 🔮 ᴍᴀɴᴀ      : *${rpg.mana}/${rpg.maxMana || rpg.mana}*\n`;
-      txt += `*│* 🏃 sᴛᴀᴍɪɴᴀ   : *${rpg.stamina}/${rpg.maxStamina || rpg.stamina}*\n`;
+      txt += `┃ ◦ ʜᴘ        : *${rpg.health}/${rpg.maxHealth || rpg.health}*\n`;
+      txt += `┃ ◦ ᴍᴀɴᴀ      : *${rpg.mana}/${rpg.maxMana || rpg.mana}*\n`;
+      txt += `┃ ◦ sᴛᴀᴍɪɴᴀ   : *${rpg.stamina}/${rpg.maxStamina || rpg.stamina}*\n`;
     }
-    if (invCount > 0) txt += `*│* 🎒 ɪɴᴠᴇɴᴛᴏʀʏ : *${invCount} items*\n`;
-    txt += `*│* 🕒 ᴡᴀᴋᴛᴜ    : *${timeStr} WIB*\n`;
-    txt += `*│* 📅 ᴛᴀɴɢɢᴀʟ  : *${dateStr}*\n`;
-    txt += `╰────────────────⬣\n\n`;
+    if (invCount > 0) txt += `┃ ◦ ɪɴᴠᴇɴᴛᴏʀʏ : *${invCount} items*\n`;
+    txt += `┃ ◦ ᴡᴀᴋᴛᴜ    : *${timeStr} WIB*\n`;
+    txt += `┃ ◦ ᴛᴀɴɢɢᴀʟ  : *${dateStr}*\n`;
+    txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n`;
   }
   const categoryOrder = [
     "owner",
@@ -413,12 +413,14 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
   return txt;
 }
 
-function createBracketBox(title, lines = [], emoji = "🤖") {
-  let text = `╭─〔 ${emoji} \`${title}\`〕─⬣\n`;
+function createBracketBox(title, lines = [], emoji = "\u{1F916}") {
+  let text = "\u256d\u2508\u2740 *" + title.toUpperCase() + "*\n";
+  text += "\u2503\n";
   for (const line of lines) {
-    text += `│ ✦ *${line}*\n`;
+    text += "\u2503 \u25e6 " + line + "\n";
   }
-  text += `╰─⬣\n\n`;
+  text += "\u2503\n";
+  text += "\u2570\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2740\n\n";
   return text;
 }
 
@@ -537,22 +539,22 @@ async function handler(m, { sock, config: botConfig, db, uptime }) {
             
 🌿 Selamat datang di assistant ${config.bot?.name}
 
-╭┈┈⫹⫺ *INFORMASI BOT* ⫹⫺┈┈╮
-│ ◈ *Nama Bot* : *${config.bot?.name}*
-│ ◈ *Versi* : *${config.bot.version}*  
-│ ◈ *Pengembang* : *${config.bot.developer}*  
-│ ◈ *Pustaka* : \`Rara-Baileys\`
+╭┈❀ *INFORMASI BOT*
+┃ ◦ ◈ *Nama Bot* : *${config.bot?.name}*
+┃ ◦ ◈ *Versi* : *${config.bot.version}*  
+┃ ◦ ◈ *Pengembang* : *${config.bot.developer}*  
+┃ ◦ ◈ *Pustaka* : \`Rara-Baileys\`
 ╰┈┈┈┈┈┈┈┈
 
-╭┈┈⫹⫺ *INFORMASI PENGGUNA* ⫹⫺┈┈╮
-│ ◈ *Nama* : *${m.pushName}*
-│ ◈ *Member?* : *${m?.isOwner ? "Bukan, tapi Owner" : m?.isPremium ? "Bukan, tapi Premium" : "Iyapp"}*
-│ ◈ *Level* : *${user.level || 0}*
-│ ◈ *Exp* : *${user.exp || 0}* 
-│ ◈ *Energi* : *${user.energi || 0}*
-│ ◈ *Koin* : *${user.koin || 0}*
-│ ◈ *Register* : *${user.isRegistered ? "Sudah" : "Belum"}*
-│ ◈ *Energi* : *${user.energi || 0}*
+╭┈❀ *INFORMASI PENGGUNA*
+┃ ◦ ◈ *Nama* : *${m.pushName}*
+┃ ◦ ◈ *Member?* : *${m?.isOwner ? "Bukan, tapi Owner" : m?.isPremium ? "Bukan, tapi Premium" : "Iyapp"}*
+┃ ◦ ◈ *Level* : *${user.level || 0}*
+┃ ◦ ◈ *Exp* : *${user.exp || 0}* 
+┃ ◦ ◈ *Energi* : *${user.energi || 0}*
+┃ ◦ ◈ *Koin* : *${user.koin || 0}*
+┃ ◦ ◈ *Register* : *${user.isRegistered ? "Sudah" : "Belum"}*
+┃ ◦ ◈ *Energi* : *${user.energi || 0}*
 ╰┈┈┈┈┈┈┈┈
 
 Tekan tombol dibawah untuk info lebih lanjut dan untuk memilih kategori
@@ -615,7 +617,7 @@ Tekan tombol dibawah untuk info lebih lanjut dan untuk memilih kategori
           cmds.map((cmd) => {
             s += `> ${m.prefix}${cmd}\n`
           })
-          s += "╰─⬣\n\n"
+          s += "╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n"
         });
         const media = await prepareWAMessageMedia({
           image: fs.readFileSync(config.assets["rara"])
@@ -639,21 +641,21 @@ Tekan tombol dibawah untuk info lebih lanjut dan untuk memilih kategori
 
 Welcome to ${config.bot?.name}, Our bot will help you
 
-╭┈┈⫹⫺ *INFORMASI BOT* ⫹⫺┈┈╮
-│ ◈ *Name*: ${config.bot?.name}
-│ ◈ *Version*: ${config.bot?.version}
-│ ◈ *Developer*: ${config.bot?.developer}
-│ ◈ *Library*: \`Rara-Baileys\`
+╭┈❀ *INFORMASI BOT*
+┃ ◦ ◈ *Name*: ${config.bot?.name}
+┃ ◦ ◈ *Version*: ${config.bot?.version}
+┃ ◦ ◈ *Developer*: ${config.bot?.developer}
+┃ ◦ ◈ *Library*: \`Rara-Baileys\`
 ╰┈┈┈┈┈┈┈┈
 
-╭┈┈⫹⫺ *INFORMASI PENGGUNA* ⫹⫺┈┈╮
-│ ◈ *Name*: ${m.pushName}
-│ ◈ *Role*: ${m?.isOwner ? "🔥 Owner" : m?.isPremium ? "👑 Premium" : "😊 User"}
-│ ◈ *Level*: ${user.level || 0}
-│ ◈ *Exp*: ${user.exp || 0}
-│ ◈ *Energi*: ${user.energi || 0}
-│ ◈ *Koin*: ${user.koin || 0}
-│ ◈ *Register*: ${user.isRegistered ? "Sudah" : "Belum"}
+╭┈❀ *INFORMASI PENGGUNA*
+┃ ◦ ◈ *Name*: ${m.pushName}
+┃ ◦ ◈ *Role*: ${m?.isOwner ? "🔥 Owner" : m?.isPremium ? "👑 Premium" : "😊 User"}
+┃ ◦ ◈ *Level*: ${user.level || 0}
+┃ ◦ ◈ *Exp*: ${user.exp || 0}
+┃ ◦ ◈ *Energi*: ${user.energi || 0}
+┃ ◦ ◈ *Koin*: ${user.koin || 0}
+┃ ◦ ◈ *Register*: ${user.isRegistered ? "Sudah" : "Belum"}
 [ 🌐 READY PANEL LEGAL ]
 example-panel.my.id
 ${readmore}${s}
@@ -756,20 +758,20 @@ ${readmore}${s}
 
 Welcome to ${config.bot?.name}, Our bot will help you
 
-╭┈┈⫹⫺ *INFORMASI BOT* ⫹⫺┈┈╮
-│ ◈ *Name*: ${config.bot?.name}
-│ ◈ *Version*: ${config.bot?.version}
-│ ◈ *Developer*: ${config.bot?.developer}
-│ ◈ *Library*: \`Rara-Baileys\`
+╭┈❀ *INFORMASI BOT*
+┃ ◦ ◈ *Name*: ${config.bot?.name}
+┃ ◦ ◈ *Version*: ${config.bot?.version}
+┃ ◦ ◈ *Developer*: ${config.bot?.developer}
+┃ ◦ ◈ *Library*: \`Rara-Baileys\`
 ╰┈┈┈┈┈┈┈┈
-╭┈┈⫹⫺ *INFORMASI PENGGUNA* ⫹⫺┈┈╮
-│ ◈ *Name*: ${m.pushName}
-│ ◈ *Role*: ${m?.isOwner ? "Owner" : m?.isPremium ? "Premium" : "User"}
-│ ◈ *Level*: ${user.level || 0}
-│ ◈ *Exp*: ${user.exp || 0}
-│ ◈ *Energi*: ${user.energi || 0}
-│ ◈ *Koin*: ${user.koin || 0}
-│ ◈ *Register*: ${user.isRegistered ? "Sudah" : "Belum"}
+╭┈❀ *INFORMASI PENGGUNA*
+┃ ◦ ◈ *Name*: ${m.pushName}
+┃ ◦ ◈ *Role*: ${m?.isOwner ? "Owner" : m?.isPremium ? "Premium" : "User"}
+┃ ◦ ◈ *Level*: ${user.level || 0}
+┃ ◦ ◈ *Exp*: ${user.exp || 0}
+┃ ◦ ◈ *Energi*: ${user.energi || 0}
+┃ ◦ ◈ *Koin*: ${user.koin || 0}
+┃ ◦ ◈ *Register*: ${user.isRegistered ? "Sudah" : "Belum"}
 ╰┈┈┈┈┈┈┈┈`,
             footerText: 'Silahkan pilih dari salah satu tombol di bawah',
             headerType: 6,
@@ -847,20 +849,20 @@ Welcome to ${config.bot?.name}, Our bot will help you
 
   🏔 𝘐 𝘊𝘢𝘯 𝘩𝘦𝘭𝘱 𝘺𝘰𝘶 𝘸𝘪𝘵𝘩 𝘴𝘦𝘷𝘦𝘳𝘢𝘭 𝘵𝘩𝘪𝘯𝘨𝘴 𝘸𝘪𝘵𝘩𝘪𝘯 𝘞𝘩𝘢𝘵𝘴𝘈𝘱𝘱. 𝘈𝘯𝘥 𝘐 𝘢𝘮 𝘈𝘳𝘮𝘦𝘥 𝘢 *𝘑𝘢𝘷𝘢𝘴𝘤𝘳𝘪𝘱𝘵* 𝘗𝘳𝘰𝘨𝘳𝘢𝘮 𝘈𝘴𝘴𝘦𝘮𝘣𝘭𝘦𝘥 𝘣𝘺 𝘮𝘺 𝘤𝘳𝘦𝘢𝘵𝘰𝘳.
 
-╭┈┈⫹⫺ *INFORMASI BOT* ⫹⫺┈┈╮
-│ ◈ *Name*: ${config.bot?.name}
-│ ◈ *Version*: ${config.bot?.version}
-│ ◈ *Developer*: ${config.bot?.developer}
-│ ◈ *Library*: \`Rara-Baileys\`
+╭┈❀ *INFORMASI BOT*
+┃ ◦ ◈ *Name*: ${config.bot?.name}
+┃ ◦ ◈ *Version*: ${config.bot?.version}
+┃ ◦ ◈ *Developer*: ${config.bot?.developer}
+┃ ◦ ◈ *Library*: \`Rara-Baileys\`
 ╰┈┈┈┈┈┈┈┈
-╭┈┈⫹⫺ *INFORMASI PENGGUNA* ⫹⫺┈┈╮
-│ ◈ *Name*: ${m.pushName}
-│ ◈ *Role*: ${m?.isOwner ? "Owner" : m?.isPremium ? "Premium" : "User"}
-│ ◈ *Level*: ${user.level || 0}
-│ ◈ *Exp*: ${user.exp || 0}
-│ ◈ *Energi*: ${user.energi || 0}
-│ ◈ *Koin*: ${user.koin || 0}
-│ ◈ *Register*: ${user.isRegistered ? "Sudah" : "Belum"}
+╭┈❀ *INFORMASI PENGGUNA*
+┃ ◦ ◈ *Name*: ${m.pushName}
+┃ ◦ ◈ *Role*: ${m?.isOwner ? "Owner" : m?.isPremium ? "Premium" : "User"}
+┃ ◦ ◈ *Level*: ${user.level || 0}
+┃ ◦ ◈ *Exp*: ${user.exp || 0}
+┃ ◦ ◈ *Energi*: ${user.energi || 0}
+┃ ◦ ◈ *Koin*: ${user.koin || 0}
+┃ ◦ ◈ *Register*: ${user.isRegistered ? "Sudah" : "Belum"}
 ╰┈┈┈┈┈┈┈┈.`
                 },
                 contextInfo: {
@@ -1001,16 +1003,16 @@ _i am an automated system (WhatsApp bot) that can help to do something search an
 
 *\`乂 I N F O - B O T\`*
 ┌ ◦ Name : ${config.bot.name}
-│ ◦ Author : @${config.bot.developer}
-│ ◦ Type Script : Case x Plugins
-│ ◦ Uptime : ${runtime(process.uptime())}
+┃ ◦ Author : @${config.bot.developer}
+┃ ◦ Type Script : Case x Plugins
+┃ ◦ Uptime : ${runtime(process.uptime())}
 └ ◦ Versi : ${config.bot.version}
 
 *\`乂 I N F O - U S E R\`*
 ┌ ◦ Nama : ${m.pushName}
-│ ◦ Status : ${m.isOwner ? "👑 Owner" : m.isPremium ? "💎 Premium" : "🏷️ Free"}
-│ ◦ Mode : ${config.mode === "pblic" ? "Bisa digunakan semua" : "Hanya Owner :b"}
-│ ◦ Nomor : @${m.sender.split("@")[0]}
+┃ ◦ Status : ${m.isOwner ? "👑 Owner" : m.isPremium ? "💎 Premium" : "🏷️ Free"}
+┃ ◦ Mode : ${config.mode === "pblic" ? "Bisa digunakan semua" : "Hanya Owner :b"}
+┃ ◦ Nomor : @${m.sender.split("@")[0]}
 └ ◦ ${greeting}
 [ 🌐 READY PANEL LEGAL ]
 example-panel.my.id
@@ -1161,7 +1163,7 @@ example-panel.my.id
                   }
                 },
                 body: {
-                  text: `🍟 Hai *${m.pushName}* \n\n_i am an automated system (WhatsApp bot) that can help to do something search and get data / information only through WhatsApp._\n\n*\`乂 I N F O - B O T\`*\n┌ ◦ Name : ${config.bot.name}\n│ ◦ Author : @${config.bot.developer}\n│ ◦ Type Script : Case x Plugins\n│ ◦ Uptime : ${runtime(process.uptime())}\n└ ◦ Versi : ${config.bot.version}\n\n*\`乂 I N F O - U S E R\`*\n┌ ◦ Nama : ${m.pushName}\n│ ◦ Status : ${m.isOwner ? "👑 Owner" : m.isPremium ? "💎 Premium" : "🏷️ Free"}\n│ ◦ Mode : ${config.mode === "pblic" ? "Bisa digunakan semua" : "Hanya Owner :b"}\n│ ◦ Nomor : @${m.sender.split("@")[0]}\n└ ◦ ${greeting}\n${topCmdText}`
+                  text: `🍟 Hai *${m.pushName}* \n\n_i am an automated system (WhatsApp bot) that can help to do something search and get data / information only through WhatsApp._\n\n*\`乂 I N F O - B O T\`*\n┌ ◦ Name : ${config.bot.name}\n┃ ◦ Author : @${config.bot.developer}\n┃ ◦ Type Script : Case x Plugins\n┃ ◦ Uptime : ${runtime(process.uptime())}\n└ ◦ Versi : ${config.bot.version}\n\n*\`乂 I N F O - U S E R\`*\n┌ ◦ Nama : ${m.pushName}\n┃ ◦ Status : ${m.isOwner ? "👑 Owner" : m.isPremium ? "💎 Premium" : "🏷️ Free"}\n┃ ◦ Mode : ${config.mode === "pblic" ? "Bisa digunakan semua" : "Hanya Owner :b"}\n┃ ◦ Nomor : @${m.sender.split("@")[0]}\n└ ◦ ${greeting}\n${topCmdText}`
                 },
                 contextInfo: {
                   mentionedJid: [m.sender],

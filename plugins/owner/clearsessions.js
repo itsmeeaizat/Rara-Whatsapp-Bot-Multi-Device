@@ -57,14 +57,11 @@ async function handler(m)  {
         
         await m.react('✅')
         await m.reply(
-            `╭┈┈⬡「 🗑️ *ᴄʟᴇᴀʀ sᴇssɪᴏɴs* 」
-┃
-┃ ㊗ ᴅᴇʟᴇᴛᴇᴅ: *${deleted}* file
-┃ ㊗ sᴋɪᴘᴘᴇᴅ: *${skipped}* file
-┃ ㊗ ɴᴏᴛᴇ: creds.json tidak dihapus
-┃
-╰┈┈⬡
-
+            `╭┈❀ 🗑️ *ᴄʟᴇᴀʀ sᴇssɪᴏɴs*
+┃ ◦ ┃ ◦ ㊗ ᴅᴇʟᴇᴛᴇᴅ: *${deleted}* file
+┃ ◦ ㊗ sᴋɪᴘᴘᴇᴅ: *${skipped}* file
+┃ ◦ ㊗ ɴᴏᴛᴇ: creds.json tidak dihapus
+┃ ◦ ╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n
 > _Session files berhasil dibersihkan!_
 > _Restart bot jika diperlukan._`
         )
