@@ -187,14 +187,14 @@ async function handler(m, { sock }) {
     const user = userRes.data.attributes;
 
     let detailTxt = `✅ *ᴀᴅᴍɪɴ ᴘᴀɴᴇʟ ʙᴇʀʜᴀsɪʟ ᴅɪʙᴜᴀᴛ*\n\n`;
-    detailTxt += `╭─「 📋 *ᴅᴇᴛᴀɪʟ ᴀᴋᴜɴ* 」\n`;
-    detailTxt += `┃ 🖥️ \`sᴇʀᴠᴇʀ\`: *${serverLabel}*\n`;
-    detailTxt += `┃ 🆔 \`ᴜsᴇʀ ɪᴅ\`: *${user.id}*\n`;
-    detailTxt += `┃ 👤 \`ᴜsᴇʀɴᴀᴍᴇ\`: *${user.username}*\n`;
-    detailTxt += `┃ 🔐 \`ᴘᴀssᴡᴏʀᴅ\`: *${password}*\n`;
-    detailTxt += `┃ 👑 \`sᴛᴀᴛᴜs\`: *Root Admin*\n`;
-    detailTxt += `┃ 🗓️ \`ᴛᴀɴɢɢᴀʟ\`: *${formatDate()}*\n`;
-    detailTxt += `╰───────────────\n\n`;
+    detailTxt += `📋 *ᴅᴇᴛᴀɪʟ ᴀᴋᴜɴ* \n`;
+    detailTxt += `🖥️ \`sᴇʀᴠᴇʀ\`: *${serverLabel}*\n`;
+    detailTxt += `🆔 \`ᴜsᴇʀ ɪᴅ\`: *${user.id}*\n`;
+    detailTxt += `👤 \`ᴜsᴇʀɴᴀᴍᴇ\`: *${user.username}*\n`;
+    detailTxt += `🔐 \`ᴘᴀssᴡᴏʀᴅ\`: *${password}*\n`;
+    detailTxt += `👑 \`sᴛᴀᴛᴜs\`: *Root Admin*\n`;
+    detailTxt += `🗓️ \`ᴛᴀɴɢɢᴀʟ\`: *${formatDate()}*\n`;
+    detailTxt += `\n\n`;
     detailTxt += `🌐 *ʟᴏɢɪɴ ᴘᴀɴᴇʟ:* ${serverConfig.domain}\n\n`;
     detailTxt += `> ⚠️ Akun ini memiliki akses penuh!\n`;
     detailTxt += `> ⚠️ Jangan bagikan ke siapapun!`;

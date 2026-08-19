@@ -66,11 +66,11 @@ async function handler(m, { sock }) {
 
     const responseText =
       `✅ *ᴘᴀsᴛᴇʙɪɴ ʙᴇʀʜᴀsɪʟ*\n\n` +
-      `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
-      `┃ 📝 ᴊᴜᴅᴜʟ: *${api_paste_name}*\n` +
-      `┃ 📊 ᴜᴋᴜʀᴀɴ: *${text.length} chars*\n` +
-      `┃ 🔗 ʟɪɴᴋ: ${url}\n` +
-      `╰┈┈⬡\n\n` +
+      ` 📋 *ᴅᴇᴛᴀɪʟ* \n` +
+      ` 📝 ᴊᴜᴅᴜʟ: *${api_paste_name}*\n` +
+      ` 📊 ᴜᴋᴜʀᴀɴ: *${text.length} chars*\n` +
+      ` 🔗 ʟɪɴᴋ: ${url}\n` +
+      `\n\n` +
       `> Paste akan expired sesuai pengaturan Pastebin.`;
     await sendToolsPreview(
       sock,

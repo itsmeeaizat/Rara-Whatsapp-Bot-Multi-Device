@@ -34,18 +34,18 @@ function handler(m) {
     
     let txt = `🔗 *ᴅᴀꜰᴛᴀʀ ᴀɴᴛɪʟɪɴᴋ*\n\n`
     
-    txt += `╭┈┈⬡「 📌 *ᴅᴇꜰᴀᴜʟᴛ* 」\n`
+    txt += ` 📌 *ᴅᴇꜰᴀᴜʟᴛ* \n`
     DEFAULT_BLOCKED_LINKS.forEach((l, i) => {
-        txt += `┃ ${i + 1}. \`${l}\`\n`
+        txt += ` ${i + 1}. \`${l}\`\n`
     })
-    txt += `╰┈┈┈┈┈┈┈┈⬡\n\n`
+    txt += `\n\n`
     
     if (customList.length > 0) {
-        txt += `╭┈┈⬡「 ➕ *ᴄᴜsᴛᴏᴍ* 」\n`
+        txt += ` ➕ *ᴄᴜsᴛᴏᴍ* \n`
         customList.forEach((l, i) => {
-            txt += `┃ ${i + 1}. \`${l}\`\n`
+            txt += ` ${i + 1}. \`${l}\`\n`
         })
-        txt += `╰┈┈┈┈┈┈┈┈⬡\n\n`
+        txt += `\n\n`
     }
     
     txt += `> Default: *${DEFAULT_BLOCKED_LINKS.length}* link\n`

@@ -17,7 +17,6 @@ const pluginConfig = {
   isEnabled: true,
 };
 
-
 async function handler(m, { sock }) {
   const args = m.args || [];
   const url = args[0]?.trim();
@@ -59,15 +58,15 @@ async function handler(m, { sock }) {
     }
 
     let text = `🎬 *${film.title || "Film"}*\n\n`;
-    text += `╭┈┈⬡「 📋 *ɪɴꜰᴏ* 」\n`;
-    text += `┃ ⭐ Rating: ${film.rating || "-"}\n`;
-    text += `┃ 📺 Quality: ${film.quality || "-"}\n`;
-    text += `┃ ⏱️ Duration: ${film.duration || "-"}\n`;
-    text += `┃ 📅 Release: ${film.release || "-"}\n`;
-    text += `┃ 🎭 Genre: ${film.tags || "-"}\n`;
-    text += `┃ 🎬 Director: ${film.director || "-"}\n`;
-    text += `┃ 👥 Actors: ${film.actors || "-"}\n`;
-    text += `╰┈┈┈┈┈┈┈┈⬡\n\n`;
+    text += ` 📋 *ɪɴꜰᴏ* \n`;
+    text += ` ⭐ Rating: ${film.rating || "-"}\n`;
+    text += ` 📺 Quality: ${film.quality || "-"}\n`;
+    text += ` ⏱️ Duration: ${film.duration || "-"}\n`;
+    text += ` 📅 Release: ${film.release || "-"}\n`;
+    text += ` 🎭 Genre: ${film.tags || "-"}\n`;
+    text += ` 🎬 Director: ${film.director || "-"}\n`;
+    text += ` 👥 Actors: ${film.actors || "-"}\n`;
+    text += `\n\n`;
 
     text += `📝 *Synopsis:*\n`;
     text += `> ${film.synopsis || "-"}\n\n`;

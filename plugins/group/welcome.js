@@ -141,7 +141,7 @@ Tanoshii jikan o issho ni sugoso ne~`,
     msg += `\n📝 *Deskripsi*\n> ❝ ${groupDesc.slice(0, 120)}${groupDesc.length > 120 ? "..." : ""} ❞\n`;
   }
 
-  msg += `\n✨ *Tips Hari Ini*\n> 「 ${quote} 」\n\n🌸 _Yoroshiku ne~ semoga betah ya!_ 🤍`;
+  msg += `\n✨ *Tips Hari Ini*\n>  ${quote} \n\n🌸 _Yoroshiku ne~ semoga betah ya!_ 🤍`;
 
   return msg;
 }

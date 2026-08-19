@@ -58,15 +58,15 @@ async function handler(m, { sock }) {
             const ip = droplet.networks?.v4?.find(n => n.type === 'public')?.ip_address || '-'
             const status = droplet.status === 'active' ? '🟢' : '🔴'
             
-            txt += `╭─────────────\n`
-            txt += `┃ ${status} *${droplet.name}*\n`
-            txt += `┃ 🆔 ID: \`${droplet.id}\`\n`
-            txt += `┃ 🌐 IP: \`${ip}\`\n`
-            txt += `┃ 💾 RAM: ${droplet.memory} MB\n`
-            txt += `┃ ⚡ CPU: ${droplet.vcpus} vCPU\n`
-            txt += `┃ 💿 Disk: ${droplet.disk} GB\n`
-            txt += `┃ 📍 Region: ${droplet.region?.slug || '-'}\n`
-            txt += `╰─────────────\n\n`
+            txt += `─────────────\n`
+            txt += `${status} *${droplet.name}*\n`
+            txt += `🆔 ID: \`${droplet.id}\`\n`
+            txt += `🌐 IP: \`${ip}\`\n`
+            txt += `💾 RAM: ${droplet.memory} MB\n`
+            txt += `⚡ CPU: ${droplet.vcpus} vCPU\n`
+            txt += `💿 Disk: ${droplet.disk} GB\n`
+            txt += `📍 Region: ${droplet.region?.slug || '-'}\n`
+            txt += `\n\n`
         }
         
         await m.reply(txt)

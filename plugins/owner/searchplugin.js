@@ -133,23 +133,23 @@ async function handler(m, { sock }) {
     await m.react("✅");
     return m.reply(
       `📋 *ɪɴꜰᴏ ᴘʟᴜɢɪɴ*\n\n` +
-        `╭┈┈⬡「 📝 *ᴅᴇᴛᴀɪʟ* 」\n` +
-        `┃ 📛 ɴᴀᴍᴀ: \`${info.name || "-"}\`\n` +
-        `┃ 🏷️ ᴀʟɪᴀs: \`${aliases}\`\n` +
-        `┃ 📁 ᴄᴀᴛᴇɢᴏʀʏ: \`${info.category || "-"}\`\n` +
-        `┃ 📄 ᴅᴇsᴄ: ${info.description || "-"}\n` +
-        `┃ 📝 ᴜsᴀɢᴇ: \`${info.usage || "-"}\`\n` +
-        `┃ 📌 ᴇxᴀᴍᴘʟᴇ: \`${info.example || "-"}\`\n` +
-        `╰┈┈⬡\n\n` +
-        `╭┈┈⬡「 ⚙️ *sᴇᴛᴛɪɴɢs* 」\n` +
-        `┃ 🔓 ᴇɴᴀʙʟᴇᴅ: ${isEnabled}\n` +
-        `┃ 👑 ᴏᴡɴᴇʀ ᴏɴʟʏ: ${isOwner}\n` +
-        `┃ 💎 ᴘʀᴇᴍɪᴜᴍ: ${isPremium}\n` +
-        `┃ 👥 ɢʀᴏᴜᴘ ᴏɴʟʏ: ${isGroup}\n` +
-        `┃ 🛡️ ᴀᴅᴍɪɴ ᴏɴʟʏ: ${isAdmin}\n` +
-        `┃ ⏱️ ᴄᴏᴏʟᴅᴏᴡɴ: \`${info.cooldown || 0}s\`\n` +
-        `┃ 🎫 ʟɪᴍɪᴛ: \`${info.limit || 0}\`\n` +
-        `╰┈┈⬡`,
+        ` 📝 *ᴅᴇᴛᴀɪʟ* \n` +
+        ` 📛 ɴᴀᴍᴀ: \`${info.name || "-"}\`\n` +
+        ` 🏷️ ᴀʟɪᴀs: \`${aliases}\`\n` +
+        ` 📁 ᴄᴀᴛᴇɢᴏʀʏ: \`${info.category || "-"}\`\n` +
+        ` 📄 ᴅᴇsᴄ: ${info.description || "-"}\n` +
+        ` 📝 ᴜsᴀɢᴇ: \`${info.usage || "-"}\`\n` +
+        ` 📌 ᴇxᴀᴍᴘʟᴇ: \`${info.example || "-"}\`\n` +
+        `\n\n` +
+        ` ⚙️ *sᴇᴛᴛɪɴɢs* \n` +
+        ` 🔓 ᴇɴᴀʙʟᴇᴅ: ${isEnabled}\n` +
+        ` 👑 ᴏᴡɴᴇʀ ᴏɴʟʏ: ${isOwner}\n` +
+        ` 💎 ᴘʀᴇᴍɪᴜᴍ: ${isPremium}\n` +
+        ` 👥 ɢʀᴏᴜᴘ ᴏɴʟʏ: ${isGroup}\n` +
+        ` 🛡️ ᴀᴅᴍɪɴ ᴏɴʟʏ: ${isAdmin}\n` +
+        ` ⏱️ ᴄᴏᴏʟᴅᴏᴡɴ: \`${info.cooldown || 0}s\`\n` +
+        ` 🎫 ʟɪᴍɪᴛ: \`${info.limit || 0}\`\n` +
+        ``,
     );
   } catch (error) {
     console.log(error);

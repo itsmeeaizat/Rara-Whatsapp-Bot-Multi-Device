@@ -26,13 +26,13 @@ async function handler(m, { sock }) {
     }
     
     let caption = `🚫 *ʟɪsᴛ ʙᴀɴɴᴇᴅ*\n\n`
-    caption += `╭┈┈⬡「 ⛔ *ᴜsᴇʀs* 」\n`
+    caption += ` ⛔ *ᴜsᴇʀs* \n`
     
     for (let i = 0; i < bannedUsers.length; i++) {
-        caption += `┃ ${i + 1}. \`${bannedUsers[i]}\`\n`
+        caption += ` ${i + 1}. \`${bannedUsers[i]}\`\n`
     }
     
-    caption += `╰┈┈⬡\n\n`
+    caption += `\n\n`
     caption += `> ᴛᴏᴛᴀʟ: \`${bannedUsers.length}\` ʙᴀɴɴᴇᴅ ᴜsᴇʀ`
     
     await m.reply(caption)

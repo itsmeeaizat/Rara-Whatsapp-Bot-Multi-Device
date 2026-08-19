@@ -227,51 +227,51 @@ function getRoleDescription(role, prefix = ".") {
     werewolf:
       `🐺 *WEREWOLF*\n\n` +
       `Kamu adalah predator malam!\n\n` +
-      `╭┈┈⬡「 📋 *INFO* 」\n` +
-      `┃ 🎯 Tujuan: Bunuh semua Villager\n` +
-      `┃ ⚔️ Skill: Bunuh 1 player tiap malam\n` +
-      `┃ 🕐 Aksi: Malam hari\n` +
-      `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+      ` 📋 *INFO* \n` +
+      ` 🎯 Tujuan: Bunuh semua Villager\n` +
+      ` ⚔️ Skill: Bunuh 1 player tiap malam\n` +
+      ` 🕐 Aksi: Malam hari\n` +
+      `\n\n` +
       `> Di malam hari, ketik:\n` +
       `> \`${prefix}wwkill <nomor>\` di PM bot`,
     seer:
       `🔮 *SEER*\n\n` +
       `Kamu bisa melihat identitas player!\n\n` +
-      `╭┈┈⬡「 📋 *INFO* 」\n` +
-      `┃ 🎯 Tujuan: Bantu Villager\n` +
-      `┃ 🔮 Skill: Lihat role 1 player\n` +
-      `┃ 🕐 Aksi: Malam hari\n` +
-      `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+      ` 📋 *INFO* \n` +
+      ` 🎯 Tujuan: Bantu Villager\n` +
+      ` 🔮 Skill: Lihat role 1 player\n` +
+      ` 🕐 Aksi: Malam hari\n` +
+      `\n\n` +
       `> Di malam hari, ketik:\n` +
       `> \`${prefix}wwsee <nomor>\` di PM bot`,
     guardian:
       `🛡️ *GUARDIAN*\n\n` +
       `Kamu bisa melindungi player!\n\n` +
-      `╭┈┈⬡「 📋 *INFO* 」\n` +
-      `┃ 🎯 Tujuan: Lindungi Villager\n` +
-      `┃ 🛡️ Skill: Lindungi 1 player\n` +
-      `┃ 🕐 Aksi: Malam hari\n` +
-      `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+      ` 📋 *INFO* \n` +
+      ` 🎯 Tujuan: Lindungi Villager\n` +
+      ` 🛡️ Skill: Lindungi 1 player\n` +
+      ` 🕐 Aksi: Malam hari\n` +
+      `\n\n` +
       `> Di malam hari, ketik:\n` +
       `> \`${prefix}wwprotect <nomor>\` di PM bot`,
     sorcerer:
       `🧙 *SORCERER*\n\n` +
       `Kamu sekutu Werewolf!\n\n` +
-      `╭┈┈⬡「 📋 *INFO* 」\n` +
-      `┃ 🎯 Tujuan: Bantu Werewolf menang\n` +
-      `┃ 🔍 Skill: Cek apakah target adalah Seer\n` +
-      `┃ 🕐 Aksi: Malam hari\n` +
-      `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+      ` 📋 *INFO* \n` +
+      ` 🎯 Tujuan: Bantu Werewolf menang\n` +
+      ` 🔍 Skill: Cek apakah target adalah Seer\n` +
+      ` 🕐 Aksi: Malam hari\n` +
+      `\n\n` +
       `> Di malam hari, ketik:\n` +
       `> \`${prefix}wwsorcerer <nomor>\` di PM bot`,
     villager:
       `👨‍🌾 *VILLAGER*\n\n` +
       `Kamu warga biasa!\n\n` +
-      `╭┈┈⬡「 📋 *INFO* 」\n` +
-      `┃ 🎯 Tujuan: Temukan Werewolf\n` +
-      `┃ 🗳️ Skill: Vote di siang hari\n` +
-      `┃ 🕐 Aksi: Siang hari\n` +
-      `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+      ` 📋 *INFO* \n` +
+      ` 🎯 Tujuan: Temukan Werewolf\n` +
+      ` 🗳️ Skill: Vote di siang hari\n` +
+      ` 🕐 Aksi: Siang hari\n` +
+      `\n\n` +
       `> Diskusi dan vote werewolf!\n` +
       `> \`${prefix}ww vote <nomor>\` di grup`,
   };
@@ -343,17 +343,17 @@ async function handler(m, { sock }) {
       await m.reply(
         `🐺 *WEREWOLF GAME*\n\n` +
           `Room berhasil dibuat!\n\n` +
-          `╭┈┈⬡「 📋 *INFO ROOM* 」\n` +
-          `┃ 👑 Host: @${m.sender.split("@")[0]}\n` +
-          `┃ 👥 Player: 1/${MAX_PLAYERS}\n` +
-          `┃ ⏱️ Min: ${MIN_PLAYERS} player\n` +
-          `╰┈┈┈┈┈┈┈┈⬡\n\n` +
-          `╭┈┈⬡「 🎮 *CARA MAIN* 」\n` +
-          `┃ ➕ \`${prefix}ww join\` - Gabung\n` +
-          `┃ ▶️ \`${prefix}ww start\` - Mulai (host)\n` +
-          `┃ 👥 \`${prefix}ww player\` - List player\n` +
-          `┃ 🚪 \`${prefix}ww exit\` - Keluar\n` +
-          `╰┈┈┈┈┈┈┈┈⬡`,
+          ` 📋 *INFO ROOM* \n` +
+          ` 👑 Host: @${m.sender.split("@")[0]}\n` +
+          ` 👥 Player: 1/${MAX_PLAYERS}\n` +
+          ` ⏱️ Min: ${MIN_PLAYERS} player\n` +
+          `\n\n` +
+          ` 🎮 *CARA MAIN* \n` +
+          ` ➕ \`${prefix}ww join\` - Gabung\n` +
+          ` ▶️ \`${prefix}ww start\` - Mulai (host)\n` +
+          ` 👥 \`${prefix}ww player\` - List player\n` +
+          ` 🚪 \`${prefix}ww exit\` - Keluar\n` +
+          ``,
         { mentions: [m.sender] },
       );
     },
@@ -404,12 +404,12 @@ async function handler(m, { sock }) {
       await m.reply(
         `✅ *PLAYER BERGABUNG*\n\n` +
           `@${m.sender.split("@")[0]} masuk!\n\n` +
-          `╭┈┈⬡「 👥 *PLAYER LIST* 」\n` +
+          ` 👥 *PLAYER LIST* \n` +
           `${playerList
             .split("\n")
-            .map((l) => `┃ ${l}`)
+            .map((l) => ` ${l}`)
             .join("\n")}\n` +
-          `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+          `\n\n` +
           `Total: ${ww[m.chat].players.length}/${MIN_PLAYERS} (min)\n` +
           (canStart
             ? `✅ Bisa mulai! \`${prefix}ww start\``
@@ -483,18 +483,18 @@ async function handler(m, { sock }) {
       await m.reply(
         `🐺 *GAME DIMULAI!*\n\n` +
           `🌙 *Malam Hari ke-1*\n\n` +
-          `╭┈┈⬡「 👥 *PLAYERS* 」\n` +
+          ` 👥 *PLAYERS* \n` +
           `${playerList
             .split("\n")
-            .map((l) => `┃ ${l}`)
+            .map((l) => ` ${l}`)
             .join("\n")}\n` +
-          `╰┈┈┈┈┈┈┈┈⬡\n\n` +
-          `╭┈┈⬡「 🎭 *ROLES* 」\n` +
+          `\n\n` +
+          ` 🎭 *ROLES* \n` +
           `${roleInfo
             .split("\n")
-            .map((l) => `┃ ${l}`)
+            .map((l) => ` ${l}`)
             .join("\n")}\n` +
-          `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+          `\n\n` +
           `📩 Cek PM untuk role kalian!\n` +
           `🌙 Werewolf berburu...\n` +
           `⏱️ Waktu malam: ${PHASE_DURATION.night / 1000} detik`,
@@ -611,18 +611,18 @@ async function handler(m, { sock }) {
 
       await m.reply(
         `🐺 *WEREWOLF - STATUS*\n\n` +
-          `╭┈┈⬡「 📊 *GAME INFO* 」\n` +
-          `┃ 📅 Day: ${ww[m.chat].day}\n` +
-          `┃ ${phaseEmoji} Phase: ${ww[m.chat].phase}\n` +
-          `┃ 👤 Alive: ${ww[m.chat].players.filter((p) => p.alive).length}\n` +
-          `┃ ☠️ Dead: ${ww[m.chat].dead.length}\n` +
-          `╰┈┈┈┈┈┈┈┈⬡\n\n` +
-          `╭┈┈⬡「 👥 *PLAYERS* 」\n` +
+          ` 📊 *GAME INFO* \n` +
+          ` 📅 Day: ${ww[m.chat].day}\n` +
+          ` ${phaseEmoji} Phase: ${ww[m.chat].phase}\n` +
+          ` 👤 Alive: ${ww[m.chat].players.filter((p) => p.alive).length}\n` +
+          ` ☠️ Dead: ${ww[m.chat].dead.length}\n` +
+          `\n\n` +
+          ` 👥 *PLAYERS* \n` +
           `${playerList
             .split("\n")
-            .map((l) => `┃ ${l}`)
+            .map((l) => ` ${l}`)
             .join("\n")}\n` +
-          `╰┈┈┈┈┈┈┈┈⬡`,
+          ``,
         { mentions: ww[m.chat].players.map((p) => p.id) },
       );
     },
@@ -690,22 +690,22 @@ async function handler(m, { sock }) {
     return m.reply(
       `🐺 *WEREWOLF GAME*\n\n` +
         `Permainan sosial mencari Werewolf!\n\n` +
-        `╭┈┈⬡「 🎮 *COMMANDS* 」\n` +
-        `┃ 🆕 \`${prefix}ww create\` - Buat room\n` +
-        `┃ ➕ \`${prefix}ww join\` - Gabung\n` +
-        `┃ ▶️ \`${prefix}ww start\` - Mulai (host)\n` +
-        `┃ 🗳️ \`${prefix}ww vote <no>\` - Vote\n` +
-        `┃ 👥 \`${prefix}ww player\` - List player\n` +
-        `┃ 🚪 \`${prefix}ww exit\` - Keluar\n` +
-        `┃ 🗑️ \`${prefix}ww delete\` - Hapus room\n` +
-        `╰┈┈┈┈┈┈┈┈⬡\n\n` +
-        `╭┈┈⬡「 🎭 *ROLES* 」\n` +
-        `┃ 🐺 Werewolf - Bunuh warga\n` +
-        `┃ 🧙 Sorcerer - Cari Seer\n` +
-        `┃ 🔮 Seer - Lihat role\n` +
-        `┃ 🛡️ Guardian - Lindungi\n` +
-        `┃ 👨‍🌾 Villager - Vote werewolf\n` +
-        `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+        ` 🎮 *COMMANDS* \n` +
+        ` 🆕 \`${prefix}ww create\` - Buat room\n` +
+        ` ➕ \`${prefix}ww join\` - Gabung\n` +
+        ` ▶️ \`${prefix}ww start\` - Mulai (host)\n` +
+        ` 🗳️ \`${prefix}ww vote <no>\` - Vote\n` +
+        ` 👥 \`${prefix}ww player\` - List player\n` +
+        ` 🚪 \`${prefix}ww exit\` - Keluar\n` +
+        ` 🗑️ \`${prefix}ww delete\` - Hapus room\n` +
+        `\n\n` +
+        ` 🎭 *ROLES* \n` +
+        ` 🐺 Werewolf - Bunuh warga\n` +
+        ` 🧙 Sorcerer - Cari Seer\n` +
+        ` 🔮 Seer - Lihat role\n` +
+        ` 🛡️ Guardian - Lindungi\n` +
+        ` 👨‍🌾 Villager - Vote werewolf\n` +
+        `\n\n` +
         `Min: ${MIN_PLAYERS} players | Max: ${MAX_PLAYERS} players`,
     );
   }
@@ -863,12 +863,12 @@ async function processNightActions(chatId, sock, db, prefix) {
     .map((p) => `${p.number}. @${p.id.split("@")[0]}`)
     .join("\n");
 
-  nightReport += `╭┈┈⬡「 👥 *PLAYER HIDUP* 」\n`;
+  nightReport += ` 👥 *PLAYER HIDUP* \n`;
   nightReport += `${playerList
     .split("\n")
-    .map((l) => `┃ ${l}`)
+    .map((l) => ` ${l}`)
     .join("\n")}\n`;
-  nightReport += `╰┈┈┈┈┈┈┈┈⬡\n\n`;
+  nightReport += `\n\n`;
   nightReport += `> 🗳️ Waktunya voting!\n`;
   nightReport += `> Ketik \`${prefix}ww vote <nomor>\`\n`;
   nightReport += `> ⏱️ Waktu: ${PHASE_DURATION.day / 1000} detik`;
@@ -1031,16 +1031,16 @@ async function endGame(chatId, sock, db, winner) {
   const endText =
     `🎉 *GAME OVER!*\n\n` +
     `${winner === "wolf" ? "🐺 *WEREWOLF MENANG!*" : "👨‍🌾 *VILLAGER MENANG!*"}\n\n` +
-    `╭┈┈⬡「 👥 *SEMUA PLAYER* 」\n` +
+    ` 👥 *SEMUA PLAYER* \n` +
     `${allPlayers
       .split("\n")
-      .map((l) => `┃ ${l}`)
+      .map((l) => ` ${l}`)
       .join("\n")}\n` +
-    `╰┈┈┈┈┈┈┈┈⬡\n\n` +
-    `╭┈┈⬡「 🎁 *HADIAH* 」\n` +
-    `┃ 💰 +${WIN_REWARD.koin.toLocaleString()} Koin\n` +
-    `┃ ⭐ +${WIN_REWARD.exp.toLocaleString()} EXP\n` +
-    `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+    `\n\n` +
+    ` 🎁 *HADIAH* \n` +
+    ` 💰 +${WIN_REWARD.koin.toLocaleString()} Koin\n` +
+    ` ⭐ +${WIN_REWARD.exp.toLocaleString()} EXP\n` +
+    `\n\n` +
     `> GG WP! Main lagi? \`${config.command?.prefix || "."}ww create\``;
 
   await sendWW(

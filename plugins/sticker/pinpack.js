@@ -55,9 +55,9 @@ async function handler(m, { sock }) {
     return m.reply(
       `── .✦ 𝗣𝗜𝗡 𝗣𝗔𝗖𝗞 ✦. ── 𝜗ৎ\n\n` +
         `Cari gambar Pinterest → jadikan sticker pack!\n\n` +
-        `╭─〔 Cara Pakai 〕───⬣\n` +
-        `│  ✦ ${m.prefix}pinpack <query>\n` +
-        `╰──────────────⬣\n\n` +
+        `Cara Pakai \n` +
+        ` ✦ ${m.prefix}pinpack <query>\n` +
+        `\n\n` +
         `*${m.prefix}pinpack anime cat*\n` +
         `*${m.prefix}pinpack aesthetic*\n\n` +
         `.☘︎ ݁˖`,

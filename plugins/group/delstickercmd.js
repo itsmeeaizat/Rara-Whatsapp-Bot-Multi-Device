@@ -31,12 +31,12 @@ async function handler(m, { sock }) {
         }
         
         let txt = `🖼️ *sᴛɪᴄᴋᴇʀ ᴄᴏᴍᴍᴀɴᴅs*\n\n`
-        txt += `╭┈┈⬡「 📋 *ᴅᴀꜰᴛᴀʀ* 」\n`
+        txt += ` 📋 *ᴅᴀꜰᴛᴀʀ* \n`
         
         for (const cmd of existingCmds) {
-            txt += `┃ 🖼️ → \`.${cmd.command}\`\n`
+            txt += ` 🖼️ → \`.${cmd.command}\`\n`
         }
-        txt += `╰┈┈┈┈┈┈┈┈⬡\n\n`
+        txt += `\n\n`
         
         txt += `*Hapus dengan:*\n`
         txt += `> \`.delstickercmd <command>\`\n`

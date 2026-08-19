@@ -47,25 +47,25 @@ async function handler(m, { sock }) {
     if (!featureName) {
         const unlockedFeatures = user.unlockedFeatures || []
         
-        let text = `╭━━━━━━━━━━━━━━━━━╮\n`
-        text += `┃  🛒 *ʙᴜʏ ꜰɪᴛᴜʀ*\n`
-        text += `╰━━━━━━━━━━━━━━━━━╯\n\n`
+        let text = `━━━━━━━━━━━━━━━━━╮\n`
+        text += `  🛒 *ʙᴜʏ ꜰɪᴛᴜʀ*\n`
+        text += `━━━━━━━━━━━━━━━━━╯\n\n`
         
         text += `> Harga: *${formatNumber(PRICE_PER_FEATURE)}* bal/fitur\n`
         text += `> Koin: *${formatNumber(user.koin || 0)}*\n\n`
         
-        text += `╭┈┈⬡「 📋 *ꜰɪᴛᴜʀ* 」\n`
+        text += ` 📋 *ꜰɪᴛᴜʀ* \n`
         
         for (const feature of PREMIUM_FEATURES) {
             const isUnlocked = unlockedFeatures.includes(feature.id)
             const status = isUnlocked ? '✅' : '🔒'
-            text += `┃ ${status} *${feature.name}*\n`
-            text += `┃    _${feature.desc}_\n`
-            text += `┃    ID: \`${feature.id}\`\n`
-            text += `┃\n`
+            text += ` ${status} *${feature.name}*\n`
+            text += `    _${feature.desc}_\n`
+            text += `    ID: \`${feature.id}\`\n`
+            text += `\n`
         }
         
-        text += `╰┈┈┈┈┈┈┈┈⬡\n\n`
+        text += `\n\n`
         text += `> Gunakan: \`.buyfitur <id>\`\n`
         text += `> Atau jadi *Premium* unlock semua!`
         
@@ -108,11 +108,11 @@ async function handler(m, { sock }) {
     
     await m.reply(
         `✅ *ꜰɪᴛᴜʀ ᴅɪ-ᴜɴʟᴏᴄᴋ*\n\n` +
-        `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
-        `┃ 🎁 ꜰɪᴛᴜʀ: *${feature.name}*\n` +
-        `┃ 💵 ʜᴀʀɢᴀ: *-${formatNumber(PRICE_PER_FEATURE)}* bal\n` +
-        `┃ 💰 sɪsᴀ: *${formatNumber(newKoin)}*\n` +
-        `╰┈┈⬡\n\n` +
+        ` 📋 *ᴅᴇᴛᴀɪʟ* \n` +
+        ` 🎁 ꜰɪᴛᴜʀ: *${feature.name}*\n` +
+        ` 💵 ʜᴀʀɢᴀ: *-${formatNumber(PRICE_PER_FEATURE)}* bal\n` +
+        ` 💰 sɪsᴀ: *${formatNumber(newKoin)}*\n` +
+        `\n\n` +
         `> _${feature.desc}_\n\n` +
         `> 💡 Tip: Jadi *Premium* untuk unlock SEMUA!`
     )

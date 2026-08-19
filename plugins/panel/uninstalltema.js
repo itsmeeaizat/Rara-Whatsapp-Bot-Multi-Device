@@ -22,9 +22,8 @@ async function handler(m) {
     
     if (!text) {
         return m.reply(
-            `╭┈┈⬡「 🗑️ *ᴜɴɪɴsᴛᴀʟʟ ᴛᴇᴍᴀ* 」
-┃ ㊗ ᴜsᴀɢᴇ: \`${m.prefix}uinstalltema <ip>|<password>\`
-╰┈┈⬡
+            ` 🗑️ *ᴜɴɪɴsᴛᴀʟʟ ᴛᴇᴍᴀ* 
+ ㊗ ᴜsᴀɢᴇ: \`${m.prefix}uinstalltema <ip>|<password>\`
 
 > \`Contoh: ${m.prefix}uinstalltema 192.168.1.1|secretpass\``
         )
@@ -63,10 +62,9 @@ async function handler(m) {
             stream.on('close', async () => {
                 m.react('✅')
                 await m.reply(
-                    `╭┈┈⬡「 ✅ *ᴜɴɪɴsᴛᴀʟʟ ᴛᴇᴍᴀ* 」
-┃ ㊗ sᴛᴀᴛᴜs: *Berhasil*
-┃ ㊗ ɪᴘ: ${ipvps}
-╰┈┈⬡
+                    ` ✅ *ᴜɴɪɴsᴛᴀʟʟ ᴛᴇᴍᴀ* 
+ ㊗ sᴛᴀᴛᴜs: *Berhasil*
+ ㊗ ɪᴘ: ${ipvps}
 
 > _Tema berhasil diuninstall!_`
                 )

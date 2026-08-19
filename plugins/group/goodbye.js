@@ -142,7 +142,7 @@ Doakan yang terbaik untuknya ya.`,
   msg += `> 🏠 *Nama* : ${groupName}\n`;
   msg += `> 👥 *Sisa Member* : ${memberCount}\n`;
   msg += `> 📅 *Tanggal* : ${now.format("DD/MM/YYYY")}\n\n`;
-  msg += `💌 *Pesan*\n> 「 ${quote} 」\n\n🌸 _Sampai jumpa lagi, tomodachi._ 🤍`;
+  msg += `💌 *Pesan*\n>  ${quote} \n\n🌸 _Sampai jumpa lagi, tomodachi._ 🤍`;
 
   return msg;
 

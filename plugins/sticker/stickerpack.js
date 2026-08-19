@@ -97,9 +97,9 @@ async function handler(m, { sock }) {
     return m.reply(
       `── .✦ 𝗦𝗧𝗜𝗖𝗞𝗘𝗥 𝗣𝗔𝗖𝗞 ✦. ── 𝜗ৎ\n\n` +
         `Cari dan kirim sticker pack!\n\n` +
-        `╭─〔 Cara Pakai 〕───⬣\n` +
-        `│  ✦ ${m.prefix}stickerpack <query>\n` +
-        `╰──────────────⬣\n\n` +
+        `Cara Pakai \n` +
+        ` ✦ ${m.prefix}stickerpack <query>\n` +
+        `\n\n` +
         `*${m.prefix}stickerpack anime*\n` +
         `*${m.prefix}stickerpack cat*\n\n` +
         `.☘︎ ݁˖`,

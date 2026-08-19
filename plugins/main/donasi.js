@@ -61,12 +61,12 @@ async function handler(m, { sock }) {
       text += `${link.url}\n`;
     }
   } else {
-    text += `╭┈┈⬡「 💳 *ᴘᴀʏᴍᴇɴᴛ* 」\n`;
-    text += `┃\n`;
-    text += `┃ > Belum dikonfigurasi\n`;
-    text += `┃ > Edit config.donasi\n`;
-    text += `┃\n`;
-    text += `╰┈┈┈┈┈┈┈┈⬡\n\n`;
+    text += ` 💳 *ᴘᴀʏᴍᴇɴᴛ* \n`;
+    text += `\n`;
+    text += ` > Belum dikonfigurasi\n`;
+    text += ` > Edit config.donasi\n`;
+    text += `\n`;
+    text += `\n\n`;
   }
 
   text += `🎁 *ʙᴇɴᴇꜰɪᴛ*\n`;

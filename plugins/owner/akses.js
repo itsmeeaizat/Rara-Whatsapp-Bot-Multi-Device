@@ -148,9 +148,9 @@ async function handler(m, { sock, plugins }) {
 
     await m.reply(
       `✅ *ᴀᴋsᴇs ᴅɪʙᴇʀɪᴋᴀɴ*\n\n` +
-        `┃ 🔑 ᴄᴍᴅ: \`${commandTarget}\`\n` +
-        `┃ ⏱️ ᴅᴜʀᴀsɪ: *${durationTarget}*\n` +
-        `┃ 👤 ᴛᴀʀɢᴇᴛ: @${target.split("@")[0]}\n`,
+        ` 🔑 ᴄᴍᴅ: \`${commandTarget}\`\n` +
+        ` ⏱️ ᴅᴜʀᴀsɪ: *${durationTarget}*\n` +
+        ` 👤 ᴛᴀʀɢᴇᴛ: @${target.split("@")[0]}\n`,
       { mentions: [target] },
     );
   }

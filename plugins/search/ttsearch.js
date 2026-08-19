@@ -28,11 +28,9 @@ async function handler(m, { sock }) {
 
   if (!query) {
     return m.reply(
-      `╭┈┈⬡「 🎵 *ᴛɪᴋᴛᴏᴋ sᴇᴀʀᴄʜ* 」
-┃
+      ` 🎵 *ᴛɪᴋᴛᴏᴋ sᴇᴀʀᴄʜ* 
+
 ㊗ ᴜsᴀɢᴇ: \`${m.prefix}ttsearch <query>\`
-┃
-╰┈┈⬡
 
 > \`Contoh: ${m.prefix}ttsearch anime\``,
     );

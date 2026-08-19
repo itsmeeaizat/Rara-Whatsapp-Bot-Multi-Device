@@ -68,11 +68,11 @@ async function handler(m, { sock }) {
     
     await m.reply(
         `✅ *ᴋᴏɪɴ ᴅɪᴋᴜʀᴀɴɢɪ*\n\n` +
-        `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
-        `┃ 👤 ᴜsᴇʀ: @${targetJid.split('@')[0]}\n` +
-        `┃ ➖ ᴋᴜʀᴀɴɢ: *-${formatKoin(amount)}*\n` +
-        `┃ 💰 sɪsᴀ: *${formatKoin(newKoin)}*\n` +
-        `╰┈┈⬡`,
+        ` 📋 *ᴅᴇᴛᴀɪʟ* \n` +
+        ` 👤 ᴜsᴇʀ: @${targetJid.split('@')[0]}\n` +
+        ` ➖ ᴋᴜʀᴀɴɢ: *-${formatKoin(amount)}*\n` +
+        ` 💰 sɪsᴀ: *${formatKoin(newKoin)}*\n` +
+        ``,
         { mentions: [targetJid] }
     )
 }

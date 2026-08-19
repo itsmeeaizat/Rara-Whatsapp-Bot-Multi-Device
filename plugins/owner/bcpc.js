@@ -130,13 +130,13 @@ async function handler(m, { sock }) {
       {
         text:
           `📱 *ʙʀᴏᴀᴅᴄᴀsᴛ ᴘʀɪᴠᴀᴛᴇ*\n\n` +
-          `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
-          `┃ 📝 ᴘᴇsᴀɴ: \`${input.substring(0, 50)}${input.length > 50 ? "..." : ""}\`\n` +
-          `┃ 📷 ᴍᴇᴅɪᴀ: \`${mediaBuffer ? mediaType : "Tidak"}\`\n` +
-          `┃ 👥 ᴛᴀʀɢᴇᴛ: \`${filtered.length}\` kontak\n` +
-          `┃ ⏱️ ᴊᴇᴅᴀ: \`${jeda}ms\`\n` +
-          `┃ 📊 ᴇsᴛɪᴍᴀsɪ: \`${Math.ceil((filtered.length * jeda) / 60000)} menit\`\n` +
-          `╰┈┈⬡\n\n` +
+          ` 📋 *ᴅᴇᴛᴀɪʟ* \n` +
+          ` 📝 ᴘᴇsᴀɴ: \`${input.substring(0, 50)}${input.length > 50 ? "..." : ""}\`\n` +
+          ` 📷 ᴍᴇᴅɪᴀ: \`${mediaBuffer ? mediaType : "Tidak"}\`\n` +
+          ` 👥 ᴛᴀʀɢᴇᴛ: \`${filtered.length}\` kontak\n` +
+          ` ⏱️ ᴊᴇᴅᴀ: \`${jeda}ms\`\n` +
+          ` 📊 ᴇsᴛɪᴍᴀsɪ: \`${Math.ceil((filtered.length * jeda) / 60000)} menit\`\n` +
+          `\n\n` +
           `> Memulai broadcast...`,
         contextInfo: ctx,
       },
@@ -176,11 +176,11 @@ async function handler(m, { sock }) {
       {
         text:
           `✅ *ʙʀᴏᴀᴅᴄᴀsᴛ ᴘʀɪᴠᴀᴛᴇ sᴇʟᴇsᴀɪ*\n\n` +
-          `╭┈┈⬡「 📊 *ʜᴀsɪʟ* 」\n` +
-          `┃ ✅ ʙᴇʀʜᴀsɪʟ: \`${success}\`\n` +
-          `┃ ❌ ɢᴀɢᴀʟ: \`${failed}\`\n` +
-          `┃ 📊 ᴛᴏᴛᴀʟ: \`${filtered.length}\`\n` +
-          `╰┈┈⬡`,
+          ` 📊 *ʜᴀsɪʟ* \n` +
+          ` ✅ ʙᴇʀʜᴀsɪʟ: \`${success}\`\n` +
+          ` ❌ ɢᴀɢᴀʟ: \`${failed}\`\n` +
+          ` 📊 ᴛᴏᴛᴀʟ: \`${filtered.length}\`\n` +
+          ``,
         contextInfo: ctx,
       },
       { quoted: m },

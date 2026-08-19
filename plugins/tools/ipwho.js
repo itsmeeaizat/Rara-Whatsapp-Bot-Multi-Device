@@ -62,25 +62,25 @@ async function handler(m, { sock }) {
 
     const text =
       `🌐 *ɪᴘ ʟᴏᴏᴋᴜᴘ*\n\n` +
-      `╭┈┈⬡「 📍 *ʟᴏᴋᴀsɪ* 」\n` +
-      `┃ 🔢 IP: ${data.ip}\n` +
-      `┃ 🌍 Country: ${data.country} ${data.country_code}\n` +
-      `┃ 🏙️ City: ${data.city || "-"}\n` +
-      `┃ 📍 Region: ${data.region || "-"}\n` +
-      `┃ 🌐 Continent: ${data.continent || "-"}\n` +
-      `┃ 📮 Postal: ${data.postal || "-"}\n` +
-      `┃ ⏰ Timezone: ${data.timezone?.id || "-"}\n` +
-      `╰┈┈┈┈┈┈┈┈⬡\n\n` +
-      `╭┈┈⬡「 🔌 *ᴋᴏɴᴇᴋsɪ* 」\n` +
-      `┃ 🏢 ISP: ${data.connection?.isp || "-"}\n` +
-      `┃ 🌐 ORG: ${data.connection?.org || "-"}\n` +
-      `┃ 📡 ASN: ${data.connection?.asn || "-"}\n` +
-      `╰┈┈┈┈┈┈┈┈⬡\n\n` +
-      `╭┈┈⬡「 🛡️ *sᴇᴄᴜʀɪᴛʏ* 」\n` +
-      `┃ 🔒 VPN: ${data.security?.vpn ? "✅ Yes" : "❌ No"}\n` +
-      `┃ 🌐 Proxy: ${data.security?.proxy ? "✅ Yes" : "❌ No"}\n` +
-      `┃ 🤖 Tor: ${data.security?.tor ? "✅ Yes" : "❌ No"}\n` +
-      `╰┈┈┈┈┈┈┈┈⬡`;
+      ` 📍 *ʟᴏᴋᴀsɪ* \n` +
+      ` 🔢 IP: ${data.ip}\n` +
+      ` 🌍 Country: ${data.country} ${data.country_code}\n` +
+      ` 🏙️ City: ${data.city || "-"}\n` +
+      ` 📍 Region: ${data.region || "-"}\n` +
+      ` 🌐 Continent: ${data.continent || "-"}\n` +
+      ` 📮 Postal: ${data.postal || "-"}\n` +
+      ` ⏰ Timezone: ${data.timezone?.id || "-"}\n` +
+      `\n\n` +
+      ` 🔌 *ᴋᴏɴᴇᴋsɪ* \n` +
+      ` 🏢 ISP: ${data.connection?.isp || "-"}\n` +
+      ` 🌐 ORG: ${data.connection?.org || "-"}\n` +
+      ` 📡 ASN: ${data.connection?.asn || "-"}\n` +
+      `\n\n` +
+      ` 🛡️ *sᴇᴄᴜʀɪᴛʏ* \n` +
+      ` 🔒 VPN: ${data.security?.vpn ? "✅ Yes" : "❌ No"}\n` +
+      ` 🌐 Proxy: ${data.security?.proxy ? "✅ Yes" : "❌ No"}\n` +
+      ` 🤖 Tor: ${data.security?.tor ? "✅ Yes" : "❌ No"}\n` +
+      ``;
 
     await m.react("✅");
     await sendToolsPreview(sock, m.chat, text, "🌐 *ɪᴘ ʟᴏᴏᴋᴜᴘ*", data.country, {

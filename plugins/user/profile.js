@@ -133,7 +133,7 @@ async function handler(m, { sock }) {
   let caption = `Halo kak @${phone}! 👋\n`;
   caption += `Ini adalah rincian lengkap dari profil, status, dan seluruh aset yang kakak miliki saat ini di dalam sistem bot:\n\n`;
   
-  caption += `*〔 👤 INFORMASI PRIBADI 〕*\n`;
+  caption += `* 👤 INFORMASI PRIBADI *\n`;
   caption += `- *Nama Asli:* ${user.name || m.pushName || "User"}\n`;
   if (user.isRegistered) {
       caption += `- *Nama Daftar:* ${user.regName} (${user.regAge} tahun, ${user.regGender})\n`;
@@ -149,7 +149,7 @@ async function handler(m, { sock }) {
       caption += `- *Pasangan (Spouse):* @${user.rpg.spouse.split("@")[0]}\n`;
   }
 
-  caption += `\n*〔 ⚔️ RPG STATS & LEVEL 〕*\n`;
+  caption += `\n* ⚔️ RPG STATS & LEVEL *\n`;
   caption += `- *Role / Pangkat:* ${role}\n`;
   caption += `- *Level Saat Ini:* ${user.rpg.level}\n`;
   caption += `- *Total Exp:* ${formatNumber(userExp)} XP\n`;
@@ -158,12 +158,12 @@ async function handler(m, { sock }) {
   caption += `- *Stamina:* ⚡ ${user.rpg.stamina} / ${user.rpg.maxStamina}\n`;
   caption += `- *Progress Ke Level ${user.rpg.level + 1}:*\n  ${getLevelBar(expInLevel, expNeeded)}\n  _${formatNumber(expInLevel)} / ${formatNumber(expNeeded)} XP_\n`;
 
-  caption += `\n*〔 💰 ASET & KEUANGAN 〕*\n`;
+  caption += `\n* 💰 ASET & KEUANGAN *\n`;
   caption += `- *Koin Tunai:* 🪙 Rp ${user.koin?.toLocaleString("id-ID") || 0} _(Digunakan untuk fitur RPG)_\n`;
   caption += `- *Uang di Bank:* 🏦 Rp ${user.rpg?.bank?.toLocaleString("id-ID") || 0} _(Aman dari resiko perampokan)_\n`;
   caption += `- *Sisa Energi:* ⚡ ${isOwnerUser || isPremiumUser ? "∞ Tak Terbatas" : user.energi} _(Dibutuhkan setiap kali memakai command)_\n`;
 
-  caption += `\n*〔 📱 WHATSAPP INFO 〕*\n`;
+  caption += `\n* 📱 WHATSAPP INFO *\n`;
   caption += `- *Nomor:* +${phone}\n`;
   caption += `- *Eksistensi WA:* ${exists ? 'Ya' : 'Tidak'}\n`;
   caption += `- *JID:* ${canonicalJid}\n`;
@@ -172,12 +172,12 @@ async function handler(m, { sock }) {
   caption += `- *Bot WhatsApp:* ${isBot ? 'Ya' : 'Bukan'}\n`;
   caption += `- *Device ID:* ${deviceId || '-'}\n`;
 
-  caption += `\n*〔 ℹ️ BIO & PROFILE 〕*\n`;
+  caption += `\n* ℹ️ BIO & PROFILE *\n`;
   caption += `- *Avatar:* ${ppUrl ? 'Ada' : 'Tidak Ada'}\n`;
   caption += `- *Bio:* ${status || '-'}\n`;
   caption += `- *Bio Set:* ${fmtDate(statusTs) || '-'}\n`;
 
-  caption += `\n*〔 🏢 BUSINESS INFO 〕*\n`;
+  caption += `\n* 🏢 BUSINESS INFO *\n`;
   caption += `- *Tipe Akun:* ${isBiz ? 'WhatsApp Business' : 'WhatsApp Biasa'}\n`;
   if (isBiz) {
     caption += `- *Deskripsi:* ${bizProfile.description || '-'}\n`;
@@ -188,13 +188,13 @@ async function handler(m, { sock }) {
     caption += `- *Verified:* ${bizProfile.isProfileLinked ? 'Ya' : 'Tidak'}\n`;
     
     if (products > 0 || collectionsCount > 0) {
-      caption += `\n*〔 🛍️ CATALOG 〕*\n`;
+      caption += `\n* 🛍️ CATALOG *\n`;
       caption += `- *Total Produk:* ${products}\n`;
       caption += `- *Koleksi:* ${collectionsCount}\n`;
     }
   }
 
-  caption += `\n*〔 🤖 BOT VIEWPOINT 〕*\n`;
+  caption += `\n* 🤖 BOT VIEWPOINT *\n`;
   caption += `- *Bot JID:* ${sock.user?.id || '-'}\n`;
   caption += `- *Bot Platform:* ${sock.authState?.creds?.platform || process.platform || '-'}\n`;
   caption += `- *Runtime:* Node ${process.version}\n`;
@@ -202,7 +202,7 @@ async function handler(m, { sock }) {
   if (user.inventory && Object.keys(user.inventory).length > 0) {
       const invItems = Object.entries(user.inventory).filter(([_, qty]) => qty > 0);
       if (invItems.length > 0) {
-          caption += `\n*〔 🎒 ISI INVENTORY 〕*\n`;
+          caption += `\n* 🎒 ISI INVENTORY *\n`;
           caption += `Barang-barang yang berhasil kakak kumpulkan:\n`;
           invItems.forEach(([item, qty]) => {
               caption += `- *${item.charAt(0).toUpperCase() + item.slice(1)}:* sejumlah ${qty} item\n`;
@@ -211,7 +211,7 @@ async function handler(m, { sock }) {
   }
 
   if (user.unlockedFeatures && user.unlockedFeatures.length > 0) {
-      caption += `\n*〔 🔓 FITUR PREMIUM TERBUKA 〕*\n`;
+      caption += `\n* 🔓 FITUR PREMIUM TERBUKA *\n`;
       caption += `Fitur eksklusif yang sudah kakak beli secara permanen:\n`;
       user.unlockedFeatures.forEach(fitur => {
           caption += `- *${fitur}*\n`;

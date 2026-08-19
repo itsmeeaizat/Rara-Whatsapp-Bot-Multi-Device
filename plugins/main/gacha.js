@@ -171,9 +171,9 @@ async function handler(m, { sock }) {
   db.save();
 
   let text = `${createGachaAnimation()} *ɢᴀᴄʜᴀ ʀᴇsᴜʟᴛ*\n\n`;
-  text += `╭─────────────╮\n`;
-  text += `│  ${reward.emoji} ${reward.emoji} ${reward.emoji}  │\n`;
-  text += `╰─────────────╯\n\n`;
+  text += `─────────────╮\n`;
+  text += ` ${reward.emoji} ${reward.emoji} ${reward.emoji}  \n`;
+  text += `╯\n\n`;
 
   if (reward.rarity === "mythic") {
     text += `🎊🎊🎊 *JACKPOT!* 🎊🎊🎊\n\n`;

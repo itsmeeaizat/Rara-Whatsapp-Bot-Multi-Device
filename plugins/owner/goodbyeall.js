@@ -26,10 +26,10 @@ async function handler(m, { sock }) {
         return m.reply(
             `👋 *ɢᴏᴏᴅʙʏᴇ ɢʟᴏʙᴀʟ*\n\n` +
             `> Aktifkan/nonaktifkan goodbye di SEMUA grup sekaligus\n\n` +
-            `╭┈┈⬡「 📋 *ᴄᴀʀᴀ ᴘᴀᴋᴀɪ* 」\n` +
-            `┃ ${m.prefix}goodbyeall on\n` +
-            `┃ ${m.prefix}goodbyeall off\n` +
-            `╰┈┈┈┈┈┈┈┈⬡`
+            ` 📋 *ᴄᴀʀᴀ ᴘᴀᴋᴀɪ* \n` +
+            ` ${m.prefix}goodbyeall on\n` +
+            ` ${m.prefix}goodbyeall off\n` +
+            ``
         )
     }
     
@@ -51,19 +51,19 @@ async function handler(m, { sock }) {
         if (status) {
             return m.reply(
                 `✅ *ɢᴏᴏᴅʙʏᴇ ɢʟᴏʙᴀʟ ᴏɴ*\n\n` +
-                `╭┈┈⬡「 📊 *ʀᴇsᴜʟᴛ* 」\n` +
-                `┃ 🌐 Total Grup: *${count}*\n` +
-                `┃ ✅ Goodbye: *AKTIF*\n` +
-                `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+                ` 📊 *ʀᴇsᴜʟᴛ* \n` +
+                ` 🌐 Total Grup: *${count}*\n` +
+                ` ✅ Goodbye: *AKTIF*\n` +
+                `\n\n` +
                 `> Member yang keluar akan dikirim pesan perpisahan!`
             )
         } else {
             return m.reply(
                 `❌ *ɢᴏᴏᴅʙʏᴇ ɢʟᴏʙᴀʟ ᴏꜰꜰ*\n\n` +
-                `╭┈┈⬡「 📊 *ʀᴇsᴜʟᴛ* 」\n` +
-                `┃ 🌐 Total Grup: *${count}*\n` +
-                `┃ ❌ Goodbye: *NONAKTIF*\n` +
-                `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+                ` 📊 *ʀᴇsᴜʟᴛ* \n` +
+                ` 🌐 Total Grup: *${count}*\n` +
+                ` ❌ Goodbye: *NONAKTIF*\n` +
+                `\n\n` +
                 `> Goodbye dinonaktifkan di semua grup.`
             )
         }

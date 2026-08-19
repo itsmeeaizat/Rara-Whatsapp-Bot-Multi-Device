@@ -31,10 +31,10 @@ async function handler(m, { sock }) {
         
         return m.reply(
             `🛒 *ʙᴜʏ ᴇɴᴇʀɢɪ*\n\n` +
-            `╭┈┈⬡「 💰 *ɪɴꜰᴏ* 」\n` +
-            `┃ 💵 ʜᴀʀɢᴀ: *${PRICE_PER_ENERGI}* koin/energi\n` +
-            `┃ 💰 ᴋᴏɪɴ ᴋᴀᴍᴜ: *${formatNumber(user.koin || 0)}*\n` +
-            `╰┈┈⬡\n\n` +
+            ` 💰 *ɪɴꜰᴏ* \n` +
+            ` 💵 ʜᴀʀɢᴀ: *${PRICE_PER_ENERGI}* koin/energi\n` +
+            ` 💰 ᴋᴏɪɴ ᴋᴀᴍᴜ: *${formatNumber(user.koin || 0)}*\n` +
+            `\n\n` +
             `> Gunakan: \`.buyenergi <jumlah>\`\n\n` +
             `\`Contoh: ${m.prefix}buyenergi 10\``
         )
@@ -70,14 +70,14 @@ async function handler(m, { sock }) {
     
     await m.reply(
         `✅ *ᴘᴇᴍʙᴇʟɪᴀɴ ʙᴇʀʜᴀsɪʟ*\n\n` +
-        `╭┈┈⬡「 📋 *ᴅᴇᴛᴀɪʟ* 」\n` +
-        `┃ ⚡ ᴇɴᴇʀɢɪ: *+${formatNumber(amount)}*\n` +
-        `┃ 💵 ʜᴀʀɢᴀ: *-${formatNumber(totalPrice)}* koin\n` +
-        `╰┈┈⬡\n\n` +
-        `╭┈┈⬡「 💰 *sᴀʟᴅᴏ* 」\n` +
-        `┃ ⚡ ᴇɴᴇʀɢɪ: *${formatNumber(newEnergi)}*\n` +
-        `┃ 💰 ᴋᴏɪɴ: *${formatNumber(newKoin)}*\n` +
-        `╰┈┈⬡`
+        ` 📋 *ᴅᴇᴛᴀɪʟ* \n` +
+        ` ⚡ ᴇɴᴇʀɢɪ: *+${formatNumber(amount)}*\n` +
+        ` 💵 ʜᴀʀɢᴀ: *-${formatNumber(totalPrice)}* koin\n` +
+        `\n\n` +
+        ` 💰 *sᴀʟᴅᴏ* \n` +
+        ` ⚡ ᴇɴᴇʀɢɪ: *${formatNumber(newEnergi)}*\n` +
+        ` 💰 ᴋᴏɪɴ: *${formatNumber(newKoin)}*\n` +
+        ``
     )
 }
 

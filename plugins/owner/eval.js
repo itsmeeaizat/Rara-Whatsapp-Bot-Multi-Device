@@ -78,10 +78,10 @@ async function handler(m, { sock, store }) {
 
     await m.reply(
         `⚙️ *ᴇᴠᴀʟ ʀᴇsᴜʟᴛ*\n\n` +
-        `╭┈┈⬡「 📋 *ɪɴғᴏ* 」\n` +
-        `┃ ${status}\n` +
-        `┃ Type: ${type}\n` +
-        `╰┈┈┈┈┈┈┈┈⬡\n\n` +
+        ` 📋 *ɪɴғᴏ* \n` +
+        ` ${status}\n` +
+        ` Type: ${type}\n` +
+        `\n\n` +
         `\`\`\`${output}\`\`\``
     )
 }

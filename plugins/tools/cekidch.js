@@ -69,14 +69,14 @@ async function handler(m, { sock }) {
 
         const infoText =
             `── .✦ 𝗖𝗛𝗔𝗡𝗡𝗘𝗟 𝗜𝗡𝗙𝗢 ✦. ──\n\n` +
-            `╭─〔 *${chName}* 〕───⬣\n` +
-            `│  ✦ ɴᴀᴍᴀ       : *${chName}*\n` +
-            `│  ✦ ɪᴅ            : \`${chId}\`\n` +
-            `│  ✦ sᴜʙsᴄʀɪʙᴇʀ : *${formatSubs(chSubs)}*\n` +
-            `│  ✦ sᴛᴀᴛᴜs     : *${chVerified}*\n` +
-            `│  ✦ ᴅɪʙᴜᴀᴛ      : *${chCreated}*\n` +
-            `│  ✦ ᴅᴇsᴋʀɪᴘsɪ  : ${descPreview}\n` +
-            `╰──────────────⬣`
+            `*${chName}* \n` +
+            ` ✦ ɴᴀᴍᴀ       : *${chName}*\n` +
+            ` ✦ ɪᴅ            : \`${chId}\`\n` +
+            ` ✦ sᴜʙsᴄʀɪʙᴇʀ : *${formatSubs(chSubs)}*\n` +
+            ` ✦ sᴛᴀᴛᴜs     : *${chVerified}*\n` +
+            ` ✦ ᴅɪʙᴜᴀᴛ      : *${chCreated}*\n` +
+            ` ✦ ᴅᴇsᴋʀɪᴘsɪ  : ${descPreview}\n` +
+            ``
 
         const buttons = [
             {
