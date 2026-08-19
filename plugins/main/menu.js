@@ -259,46 +259,51 @@ async function buildMenuText(
 Aku ${botConfig.bot?.name || "Rara-AI"}, bot WhatsApp yang siap bantu kamu.  
 Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana langsung lewat WhatsApp — praktis tanpa ribet.`;
   const botInfoLines = [
-    `🖐 ɴᴀᴍᴀ     : ${botConfig.bot?.name || "Rara-AI"}`,
-    `🔑 ᴠᴇʀsɪ    : v${botConfig.bot?.version || "1.2.0"}`,
-    `⚙️ ᴍᴏᴅᴇ     : ${(botConfig.mode || "public").toUpperCase()}`,
-    `🧶 ᴘʀᴇꜰɪx    : [ ${prefix} ]`,
-    `⏱ ᴜᴘᴛɪᴍᴇ   : ${uptimeFormatted}`,
-    `👥 ᴛᴏᴛᴀʟ    : ${totalUsers} Users`,
-    `🏷 ɢʀᴏᴜᴘ     : ${botMode.toUpperCase()}`,
-    `👑 ᴏᴡɴᴇʀ    : ${botConfig.owner?.name || "Rara-AI"}`,
+    `ɴᴀᴍᴀ     : ${botConfig.bot?.name || "Rara-AI"}`,
+    `ᴠᴇʀsɪ    : v${botConfig.bot?.version || "1.2.0"}`,
+    `ᴍᴏᴅᴇ     : ${(botConfig.mode || "public").toUpperCase()}`,
+    `ᴘʀᴇꜰɪx    : [ ${prefix} ]`,
+    `ᴜᴘᴛɪᴍᴇ   : ${uptimeFormatted}`,
+    `ᴛᴏᴛᴀʟ    : ${totalUsers} Users`,
+    `ɢʀᴏᴜᴘ     : ${botMode.toUpperCase()}`,
+    `ᴏᴡɴᴇʀ    : ${botConfig.owner?.name || "Rara-AI"}`,
   ];
   const userInfoLines = [
-    `🙋 ɴᴀᴍᴀ     : ${m.pushName}`,
-    `🎭 ʀᴏʟᴇ     : ${roleEmoji} ${userRole}`,
-    `🎟 ᴇɴᴇʀɢɪ   : ${m.isOwner || m.isPremium ? "∞ Unlimited" : (user?.energi ?? 25)}`,
-    `⚡ ʟᴇᴠᴇʟ    : ${Math.floor((user?.exp || 0) / 20000) + 1}`,
-    `✨ ᴇxᴘ       : ${(user?.exp ?? 0).toLocaleString()}`,
-    `💰 ᴋᴏɪɴ      : ${(user?.koin ?? 0).toLocaleString()}`,
+    `ɴᴀᴍᴀ     : ${m.pushName}`,
+    `ʀᴏʟᴇ     : ${userRole}`,
+    `ᴇɴᴇʀɢɪ   : ${m.isOwner || m.isPremium ? "∞ Unlimited" : (user?.energi ?? 25)}`,
+    `ʟᴇᴠᴇʟ    : ${Math.floor((user?.exp || 0) / 20000) + 1}`,
+    `ᴇxᴘ       : ${(user?.exp ?? 0).toLocaleString()}`,
+    `ᴋᴏɪɴ      : ${(user?.koin ?? 0).toLocaleString()}`,
   ];
   const rpg = user?.rpg || {};
   if (rpg.health !== undefined) {
-    userInfoLines.push(
-      `❤️ ʜᴘ        : ${rpg.health}/${rpg.maxHealth || rpg.health}`,
-    );
-    userInfoLines.push(`🔮 ᴍᴀɴᴀ      : ${rpg.mana}/${rpg.maxMana || rpg.mana}`);
-    userInfoLines.push(
-      `🏃 sᴛᴀᴍɪɴᴀ   : ${rpg.stamina}/${rpg.maxStamina || rpg.stamina}`,
-    );
+    userInfoLines.push(`ʜᴘ        : ${rpg.health}/${rpg.maxHealth || rpg.health}`);
+    userInfoLines.push(`ᴍᴀɴᴀ      : ${rpg.mana}/${rpg.maxMana || rpg.mana}`);
+    userInfoLines.push(`sᴛᴀᴍɪɴᴀ   : ${rpg.stamina}/${rpg.maxStamina || rpg.stamina}`);
   }
   const inv = user?.inventory || {};
   const invCount = Object.values(inv).reduce(
     (a, b) => a + (typeof b === "number" ? b : 0),
     0,
   );
-  if (invCount > 0) userInfoLines.push(`🎒 ɪɴᴠᴇɴᴛᴏʀʏ : ${invCount} items`);
-  userInfoLines.push(`🕒 ᴡᴀᴋᴛᴜ    : ${timeStr} WIB`);
-  userInfoLines.push(`📅 ᴛᴀɴɢɢᴀʟ  : ${dateStr}`);
+  if (invCount > 0) userInfoLines.push(`ɪɴᴠᴇɴᴛᴏʀʏ : ${invCount} items`);
+  userInfoLines.push(`ᴡᴀᴋᴛᴜ    : ${timeStr} WIB`);
+  userInfoLines.push(`ᴛᴀɴɢɢᴀʟ  : ${dateStr}`);
 
+  // Server info
+  const os = await import("os");
+  const serverInfoLines = [
+    `ᴘʟᴀᴛꜰᴏʀᴍ  : ${os.platform()} ${os.arch()}`,
+    `ɴᴏᴅᴇ    : ${process.version}`,
+    `ʀᴀᴍ      : ${Math.round(os.totalmem() / 1024 / 1024 / 1024)} GB`,
+    `ᴜᴘᴛɪᴍᴇ   : ${uptimeFormatted}`,
+  ];
   if (useBracketBoxStyle) {
     txt += `\n\n`;
     txt += createBracketBox("BOT INFO", botInfoLines);
     txt += createBracketBox("USER INFO", userInfoLines);
+    txt += createBracketBox("SERVER INFO", serverInfoLines);
   } else {
     txt += `\n\n╭┈❀ *ʙᴏᴛ ɪɴꜰᴏ*\n`;
     txt += `┃ ◦ ɴᴀᴍᴀ     : *${botConfig.bot?.name || "Rara-AI"}*\n`;
@@ -326,6 +331,12 @@ Kamu bisa pakai aku buat cari info, ambil data, atau bantu hal-hal sederhana lan
     txt += `┃ ◦ ᴡᴀᴋᴛᴜ    : *${timeStr} WIB*\n`;
     txt += `┃ ◦ ᴛᴀɴɢɢᴀʟ  : *${dateStr}*\n`;
     txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n\n`;
+    txt += `╭┈❀ *sᴇʀᴠᴇʀ ɪɴꜰᴏ*\n`;
+    txt += `┃ ◦ ᴘʟᴀᴛꜰᴏʀᴍ  : *${os.platform()} ${os.arch()}*\n`;
+    txt += `┃ ◦ ɴᴏᴅᴇ    : *${process.version}*\n`;
+    txt += `┃ ◦ ʀᴀᴍ      : *${Math.round(os.totalmem() / 1024 / 1024 / 1024)} GB*\n`;
+    txt += `┃ ◦ ᴜᴘᴛɪᴍᴇ   : *${uptimeFormatted}*\n`;
+    txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n`;
   }
   const categoryOrder = [
     "owner",

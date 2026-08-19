@@ -11,8 +11,9 @@ import {
   getPlugin,
 } from "../../src/lib/rara-plugins.js";
 import { getDatabase } from "../../src/lib/rara-database.js";
-import { getTimeGreeting } from "../../src/lib/rara-formatter.js";
+import { getTimeGreeting, formatUptime } from "../../src/lib/rara-formatter.js";
 import fs from "fs"
+import os from "os"
 
 const pluginConfig = {
   name: "menucat",
@@ -121,7 +122,7 @@ function getCommandSymbols(cmdName) {
   return symbols.length > 0 ? " " + symbols.join(" ") : "";
 }
 
-async function handler(m, { sock, db }) {
+async function handler(m, { sock, db, uptime }) {
   const prefix = config.command?.prefix || ".";
   const args = m.args || [];
   const categoryArg = args[0]?.toLowerCase();
@@ -203,8 +204,50 @@ async function handler(m, { sock, db }) {
       return total > 0;
     });
 
-    let txt = ``;
-    txt += createBracketBox("🤖", "KETERANGAN", [
+    
+  const uptimeFormatted = formatUptime(uptime || process.uptime());
+  const totalUsers = db.getUserCount();
+  const timeHelper = await import("../../src/lib/rara-time.js");
+  const timeStr = timeHelper.formatTime("HH:mm");
+  const dateStr = timeHelper.formatFull("dddd, DD MMMM YYYY");
+  const user = db.getUser(m.sender);
+
+  let txt = ``;
+  // BOT INFO
+  txt += `╭┈❀ *ʙᴏᴛ ɪɴꜰᴏ*\n`;
+  txt += `┃\n`;
+  txt += `┃ ◦ ɴᴀᴍᴀ     : *${config.bot?.name || "Rara-AI"}*\n`;
+  txt += `┃ ◦ ᴠᴇʀsɪ    : *v${config.bot?.version || "1.2.0"}*\n`;
+  txt += `┃ ◦ ᴍᴏᴅᴇ     : *${(config.mode || "public").toUpperCase()}*\n`;
+  txt += `┃ ◦ ᴘʀᴇꜰɪx    : *[ ${prefix} ]*\n`;
+  txt += `┃ ◦ ᴜᴘᴛɪᴍᴇ   : *${uptimeFormatted}*\n`;
+  txt += `┃ ◦ ᴛᴏᴛᴀʟ    : *${totalUsers} Users*\n`;
+  txt += `┃\n`;
+  txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n`;
+  // USER INFO
+  let userRole = "User";
+  if (m.isOwner) userRole = "Owner";
+  else if (m.isPremium) userRole = "Premium";
+  txt += `╭┈❀ *ᴜsᴇʀ ɪɴꜰᴏ*\n`;
+  txt += `┃\n`;
+  txt += `┃ ◦ ɴᴀᴍᴀ     : *${m.pushName || "User"}*\n`;
+  txt += `┃ ◦ ʀᴏʟᴇ     : *${userRole}*\n`;
+  txt += `┃ ◦ ᴇɴᴇʀɢɪ   : *${m.isOwner || m.isPremium ? "∞ Unlimited" : (user?.energi ?? 25)}*\n`;
+  txt += `┃ ◦ ᴋᴏɪɴ      : *${(user?.koin ?? 0).toLocaleString()}*\n`;
+  txt += `┃ ◦ ᴡᴀᴋᴛᴜ    : *${timeStr} WIB*\n`;
+  txt += `┃ ◦ ᴛᴀɴɢɢᴀʟ  : *${dateStr}*\n`;
+  txt += `┃\n`;
+  txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n`;
+  // SERVER INFO
+  txt += `╭┈❀ *sᴇʀᴠᴇʀ ɪɴꜰᴏ*\n`;
+  txt += `┃\n`;
+  txt += `┃ ◦ ᴘʟᴀᴛꜰᴏʀᴍ  : *${os.platform()} ${os.arch()}*\n`;
+  txt += `┃ ◦ ɴᴏᴅᴇ    : *${process.version}*\n`;
+  txt += `┃ ◦ ʀᴀᴍ      : *${Math.round(os.totalmem() / 1024 / 1024 / 1024)} GB*\n`;
+  txt += `┃ ◦ ᴜᴘᴛɪᴍᴇ   : *${uptimeFormatted}*\n`;
+  txt += `┃\n`;
+  txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n`;
+    txt += createBracketBox("", "KETERANGAN", [
       "Ⓞ = Hanya untuk owner",
       "ⓟ = Hanya untuk premium",
       "Ⓛ = Membutuhkan limit",

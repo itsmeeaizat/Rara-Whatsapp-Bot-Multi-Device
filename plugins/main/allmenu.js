@@ -6,8 +6,10 @@ import config from "../../config.js";
 import axios from "axios";
 import {
   getTimeGreeting,
+  formatUptime,
 } from "../../src/lib/rara-formatter.js";
 import fs from "fs"
+import os from "os"
 import {
   getCommandsByCategory,
   getCategories,
@@ -158,8 +160,49 @@ async function handler(m, { sock, config: botConfig, db, uptime }) {
     roleEmoji = "💎";
   }
   const greeting = getTimeGreeting();
+  
+  const uptimeFormatted = formatUptime(uptime);
+  const totalUsers = db.getUserCount();
+  const timeHelper = await import("../../src/lib/rara-time.js");
+  const timeStr = timeHelper.formatTime("HH:mm");
+  const dateStr = timeHelper.formatFull("dddd, DD MMMM YYYY");
+
   let txt = ``;
-  txt += createBracketBox("🤖", "KETERANGAN", [
+  // BOT INFO
+  txt += `╭┈❀ *ʙᴏᴛ ɪɴꜰᴏ*\n`;
+  txt += `┃\n`;
+  txt += `┃ ◦ ɴᴀᴍᴀ     : *${botConfig.bot?.name || "Rara-AI"}*\n`;
+  txt += `┃ ◦ ᴠᴇʀsɪ    : *v${botConfig.bot?.version || "1.2.0"}*\n`;
+  txt += `┃ ◦ ᴍᴏᴅᴇ     : *${(botConfig.mode || "public").toUpperCase()}*\n`;
+  txt += `┃ ◦ ᴘʀᴇꜰɪx    : *[ ${prefix} ]*\n`;
+  txt += `┃ ◦ ᴜᴘᴛɪᴍᴇ   : *${uptimeFormatted}*\n`;
+  txt += `┃ ◦ ᴛᴏᴛᴀʟ    : *${totalUsers} Users*\n`;
+  txt += `┃ ◦ ɢʀᴏᴜᴘ     : *${botMode.toUpperCase()}*\n`;
+  txt += `┃ ◦ ᴏᴡɴᴇʀ    : *${botConfig.owner?.name || "Rara-AI"}*\n`;
+  txt += `┃\n`;
+  txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n`;
+  // USER INFO
+  txt += `╭┈❀ *ᴜsᴇʀ ɪɴꜰᴏ*\n`;
+  txt += `┃\n`;
+  txt += `┃ ◦ ɴᴀᴍᴀ     : *${m.pushName || "User"}*\n`;
+  txt += `┃ ◦ ʀᴏʟᴇ     : *${userRole}*\n`;
+  txt += `┃ ◦ ᴇɴᴇʀɢɪ   : *${m.isOwner || m.isPremium ? "∞ Unlimited" : (user?.energi ?? 25)}*\n`;
+  txt += `┃ ◦ ʟᴇᴠᴇʟ    : *${Math.floor((user?.exp || 0) / 20000) + 1}*\n`;
+  txt += `┃ ◦ ᴋᴏɪɴ      : *${(user?.koin ?? 0).toLocaleString()}*\n`;
+  txt += `┃ ◦ ᴡᴀᴋᴛᴜ    : *${timeStr} WIB*\n`;
+  txt += `┃ ◦ ᴛᴀɴɢɢᴀʟ  : *${dateStr}*\n`;
+  txt += `┃\n`;
+  txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n`;
+  // SERVER INFO
+  txt += `╭┈❀ *sᴇʀᴠᴇʀ ɪɴꜰᴏ*\n`;
+  txt += `┃\n`;
+  txt += `┃ ◦ ᴘʟᴀᴛꜰᴏʀᴍ  : *${os.platform()} ${os.arch()}*\n`;
+  txt += `┃ ◦ ɴᴏᴅᴇ    : *${process.version}*\n`;
+  txt += `┃ ◦ ʀᴀᴍ      : *${Math.round(os.totalmem() / 1024 / 1024 / 1024)} GB*\n`;
+  txt += `┃ ◦ ᴜᴘᴛɪᴍᴇ   : *${uptimeFormatted}*\n`;
+  txt += `┃\n`;
+  txt += `╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈❀\n\n`;
+  txt += createBracketBox("", "KETERANGAN", [
     "Ⓞ = Hanya untuk owner",
     "ⓟ = Hanya untuk premium",
     "Ⓛ = Membutuhkan limit",
