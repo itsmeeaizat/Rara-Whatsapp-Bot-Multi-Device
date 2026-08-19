@@ -32,7 +32,14 @@ async function handler(m) {
         desc = 'Tetep cantik kok! 💖'
     }
     
-    let txt = mentioned === m.sender ? `╭─【 🌸 *KECANTIKAN* 】\n┃\n┃ ➤ Hai @${mentioned.split('@')[0]}\n┃\n┃ Tingkat kecantikan kamu *${percent}%*\n┃ \`\`\`${desc}\`\`\`\n╰────────────────⸣` : `╭─【 🌸 *KECANTIKAN* 】\n┃\n┃ ➤ Kamu ngecek @${mentioned.split('@')[0]}\n┃\n┃ Tingkat kecantikan dia sebesar *${percent}%*\n┃ \`\`\`${desc}\`\`\`\n╰────────────────⸣`
+    let txt = mentioned === m.sender ? `Hai @${mentioned.split('@')[0]}
+    
+Tingkat kecantikan kamu *${percent}%*
+\`\`\`${desc}\`\`\`` : `Kamu ingin ngecek tingkat kecantikan @${mentioned.split('@')[0]} yak? 
+    
+Tingkat kecantikan dia sebesar *${percent}%*
+\`\`\`${desc}\`\`\``
+    
     await m.reply(txt, { mentions: [mentioned] })
 }
 

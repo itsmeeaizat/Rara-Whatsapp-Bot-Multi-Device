@@ -24,7 +24,7 @@ async function handler(m) {
         return;
     }
     
-    await m.reply(`╭─【 🔥 *DARE* 】\n┃\n┃ \`\`\`${challenge}\`\`\`\n╰────────────────⸣`);
+    await m.reply(`\`\`\`${challenge}\`\`\``);
 }
 
 export { pluginConfig as config, handler }

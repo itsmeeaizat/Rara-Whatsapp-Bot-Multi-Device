@@ -26,7 +26,14 @@ async function handler(m) {
     else if (percent >= 30) desc = 'Cukup social butterfly 🦋'
     else desc = 'Extrovert mode ON! 🎉'
     
-    let txt = mentioned === m.sender ? `╭─【 🌑 *INTROVERT* 】\n┃\n┃ ➤ Hai @${mentioned.split('@')[0]}\n┃\n┃ Tingkat introvert kamu *${percent}%*\n┃ \`\`\`${desc}\`\`\`\n╰────────────────⸣` : `╭─【 🌑 *INTROVERT* 】\n┃\n┃ ➤ Kamu ngecek @${mentioned.split('@')[0]}\n┃\n┃ Tingkat introvert dia sebesar *${percent}%*\n┃ \`\`\`${desc}\`\`\`\n╰────────────────⸣`
+    let txt = mentioned === m.sender ? `Hai @${mentioned.split('@')[0]}
+    
+Tingkat keintrovertan kamu *${percent}%*
+\`\`\`${desc}\`\`\`` : `Kamu ingin ngecek tingkat keintrovertan @${mentioned.split('@')[0]} yak? 
+    
+Tingkat keintrovertan dia sebesar *${percent}%*
+\`\`\`${desc}\`\`\``
+    
     await m.reply(txt, { mentions: [mentioned] })
 }
 

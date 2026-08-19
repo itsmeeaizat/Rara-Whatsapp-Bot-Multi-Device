@@ -47,7 +47,8 @@ async function handler(m) {
     
     const rating = ratings[Math.floor(Math.random() * ratings.length)];
     
-    await m.reply(`╭─【 ⭐ *RATE* 】\n┃\n┃ ➤ Rating: *${rating.score}*\n┃ ${rating.comment}\n╰────────────────⸣`);
+    await m.reply(`Rating dari aku: *${rating.score}*
+${rating.comment}`);
 }
 
 export { pluginConfig as config, handler }

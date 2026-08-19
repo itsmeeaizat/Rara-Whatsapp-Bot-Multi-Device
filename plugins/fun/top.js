@@ -49,7 +49,7 @@ async function handler(m, { sock }) {
             list += `*${index + 1}* ${medals[index]} @${jid.split('@')[0]}\n`
         })
         
-        await m.reply(`╭─【 🏆 *ᴛᴏᴘ 5 ${kategori.toUpperCase()}* 】\n┃\n${list.split('\n').map(l => '┃ ' + l).join('\n')}\n╰────────────────⸣`, { mentions: top5 })
+        await m.reply(`🏆 *ᴛᴏᴘ 5 ${kategori.toUpperCase()}*\n${list}`, { mentions: top5 })
         m.react('✅')
     } catch (error) {
         m.react('☢')

@@ -47,7 +47,8 @@ async function handler(m) {
     
     const answer = answers[Math.floor(Math.random() * answers.length)];
     
-    await m.reply(`╭─【 📍 *DIMANA* 】\n┃\n┃ ➤ ${m.body.slice(1)}?\n┃\n┃ *${answer}*\n╰────────────────⸣`);
+    await m.reply(`${m.body.slice(1)}?
+*${answer}*`);
 }
 
 export { pluginConfig as config, handler }

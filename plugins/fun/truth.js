@@ -22,7 +22,7 @@ async function handler(m) {
         await m.reply('❌ Data tidak tersedia!');
         return;
     }
-    await m.reply(`╭─【 🟢 *TRUTH* 】\n┃\n┃ \`\`\`${question}\`\`\`\n╰────────────────⸣`);
+    await m.reply(`\`\`\`${question}\`\`\``);
 }
 
 export { pluginConfig as config, handler }
