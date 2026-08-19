@@ -102,7 +102,7 @@ function createBracketBox(emoji, title, lines = []) {
   let text = "\u256d\u2508\u2740 *" + toSmallCaps(title) + "*\n";
   text += "\u2503\n";
   for (const line of lines) {
-    text += "\u2503 \u25e6 " + toSmallCaps(line) + "\n";
+    text += "\u2503 \u25e6 " + line + "\n";
   }
   text += "\u2503\n";
   text += "\u2570\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2508\u2740\n\n";
