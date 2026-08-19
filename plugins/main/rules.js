@@ -32,7 +32,6 @@ async function handler(m, { sock, config: botConfig }) {
     try {
         const db = getDatabase()
         const customRules = db.setting('botRules')
-        const botName = botConfig.bot?.name || 'Rara-AI'
 
         let rulesList = DEFAULT_BOT_RULES
 
@@ -47,21 +46,24 @@ async function handler(m, { sock, config: botConfig }) {
             }
         }
 
-        let txt = `╭─〔 📜 *ʀᴜʟᴇs ʙᴏᴛ* 〕\n`
-        txt += `┃\n`
-        txt += `┃ *${botName}*\n`
-        txt += `┃\n`
-        for (let i = 0; i < rulesList.length; i++) {
-            txt += `┃ ➤ *${i + 1}.* ${rulesList[i]}\n`
-        }
-        txt += `┃\n`
-        txt += `┃ ⚠️ _Pelanggaran dapat mengakibatkan_\n`
-        txt += `┃ _banned / kick dari bot_\n`
-        txt += `╰────────────────⬣`
+        const tableData = rulesList.map((rule, i) => [
+            `${i + 1}`,
+            rule
+        ])
 
-        await m.reply(txt)
+        await sock.sendTable(
+            m.chat,
+            '📜 Aturan Bot',
+            ['No', 'Rule'],
+            tableData,
+            m,
+            {
+                headerText: `${botConfig.bot?.name || 'Rara-AI'} *RULES*`,
+                footer: 'Pelanggaran dapat mengakibatkan banned / kick!'
+            }
+        )
     } catch (e) {
-        m.reply('❌ Terjadi kesalahan saat mengambil rules')
+        m.reply('Terjadi kesalahan saat mengambil rules')
     }
 }
 

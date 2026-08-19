@@ -93,38 +93,38 @@ async function handler(m, { sock }) {
     const execTime = (tEnd - tStart).toFixed(2)
 
     const serverDetails =
-      `╭─〔 🏓 *ᴘᴏɴɢ* — ${execTime}ms 〕\n` +
-      `┃\n` +
-      `┃ 🖥️ *ɪɴꜰᴏʀᴍᴀsɪ sɪsᴛᴇᴍ*\n` +
-      `┃ ➤ *OS:* ${os.type()} (${os.release()})\n` +
-      `┃ ➤ *Platform:* ${os.platform()} (${os.arch()})\n` +
-      `┃ ➤ *Hostname:* ${os.hostname()}\n` +
-      `┃ ➤ *NodeJS:* ${process.version}\n` +
-      `┃ ➤ *Engine V8:* ${process.versions.v8}\n` +
-      `┃\n` +
-      `┃ 💻 *ɪɴꜰᴏʀᴍᴀsɪ ᴄᴘᴜ*\n` +
-      `┃ ➤ *Model:* ${cpuModel.trim()}\n` +
-      `┃ ➤ *Cores:* ${cpuCores} Core(s)\n` +
-      `┃ ➤ *Speed:* ${cpuSpeed} MHz\n` +
-      `┃ ➤ *Load Avg:* ${load1m} (1m), ${load5m} (5m), ${load15m} (15m)\n` +
-      `┃\n` +
-      `┃ 🧠 *ᴘᴇɴɢɢᴜɴᴀᴀɴ ᴍᴇᴍᴏʀɪ*\n` +
-      `┃ ➤ *Total RAM:* ${fmtSize(totalMem)}\n` +
-      `┃ ➤ *Dipakai:* ${fmtSize(usedMem)} (${memPct}%)\n` +
-      `┃ ➤ *Sisa Bebas:* ${fmtSize(freeMem)}\n` +
-      `┃\n` +
-      `┃ 📦 *ᴍᴇᴍᴏʀɪ ɴᴏᴅᴇᴊs*\n` +
-      `┃ ➤ *RSS:* ${fmtSize(memoryUsage.rss)}\n` +
-      `┃ ➤ *Heap Total:* ${fmtSize(memoryUsage.heapTotal)}\n` +
-      `┃ ➤ *Heap Used:* ${fmtSize(memoryUsage.heapUsed)}\n` +
-      `┃ ➤ *External:* ${fmtSize(memoryUsage.external)}\n` +
-      `┃\n` +
-      `┃ ⏱️ *ᴡᴀᴋᴛᴜ ᴀᴋᴛɪꜰ*\n` +
-      `┃ ➤ *Uptime Server:* ${uptimeOS}\n` +
-      `┃ ➤ *Uptime Bot:* ${uptimeBot}\n` +
-      `┃\n` +
-      `┃ _Eksekusi dalam *${execTime}ms*_\n` +
-      `╰────────────────⬣`
+      `🏓 *PONG!* (${execTime}ms)\n\n` +
+      `Berikut adalah detail spesifikasi dan performa server secara lengkap:\n\n` +
+
+      `🖥️ *INFORMASI SISTEM*\n` +
+      `> ◦ *OS:* ${os.type()} (${os.release()})\n` +
+      `> ◦ *Platform:* ${os.platform()} (${os.arch()})\n` +
+      `> ◦ *Hostname:* ${os.hostname()}\n` +
+      `> ◦ *NodeJS:* ${process.version}\n` +
+      `> ◦ *Engine V8:* ${process.versions.v8}\n\n` +
+
+      `💻 *INFORMASI CPU*\n` +
+      `> ◦ *Model:* ${cpuModel.trim()}\n` +
+      `> ◦ *Cores:* ${cpuCores} Core(s)\n` +
+      `> ◦ *Speed:* ${cpuSpeed} MHz\n` +
+      `> ◦ *Load Avg:* ${load1m} (1m), ${load5m} (5m), ${load15m} (15m)\n\n` +
+
+      `🧠 *PENGGUNAAN MEMORI*\n` +
+      `> ◦ *Total RAM:* ${fmtSize(totalMem)}\n` +
+      `> ◦ *Dipakai:* ${fmtSize(usedMem)} (${memPct}%)\n` +
+      `> ◦ *Sisa Bebas:* ${fmtSize(freeMem)}\n\n` +
+
+      `📦 *MEMORI NODEJS*\n` +
+      `> ◦ *RSS:* ${fmtSize(memoryUsage.rss)}\n` +
+      `> ◦ *Heap Total:* ${fmtSize(memoryUsage.heapTotal)}\n` +
+      `> ◦ *Heap Used:* ${fmtSize(memoryUsage.heapUsed)}\n` +
+      `> ◦ *External:* ${fmtSize(memoryUsage.external)}\n\n` +
+
+      `⏱️ *WAKTU AKTIF (UPTIME)*\n` +
+      `> ◦ *Uptime Server:* ${uptimeOS}\n` +
+      `> ◦ *Uptime Bot:* ${uptimeBot}\n\n` +
+
+      `Sistem berjalan stabil dan menyelesaikan kalkulasi dalam waktu eksekusi *${execTime}ms*.`
 
     builder.addText(serverDetails)
 

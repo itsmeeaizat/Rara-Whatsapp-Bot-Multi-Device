@@ -27,7 +27,7 @@ const ICONS = {
     stalker: '🔎', random: '🎲', religi: '🕌', islamic: '☪️', cek: '✅',
     store: '🛒', panel: '🖥️', convert: '🔄', primbon: '🔮', tts: '🗣️',
     otp: '🔑', vps: '☁️', pushkontak: '📱', jpm: '🎰', ephoto: '📸',
-    asupan: '🎞️', clan: '⚔️', berita: '📰', other: '📦'
+    other: '📦'
 }
 
 async function handler(m, { sock }) {
@@ -51,25 +51,27 @@ async function handler(m, { sock }) {
         await m.react('📊')
 
         const sorted = Object.entries(cats).sort((a, b) => b[1].total - a[1].total)
-        const botName = config.bot?.name || 'Rara-AI'
 
-        let txt = `╭─〔 📊 *ᴅɪsᴛʀɪʙᴜsɪ ꜰɪᴛᴜʀ* 〕\n`
-        txt += `┃\n`
-        txt += `┃ ➤ *Total:* ${total} fitur\n`
-        txt += `┃ ➤ *Aktif:* ${enabled} fitur\n`
-        txt += `┃ ➤ *Kategori:* ${sorted.length}\n`
-        txt += `┃\n`
+        const tableData = sorted.map(([cat, data]) => {
+            const pct = ((data.total / total) * 100).toFixed(1)
+            return [
+                `${ICONS[cat] || '📦'} ${cat.toUpperCase()}`,
+                data.total.toString(),
+                `${pct}%`
+            ]
+        })
 
-        for (const [cat, data] of sorted) {
-            const icon = ICONS[cat] || '📦'
-            txt += `┃ ${icon} *${cat.toUpperCase()}* — ${data.total} fitur\n`
-        }
-
-        txt += `┃\n`
-        txt += `┃ _Bot ${botName} — Made in Indonesia 🇮🇩_\n`
-        txt += `╰────────────────⬣`
-
-        await m.reply(txt)
+        await sock.sendTable(
+            m.chat,
+            'Distribusi Fitur',
+            ['Kategori', 'Jumlah', 'Persen'],
+            tableData,
+            m,
+            {
+                headerText: `Total: ${total} | Aktif: ${enabled} | Kategori: ${sorted.length}`,
+                footer: `Total ${total} fitur tersedia`
+            }
+        )
 
     } catch (error) {
         await m.react('☢')
